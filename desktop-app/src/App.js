@@ -6,11 +6,11 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      <div style={{ display: 'flex' }}>
+      
         <Sidebar />
-        <div style={{ flex: 1, padding: '20px', backgroundColor: '#fff' }}>
-        </div>
-      </div>
+        
+      
+      
     </div>
   );
 }
