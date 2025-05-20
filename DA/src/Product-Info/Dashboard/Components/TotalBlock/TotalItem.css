@@ -1,0 +1,26 @@
+.Item-Container{
+    width: 100%;
+    background-color: transparent;
+}
+.Item-box{
+    display: flex;
+    gap: 24px;
+    margin: 40px;
+}
+
+.block{
+    background-color: white;
+    width: 100%;
+    max-width: 308px;
+    height: auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 0 #3658BF40;
+    padding: 20px;
+}
+.Title{
+    color: #939191;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100%;
+}

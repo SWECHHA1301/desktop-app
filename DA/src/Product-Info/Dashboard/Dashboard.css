@@ -1,0 +1,12 @@
+.dash-board{
+    background-color: hsl(226, 41%, 92%);
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title{
+color: #3658BF;
+font-size: 32px;
+font-weight: 700;
+line-height: 100%;
+}
