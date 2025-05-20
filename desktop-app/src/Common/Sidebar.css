@@ -1,0 +1,35 @@
+.sidebar {
+  width: 80px;
+  background-color: #ffffff;
+    height: calc(100vh - 60px); /* Adjust height to fit below the navbar */
+  padding: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 4px 4px 6px rgba(25%, 25%, 25%, 0.1);
+  top: 68px;
+  left: 8px;
+  position: fixed;
+  
+}
+
+.nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nav-icon svg {
+  margin-bottom: 4px;
+}
+
+.nav-icon.active {
+  color: #3b57d5; /* Blue highlight */
+}
