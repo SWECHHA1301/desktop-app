@@ -7,11 +7,11 @@ import TotalItem from './Product-Info/Dashboard/Components/TotalBlock/TotalItem'
 function App() {
   return (
     <div className="app">
-      {/* <Navbar />
+      <Navbar />
       
-        <Sidebar /> */}
+        <Sidebar />
         
-       <TotalItem/>
+       <Dashboard/>
       
     </div>
   );

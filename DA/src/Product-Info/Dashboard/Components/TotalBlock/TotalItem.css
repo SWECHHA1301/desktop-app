@@ -1,11 +1,15 @@
+ div , p{
+    margin:0;
+ }
 .Item-Container{
     width: 100%;
     background-color: transparent;
+    /* position: relative; */
 }
 .Item-box{
     display: flex;
     gap: 24px;
-    margin: 40px;
+    margin-top: 1.5rem;
 }
 
 .block{
@@ -13,6 +17,7 @@
     width: 100%;
     max-width: 308px;
     height: auto;
+    max-height: 133px;
     border: none;
     border-radius: 10px;
     box-shadow: 4px 4px 4px 0 #3658BF40;
@@ -23,4 +28,5 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 100%;
+
 }
