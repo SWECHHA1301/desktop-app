@@ -13,20 +13,20 @@ const tables = [
     type: "AC",
     rows: [
       [
-        { id: "t1", time: "7 Min", price: 769, status: "running" },
-        { id: "t2", time: "10 Min", price: 975, status: "running" },
+        { id: "t1", time: "7 Min", price: 769, status: "printed" },
+        { id: "t2", time: "10 Min", price: 975, status: "printed" },
         { id: "t3" }, { id: "t4" },
-        { id: "t5", time: "7 Min", price: 769, status: "kot" },
+        { id: "t5", time: "7 Min", price: 769, status: "running KOT" },
         { id: "t6" }, { id: "t7" }, { id: "t8" }, { id: "t9" }, { id: "t10" },
-        { id: "t11", time: "7 Min", price: 769, status: "kot" }
+        { id: "t11", time: "7 Min", price: 769, status: "running KOT" }
       ],
       [
-        { id: "f1", time: "7 Min", price: 769, status: "running" },
-        { id: "f2", time: "10 Min", price: 975, status: "running" },
+        { id: "f1", time: "7 Min", price: 769, status: "printed" },
+        { id: "f2", time: "10 Min", price: 975, status: "printed" },
         { id: "f3" }, { id: "f4" },
-        { id: "f5", time: "7 Min", price: 769, status: "kot" },
+        { id: "f5", time: "7 Min", price: 769, status: "running KOT" },
         { id: "f6" }, { id: "f7" }, { id: "f8" }, { id: "f9" }, { id: "f10" },
-        { id: "f11", time: "7 Min", price: 769, status: "kot" }
+        { id: "f11", time: "7 Min", price: 769, status: "running KOT" }
       ]
     ]
   },
@@ -34,20 +34,20 @@ const tables = [
     type: "NON AC",
     rows: [
       [
-        { id: "t1", time: "7 Min", price: 769, status: "running" },
-        { id: "t2", time: "10 Min", price: 975, status: "running" },
+        { id: "t1", time: "7 Min", price: 769, status: "printed" },
+        { id: "t2", time: "10 Min", price: 975, status: "printed" },
         { id: "t3" }, { id: "t4" },
-        { id: "t5", time: "7 Min", price: 769, status: "kot" },
+        { id: "t5", time: "7 Min", price: 769, status: "running KOT" },
         { id: "t6" }, { id: "t7" }, { id: "t8" }, { id: "t9" }, { id: "t10" },
-        { id: "t11", time: "7 Min", price: 769, status: "kot" }
+        { id: "t11", time: "7 Min", price: 769, status: "running KOT" }
       ],
       [
-        { id: "f1", time: "7 Min", price: 769, status: "running" },
-        { id: "f2", time: "10 Min", price: 975, status: "running" },
+        { id: "f1", time: "7 Min", price: 769, status: "printed" },
+        { id: "f2", time: "10 Min", price: 975, status: "printed" },
         { id: "f3" }, { id: "f4" },
-        { id: "f5", time: "7 Min", price: 769, status: "kot" },
+        { id: "f5", time: "7 Min", price: 769, status: "running KOT" },
         { id: "f6" }, { id: "f7" }, { id: "f8" }, { id: "f9" }, { id: "f10" },
-        { id: "f11", time: "7 Min", price: 769, status: "kot" }
+        { id: "f11", time: "7 Min", price: 769, status: "running KOT" }
       ]
     ]
   }
@@ -60,20 +60,20 @@ const TableDashboard = () => {
       <div className="top-controls">
         <div className="buttons">
           <button className="action-btn">
-            <PlusCircle size={16} /> Table Reservation
+            <PlusCircle size={14} /> Table Reservation
           </button>
           <button className="action-btn">
-            <PlusCircle size={16} /> Contactless
+            <PlusCircle size={14} /> Contactless
           </button>
         </div>
-        <div className="legend">  
-      <div className="legend-item"><Circle size={12} className="kot" /> Running KOT Table</div>  
-      <div className="legend-item"><Circle size={12} className="move" /> Move KOT /Item</div>  
-      <div className="legend-item"><Circle size={12} className="blank" /> Blank Table</div>  
-      <div className="legend-item"><Circle size={12} className="running" /> Running Table</div>  
-      <div className="legend-item"><Circle size={12} className="printed" /> Printed Table</div>  
-      <div className="legend-item"><Circle size={12} className="print" /> Print Table</div>
-        </div>
+        <div className="legend">
+  <div><span className="circle gray"></span> Blank Table</div>
+  <div><span className="circle blue"></span> running Table</div>
+  <div><span className="circle green"></span> Printed Table</div>
+  <div><span className="circle orange"></span> running KOT Table</div>
+</div>
+
+
 
       </div>
 
@@ -84,7 +84,7 @@ const TableDashboard = () => {
             <h3>{section.type} Table</h3>
             {section.rows.map((row, rowIndex) => (
               <div key={rowIndex}>
-                <p className="row-label">Table For 2</p>
+                <h4 className="row-label">Table For 2</h4>
                 <div className="table-row">
                   {row.map((table, i) => (
                     <div
@@ -97,9 +97,15 @@ const TableDashboard = () => {
                           <div>{table.id}</div>
                           <div>₹{table.price}</div>
                           <div className="icons">
-                            <Printer size={14} />
-                            <ClipboardList size={14} />
-                            <Eye size={14} />
+                             {table.status === "printed" && (
+                             <ClipboardList size={16} />
+                             )}
+                              {table.status === "running KOT" && (
+                              <>
+                              <Printer size={16} />
+                              <Eye size={16} />
+                              </>
+                            )} 
                           </div>
                         </>
                       ) : (
