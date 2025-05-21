@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+  background-color: #e2e8f0;
+  min-height: 100vh;
+  padding: 20px;
+  padding-left: 100px; /* shift content right to avoid sidebar overlap */
+}
+
+.top-controls {
+  position: sticky;
+  top: 60px;
+  background-color: #e2e8f0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  flex-wrap: nowrap; /* ensure same line */
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  height: 36px;
+  padding: 8px 16px 8px 16px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  left: 100px;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* spacing between icon and text */
+}
+
+
+.legend .move { color: gray; }
+.legend .blank { color: #d1d5db; }
+.legend .running { color: #10b981; }
+.legend .printed { color: #6b7280; }
+.legend .print { color: #fbbf24; }
+.legend .kot { color: #facc15; }
+
+.sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.section-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.section-card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.row-label {
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+.table-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.table-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #d1d5db;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  gap: 2px;
+  padding: 4px;
+  text-align: center;
+}
+
+.table-box.running {
+  background-color: #86efac;
+}
+
+.table-box.kot {
+  background-color: #fde68a;
+}
+
+.table-box.printed {
+  background-color: #a5b4fc;
+}
+
+.table-box.print {
+  background-color: #fcd34d;
+}
+
+.empty-box {
+  opacity: 0.6;
+}
+
+.icons {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .top-controls {
+    flex-wrap: wrap;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+}
