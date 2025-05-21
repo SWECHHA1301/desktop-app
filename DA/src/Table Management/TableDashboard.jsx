@@ -72,10 +72,7 @@ const TableDashboard = () => {
   <div><span className="circle green"></span> Printed Table</div>
   <div><span className="circle orange"></span> running KOT Table</div>
 </div>
-
-
-
-      </div>
+</div>
 
       {/* Table Sections */}
       <div className="sections-wrapper">

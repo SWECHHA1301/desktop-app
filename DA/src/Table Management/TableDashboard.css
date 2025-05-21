@@ -19,37 +19,45 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  flex-wrap: nowrap; /* ensure same line */
-  gap: 10px;
+  gap: 20px;
+  flex-wrap: wrap; /* wrap items on small screens */
 }
 
 .buttons {
   display: flex;
   gap: 16px;
-  height: 36px;
-  padding: 8px 16px 8px 16px;
+  flex-wrap: wrap; /* allows vertical stacking on narrow screens */
 }
 
 .action-btn {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   background-color: #3b82f6;
   color: white;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  left: 100px;
+  font-size: 14px;
+  white-space: nowrap;
+  height: 30px;
+  width: 204px;
 }
 
 .legend {
   display: flex;
-  gap: 20px;
-  align-items: center;
   flex-wrap: wrap;
+  gap: 16px;
   font-size: 14px;
+  align-items: center;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .circle {
@@ -57,14 +65,43 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin-right: 6px;
-  vertical-align: middle;
 }
 
 .gray { background-color: #939393; }
 .green { background-color: #98FA7A; }
-.blue { background-color: #02E6FF; }
-.orange { background-color: #F9DF7A; }
+.blue  { background-color: #02E6FF; }
+.orange{ background-color: #F9DF7A; }
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .top-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .legend {
+    width: 100%;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .legend div {
+    width: 48%; /* allow 2 per row */
+  }
+}
 
 
 .sections-wrapper {
@@ -153,13 +190,17 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .top-controls {
-    flex-wrap: wrap;
-  }
-
-  .buttons {
-    flex-direction: column;
-    width: 100%;
-  }
+.top-controls {
+  position: sticky;
+  top: 60px;
+  background-color: #e2e8f0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: row;
 }
+
