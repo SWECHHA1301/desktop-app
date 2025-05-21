@@ -1,6 +1,6 @@
- div , p{
+ div,p{
     margin:0;
- }
+}
 .Item-Container{
     width: 100%;
     background-color: transparent;
@@ -10,6 +10,7 @@
     display: flex;
     gap: 24px;
     margin-top: 1.5rem;
+   
 }
 
 .block{
