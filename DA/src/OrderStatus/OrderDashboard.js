@@ -13,6 +13,7 @@ const orders = [
 ];
 
 const OrderCard = ({ table, status, type }) => (
+  <div className="order-container">
   <div className={`order-card ${status.toLowerCase()}`}>
     <div className="order-header">
       <span className="order-table">Table No.-{table}</span>
@@ -22,8 +23,12 @@ const OrderCard = ({ table, status, type }) => (
       </div>
     </div>
     <div className="order-info">KOT-xxx | Bill-xx4</div>
-    <div className="order-type">Type- {type}</div>
-    <div className={`order-status ${status.toLowerCase()}`}>{status}</div>
+    
+    <div className="order-type-row">
+      <span className="order-type">Type - {type}</span>
+      <span className={`order-status ${status.toLowerCase()}`}>{status}</span>
+    </div>
+  </div>
   </div>
 );
 
