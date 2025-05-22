@@ -125,3 +125,18 @@ html, body {
   color: #E38417;
 }
 
+@media (max-width: 768px) {
+  .orders-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    padding: 8px;
+    margin-left: 85px;
+  }
+
+  .order-card {
+    max-width: 100%;  /* Take full available width */
+    margin: 0 auto;   /* Center it if there's margin space */
+  }
+}
+
+
+
