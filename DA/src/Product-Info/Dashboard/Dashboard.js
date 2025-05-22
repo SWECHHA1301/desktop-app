@@ -2,6 +2,7 @@ import React from 'react'
 import './Dashboard.css'
 import TotalItem from './Components/TotalBlock/TotalItem'
 import SellingItem from './Components/SellingItem/SellingItem'
+import PayMethod from './Components/PaymentAndAccount/PayMethod'
 export default function Dashboard() {
   return (
     <>
@@ -12,11 +13,15 @@ export default function Dashboard() {
       <h2 className='title'>Dashboard</h2>
       </div>
 
-      <div>
+      <div className='total-Items'>
         <TotalItem/>
       </div>
-       
-       <div><SellingItem/></div>
+
+       <div  className='collection-block'>
+       <SellingItem/>
+
+       <PayMethod/>
+       </div>
 
       </div>
     </div>

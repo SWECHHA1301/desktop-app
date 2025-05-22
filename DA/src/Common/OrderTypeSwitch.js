@@ -6,7 +6,7 @@ const OrderTypeSwitch = ({ selected, onChange }) => {
       <button
         onClick={() => onChange("Dine in")}
         className={`flex-1 py-1 rounded-full text-sm font-medium ${
-          selected === "Dine in" ? "bg-blue-600 text-white" : "text-gray-700"
+          selected === "Dine in" ? "bg-blue-800 text-white" : "text-gray-700"
         }`}
       >
         Dine in

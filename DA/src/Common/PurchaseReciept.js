@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { ArrowLeftCircle, PlusCircle, X } from "lucide-react";
 import OrderTypeSwitch from "./OrderTypeSwitch";
+import "./PurchaseReceipt.css";
 
 const PurchaseReceipt = () => {
   const [items, setItems] = useState([
@@ -11,6 +13,8 @@ const PurchaseReceipt = () => {
   const [customerName, setCustomerName] = useState("");
   const [table, setTable] = useState("B-2");
   const [orderType, setOrderType] = useState("Dine in");
+
+  const [showReceipt, setShowReceipt] = useState(true); 
 
   const handleQuantityChange = (id, delta) => {
     setItems((prev) =>
@@ -27,93 +31,144 @@ const PurchaseReceipt = () => {
   const total = items.reduce((acc, item) => acc + item.qty * item.price, 0);
 
   return (
-    <div className="w-96 bg-white rounded-xl shadow-lg p-4 border">
-      <div className="flex justify-between items-center mb-2">
-        <h2 className="font-semibold text-lg">Purchase Receipt</h2>
-        <button className="text-xl font-bold">+</button>
-      </div>
-
-      <div className="flex justify-around mb-2">
-        <OrderTypeSwitch selected={orderType} onChange={setOrderType} />
-      </div>
-
-      <div className="flex justify-between gap-2 mb-3">
-        <input
-          type="text"
-          placeholder="Customer Name"
-          value={customerName}
-          onChange={(e) => setCustomerName(e.target.value)}
-          className="w-1/2 p-1 border rounded"
-        />
-        <input
-          type="text"
-          value={table}
-          onChange={(e) => setTable(e.target.value)}
-          className="w-1/2 p-1 border rounded text-center"
-        />
-      </div>
-
-      <div className="border-t pt-2">
-        <div className="text-sm font-medium flex justify-between mb-1">
-          <span>KOT : 1</span>
-          <span>Time : 17:05</span>
-          <span>Items : {items.length}</span>
-        </div>
-        {items.map((item) => (
-          <div key={item.id} className="flex justify-between items-center text-sm py-1 border-b">
-            <div className="flex-1">{item.name}</div>
-            <div className="flex items-center gap-1">
-              {item.name === "Fried Rice" ? (
-                <>
-                  <button
-                    onClick={() => handleQuantityChange(item.id, -1)}
-                    className="px-2 border rounded"
-                  >
-                    -
-                  </button>
-                  <span>{item.qty}</span>
-                  <button
-                    onClick={() => handleQuantityChange(item.id, 1)}
-                    className="px-2 border rounded"
-                  >
-                    +
-                  </button>
-                </>
-              ) : (
-                <span>{item.qty}</span>
-              )}
-            </div>
-            <div className="w-16 text-right">₹{item.qty * item.price}</div>
-            <button onClick={() => handleRemove(item.id)} className="text-red-500 ml-2">×</button>
+    <div className="receipt-wrapper">
+      <div className="receipt-container">
+        <div className="receipt-header">
+          <button className="circle-icon" onClick={() => setShowReceipt(false)}>
+            <ArrowLeftCircle color="#3658BF" size={20} />
+          </button>
+          <div className="header-title">
+            <h2 className="receipt-title">Purchase Receipt</h2>
+            <div className="receipt-id">#123400</div>
           </div>
-        ))}
-      </div>
+          <div className="circle-icon">
+            <PlusCircle color="white" size={20} />
+          </div>
+        </div>
 
-      <div className="mt-4 text-sm">
-        <div className="flex justify-between">
-          <span>SubTotal</span>
-          <span>₹{total}</span>
+        <div className="order-type-switch">
+          <OrderTypeSwitch selected={orderType} onChange={setOrderType} />
         </div>
-        <div className="flex justify-between">
-          <span>Taxes</span>
-          <span>₹0.00</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Discount</span>
-          <span>₹0.00</span>
-        </div>
-        <div className="flex justify-between font-semibold border-t pt-2 mt-2">
-          <span>Total</span>
-          <span>₹{total}</span>
-        </div>
-      </div>
 
-      <div className="flex justify-between mt-4">
-        <button className="bg-blue-100 text-blue-700 px-3 py-1 rounded flex items-center">
-          + Add
-        </button>
-        <button className="bg-red-100 text-red-700 px-3 py-1 rounded">Abort</button>
-        <button className="bg-green-600 text-white px-3 py-1 rounded">Proceed →</button>
+        <div className="customer-inputs">
+          <div className="input-group">
+            <label className="input-label">
+              Customer Name
+              <span className="small-icon">
+                <PlusCircle size={10} color="white" />
+              </span>
+            </label>
+            <input
+              type="text"
+              value={customerName}
+              onChange={(e) => setCustomerName(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <label className="input-label">Table</label>
+            <input
+              type="text"
+              value={table}
+              onChange={(e) => setTable(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <hr />
+
+        <div className="receipt-body">
+          <div className="receipt-h">
+            <span>S.No</span>
+            <span>Food Name</span>
+            <span>QTY</span>
+            <span>Amount</span>
+          </div>
+          <div className="receipt-info">
+            <span className="ss">KOT : 1</span>
+            <span className="ss">Time : 17:05</span>
+            <span className="ss">Items : {items.length}</span>
+          </div>
+          {items.map((item) => (
+            <div key={item.id} className="item-row">
+              <div className="item-id">{item.id}.</div>
+              <div className="item-name">{item.name}</div>
+              <div className="item-qty">
+                {item.name === "Fried Rice" ? (
+                  <div className="item-qty">
+                    <button
+                      onClick={() => handleQuantityChange(item.id, -1)}
+                      className="qty-btn"
+                    >
+                      -
+                    </button>
+                    <span className="qty">{item.qty}</span>
+                    <button
+                      onClick={() => handleQuantityChange(item.id, 1)}
+                      className="qty-btn"
+                    >
+                      +
+                    </button>
+                  </div>
+                ) : (
+                  <span>{item.qty}</span>
+                )}
+              </div>
+              <div className="item-price">₹{item.qty * item.price}</div>
+              <button
+                onClick={() => handleRemove(item.id)}
+                className="remove-btn"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div className="payment-section">
+          <div className="receipt-summary">
+            <h3 className="summary-heading">Payment Summary</h3>
+            <div className="summary-row muted">
+              <span>SubTotal</span>
+              <span>₹{total.toFixed(2)}</span>
+            </div>
+            <div className="summary-row muted">
+              <span>Taxes</span>
+              <span>₹0.00</span>
+            </div>
+            <div className="summary-row muted">
+              <span>Discount</span>
+              <span>₹0.00</span>
+            </div>
+            <div className="summary-row muted">
+              <span>Discount</span>
+              <span>₹0.00</span>
+            </div>
+            <hr />
+            <div className="summary-total">
+              <span>Total</span>
+              <span>₹{total.toFixed(2)}</span>
+            </div>
+          </div>
+
+          <div className="payment-buttons">
+            <div className="receipt-actions">
+              <button className="btn add-btn">
+                Add <span>＋</span>
+              </button>
+              <button className="btn abort-btn">
+                Abort <span>✖</span>
+              </button>
+            </div>
+            <div className="receipt-actions">
+              <button className="btn kot-btn">
+                KOT <span>⏸</span>
+              </button>
+              <button className="btn proceed-btn">
+                Proceed <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
