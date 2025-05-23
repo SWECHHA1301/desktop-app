@@ -6,6 +6,9 @@ import TableDashboard from './Table Management/TableDashboard';
 import ProductCard from './Product/ProductCard';
 import OrderDashboard from './OrderStatus/OrderDashboard';
 import Dashboard from './Product-Info/Dashboard/Dashboard';
+import OrderTypeSwitch from './Common/OrderTypeSwitch';
+import PurchaseReceipt from './Common/PurchaseReciept';
+import OrderHistory from './OrderHistory/OrderHistory';
 
 
 function App() {
@@ -13,9 +16,11 @@ function App() {
     <div className="app">
       <Navbar />
       <Sidebar />
-      {/* <PurchaseReceipt /> */}
+      {/* <PurchaseReceipt/> */}
       {/* <OrderDashboard /> */}
-      <Dashboard/>
+      {/* <Dashboard/> */}
+      {/* <OrderTypeSwitch/> */}
+      <OrderHistory/>
     </div>
   );
 }

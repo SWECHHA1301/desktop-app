@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const OrderTypeSwitch = ({ selected, onChange }) => {
   return (
     <div className="flex bg-gray-200 rounded-full w-48 p-1">

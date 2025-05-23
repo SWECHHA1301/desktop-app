@@ -1,0 +1,7 @@
+.Button-section{
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}

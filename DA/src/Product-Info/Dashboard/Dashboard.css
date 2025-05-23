@@ -1,23 +1,25 @@
 .dash-board{
-    background-color: hsl(226, 41%, 92%);
+    background-color: #E2E6F3;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     height: auto;
     padding-bottom: 40px;
 }
 
+
 .title{
 color: #3658BF;
 font-size: 32px;
 font-weight: 700;
 line-height: 100%;
-margin: 0;
+/*  */
 }
 
 .Element-container{
     padding: 90px  24px 0 112px;
     display: flex;
     flex-direction: column;
+   
 }
 .collection-block{
     margin-top: 24px;
@@ -25,6 +27,7 @@ margin: 0;
     justify-content:space-between;
     width:100%;
     gap:24px;
+     
 }
 
 .total-Items{

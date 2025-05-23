@@ -31,6 +31,7 @@ const PurchaseReceipt = () => {
   const total = items.reduce((acc, item) => acc + item.qty * item.price, 0);
 
   return (
+    <div className="body">
     <div className="receipt-wrapper">
       <div className="receipt-container">
         <div className="receipt-header">
@@ -170,6 +171,7 @@ const PurchaseReceipt = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
