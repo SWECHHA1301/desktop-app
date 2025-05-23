@@ -1,12 +1,36 @@
-.product-container {
-  padding: 16px;
-  background-color: #edf0fa;
-  border-radius: 12px;
-  margin-top: 100px;
-  margin-left: 100px;
+body {
+  margin: 0;
+  background-color: #E2E6F3;
+  font-family: sans-serif;
+  overflow: hidden;
 }
 
-/* Title Bar */
+.product-container {
+  display: flex;
+  margin-left: 100px;
+  padding-top: 75px;
+  gap: 20px;
+  height: calc(100vh - 75px);
+}
+
+.left-content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.title-bar-container {
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .title-bar {
   display: flex;
   align-items: center;
@@ -15,13 +39,15 @@
 }
 
 .filter-btn {
-  padding: 6px 12px;
-  font-size: 14px;
-  border: 1.5px solid #999;
-  border-radius: 20px;
-  background-color: #fff;
-  font-weight: 600;
+  color: #000;
+  border-radius: 10px;
+  border: 0.5px solid #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
+  width: 88px;
+  height: 20px;
   transition: background-color 0.2s;
 }
 
@@ -59,9 +85,9 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  padding: 16px 0;
+  padding-bottom: 16px;
 }
 
 .product-card {
@@ -71,15 +97,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 160px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 202px;
+  height: 192px;
   transition: border-color 0.2s ease;
 }
 
 .product-image {
   flex: 1;
   background-color: #d3d3d3;
-  height: 80px;
+  height: 121px;
 }
 
 .product-details {
@@ -123,3 +149,62 @@
   padding: 0;
   transition: background-color 0.2s ease;
 }
+
+.right-bar {
+  width: 32%;
+  position: sticky;
+  top: 70px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 60px; /* match navbar height exactly */
+    margin: 0;
+  }
+
+  .product-container {
+    flex-direction: column;
+    margin: 0;
+    padding: 0 10px 10px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .left-content,
+  .right-bar {
+    width: 100%;
+    position: static;
+    top: unset;
+    overflow: visible;
+    margin-left: 85px;
+  }
+
+  .title-bar-container {
+    position: relative !important;
+    top: unset !important;
+    z-index: auto !important;
+    margin-top: 0;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+  .receipt-container {
+    height: auto;
+    position: static;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+
+
+

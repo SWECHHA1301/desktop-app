@@ -125,6 +125,11 @@ html, body {
   color: #E38417;
 }
 
+.order-container.selected .order-card {
+  box-shadow: 0px 4px 8px 0px #3658BF;
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .orders-grid {
     grid-template-columns: 1fr; /* Single column on mobile */

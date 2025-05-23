@@ -5,7 +5,7 @@
   margin: 0;
   background-color:#E2E6F3;
   font-family: sans-serif;
-  padding: 16px;
+  padding: 10px;
 }
 
 .receipt-wrapper {
@@ -16,16 +16,21 @@
 }
 
 .receipt-container {
-  width: 425px;
-  height: 650px;
+  width: 100%;
+  height: calc(100vh - 75px); /* Fill height below navbar */
   background: white;
-  border-radius: 10px;
-  box-shadow: 8px 8px 4px 0px #3658BF;
-  padding: 16px;
+  border: 2px solid #e0e0e0;
+  padding: 10px;
   font-family: sans-serif;
-  position: relative;
+  position: sticky;
+  top: 75px;
   overflow-y: auto;
-  top: 50px;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .receipt-closed {
@@ -241,9 +246,8 @@
   cursor: pointer;
 }
 
-/* Summary */
-/* Container for summary + buttons */
 .payment-section {
+  width: 400px;
   margin-top: 16px;
   padding: 16px;
   border-radius: 10px;
