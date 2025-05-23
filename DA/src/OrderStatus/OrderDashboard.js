@@ -33,7 +33,7 @@ const OrderCard = ({ table, status, type }) => (
 );
 
 export default function OrderDashboard() {
-  const [activeTab, setActiveTab] = useState('Dine in');
+  const [activeTab, setActiveTab] = useState('All');
 
   const filteredOrders = activeTab === 'All'
     ? orders

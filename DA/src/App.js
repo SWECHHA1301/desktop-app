@@ -9,6 +9,7 @@ import Dashboard from './Product-Info/Dashboard/Dashboard';
 import OrderTypeSwitch from './Common/OrderTypeSwitch';
 import PurchaseReceipt from './Common/PurchaseReciept';
 import OrderHistory from './OrderHistory/OrderHistory';
+import AccManagment from './OrderHistory/AccManagment/AccManagment';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       {/* <Dashboard/> */}
       {/* <OrderTypeSwitch/> */}
       <OrderHistory/>
+      {/* <AccManagment/> */}
     </div>
   );
 }
