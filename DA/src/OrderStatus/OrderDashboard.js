@@ -40,7 +40,7 @@ export default function OrderDashboard() {
     : orders.filter(order => order.type === activeTab);
 
   return (
-    <div className="dashboard">
+    <div className="dashboard-order">
       <div className="tabs">
         {['All', 'Dine in', 'Take Away'].map(tab => (
           <button
