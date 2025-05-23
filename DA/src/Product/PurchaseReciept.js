@@ -75,8 +75,6 @@ const PurchaseReceipt = () => {
           </div>
         </div>
 
-        <hr />
-
         <div className="receipt-body">
           <div className="receipt-h">
             <span>S.No</span>
