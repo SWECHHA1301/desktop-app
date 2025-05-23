@@ -2,10 +2,12 @@ import React from 'react'
 import './PayMethod.css'
 
 const blockItems=[
+
     {
      name:'UPI',
      value:'4,200',
-     percent:'42%'
+     percent:'42%',
+    
     },
 
     {
@@ -58,13 +60,13 @@ export default function PayMethod() {
 
 <div className='pay-table'>
    <div className='block-Item-head'>
-       <p>Product Name</p>
-       <p>Quantity Sold</p>
-       <p> Total Revenue</p>
+       <p>Method</p>
+       <p>Value()</p>
+       <p>Percentage</p>
       </div>
     {blockItems.map((item,index) => (
-<div className='table-block' key={index}>
-<p>{item.name}</p>
+<div className='table-block' key={index} >
+<p >{item.name}</p>
 <p>{item.value}</p>
 <p>{item.percent}</p>
 
@@ -83,7 +85,7 @@ export default function PayMethod() {
        <p>Counter</p>
        <p>Transaction</p>
 
-       <div><p>UPI</p> <p>( )</p></div>
+       <div ><p>UPI</p> <p>( )</p></div>
       <div><p>Card</p> <p>( )</p></div>
        <div><p>Total Sales</p> <p>( )</p></div>
       <div><p>Orders</p> <p>( )</p></div>

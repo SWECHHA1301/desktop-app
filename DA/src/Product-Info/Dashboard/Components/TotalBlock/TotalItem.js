@@ -32,10 +32,10 @@ export default function TotalItem() {
  {orderItem.map((item,index)=>(
    <div className='block' key={index}>
      <img src={item.image} alt='' />
-     
+               <div style={{display:'flex',flexDirection:'column',gap:'32px',alignItems:"flex-start", margin:'24px 0 24px 24px'}}>
               <p className='Title'>{item.title}</p>
-              <p>{item.value}</p>
-              
+              <p className='Value'>{item.value}</p>
+              </div>
     </div>
  ))}
  

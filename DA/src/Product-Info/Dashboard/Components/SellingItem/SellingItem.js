@@ -45,27 +45,28 @@ export default function SellingItem() {
        <p> Total Revenue</p>
       </div>
       
-       <div style={{ marginBottom: '20px'}}>
+       <div style={{ marginBottom: '24px'}}>
        
         {Items.map((item,index)=>(
        <div className='Item-info' key={index}>
-    
+        
         <p>{item.name}</p>
-         <p>{item.Volume}</p>
-         
-          <p>{item.price}</p>
+        <p>{item.Volume}</p>
+         <p>{item.price}</p>
        </div>))}
        </div>
      </div>
 
      <div className='Most-sale-graph'>
+
       <div className='head-title'>
         <p>Most Selling Items</p>
       </div>
+
       <div className='graph-container'>
-      <div className='graph'>
-       
-      </div></div>
+      <div className='graph'></div>
+      </div>
+      
      </div>
 
      </div>

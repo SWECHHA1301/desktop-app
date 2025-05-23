@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from './Common/Navbar';
 import Sidebar from './Common/Sidebar';
-// import Dashboard from './Product-Info/Dashboard/Dashboard';
+
 import TableDashboard from './Table Management/TableDashboard';
 import ProductCard from './Product/ProductCard';
 import OrderDashboard from './OrderStatus/OrderDashboard';
-// import TotalItem from './Product-Info/Dashboard/Components/TotalBlock/TotalItem';
-// import SellingItem from './Product-Info/Dashboard/Components/SellingItem/SellingItem';
+import Dashboard from './Product-Info/Dashboard/Dashboard';
+
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
       <Navbar />
       <Sidebar />
       {/* <PurchaseReceipt /> */}
-      <OrderDashboard />
-
+      {/* <OrderDashboard /> */}
+      <Dashboard/>
     </div>
   );
 }
