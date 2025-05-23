@@ -1,10 +1,9 @@
-import React from 'react';
-import Navbar from './Common/Navbar';
-import Sidebar from './Common/Sidebar';
-import ProductCard from './Product/ProductCard';
-import OrderDashboard from './OrderStatus/OrderDashboard';
-import OrderHistory from './OrderHistory/OrderHistory';
-
+import React from "react";
+import Navbar from "./Common/Navbar";
+import Sidebar from "./Common/Sidebar";
+import ProductCard from "./Product/ProductCard";
+import TableDashboard from "./Table Management/TableDashboard";
+import OrderHistory from "./OrderHistory/OrderHistory";
 
 function App() {
   return (
@@ -12,11 +11,8 @@ function App() {
       <Navbar />
       <Sidebar />
       <OrderHistory />
-    
-      </div>
-
+    </div>
   );
 }
 
 export default App;
-
