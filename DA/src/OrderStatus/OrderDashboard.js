@@ -32,12 +32,10 @@ const OrderCard = ({ table, status, type, isSelected, onClick }) => (
 );
 
 export default function OrderDashboard() {
-<<<<<<< HEAD
+
   const [activeTab, setActiveTab] = useState('All');
-=======
-  const [activeTab, setActiveTab] = useState('Dine in');
+
   const [selectedIndex, setSelectedIndex] = useState(null);
->>>>>>> 7386c36dcf16c1d7b65b0e5f8bf44a12bd8724ab
 
   const filteredOrders = activeTab === 'All'
     ? orders

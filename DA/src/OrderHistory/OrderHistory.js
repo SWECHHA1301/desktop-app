@@ -14,13 +14,7 @@ export default function OrderHistory() {
   ];
 
   const [activeTab, setActiveTab] = useState('All');
-<<<<<<< HEAD
   const filteredOrders = activeTab === 'All' ? data : data.filter(item => item.Type === activeTab || item.Type === 'Order Type');
-=======
-  const filteredOrders = activeTab === 'All'
-    ? data
-    : data.filter(item => item.Type === activeTab || item.Type === 'Order Type');
->>>>>>> 7386c36dcf16c1d7b65b0e5f8bf44a12bd8724ab
 
   return (
     <div className="Order-Main-Container">
