@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ArrowLeftCircle, PlusCircle, X } from "lucide-react";
-import OrderTypeSwitch from "./OrderTypeSwitch";
+import OrderTypeSwitch from "../Common/OrderTypeSwitch";
 import "./PurchaseReceipt.css";
 
 const PurchaseReceipt = () => {
@@ -74,8 +74,6 @@ const PurchaseReceipt = () => {
             />
           </div>
         </div>
-
-        <hr />
 
         <div className="receipt-body">
           <div className="receipt-h">

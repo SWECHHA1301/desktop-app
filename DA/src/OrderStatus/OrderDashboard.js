@@ -12,35 +12,39 @@ const orders = [
   { table: 't2', status: 'Completed', type: 'Dine in' }
 ];
 
-const OrderCard = ({ table, status, type }) => (
-  <div className="order-container">
-  <div className={`order-card ${status.toLowerCase()}`}>
-    <div className="order-header">
-      <span className="order-table">Table No.-{table}</span>
-      <div className="order-time">
-        <div>Time :</div>
-        <div>Date :</div>
+const OrderCard = ({ table, status, type, isSelected, onClick }) => (
+  <div className={`order-container ${isSelected ? 'selected' : ''}`} onClick={onClick}>
+    <div className={`order-card ${status.toLowerCase()}`}>
+      <div className="order-header">
+        <span className="order-table">Table No.-{table}</span>
+        <div className="order-time">
+          <div>Time :</div>
+          <div>Date :</div>
+        </div>
+      </div>
+      <div className="order-info">KOT-xxx | Bill-xx4</div>
+      <div className="order-type-row">
+        <span className="order-type">Type - {type}</span>
+        <span className={`order-status ${status.toLowerCase()}`}>{status}</span>
       </div>
     </div>
-    <div className="order-info">KOT-xxx | Bill-xx4</div>
-    
-    <div className="order-type-row">
-      <span className="order-type">Type - {type}</span>
-      <span className={`order-status ${status.toLowerCase()}`}>{status}</span>
-    </div>
-  </div>
   </div>
 );
 
 export default function OrderDashboard() {
+<<<<<<< HEAD
   const [activeTab, setActiveTab] = useState('All');
+=======
+  const [activeTab, setActiveTab] = useState('Dine in');
+  const [selectedIndex, setSelectedIndex] = useState(null);
+>>>>>>> 7386c36dcf16c1d7b65b0e5f8bf44a12bd8724ab
 
   const filteredOrders = activeTab === 'All'
     ? orders
     : orders.filter(order => order.type === activeTab);
 
   return (
-    <div className="dashboard">
+    <div className="dashboard-order">
       <div className="tabs">
         {['All', 'Dine in', 'Take Away'].map(tab => (
           <button
@@ -54,7 +58,12 @@ export default function OrderDashboard() {
       </div>
       <div className="orders-grid">
         {filteredOrders.map((order, index) => (
-          <OrderCard key={index} {...order} />
+          <OrderCard
+            key={index}
+            {...order}
+            isSelected={index === selectedIndex}
+            onClick={() => setSelectedIndex(index)}
+          />
         ))}
       </div>
     </div>

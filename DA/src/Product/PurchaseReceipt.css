@@ -1,31 +1,41 @@
-.body {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+body {
   margin: 0;
-  background-color:#E2E6F3;
+  background-color: #E2E6F3;
   font-family: sans-serif;
-  padding: 16px;
+  padding: 10px;
+  overflow: hidden; /* prevent page scroll */
 }
 
 .receipt-wrapper {
+  width: 400px;
+  height: 100%;
+  position: fixed;
+  top: 70px;
+  right: 10px;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 100%;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  overflow: hidden;
 }
 
 .receipt-container {
-  width: 425px;
-  height: 650px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 8px 8px 4px 0px #3658BF;
-  padding: 16px;
-  font-family: sans-serif;
-  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
-  top: 50px;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .receipt-closed {
@@ -124,7 +134,6 @@
   box-sizing: border-box;
 }
 
-
 /* Order Type Switch */
 .order-type-switch {
   display: flex;
@@ -154,7 +163,7 @@
 
 .receipt-h {
   display: flex;
-  width: 400px;
+  width: 100%;
   height: 43px;
   justify-content: space-between;
   align-items: center;
@@ -167,10 +176,9 @@
   padding-right: 10px;
 }
 
-
 .receipt-info {
   display: flex;
-  width: 400px;
+  width: 100%;
   height: 27px;
   justify-content: space-between;
   align-items: center;
@@ -181,20 +189,20 @@
   background: #3658BF;
   color: white;
 }
-.ss{
+.ss {
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .item-row {
-  width: 400px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
   padding: 10px 12px;
   margin-bottom: 8px;
-  background: #E6E8EF; /* or white if needed */
+  background: #E6E8EF;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
@@ -208,9 +216,8 @@
   text-align: left;
 }
 
-
 .item-price {
-  width: 20%;
+  width: 64px;
   text-align: right;
 }
 
@@ -227,11 +234,6 @@
   cursor: pointer;
 }
 
-.item-price {
-  width: 64px;
-  text-align: right;
-}
-
 .remove-btn {
   background: none;
   border: none;
@@ -241,9 +243,8 @@
   cursor: pointer;
 }
 
-/* Summary */
-/* Container for summary + buttons */
 .payment-section {
+  width: 100%;
   margin-top: 16px;
   padding: 16px;
   border-radius: 10px;
@@ -330,8 +331,6 @@
   background: #fff;
 }
 
-
-
 .qty {
   display: inline-block;
   width: 43px;
@@ -342,3 +341,5 @@
   border: 1px solid #3658BF;
   font-weight: 500;
 }
+
+

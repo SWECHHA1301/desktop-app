@@ -67,12 +67,12 @@ const TableDashboard = () => {
           </button>
         </div>
         <div className="legend">
-  <div><span className="circle gray"></span> Blank Table</div>
-  <div><span className="circle blue"></span> running Table</div>
-  <div><span className="circle green"></span> Printed Table</div>
-  <div><span className="circle orange"></span> running KOT Table</div>
-</div>
-</div>
+          <div><span className="circle gray"></span> Blank Table</div>
+          <div><span className="circle blue"></span> running Table</div>
+          <div><span className="circle green"></span> Printed Table</div>
+          <div><span className="circle orange"></span> running KOT Table</div>
+        </div>
+      </div>
 
       {/* Table Sections */}
       <div className="sections-wrapper">
@@ -90,19 +90,37 @@ const TableDashboard = () => {
                     >
                       {table.time ? (
                         <>
-                          <div>{table.time}</div>
+                          <div style={{
+                            position: 'relative'
+                          }}>{table.time}</div>
                           <div>{table.id}</div>
                           <div>₹{table.price}</div>
                           <div className="icons">
-                             {table.status === "printed" && (
-                             <ClipboardList size={16} />
-                             )}
-                              {table.status === "running KOT" && (
-                              <>
-                              <Printer size={16} />
-                              <Eye size={16} />
-                              </>
-                            )} 
+                            {table.status === "printed" && (
+                              <ClipboardList size={16} />
+                            )}
+                            {table.status === "running KOT" && (
+                              <div style={{
+                                position: 'absolute',
+                                display: 'flex',
+                                flexDirection: 'row',
+                                bottom: 16,
+                                gap: 8,
+                              }}>
+                                <Printer style={{
+                                  backgroundColor: '#fff',
+                                  padding: 1,
+                                  borderRadius: 5,
+                                  cursor: 'pointer'
+                                }} size={16} />
+                                <Eye style={{
+                                  backgroundColor: '#fff',
+                                  padding: 1,
+                                  borderRadius: 5,
+                                  cursor: 'pointer'
+                                }} size={16} />
+                              </div>
+                            )}
                           </div>
                         </>
                       ) : (
