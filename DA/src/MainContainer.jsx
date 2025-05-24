@@ -20,8 +20,7 @@ const MainContainer = ({ children }) => {
                     height: '92vh',
                     overflowY: 'scroll',
                     width: '100%',
-                    padding: "24px"
-
+                    padding: "24px",
                 }}>
                     {
                         children

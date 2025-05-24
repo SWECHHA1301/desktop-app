@@ -10,7 +10,6 @@ import Dashboard from "./Dashboard/Dashboard";
 import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 import OrderHistory from "./OrderHistory/OrderHistory";
 import MainContainer from "./MainContainer";
-import AccManagement from "./HistoryMgmt/AccManagement";
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
       {/* <CustomerDetail/> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<CustomerList />} />
+      <MainContainer children={<OrderHistory />} />
     </div>
   );
 }
