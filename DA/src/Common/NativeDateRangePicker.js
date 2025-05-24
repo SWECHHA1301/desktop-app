@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar } from "lucide-react"; // Optional, you can use any icon lib
+import { Calendar,ChevronDown } from "lucide-react"; // Optional, you can use any icon lib
 
 export default function NativeDateRangePicker() {
   const [startDate, setStartDate] = useState("2024-11-05");
@@ -31,7 +31,7 @@ export default function NativeDateRangePicker() {
           style={styles.hiddenInput}
         />
       </div>
-      <span style={styles.chevron}>V</span>
+      <span><ChevronDown /></span>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 .Order-Main-Container{
     width: 100%;
-    padding: 76px 24px 24px 112px;
-    background-color: #E2E6F3;
+    /* background-color: #E2E6F3; */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -9,14 +8,11 @@
 .Tab-Section{
     background-color: white;
     width: 100%;
-    max-width: 1304px;
-    height: 863px;
     border-radius: 10px;
-    padding: 24px 24px 0 24px;
-   
+    padding: 24px;
+    height: calc(92vh - 104px);
+    overflow-y: scroll;
 }
-
-
 
 .Tab-Section td ,th{
     padding: 19px 0 19px 0;

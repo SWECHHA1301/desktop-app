@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { ArrowLeftCircle, PlusCircle, X, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  ArrowLeftCircle,
+  PlusCircle,
+  X,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import OrderTypeSwitch from "../Common/OrderTypeSwitch";
 import "./PurchaseReceipt.css";
 
@@ -92,49 +98,84 @@ const PurchaseReceipt = () => {
             <div className="item-list-scrollable">
               {items.map((item) => (
                 <div key={item.id} style={{ marginBottom: "8px" }}>
-                  <div className="item-row">
+                  <div
+                    style={
+                      item.id === expandedItemId
+                        ? {
+                            borderLeftWidth: 5,
+                            borderColor: "blue",
+                            borderRadius: 10,
+                          }
+                        : {}
+                    }
+                  >
                     <div
-                      className="item-id"
-                      onClick={() => toggleExpand(item.id)}
-                      style={{ cursor: "pointer" }}
+                      style={
+                        item.id === expandedItemId
+                          ? {
+                              borderBottomRightRadius: 0,
+                              borderBottomLeftRadius: 0,
+                            }
+                          : {}
+                      }
+                      className={"item-row"}
                     >
-                      {expandedItemId === item.id ? (
-                        <ChevronUp size={16} />
-                      ) : (
-                        <ChevronDown size={16} />
-                      )}
+                      <div
+                        className="item-id"
+                        onClick={() => toggleExpand(item.id)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        {expandedItemId === item.id ? (
+                          <ChevronUp size={16} />
+                        ) : (
+                          <ChevronDown size={16} />
+                        )}
+                      </div>
+                      <div className="item-name">{item.name}</div>
+                      <div className="item-qty">{item.qty}</div>
+                      <div className="item-price">₹{item.qty * item.price}</div>
+                      <button
+                        onClick={() => handleRemove(item.id)}
+                        className="remove-btn"
+                      >
+                        <X size={16} />
+                      </button>
                     </div>
-                    <div className="item-name">{item.name}</div>
-                    <div className="item-qty">{item.qty}</div>
-                    <div className="item-price">₹{item.qty * item.price}</div>
-                    <button onClick={() => handleRemove(item.id)} className="remove-btn">
-                      <X size={16} />
-                    </button>
-                  </div>
-                  {expandedItemId === item.id && (
-                    <div className="inline-drawer">
-                      <div className="drawer-controls">
-                        <div className="drawer-column">
-                          <div className="drawer-label">Quantity</div>
-                          <div className="qty-control">
-                            <button onClick={() => handleQuantityChange(item.id, -1)}>-</button>
-                            <span>{item.qty}</span>
-                            <button onClick={() => handleQuantityChange(item.id, 1)}>+</button>
+                    {expandedItemId === item.id && (
+                      <div className="inline-drawer">
+                        <div className="drawer-controls">
+                          <div className="drawer-column">
+                            <div className="drawer-label">Quantity</div>
+                            <div className="qty-control">
+                              <button
+                                onClick={() =>
+                                  handleQuantityChange(item.id, -1)
+                                }
+                              >
+                                -
+                              </button>
+                              <span>{item.qty}</span>
+                              <button
+                                onClick={() => handleQuantityChange(item.id, 1)}
+                              >
+                                +
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div className="drawer-column">
-                          <div className="drawer-label">Discount</div>
-                          <div className="discount-input">
-                            <input type="text" placeholder="0" />
-                            <select>
-                              <option value="%">%</option>
-                              <option value="₹">₹</option>
-                            </select>
+                          <div className="drawer-column">
+                            <div className="drawer-label">Discount</div>
+                            <div className="discount-input">
+                              <input type="text" placeholder="0" />
+                              <select>
+                                <option value="%">%</option>
+                                <option value="₹">₹</option>
+                              </select>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -188,7 +229,3 @@ const PurchaseReceipt = () => {
 };
 
 export default PurchaseReceipt;
-
-
-
-
