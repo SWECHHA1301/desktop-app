@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './OrderHistory.css';
 
 export default function OrderHistory() {
   const data = [
-    { Number: 'No.', Id: 'Order ID', Date: 'Order Date', Type: 'Order Type', Method: 'Payment Method', total: 'Total Payment' },
     { Number: '1', Id: 'xxxx5', Date: 'Saturday, April 11', Type: 'Take Away', Method: 'UPI', total: '₹200.00' },
     { Number: '2', Id: 'zzzz7', Date: 'Saturday, April 11', Type: 'Take Away', Method: 'UPI', total: '₹579.00' },
     { Number: '3', Id: 'yyyy9', Date: 'Saturday, April 11', Type: 'Dine in', Method: 'Card', total: '₹1000.00' },
@@ -14,7 +13,15 @@ export default function OrderHistory() {
   ];
 
   const [activeTab, setActiveTab] = useState('All');
-  const filteredOrders = activeTab === 'All' ? data : data.filter(item => item.Type === activeTab || item.Type === 'Order Type');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredOrders = data.filter(item => {
+    const matchesTab = activeTab === 'All' || item.Type === activeTab;
+    const matchesSearch = Object.values(item).some(value =>
+      value.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return matchesTab && matchesSearch;
+  });
 
   return (
     <div className="Order-Main-Container">
@@ -28,12 +35,22 @@ export default function OrderHistory() {
             {tab}
           </button>
         ))}
+
+        <div className="Search-detail">
+          <i className="fa fa-search" aria-hidden="true"></i>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="Tab-Section">
         <table>
           <thead>
-            <tr>
+            <tr style={{ borderRadius: '10px 10px 0 0' }}>
               <th>No.</th>
               <th>Order ID</th>
               <th>Order Date</th>
@@ -43,13 +60,17 @@ export default function OrderHistory() {
             </tr>
           </thead>
           <tbody>
-            {filteredOrders.slice(1).map((item, index) => (
+            {filteredOrders.map((item, index) => (
               <tr key={index}>
                 <td>{item.Number}</td>
                 <td>{item.Id}</td>
-                <td>{item.Date}</td>
-                <td>{item.Type}</td>
-                <td>{item.Method}</td>
+                <td style={{ color: '#3658BF' }}>{item.Date}</td>
+                <td style={{ color: item.Type === 'Dine in' ? '#FF0000' : item.Type === 'Take Away' ? '#2CAC04' : 'inherit' }}>
+                  {item.Type}
+                </td>
+                <td style={{ color: item.Method === 'Card' ? '#FF0000' : item.Method === 'Cash' ? '#2CAC04' : 'inherit' }}>
+                  {item.Method}
+                </td>
                 <td>{item.total}</td>
               </tr>
             ))}

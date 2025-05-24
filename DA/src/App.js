@@ -19,6 +19,7 @@ import Sidebar from "./Common/Sidebar";
 import ProductCard from "./Product/ProductCard";
 import TableDashboard from "./Table Management/TableDashboard";
 import OrderHistory from "./OrderHistory/OrderHistory";
+import WorkingCalendar from './Common/Calendar/Calendar';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
       <OrderHistory/>
       {/* <AccManagment/> */}
       {/* <CustomerDetail/> */}
-
+  
     </div>
   );
 }
