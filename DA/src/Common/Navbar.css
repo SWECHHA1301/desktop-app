@@ -70,13 +70,13 @@
 }
 
 
-.icons {
+.icons-navbar {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.icons-svg {
+.icons-svg-navbar {
   width: 20px;
   height: 20px;
   color: #333;

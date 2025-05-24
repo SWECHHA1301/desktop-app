@@ -2,7 +2,6 @@ import React from "react";
 import "./TableDashboard.css";
 import {
   PlusCircle,
-  Circle,
   Printer,
   Eye,
   ClipboardList,
@@ -68,9 +67,9 @@ const TableDashboard = () => {
         </div>
         <div className="legend">
           <div><span className="circle gray"></span> Blank Table</div>
-          <div><span className="circle blue"></span> running Table</div>
+          <div><span className="circle blue"></span> Running Table</div>
           <div><span className="circle green"></span> Printed Table</div>
-          <div><span className="circle orange"></span> running KOT Table</div>
+          <div><span className="circle orange"></span> Running KOT Table</div>
         </div>
       </div>
 
@@ -83,51 +82,41 @@ const TableDashboard = () => {
               <div key={rowIndex}>
                 <h4 className="row-label">Table For 2</h4>
                 <div className="table-row">
-                  {row.map((table, i) => (
-                    <div
-                      key={i}
-                      className={`table-box ${table.status || "blank"}`}
-                    >
-                      {table.time ? (
-                        <>
-                          <div style={{
-                            position: 'relative'
-                          }}>{table.time}</div>
-                          <div>{table.id}</div>
-                          <div>₹{table.price}</div>
+                  {row.map((table, i) => {
+                    const statusClass =
+                      table.status === "printed"
+                        ? "printed"
+                        : table.status === "running KOT"
+                        ? "kot"
+                        : "";
+
+                    return (
+                      <div key={i} className={`table-box ${statusClass}`}>
+                        {table.time ? (
+                          <>
+                            <div>{table.time}</div>
+                            <div>{table.id}</div>
+                            <div>₹{table.price}</div>
+                          </>
+                        ) : (
+                          <div className="empty-box">{table.id}</div>
+                        )}
+
+                        {/* Icons per status */}
+                        {table.status === "printed" && (
                           <div className="icons">
-                            {table.status === "printed" && (
-                              <ClipboardList size={16} />
-                            )}
-                            {table.status === "running KOT" && (
-                              <div style={{
-                                position: 'absolute',
-                                display: 'flex',
-                                flexDirection: 'row',
-                                bottom: 16,
-                                gap: 8,
-                              }}>
-                                <Printer style={{
-                                  backgroundColor: '#fff',
-                                  padding: 1,
-                                  borderRadius: 5,
-                                  cursor: 'pointer'
-                                }} size={16} />
-                                <Eye style={{
-                                  backgroundColor: '#fff',
-                                  padding: 1,
-                                  borderRadius: 5,
-                                  cursor: 'pointer'
-                                }} size={16} />
-                              </div>
-                            )}
+                            <ClipboardList size={16} className="icon-button" />
                           </div>
-                        </>
-                      ) : (
-                        <div className="empty-box">{table.id}</div>
-                      )}
-                    </div>
-                  ))}
+                        )}
+                        {table.status === "running KOT" && (
+                          <div className="icons">
+                            <Printer size={16} className="icon-button" />
+                            <Eye size={16} className="icon-button" />
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -139,4 +128,5 @@ const TableDashboard = () => {
 };
 
 export default TableDashboard;
+
 

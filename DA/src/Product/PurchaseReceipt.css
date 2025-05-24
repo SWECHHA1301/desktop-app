@@ -1,11 +1,3 @@
-body {
-  margin: 0;
-  background-color: #E2E6F3;
-  font-family: sans-serif;
-  padding: 10px;
-  overflow: hidden; /* prevent page scroll */
-}
-
 .receipt-wrapper {
   width: 400px;
   height: 100%;
@@ -25,14 +17,12 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
   padding: 10px;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   gap: 10px;
 }
-
-
 
 ::-webkit-scrollbar {
   display: none;
@@ -157,6 +147,8 @@ body {
 
 /* Items Section */
 .receipt-body {
+  flex: 1;
+  overflow-y: auto;
   border-top: 1px solid #ccc;
   padding-top: 8px;
 }
@@ -174,6 +166,7 @@ body {
   background: #E6E8EF;
   padding-left: 10px;
   padding-right: 10px;
+  position: sticky;
 }
 
 .receipt-info {
@@ -189,6 +182,7 @@ body {
   background: #3658BF;
   color: white;
 }
+
 .ss {
   padding-left: 10px;
   padding-right: 10px;
@@ -244,8 +238,8 @@ body {
 }
 
 .payment-section {
-  width: 100%;
-  margin-top: 16px;
+  flex-shrink: 0;
+  margin-top: 8px;
   padding: 16px;
   border-radius: 10px;
   background-color: #fff;
@@ -263,7 +257,8 @@ body {
   margin-bottom: 8px;
 }
 
-.summary-row, .summary-total {
+.summary-row,
+.summary-total {
   display: flex;
   justify-content: space-between;
   padding: 4px 0;
@@ -341,5 +336,104 @@ body {
   border: 1px solid #3658BF;
   font-weight: 500;
 }
+
+.item-row.expanded {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.inline-drawer {
+  background: #E6E8EF;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: -8px;
+  padding: 10px 12px 12px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.drawer-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.drawer-column {
+  flex: 1;
+}
+
+.drawer-label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+/* Quantity Control */
+.qty-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.qty-control button {
+  background: none;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #3658BF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-control span {
+  height: 28px;
+  width: 43px;
+  border: 1px solid #3658BF;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Discount Input */
+.discount-input {
+  display: flex;
+  border: 1px solid #3658BF;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+  height: 28px;
+  width: 184px;
+  background: white;
+}
+
+.discount-input input {
+  flex: 1;
+  border: none;
+  padding: 6px 8px;
+  outline: none;
+  text-align: center;
+  width: 100%; /* Optional since flex: 1 handles it */
+}
+
+.discount-input select {
+  border: none;
+  background: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  height: 26px;
+  width: 54px;
+  align-items: center;
+  border-left: 1px solid #ccc;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+
+
 
 

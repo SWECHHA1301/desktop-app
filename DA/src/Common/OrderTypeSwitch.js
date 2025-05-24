@@ -15,7 +15,7 @@ const OrderTypeSwitch = ({ selected, onChange }) => {
       <button
         onClick={() => onChange("Take Away")}
         className={`flex-1 py-1 rounded-full text-sm font-medium ${
-          selected === "Take Away" ? "bg-blue-600 text-white" : "text-gray-700"
+          selected === "Take Away" ? "bg-blue-800 text-white" : "text-gray-700"
         }`}
       >
         Take Away

@@ -7,7 +7,7 @@ body {
   background-color: #e2e8f0;
   min-height: 100vh;
   padding: 20px;
-  padding-left: 100px; /* shift content right to avoid sidebar overlap */
+  padding-left: 100px;
 }
 
 .top-controls {
@@ -20,13 +20,13 @@ body {
   align-items: center;
   padding: 10px 0;
   gap: 20px;
-  flex-wrap: wrap; /* wrap items on small screens */
+  flex-wrap: wrap;
 }
 
 .buttons {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap; /* allows vertical stacking on narrow screens */
+  flex-wrap: wrap;
 }
 
 .action-btn {
@@ -72,7 +72,8 @@ body {
 .blue  { background-color: #02E6FF; }
 .orange{ background-color: #F9DF7A; }
 
-/* Responsive styles for small screens */
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .top-controls {
     flex-direction: column;
@@ -99,10 +100,36 @@ body {
   }
 
   .legend div {
-    width: 48%; /* allow 2 per row */
+    width: 48%;
+  }
+
+  .icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .icon-button {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    font-size: 12px;
+  }
+
+  .table-box {
+    font-size: 12px;
+    padding: 6px 4px;
+    flex: 0 0 auto;
+  }
+
+  .table-row {
+   overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    
   }
 }
-
 
 .sections-wrapper {
   display: flex;
@@ -124,7 +151,7 @@ body {
   font-weight: 700;
 }
 
-.section-card h4{
+.section-card h4 {
   margin-top: 10px;
 }
 
@@ -136,70 +163,62 @@ body {
 .table-row {
   display: flex;
   gap: 10px;
-  flex-wrap: nowrap;          /* Don't allow wrapping */
+  flex-wrap: nowrap;
   width: 100%;
-  overflow-x: auto;           /* Optional: scroll if too many boxes */
   box-sizing: border-box;
+   max-width: 100%; 
 }
 
+/* ✅ FIXED: Icons are now always inside */
 .table-box {
   flex: 1;
+  width: 100px;
   height: 100px;
-  border-radius: 10px;
   background-color: #d1d5db;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  gap: 2px;
-  padding: 4px;
-  text-align: center;
-  min-width: 100px;           /* Optional to control smallest size */
-  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 8px 6px;
   font-size: 14px;
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px dashed black;
+  min-width: 100px;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
 
-
-
-.table-box.running {
-  background-color: #F9DF7A;
+.table-box.printed {
+  background-color: #98FA7A;
 }
 
 .table-box.kot {
-  background-color: #fde68a;
+  background-color: #F9DF7A;
 }
-
-.table-box.printed {
-  background-color: hsl(106, 93%, 73%);
-}
-
 
 .empty-box {
   opacity: 0.6;
+  margin-top: 20px;
+  align-items: center;
 }
 
+/* ✅ No absolute here, icons are flex-placed */
 .icons {
   display: flex;
-  gap: 4px;
   justify-content: center;
+  align-items: center;
+  gap: 6px;
+  bottom: -14px;
+  position: relative;
+  flex-wrap: wrap;
 }
 
-.top-controls {
-  position: sticky;
-  top: 60px;
-  background-color: #e2e8f0;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  flex-wrap: wrap;
-  gap: 10px;
-  flex-direction: row;
+.icon-button {
+  background-color: white;
+  border: 1px solid #333;
+  padding: 2px;
+  border-radius: 4px;
+  cursor: pointer;
 }
+
