@@ -1,37 +1,33 @@
-
 import React from "react";
 import Navbar from "./Common/Navbar";
 import Sidebar from "./Common/Sidebar";
-// import ProductCard from "./Product/ProductCard";
-// import TableDashboard from "./Table Management/TableDashboard";
-// import OrderHistory from "./OrderHistory/OrderHistory";
-// import WorkingCalendar from './Common/Calendar/Calendar';
-// import AccManagement from './HistoryMgmt/AccManagement';
-// import PurchaseReceipt from './Product/PurchaseReciept';
-import CustomerList from './xx/CustomerList';
+import ProductCard from "./Product/ProductCard";
+import TableDashboard from "./Table Management/TableDashboard";
+import PurchaseReceipt from "./Product/PurchaseReciept";
+import CustomerList from "./xx/CustomerList";
+import OrderDashboard from "./OrderStatus/OrderDashboard";
+import Dashboard from "./Dashboard/Dashboard";
+import OrderTypeSwitch from "./Common/OrderTypeSwitch";
+import OrderHistory from "./OrderHistory/OrderHistory";
+import MainContainer from "./MainContainer";
+import AccManagement from "./HistoryMgmt/AccManagement";
 
 function App() {
   return (
     <div className="app">
-      <Navbar />
-      <Sidebar />
       {/* <TableDashboard /> */}
-      <CustomerList />
+      {/* <CustomerList /> */}
 
-      {/* <PurchaseReceipt/> */}
+      {/* <PurchaseReceipt /> */}
       {/* <OrderDashboard /> */}
-      {/* <Dashboard/> */}
-      {/* <OrderTypeSwitch/> */}
-      {/* <OrderHistory/> */}
+      {/* <Dashboard /> */}
+      {/* <OrderTypeSwitch /> */}
       {/* <CustomerDetail/> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
+      <MainContainer children={<CustomerList />} />
     </div>
   );
 }
 
 export default App;
-
-
-
-
