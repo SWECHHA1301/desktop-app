@@ -1,0 +1,160 @@
+.Account-section{
+width: 100%;
+padding: 52px 24px 24px 112px;
+background-color: #E2E6F3;
+font-family: Arial, Helvetica, sans-serif;
+}
+.Account-nav{
+width: 100%;
+max-width: 1304px;
+padding-top: 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-title{
+    color: #3658BF;
+font-size: 20px;
+font-weight: 700;
+line-height: 100%;
+margin-bottom: 24px;
+
+}
+
+.trancation-info{
+background-color: white;
+    width: 100%;
+    max-width: 1304px;
+    height: 863px;
+    border-radius: 10px;
+
+}
+
+.select-account{
+    background-color: #3658BF;
+    width: 100%;
+    max-width: 1304px;
+    height: 83px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.select-btn{
+    background-color: white;
+     width: 100%;
+    max-width: 193px;
+    height: 44px;
+    border-radius: 10px;
+    padding: 0 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.select-btn p{
+color: #3658BF;
+font-weight: 700;
+font-size: 20px;
+line-height: 100%;
+}
+.create-btn{
+        background-color: white;
+     width: 100%;
+    max-width: 237.5px;
+    height: 44px;
+    border-radius: 10px;
+    padding: 0 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.create-btn p{
+    color: #3658BF;
+font-weight: 700;
+font-size: 20px;
+line-height: 100%;
+}
+.Transactions-sec h2{
+color: #4A4A4A;
+font-size: 20px;
+font-weight: 700;
+line-height: 100%;
+
+}
+
+.Transactions-sec{
+    display: flex;
+    gap: 27px;
+    align-items: center;
+    margin:18px 0 15.12px 39px;
+}
+
+.filter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+     width: 100%;
+    max-width: 90px;
+    height: 39px;
+    background-color: #3658BF;
+}
+
+.filter p{
+    color: white;
+font-size: 16px;
+font-weight: 700;
+line-height: 100%;
+}
+
+/* table */
+.tab-items{
+width: 100%;
+max-width: 1256px;
+height: 54px;
+text-align: center;
+
+}
+
+.Account-section td ,th{
+    padding: 19px 0 19px 0;
+    max-width: 140px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+ 
+.Account-section th{
+color: #306CFE;
+
+}
+.Account-section tr{
+    display: flex;
+justify-content: space-between;
+  border: 1px solid rgb(97, 97, 97);
+  border-collapse: collapse;
+  
+}
+.Account-section table{
+ width:100%;
+ 
+
+}
+.Account-section tr :nth-of-type(1){
+    width: 100%;
+    max-width: 60px;
+}
+
+.main-tab{
+    padding: 0 24px;
+    
+}

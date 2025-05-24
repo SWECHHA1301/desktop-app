@@ -16,13 +16,7 @@
    
 }
 
-.tab-items{
-width: 100%;
-max-width: 1256px;
-height: 54px;
-text-align: center;
 
-}
 
 .Tab-Section td ,th{
     padding: 19px 0 19px 0;
@@ -44,7 +38,7 @@ color: #306CFE;
 .Tab-Section tr{
     display: flex;
 justify-content: space-between;
-  border: 1px solid black;
+  border: 1px solid rgb(97, 97, 97);
   border-collapse: collapse;
   
 }

@@ -20,6 +20,7 @@ import ProductCard from "./Product/ProductCard";
 import TableDashboard from "./Table Management/TableDashboard";
 import OrderHistory from "./OrderHistory/OrderHistory";
 import WorkingCalendar from './Common/Calendar/Calendar';
+import AccManagement from './HistoryMgmt/AccManagement';
 
 function App() {
   return (
@@ -31,10 +32,9 @@ function App() {
       {/* <OrderDashboard /> */}
       {/* <Dashboard/> */}
       {/* <OrderTypeSwitch/> */}
-      <OrderHistory/>
-      {/* <AccManagment/> */}
+      {/* <OrderHistory/> */}
       {/* <CustomerDetail/> */}
-  
+      <AccManagement/>
     </div>
   );
 }
