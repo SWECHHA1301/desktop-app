@@ -1,48 +1,62 @@
-.customer-panel {
-  /* padding: 20px 80px; */
-}
-
 .customer-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.drawer-scroll-area {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 8px;
+}
+
+
+.customer-title {
+color: #3658BF;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-bottom: 10px;
+}
+
 .customer-actions {
   display: flex;
   gap: 16px;
   align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  position: sticky;
 }
 
-.tabs {
+.tab {
   display: flex;
   gap: 16px;
 }
 
-.tab-button {
+.tab-buttons {
   width: 176px;
   height: 40px;
-  padding: 10px 24px;
-  margin-top: 80px;
+  padding: 0 16px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 16px;
-  border: none;
+  border: 1px solid transparent;
   background-color: #3658BF;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.tab-button.active {
+.tab-buttons.active {
   background-color: white;
   color: black;
   border: 1px solid #3658BF;
 }
 
 .search-input {
+  width: 369px;
   height: 40px;
-  width: 250px;
   border-radius: 10px;
   padding: 0 12px;
   border: 1px solid #ccc;
@@ -53,7 +67,6 @@
   background-color: #f9f9f9;
   border-radius: 12px;
   margin-bottom: 12px;
-  margin-left: 24px;
   overflow: hidden;
 }
 .drawer-card:hover, .selected {
@@ -112,15 +125,26 @@
 
 .drawer-info-top {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 .drawer-info-left,
-.drawer-info-right {
+.drawer-due-center,
+.drawer-icons {
+  flex: 1;
+}
+
+.drawer-due-center {
+  text-align: center;
+  font-weight: 600;
+}
+
+.drawer-icons {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  justify-content: flex-end;
+  gap: 12px;
+  align-items: center;
 }
 
 .drawer-due {
@@ -128,10 +152,11 @@
   font-weight: bold;
 }
 
-.drawer-icons {
+
+.drawer-info-bottom {
   display: flex;
-  gap: 12px;
-  margin-top: 4px;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .drawer-buttons {
@@ -139,6 +164,7 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+
 
 .drawer-buttons button {
   background-color: #3658BF;
@@ -153,11 +179,3 @@
   cursor: pointer;
 }
 
-.customer-header h2{
-  color: #3658BF;
-  font-family: Inter;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}

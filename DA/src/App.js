@@ -4,7 +4,7 @@ import Sidebar from "./Common/Sidebar";
 import ProductCard from "./Product/ProductCard";
 import TableDashboard from "./Table Management/TableDashboard";
 import PurchaseReceipt from "./Product/PurchaseReciept";
-import CustomerList from "./xx/CustomerList";
+import CustomerList from "./CustomerDetails/CustomerList";
 import OrderDashboard from "./OrderStatus/OrderDashboard";
 import Dashboard from "./Dashboard/Dashboard";
 import OrderTypeSwitch from "./Common/OrderTypeSwitch";
@@ -24,7 +24,7 @@ function App() {
       {/* <CustomerDetail/> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<OrderHistory />} />
+      <MainContainer children={<CustomerList />} />
     </div>
   );
 }

@@ -50,7 +50,6 @@ const styles = {
     fontSize: "14px",
     position: "relative",
     cursor: "pointer",
-    // width: "fit-content",
      width: '100%',
     maxWidth:'311px',
     height: '40px'
