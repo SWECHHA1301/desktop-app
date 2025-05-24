@@ -2,13 +2,10 @@
 import React from "react";
 import Navbar from "./Common/Navbar";
 import Sidebar from "./Common/Sidebar";
-// import ProductCard from "./Product/ProductCard";
-// import TableDashboard from "./Table Management/TableDashboard";
-// import OrderHistory from "./OrderHistory/OrderHistory";
-// import WorkingCalendar from './Common/Calendar/Calendar';
-// import AccManagement from './HistoryMgmt/AccManagement';
-// import PurchaseReceipt from './Product/PurchaseReciept';
-import CustomerList from './xx/CustomerList';
+
+
+import OrderDashboard from './OrderStatus/OrderDashboard';
+import OrderHistory from "./OrderHistory/OrderHistory";
 
 function App() {
   return (
@@ -16,16 +13,12 @@ function App() {
       <Navbar />
       <Sidebar />
       {/* <TableDashboard /> */}
-      <CustomerList />
+      {/* <CustomerList /> */}
 
       {/* <PurchaseReceipt/> */}
-      {/* <OrderDashboard /> */}
-      {/* <Dashboard/> */}
-      {/* <OrderTypeSwitch/> */}
-      {/* <OrderHistory/> */}
-      {/* <CustomerDetail/> */}
-      {/* <AccManagement/> */}
-      {/* <PurchaseReceipt /> */}
+      <OrderHistory />
+      
+      
     </div>
   );
 }

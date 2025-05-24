@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DateCalendar from '../Common/Calendar/DateCalendar';
+import NativeDateRangePicker from '../Common/NativeDateRangePicker';
 import './OrderHistory.css';
 
 export default function OrderHistory() {
@@ -47,7 +47,7 @@ export default function OrderHistory() {
           />
         </div>
 
-        <DateCalendar />
+        <NativeDateRangePicker />
       </div>
 
       <div className="Tab-Section">
