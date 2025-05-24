@@ -10,7 +10,7 @@ import OrderTypeSwitch from './Common/OrderTypeSwitch';
 import PurchaseReceipt from './Common/PurchaseReciept';
 import OrderHistory from './OrderHistory/OrderHistory';
 import AccManagment from './OrderHistory/AccManagment/AccManagment';
-
+import CustomerDetail from './CustomerDetail/CustomerDetail'
 
 function App() {
   return (
@@ -21,8 +21,9 @@ function App() {
       {/* <OrderDashboard /> */}
       {/* <Dashboard/> */}
       {/* <OrderTypeSwitch/> */}
-      <OrderHistory/>
+      {/* <OrderHistory/> */}
       {/* <AccManagment/> */}
+      <CustomerDetail/>
     </div>
   );
 }
