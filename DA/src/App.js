@@ -24,7 +24,7 @@ function App() {
       {/* <CustomerDetail/> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<CustomerList />} />
+      <MainContainer children={<PurchaseReceipt />} />
     </div>
   );
 }

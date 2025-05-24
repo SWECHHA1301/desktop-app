@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import {
-  ArrowLeftCircle,
+  Hash,
+  Plus,
+   ChevronRight,
   PlusCircle,
   X,
   ChevronDown,
@@ -19,6 +21,7 @@ const PurchaseReceipt = () => {
   const [customerName, setCustomerName] = useState("");
   const [table, setTable] = useState("B-2");
   const [orderType, setOrderType] = useState("Dine in");
+  const [showSummary, setShowSummary] = useState(false);
 
   const toggleExpand = (id) => {
     setExpandedItemId((prev) => (prev === id ? null : id));
@@ -43,17 +46,27 @@ const PurchaseReceipt = () => {
       <div className="receipt-wrapper">
         <div className="receipt-container">
           <div className="receipt-header">
-            <button className="circle-icon" onClick={() => {}}>
-              <ArrowLeftCircle color="#3658BF" size={20} />
-            </button>
-            <div className="header-title">
-              <h2 className="receipt-title">Purchase Receipt</h2>
-              <div className="receipt-id">#123400</div>
-            </div>
-            <div className="circle-icon">
-              <PlusCircle color="white" size={20} />
-            </div>
-          </div>
+  <button className="circle-icon blue-outline">
+    <div className="blue-circle">
+      <ChevronRight size={16} color="white" />
+    </div>
+  </button>
+
+  <div className="header-title">
+    <h2 className="receipt-title">Purchase Receipt</h2>
+    <div className="receipt-id">
+      <span className="receipt-hash">
+        <Hash size={12} />
+      </span>
+      <span>123400</span>
+    </div>
+  </div>
+
+  <button className="circle-icon black-outline">
+    <Plus size={20} />
+  </button>
+</div>
+
 
           <div className="order-type-switch">
             <OrderTypeSwitch selected={orderType} onChange={setOrderType} />
@@ -182,46 +195,59 @@ const PurchaseReceipt = () => {
           </div>
 
           <div className="payment-section">
-            <div className="receipt-summary">
-              <h3 className="summary-heading">Payment Summary</h3>
-              <div className="summary-row muted">
-                <span>SubTotal</span>
-                <span>₹{total.toFixed(2)}</span>
-              </div>
-              <div className="summary-row muted">
-                <span>Taxes</span>
-                <span>₹0.00</span>
-              </div>
-              <div className="summary-row muted">
-                <span>Discount</span>
-                <span>₹0.00</span>
-              </div>
-              <hr />
-              <div className="summary-total">
-                <span>Total</span>
-                <span>₹{total.toFixed(2)}</span>
-              </div>
-            </div>
+  <div className="receipt-summary-drawer">
+    <div
+      className="summary-toggle"
+      onClick={() => setShowSummary((prev) => !prev)}
+    >
+      <span>Payment Summary</span>
+      {showSummary ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+    </div>
 
-            <div className="payment-buttons">
-              <div className="receipt-actions">
-                <button className="btn add-btn">
-                  Add <span>＋</span>
-                </button>
-                <button className="btn abort-btn">
-                  Abort <span>✖</span>
-                </button>
-              </div>
-              <div className="receipt-actions">
-                <button className="btn kot-btn">
-                  KOT <span>⏸</span>
-                </button>
-                <button className="btn proceed-btn">
-                  Proceed <span>→</span>
-                </button>
-              </div>
-            </div>
-          </div>
+    {showSummary && (
+      <div className="summary-details">
+        <div className="summary-row muted">
+          <span>SubTotal</span>
+          <span>₹{total.toFixed(2)}</span>
+        </div>
+        <div className="summary-row muted">
+          <span>Taxes</span>
+          <span>₹0.00</span>
+        </div>
+        <div className="summary-row muted">
+          <span>Discount</span>
+          <span>₹0.00</span>
+        </div>
+        <hr />
+      </div>
+    )}
+
+    <div className="summary-total always-visible">
+      <span>Total</span>
+      <span>₹{total.toFixed(2)}</span>
+    </div>
+  </div>
+
+  <div className="payment-buttons">
+    <div className="receipt-actions">
+      <button className="btn add-btn">
+        Add <span>＋</span>
+      </button>
+      <button className="btn abort-btn">
+        Abort <span>✖</span>
+      </button>
+    </div>
+    <div className="receipt-actions">
+      <button className="btn kot-btn">
+        KOT <span>⏸</span>
+      </button>
+      <button className="btn proceed-btn">
+        Proceed <span>→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </div>

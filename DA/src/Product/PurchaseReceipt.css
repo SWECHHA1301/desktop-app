@@ -45,27 +45,76 @@
 
 .receipt-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .header-title {
-  text-align: center;
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
 }
 
 .receipt-title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
   margin: 0;
 }
 
 .receipt-id {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #3658bf;
+  font-weight: 500;
   font-size: 14px;
-  color: #333;
-  margin-top: 4px;
-  text-align: center;
+  border-bottom: 1px dotted #aaa;
+  padding-bottom: 1px;
 }
+
+.receipt-hash {
+  border: 1px solid #3658bf;
+  border-radius: 50%;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-icon {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 40px;
+height: 40px;
+}
+
+.blue-outline {
+  background: transparent;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.blue-circle {
+  background: #3658BF;
+  border-radius: 39.292px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.black-outline {
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* Icons */
 .icon-circle {
@@ -433,6 +482,46 @@
   border-bottom-right-radius: 20px;
 }
 
+.receipt-summary-drawer {
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.summary-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.summary-details {
+  margin-bottom: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.summary-row.muted span:first-child {
+  color: #777;
+}
+
+.summary-total.always-visible {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+  border-top: 1px solid #ccc;
+  padding-top: 8px;
+}
 
 
 
