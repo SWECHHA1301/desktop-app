@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import DateCalendar from '../Common/Calendar/DateCalendar';
 import './OrderHistory.css';
 
 export default function OrderHistory() {
@@ -45,6 +46,8 @@ export default function OrderHistory() {
             onChange={e => setSearchTerm(e.target.value)}
           />
         </div>
+
+        <DateCalendar />
       </div>
 
       <div className="Tab-Section">
@@ -65,7 +68,7 @@ export default function OrderHistory() {
                 <td>{item.Number}</td>
                 <td>{item.Id}</td>
                 <td style={{ color: '#3658BF' }}>{item.Date}</td>
-                <td style={{ color: item.Type === 'Dine in' ? '#FF0000' : item.Type === 'Take Away' ? '#2CAC04' : 'inherit' }}>
+                <td style={{ color: item.Type === 'Dine in' ? '#FF0000' : '#2CAC04' }}>
                   {item.Type}
                 </td>
                 <td style={{ color: item.Method === 'Card' ? '#FF0000' : item.Method === 'Cash' ? '#2CAC04' : 'inherit' }}>

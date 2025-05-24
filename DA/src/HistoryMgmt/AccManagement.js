@@ -1,4 +1,5 @@
 import React from 'react'
+import DateCalendar from '../Common/Calendar/DateCalendar';
 import './AccManagement.css'
  const details = [
     { Number: '1', Id: 'xxxx5', Date: 'Saturday, April 11', Type: 'Take Away', Method: 'UPI', total: '₹200.00' },
@@ -18,6 +19,8 @@ export default function AccManagement() {
 
    <div className='Account-nav'>
     <h2 className='nav-title'>Account Management</h2>
+    <div style={{paddingBottom:'16px'}}>
+    <DateCalendar/></div>
    </div>
 
    <div className='trancation-info'>
