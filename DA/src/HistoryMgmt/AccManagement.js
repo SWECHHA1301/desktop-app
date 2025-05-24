@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import './OrderHistory.css';
-
-export default function OrderHistory() {
-  const data = [
+import React from 'react'
+import './AccManagement.css'
+ const details = [
     { Number: '1', Id: 'xxxx5', Date: 'Saturday, April 11', Type: 'Take Away', Method: 'UPI', total: '₹200.00' },
     { Number: '2', Id: 'zzzz7', Date: 'Saturday, April 11', Type: 'Take Away', Method: 'UPI', total: '₹579.00' },
     { Number: '3', Id: 'yyyy9', Date: 'Saturday, April 11', Type: 'Dine in', Method: 'Card', total: '₹1000.00' },
@@ -12,42 +10,36 @@ export default function OrderHistory() {
     { Number: '7', Id: 'jinin', Date: 'Saturday, April 11', Type: 'Dine in', Method: 'Card', total: '₹5075.00' },
   ];
 
-  const [activeTab, setActiveTab] = useState('All');
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const filteredOrders = data.filter(item => {
-    const matchesTab = activeTab === 'All' || item.Type === activeTab;
-    const matchesSearch = Object.values(item).some(value =>
-      value.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    return matchesTab && matchesSearch;
-  });
-
+export default function AccManagement() {
   return (
-    <div className="Order-Main-Container">
-      <div className="tab-sec">
-        {['All', 'Dine in', 'Take Away'].map(tab => (
-          <button
-            key={tab}
-            className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
+    <>
 
-        <div className="Search-detail">
-          <i className="fa fa-search" aria-hidden="true"></i>
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-          />
-        </div>
-      </div>
+  <div className='Account-section'>
 
-      <div className="Tab-Section">
+   <div className='Account-nav'>
+    <h2 className='nav-title'>Account Management</h2>
+   </div>
+
+   <div className='trancation-info'>
+   <div className='select-account'>
+    <button  className='select-btn'>
+     <p>Select Account</p>
+     <div></div>
+    </button>
+    <button className='create-btn'>
+  <p>Create Transaction</p>
+    </button>
+   </div>
+     
+<div className='Transactions-sec'>
+   <h2>Transactions</h2>
+   <button className='filter'>
+    <p>Filter</p>
+    <div></div>
+   </button>
+</div>
+
+      <div className='main-tab'>
         <table>
           <thead>
             <tr style={{ borderRadius: '10px 10px 0 0' }}>
@@ -60,15 +52,15 @@ export default function OrderHistory() {
             </tr>
           </thead>
           <tbody>
-            {filteredOrders.map((item, index) => (
+            {details.map((item, index) => (
               <tr key={index}>
                 <td>{item.Number}</td>
                 <td>{item.Id}</td>
                 <td style={{ color: '#3658BF' }}>{item.Date}</td>
-                <td style={{ color: item.Type === 'Dine in' ? '#FF0000' : item.Type === 'Take Away' ? '#2CAC04' : 'inherit' }}>
+                <td>
                   {item.Type}
                 </td>
-                <td style={{ color: item.Method === 'Card' ? '#FF0000' : item.Method === 'Cash' ? '#2CAC04' : 'inherit' }}>
+                <td >
                   {item.Method}
                 </td>
                 <td>{item.total}</td>
@@ -77,6 +69,10 @@ export default function OrderHistory() {
           </tbody>
         </table>
       </div>
-    </div>
-  );
+  
+   </div>
+  </div>
+
+    </>
+  )
 }

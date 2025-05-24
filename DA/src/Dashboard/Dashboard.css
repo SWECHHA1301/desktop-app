@@ -4,6 +4,7 @@
     font-family: Arial, Helvetica, sans-serif;
     height: auto;
     padding-bottom: 40px;
+    overflow-y: scroll;
 }
 
 
