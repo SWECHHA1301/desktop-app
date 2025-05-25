@@ -47,21 +47,13 @@
   cursor: pointer;
 }
 
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-
 /* Scrollable body */
 .modal-body {
   flex: 1;
   padding: 20px;
-  gap: 20px;
-  overflow-y: auto;
   display: flex;
+  gap: 20px;
+  overflow: hidden;
 }
 
 /* Fixed footer */
@@ -73,6 +65,14 @@
   gap: 10px;
   border-top: 1px solid #ddd;
   background: #f0f0f0;
+  margin-top: 10px;
+}
+
+
+  .charges-section {
+  width: 300px;
+  flex-shrink: 0;
+  overflow: hidden; /* fixed block */
 }
 
 
@@ -85,8 +85,24 @@
 .charges-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  margin-bottom: 10px;
 }
+
+.charges-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #555;
+  margin: 0;
+}
+
+.additional-link {
+  font-size: 14px;
+  color: #3658BF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
 
 .charges-list {
   margin-top: 10px;
@@ -109,13 +125,32 @@
 .charge-row input {
   width: 80px;
   padding: 2px;
-  border-radius: 20px; /* Rounded input */
+  border-radius: 20px;
   border: 1px solid #ccc;
+}
+
+.vertical-divider {
+  width: 2px;
+  background-color: #797979; /* Light grey */
+  margin: 0 20px;
+}
+
+
+.payment-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }
 
 .payment-option {
   padding: 10px;
-  margin-bottom: 24px;
   width: 279px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -131,30 +166,36 @@
 }
 
 .qr-code {
-  background: #eee;
-  height: 100px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 14px;
-  color: #666;
+  align-items: center;
+  margin-top: 10px;
 }
+
 
 .cash-inputs {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  gap: 20px;
+  margin-top: 10px;
 }
 
-.cash-inputs div {
-  flex: 1;
-  margin-right: 10px;
+.cash-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
 }
 
-.cash-inputs input {
-  width: 100%;
-  margin-top: 4px;
+.cash-input {
+  border: 1px solid #797979;
+  border-radius: 10px;
+  padding: 4px 8px;
+  width: 80px;
+  text-align: right;
 }
+
 
 .cancel-btn,
 .save-btn,
@@ -182,6 +223,68 @@
   color: #797979;
   font-size: 16px;
   font-weight: 700;
-  padding-bottom: 24px;
 }
+
+.payment-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #3658BF;
+}
+
+.payment-option label {
+    font-size: 18px;
+}
+
+.payment-option span {
+    justify-content: flex-end;
+}
+
+.payment p {
+    color: #797979;
+    margin-left: 28px;
+}
+
+.payment{
+    display: inline-flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+margin-left: 25px;
+}
+/* Custom Radio Button */
+.payment-option input[type="radio"] {
+  accent-color: #3658BF;
+  width: 24px;
+  height: 24px;
+}
+
+.cash-inputs div:first-child input {
+  border: 1px solid #3658BF;
+  border-radius: 10px;
+  padding: 4px 8px;
+}
+
+.split-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.split-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.split-input {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  width: 100px;
+  text-align: right;
+}
+
+
 

@@ -1,5 +1,6 @@
 import React from "react";
 import {ChevronLeft, X} from "lucide-react";
+import {QrCode} from "./Common/Icons"
 import "./PaymentModal.css";
 
 const PaymentModal = ({ onClose }) => {
@@ -17,13 +18,10 @@ const PaymentModal = ({ onClose }) => {
 
         <div className="modal-body">
           <div className="charges-section">
-            <div className="charges-header">
-              <h3>Charges</h3>
-              <a href="#" style={{
-                color: "#3658BF"
-              }}>
-                Additional Charges</a>
-            </div>
+          <div className="charges-header">
+                <span className="charges-title">Charges</span>
+                <span className="additional-link">Additional Charges</span>
+              </div>
             <div className="charges-list">
               {[
                 "Subtotal",
@@ -44,7 +42,7 @@ const PaymentModal = ({ onClose }) => {
                     value="₹00.00"
                     readOnly
                     style={{
-                      borderRadius: "10px",
+                      borderRadius: "20px",
                       border: "1px solid #797979",
                       padding: "3px 8px"
                     }}
@@ -62,6 +60,9 @@ const PaymentModal = ({ onClose }) => {
             </div>
           </div>
 
+          <div className="vertical-divider"></div>
+          
+          <div className="payment-container" >
           <div className="payment">
             <h3 className="payment-title">Payment Method</h3>
 
@@ -70,62 +71,105 @@ const PaymentModal = ({ onClose }) => {
               style={{
                 borderRadius: "10px",
                 border: "2px solid #3658BF",
-                height: "202px"
+                padding: "10px",
               }}
             >
-              <label>
-                <input type="radio" name="payment" defaultChecked />
-                <strong>UPI</strong> <span>₹ 00.00</span>
+              <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div className="payment-left">
+                  <input type="radio" name="payment" defaultChecked />
+                  <strong style={{ color: "#3658BF", marginLeft: "6px" }}>UPI</strong>
+                </div>
+                <span>₹ 00.00</span>
               </label>
               <p>Scan the QR Code to pay</p>
-              <div className="qr-code">[QR Code]</div>
+            
+              <div className="qr-code">
+                <QrCode />
+              </div>
             </div>
+
 
             <div className="payment-option no-border">
-             <label>
+             <label >
+              <div className="payment-left">
                <input type="radio" name="payment" />
-               <strong>Card</strong> <span>Text</span>
+               <strong style={{ color: "#3658BF", marginLeft: "6px" }}>Card</strong>
+               </div>
              </label>
+             <p>Text</p>
            </div>
 
-            <div className="payment-option selected"
-             style={{
+            <div
+              className="payment-option selected"
+              style={{
                 borderRadius: "10px",
                 border: "2px solid #3658BF",
-                height: "134px"
-              }}>
-              <label>
-                <input type="radio" name="payment" />
-                <strong>Cash</strong> <span>₹ 00.00</span>
+                padding: "10px",
+              }}
+            >
+              <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div lassName="payment-left">
+                  <input type="radio" name="payment" />
+                  <strong style={{ color: "#3658BF", marginLeft: "6px" }}>Cash</strong>
+                </div>
+                <span>₹ 00.00</span>
               </label>
               <p>Pay in cash</p>
+            
               <div className="cash-inputs">
-                <div>
-                  Cash Received <input type="text" value="₹ 00.00" readOnly />
+                <div className="cash-row">
+                  <span>Cash Received</span>
+                  <input type="text" value="₹ 00.00" readOnly className="cash-input"
+                  style={{
+                    border: "1px solid #797979"
+                  }} />
                 </div>
-                <div>
-                  Return Amount <input type="text" value="₹ 00.00" readOnly />
+                <div className="cash-row">
+                  <span>Return Amount</span>
+                  <span>₹ 00.00</span>
                 </div>
               </div>
             </div>
 
-            <div className="payment-option"
+
+        <div
+            className="payment-option selected"
             style={{
-                borderRadius: "10px",
-                border: "2px solid #3658BF",
-                height: "134px"
-              }}>
-              <label>
+              borderRadius: "10px",
+              border: "2px solid #3658BF",
+              padding: "10px",
+            }}
+          >
+            <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div lassName="payment-left">
                 <input type="radio" name="payment" />
-                <strong>Split</strong> <span>₹ 00.00</span>
-              </label>
-              <p>Pay in multiple methods</p>
-              <div style={{ border: 0 }}>
-                Cash:{" "}
-                 <input type="text" value="₹ 00.00" readOnly 
-               />
+                <strong style={{ color: "#3658BF", marginLeft: "6px" }}>Split</strong>
+                </div> 
+                 <span>₹ 00.00</span>
+            </label>
+            <p>Pay in multiple methods</p>
+          
+            <div className="split-grid">
+              <div className="split-row">
+                <span>Cash :</span>
+                <input type="text" value="₹ 00.00" readOnly className="split-input" />
               </div>
-            </div>
+              <div className="split-row">
+                <span>UPI    :</span>
+                <input type="text" value="₹ 00.00" readOnly className="split-input" />
+              </div>
+              <div className="split-row">
+                <span>Card   :</span>
+                <input type="text" value="₹ 00.00" readOnly className="split-input" />
+              </div>
+              <div className="split-row">
+                <span>Return :</span>
+                <span>₹ 00.00</span>
+              </div>
+          </div>
+       </div>
+
+          </div>
           </div>
         </div>
 
