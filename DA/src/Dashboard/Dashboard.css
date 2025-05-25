@@ -3,8 +3,7 @@
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     height: auto;
-    padding-bottom: 40px;
-    overflow-y: scroll;
+    
 }
 
 
@@ -17,7 +16,7 @@ line-height: 100%;
 }
 
 .Element-container{
-    padding: 90px  24px 0 112px;
+    /* padding: 24px 24px 20px 24px; */
     display: flex;
     flex-direction: column;
    

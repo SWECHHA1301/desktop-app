@@ -1,24 +1,35 @@
 import React from 'react'
 import './PayMethod.css'
-
+import { Calendar } from "lucide-react";
 const blockItems=[
 
     {
      name:'UPI',
      value:'4,200',
      percent:'42%',
-    
+     style:{
+      color:'#2BAC04',
+      
+     }
     },
 
     {
       name:'Card',
      value:'3,100',
-     percent:'31%'
+     percent:'31%',
+     style:{
+      color:'#E38417',
+      
+     }
     },
     {
      name:'Cash',
      value:'2,700',
-     percent:'27%'
+     percent:'27%',
+     style:{
+      color:'#FECB00',
+      
+     }
     },
     
 ]
@@ -31,6 +42,9 @@ const accountItems=[
     card:'2,100',
     totalsales:'10,900',
     orders:'43',
+    style:{
+      color:'#3658BF'
+    }
   },
   {
     name:'Account2',
@@ -39,6 +53,9 @@ const accountItems=[
     card:'1,500',
     totalsales:'7,400',
     orders:'30',
+    style:{
+      color:'#3658BF'
+    }
   },
 ]
 export default function PayMethod() {
@@ -50,6 +67,7 @@ export default function PayMethod() {
 
         <p>Payment Method Breakdown</p>
         <div className='Days'>
+        <Calendar size={20} color='black'/>
          <p>30 days</p>
         </div>
       </div>
@@ -58,48 +76,56 @@ export default function PayMethod() {
 <div className='pay-graph'></div>
 
 
-<div className='pay-table'>
-   <div className='block-Item-head'>
-       <p>Method</p>
-       <p>Value()</p>
-       <p>Percentage</p>
-      </div>
+<table className='pay-table'>
+  
+   <thead >
+      <tr className='block-Item-head'> <th>Method</th>
+       <th>Value()</th>
+       <th>Percentage</th>
+       </tr>
+      </thead>
+      <tbody>
     {blockItems.map((item,index) => (
-<div className='table-block' key={index} >
-<p >{item.name}</p>
-<p>{item.value}</p>
-<p>{item.percent}</p>
+<tr className='table-block' key={index} >
+<td style={item.style} >{item.name}</td>
+<td>{item.value}</td>
+<td>{item.percent}</td>
 
-</div>))}
-</div>
+</tr>))}</tbody>
+</table>
 
     </div>
 
       </div>
 
        <div className='Account-manage'>
+
         <div className='Account-title'>
           <p>Account Management</p>
         </div>
-         <div className='account-table-head'>
-       <p>Counter</p>
-       <p>Transaction</p>
+        <table className='Acc-table'>
+          <thead>
+         <tr className='account-table-head'>
+       <th>Counter</th>
+       <th>Transaction</th>
 
-       <div ><p>UPI</p> <p>( )</p></div>
-      <div><p>Card</p> <p>( )</p></div>
-       <div><p>Total Sales</p> <p>( )</p></div>
-      <div><p>Orders</p> <p>( )</p></div>
+       <th style={{display:'flex', flexDirection:'column'}}> <p>UPI</p> <p>( )</p></th>
+      <th style={{display:'flex', flexDirection:'column'}}><p>Card</p> <p>( )</p></th>
+       <th style={{display:'flex', flexDirection:'column'}}><p>Total Sales</p> <p>( )</p></th>
+      <th style={{display:'flex', flexDirection:'column'}}><p>Orders</p> <p>( )</p></th>
       
-      </div>
+      </tr></thead>
+      <tbody>
       {accountItems.map((item,index)=>(
-      <div className='account-Items' key={index}>
-       <p>{item.name}</p>
-       <p>{item.transaction}</p>
-       <p>{item.UPI}</p>
-       <p>{item.card}</p>
-       <p>{item.totalsales}</p>
-       <p>{item.orders}</p>
-      </div>))}
+      <tr className='account-Items' key={index}>
+       <td style={item.style}>{item.name}</td>
+       <td>{item.transaction}</td>
+       <td>{item.UPI}</td>
+       <td>{item.card}</td>
+       <td>{item.totalsales}</td>
+       <td>{item.orders}</td>
+      </tr>))}</tbody>
+      </table>
       </div>
      </div>
     </>

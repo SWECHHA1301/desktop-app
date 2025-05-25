@@ -1,6 +1,7 @@
 import React from 'react'
 import './SellingItem.css'
 
+
 const Items=[
     {
      name:' chesse pizza',
@@ -52,7 +53,7 @@ export default function SellingItem() {
         
         <p>{item.name}</p>
         <p>{item.Volume}</p>
-         <p>{item.price}</p>
+         <p style={{color:'#256A11'}}>{item.price}</p>
        </div>))}
        </div>
      </div>

@@ -59,8 +59,8 @@
 .breakdown{
     display: flex;
     flex-direction: column;
-    gap:55px;
-    padding:0 16px;
+    padding: 0 16px;
+    gap:16px;
 }
 
 .pay-graph{
@@ -78,33 +78,37 @@
     height: 200px;
     border-radius: 10px;
     box-shadow:  0 4px 4px 0 #3658BF;
-    
+
     }
 
     .table-block{
-
-    
     display: flex;
     align-items: center;
-    justify-items: center;
-    justify-content: space-between;
-   
-    }
-.table-block p{
+    padding: 0 32px;
+    justify-content: center;
+    justify-items:center ;
     
- padding: 32px 32px 0 32px;
+}
+.table-block td{
+    padding-bottom: 32px;
+    width: 100%;
+    text-align: center;
+      height: 50px;
  color:#3658BF;
   font-size: 15px;
   font-weight: 700;
 line-height: 100%;
+max-width: 140px;
 }
    
 
     .block-Item-head{
     background-color: #D4DAED;
     color:#4A4A4A;
+    width: 100%;
+   margin-bottom: 16px;
      display: flex;
-     justify-content: space-between;
+     justify-content: center;
      align-items: center;
      padding: 0 32px;
      height: 50px;
@@ -113,7 +117,10 @@ line-height: 100%;
     font-weight: 700;
     line-height: 100%;
     }
-
+    
+.block-Item-head th{
+     max-width: 140px;
+}
     
 
 .Account-manage{
@@ -121,8 +128,8 @@ line-height: 100%;
     max-width:640px;
     height: 246px;
     border-radius: 10px;
-       box-shadow:  4px 4px 4px 0 #3658BF40;
-       background-color: white;
+    box-shadow:  4px 4px 4px 0 #3658BF40;
+    background-color: white;
 }
 
 .Account-title{
@@ -140,6 +147,9 @@ line-height: 100%;
     line-height: 100%;
 }
 
+.Acc-table{
+    width: 100%;
+}
 .account-table-head{
     background-color: #D4DAED;
     color:#4A4A4A;
@@ -151,17 +161,30 @@ line-height: 100%;
      font-size: 15px;
     font-weight: 700;
     line-height: 100%;
+    width: 100%;
+
+    
+}
+.account-table-head th{
+padding:0;
 }
 
 .account-Items{
+    width: 100%;
      padding: 0 25px;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     justify-content: space-between;
-    color:#3658BF;
+
+    color: black;
  font-size: 15px;
  font-weight: 700;
     line-height: 100%;
+}
+.account-Items td{
+     width: 100%;
+     max-width: 140px;
+ text-align: center;
 }

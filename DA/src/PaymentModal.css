@@ -1,0 +1,187 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 1000px;
+  height: 90vh; /* Set height to fit viewport */
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0002;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Fixed header */
+.modal-header {
+  background: #3f51b5;
+  height: 66px;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Scrollable body */
+.modal-body {
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+  overflow-y: auto;
+  display: flex;
+}
+
+/* Fixed footer */
+.modal-footer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 20px;
+  gap: 10px;
+  border-top: 1px solid #ddd;
+  background: #f0f0f0;
+}
+
+
+
+.charges-section,
+.payment {
+  flex: 1;
+}
+
+.charges-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charges-list {
+  margin-top: 10px;
+}
+
+.charge-row,
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.total-row {
+  border-top: 1px solid #797979;
+  border-bottom: 1px solid #797979;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.charge-row input {
+  width: 80px;
+  padding: 2px;
+  border-radius: 20px; /* Rounded input */
+  border: 1px solid #ccc;
+}
+
+.payment-option {
+  padding: 10px;
+  margin-bottom: 24px;
+  width: 279px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.payment-option.selected {
+  border: 2px solid #3658BF;
+}
+
+.payment-option.no-border {
+  border: none;
+  box-shadow: none;
+}
+
+.qr-code {
+  background: #eee;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.cash-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.cash-inputs div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.cash-inputs input {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.cancel-btn,
+.save-btn,
+.save-print-btn,
+.save-ebill-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.save-btn,
+.save-print-btn,
+.save-ebill-btn {
+  background: #3f51b5;
+  color: white;
+}
+
+.payment-title {
+  color: #797979;
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 24px;
+}
+
