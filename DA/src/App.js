@@ -21,10 +21,10 @@ function App() {
       {/* <OrderDashboard /> */}
       {/* <Dashboard /> */}
       {/* <OrderTypeSwitch /> */}
-      {/* <CustomerDetail/> */}
+
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<PurchaseReceipt />} />
+      <MainContainer children={<CustomerList />} />
     </div>
   );
 }

@@ -32,7 +32,7 @@ export default function CustomerList() {
   <h2 className="customer-title">Customer Details</h2>
 
   <div className="customer-actions">
-    <div className="tab">
+    
       {['All', 'Dine in', 'Take Away'].map((tab) => (
         <button
           key={tab}
@@ -42,7 +42,7 @@ export default function CustomerList() {
           {tab}
         </button>
       ))}
-    </div>
+    
     <input className="search-input" placeholder="Search" />
     <NativeDateRangePicker />
   </div>

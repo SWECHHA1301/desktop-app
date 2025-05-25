@@ -13,6 +13,7 @@ export default function NativeDateRangePicker() {
 
   return (
     <div style={styles.wrapper}>
+      <div style={{display:'flex',alignItems:'center',gap:'8.5px'}}>
       <Calendar size={16} style={styles.icon} />
       <span style={styles.text}>
         {formatDisplayDate(startDate)} - {formatDisplayDate(endDate)}
@@ -31,6 +32,7 @@ export default function NativeDateRangePicker() {
           style={styles.hiddenInput}
         />
       </div>
+      </div>
       <span><ChevronDown /></span>
     </div>
   );
@@ -40,18 +42,18 @@ const styles = {
   wrapper: {
     display: "flex",
     alignItems: "center",
+     justifyContent: 'space-between',
     backgroundColor: "white",
     borderRadius: "10px",
     padding: "10px",
-    gap: "8px",
     border: "1px solid #616161",
     fontFamily: "sans-serif",
     fontWeight: "bold",
     fontSize: "14px",
     position: "relative",
     cursor: "pointer",
-     width: '100%',
-    maxWidth:'311px',
+    width: '100%',
+    maxWidth:'270px',
     height: '40px'
   },
   icon: {
