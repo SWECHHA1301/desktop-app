@@ -48,7 +48,7 @@ const PurchaseReceipt = () => {
           <div className="receipt-header">
   <button className="circle-icon blue-outline">
     <div className="blue-circle">
-      <ChevronRight size={16} color="white" />
+      <ChevronRight size={20} color="white" />
     </div>
   </button>
 
@@ -97,12 +97,14 @@ const PurchaseReceipt = () => {
           </div>
 
           <div className="receipt-body">
+           
             <div className="receipt-h">
               <span>S.No</span>
               <span>Food Name</span>
               <span>QTY</span>
               <span>Amount</span>
             </div>
+           
             <div className="receipt-info">
               <span className="ss">KOT : 1</span>
               <span className="ss">Time : 17:05</span>
@@ -116,7 +118,7 @@ const PurchaseReceipt = () => {
                       item.id === expandedItemId
                         ? {
                             borderLeftWidth: 5,
-                            borderColor: "blue",
+                            borderColor: "#3658BF",
                             borderRadius: 10,
                           }
                         : {}
@@ -194,7 +196,12 @@ const PurchaseReceipt = () => {
             </div>
           </div>
 
-          <div className="payment-section">
+          <div className="payment-section"
+          style={{
+     borderTopWidth: 5,
+     borderColor: "#3658BF",
+     borderRadius: 10,
+  }}>
   <div className="receipt-summary-drawer">
     <div
       className="summary-toggle"
@@ -208,17 +215,16 @@ const PurchaseReceipt = () => {
       <div className="summary-details">
         <div className="summary-row muted">
           <span>SubTotal</span>
-          <span>₹{total.toFixed(2)}</span>
+          <span className="st">₹{total.toFixed(2)}</span>
         </div>
         <div className="summary-row muted">
           <span>Taxes</span>
-          <span>₹0.00</span>
+          <span className="st">₹0.00</span>
         </div>
         <div className="summary-row muted">
           <span>Discount</span>
-          <span>₹0.00</span>
+          <span className="st">₹0.00</span>
         </div>
-        <hr />
       </div>
     )}
 

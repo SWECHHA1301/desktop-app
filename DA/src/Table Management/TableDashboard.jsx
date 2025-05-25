@@ -105,13 +105,13 @@ const TableDashboard = () => {
                         {/* Icons per status */}
                         {table.status === "printed" && (
                           <div className="icons">
-                            <ClipboardList size={16} className="icon-button" />
+                            <ClipboardList size={24} className="icon-button" />
                           </div>
                         )}
                         {table.status === "running KOT" && (
                           <div className="icons">
-                            <Printer size={16} className="icon-button" />
-                            <Eye size={16} className="icon-button" />
+                            <Printer size={24} className="icon-button" />
+                            <Eye size={24} className="icon-button" />
                           </div>
                         )}
                       </div>
@@ -128,5 +128,7 @@ const TableDashboard = () => {
 };
 
 export default TableDashboard;
+
+
 
 

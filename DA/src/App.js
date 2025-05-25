@@ -3,7 +3,7 @@ import Navbar from "./Common/Navbar";
 import Sidebar from "./Common/Sidebar";
 import ProductCard from "./Product/ProductCard";
 import TableDashboard from "./Table Management/TableDashboard";
-import PurchaseReceipt from "./Product/PurchaseReciept";
+import PurchaseReceipt from "./Receipt/PurchaseReciept";
 import CustomerList from "./CustomerDetails/CustomerList";
 import OrderDashboard from "./OrderStatus/OrderDashboard";
 import Dashboard from "./Dashboard/Dashboard";
@@ -24,7 +24,7 @@ function App() {
 
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<CustomerList />} />
+      <MainContainer children={<TableDashboard />} />
     </div>
   );
 }

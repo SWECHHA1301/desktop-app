@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProductCard.css';
-import PurchaseReceipt from './PurchaseReciept';
+import PurchaseReceipt from '../Receipt/PurchaseReciept';
 
 const ProductCard = () => {
   const products = new Array(16).fill({
