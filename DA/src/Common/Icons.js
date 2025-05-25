@@ -14,4 +14,10 @@ const UserAvatarIcon = () => (
   </svg>
 );
 
+export const FourPointStar = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <path d="M16.0002 1.33301L12.0002 11.9997L1.3335 15.9997L12.0002 19.9997L16.0002 30.6663L20.0002 19.9997L30.6668 15.9997L20.0002 11.9997L16.0002 1.33301Z" fill="#3658BF"/>
+</svg>
+);
+
 export default UserAvatarIcon;
