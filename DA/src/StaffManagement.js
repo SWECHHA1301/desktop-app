@@ -1,17 +1,16 @@
-import React from 'react'
-import './StaffManagement.css'
-import NativeDateRangePicker from "../Common/NativeDateRangePicker";
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import React from "react";
+import "./StaffManagement.css";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 const staffList = Array.from({ length: 8 }, (_, i) => ({
   id: i + 1,
-  name: 'Aram',
-  email: 'aram@gmail.com',
-  role: 'Staff',
+  name: "Aram",
+  email: "aram@gmail.com",
+  role: "Staff",
 }));
 export default function StaffManagement() {
   return (
-  <div className="staff-container">
+    <div className="staff-container">
       <div className="staff-box">
         <div className="staff-header">Staff Management</div>
         <table className="staff-table">
@@ -50,4 +49,4 @@ export default function StaffManagement() {
       </div>
     </div>
   );
-};
+}
