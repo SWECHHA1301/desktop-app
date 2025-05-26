@@ -166,11 +166,6 @@
   border: 2px solid #3658BF;
 }
 
-.payment-option.no-border {
-  border: none;
-  box-shadow: none;
-}
-
 .qr-code {
   display: flex;
   justify-content: center;
@@ -253,23 +248,17 @@
 
 .payment{
     display: inline-flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 24px;
-margin-left: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-left: 25px;
 }
 /* Custom Radio Button */
 .payment-option input[type="radio"] {
-  accent-color: #3658BF;
+  /* accent-color: #3658BF; */
   width: 24px;
   height: 24px;
   vertical-align: middle;
-}
-
-.cash-inputs div:first-child input {
-  border: 1px solid #3658BF;
-  border-radius: 10px;
-  padding: 4px 8px;
 }
 
 .split-grid {

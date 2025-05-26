@@ -8,7 +8,7 @@ import CustomerList from "./CustomerDetails/CustomerList";
 import OrderDashboard from "./OrderStatus/OrderDashboard";
 import Dashboard from "./Dashboard/Dashboard";
 import OrderTypeSwitch from "./Common/OrderTypeSwitch";
-import OrderHistory from "./OrderHistory/OrderHistory";
+
 import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
@@ -26,7 +26,7 @@ function App() {
 
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<OrderDashboard />} />
+      <MainContainer children={<PurchaseReceipt />} />
     </div>
   );
 }

@@ -40,7 +40,6 @@ const PaymentModal = ({ onClose }) => {
                     className="tip-box"
                     type="text"
                     value="₹00.00"
-                    readOnly
                     style={{
                       borderRadius: "20px",
                       border: "1px solid #797979",
@@ -67,17 +66,17 @@ const PaymentModal = ({ onClose }) => {
             <h3 className="payment-title">Payment Method</h3>
 
             <div
-              className="payment-option selected"
+              className="payment-option "
               style={{
                 borderRadius: "10px",
-                border: "2px solid #3658BF",
+                border: "2px solid black",
                 padding: "10px",
               }}
             >
               <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div className="payment-left">
                   <input type="radio" name="payment" defaultChecked />
-                  <strong style={{ color: "#3658BF", marginLeft: "6px" }}>UPI</strong>
+                  <strong style={{ color: "black", marginLeft: "6px" }}>UPI</strong>
                 </div>
                 <span>₹ 00.00</span>
               </label>
@@ -89,28 +88,78 @@ const PaymentModal = ({ onClose }) => {
             </div>
 
 
-            <div className="payment-option no-border">
-             <label >
-              <div className="payment-left">
-               <input type="radio" name="payment" />
-               <strong style={{ color: "#3658BF", marginLeft: "6px" }}>Card</strong>
-               </div>
-             </label>
-             <p>Text</p>
-           </div>
-
             <div
-              className="payment-option selected"
+              className="payment-option"
               style={{
                 borderRadius: "10px",
-                border: "2px solid #3658BF",
+                border: "2px solid black",
+                padding: "10px",
+              }}
+            >
+              <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div className="payment-left" style={{ display: "flex", alignItems: "center" }}>
+                  <input type="radio" name="payment" />
+                  <strong style={{ color: "black", marginLeft: "8px" }}>Card</strong>
+                  <div
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      marginLeft: "8px",
+                      backgroundImage: "url('/card.png')",
+                      backgroundSize: "contain"
+                      }}
+                  >
+                  </div>
+                </div>
+                <span>₹ 00.00</span>
+              </label>
+            
+              <p style={{ marginTop: "5px", marginBottom: "10px" }}>Swipe and Pay</p>
+            
+              <div className="card-info" style={{ display: "flex", justifyContent: "space-between", fontSize: "14px" }}>
+                <div>
+                  <div style={{ color: "#797979"}}>Card last 4 digits</div>
+                  <div style={{ fontWeight: "400" }}>XXXX-XXXX-XXXX-1234</div>
+                </div>
+                <div>
+                  <div style={{ color: "#797979"}}>Transaction ID</div>
+                  <div style={{ fontWeight: "400" }}>t266372XXXX</div>
+                </div>
+              </div>
+            
+              <div className="card-status" style={{ marginTop: "10px", marginLeft: "20px" }}>
+                <div style={{ color: "#797979", }}>Status</div>
+                <span
+                  style={{
+                    backgroundColor: "#EFE6C3",
+                    height: "28px",
+                    padding: "2px 8px",
+                    borderRadius: "6px",
+                    fontSize: "14px",
+                    fontWeight: "bold",
+                    display: "inline-block",
+                    marginTop: "4px",
+                    color: "#E38417"
+                  }}
+                >
+                  pending
+                </span>
+              </div>
+            </div>
+
+
+            <div
+              className="payment-option "
+              style={{
+                borderRadius: "10px",
+                border: "2px solid black",
                 padding: "10px",
               }}
             >
               <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div lassName="payment-left">
                   <input type="radio" name="payment" />
-                  <strong style={{ color: "#3658BF", marginLeft: "8px" }}>Cash</strong>
+                  <strong style={{ marginLeft: "8px" }}>Cash</strong>
                 </div>
                 <span>₹ 00.00</span>
               </label>
@@ -119,7 +168,7 @@ const PaymentModal = ({ onClose }) => {
               <div className="cash-inputs">
                 <div className="cash-row">
                   <span>Cash Received</span>
-                  <input type="text" value="₹ 00.00" readOnly className="cash-input"
+                  <input type="text" value="₹ 00.00"  className="cash-input"
                   style={{
                     border: "1px solid #797979"
                   }} />
@@ -133,17 +182,17 @@ const PaymentModal = ({ onClose }) => {
 
 
         <div
-            className="payment-option selected"
+            className="payment-option"
             style={{
               borderRadius: "10px",
-              border: "2px solid #3658BF",
+              border: "2px solid black",
               padding: "10px",
             }}
           >
             <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div lassName="payment-left">
                 <input type="radio" name="payment" />
-                <strong style={{ color: "#3658BF", marginLeft: "8px" }}>Split</strong>
+                <strong style={{ marginLeft: "8px" }}>Split</strong>
                 </div> 
                  <span>₹ 00.00</span>
             </label>
@@ -152,15 +201,15 @@ const PaymentModal = ({ onClose }) => {
             <div className="split-grid">
               <div className="split-row">
                 <span>Cash :</span>
-                <input type="text" value="₹ 00.00" readOnly className="split-input" />
+                <input type="text" value="₹ 00.00" className="split-input" />
               </div>
               <div className="split-row">
                 <span>UPI    :</span>
-                <input type="text" value="₹ 00.00" readOnly className="split-input" />
+                <input type="text" value="₹ 00.00"  className="split-input" />
               </div>
               <div className="split-row">
                 <span>Card   :</span>
-                <input type="text" value="₹ 00.00" readOnly className="split-input" />
+                <input type="text" value="₹ 00.00" className="split-input" />
               </div>
               <div className="split-row">
                 <span>Return :</span>
@@ -173,7 +222,10 @@ const PaymentModal = ({ onClose }) => {
           </div>
         </div>
 
-        <div className="modal-footer">
+        <div className="modal-footer"
+        style={{
+          backgroundColor:"#D4DAED"
+        }}>
           <button className="cancel-btn">Cancel</button>
           <button className="save-btn">Save</button>
           <button className="save-print-btn">Save & Print</button>
