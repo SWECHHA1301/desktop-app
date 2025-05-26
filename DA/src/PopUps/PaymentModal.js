@@ -1,6 +1,6 @@
 import React from "react";
 import {ChevronLeft, X} from "lucide-react";
-import {QrCode} from "./Common/Icons"
+import {QrCode} from "../Common/Icons"
 import "./PaymentModal.css";
 
 const PaymentModal = ({ onClose }) => {
@@ -110,7 +110,7 @@ const PaymentModal = ({ onClose }) => {
               <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div lassName="payment-left">
                   <input type="radio" name="payment" />
-                  <strong style={{ color: "#3658BF", marginLeft: "6px" }}>Cash</strong>
+                  <strong style={{ color: "#3658BF", marginLeft: "8px" }}>Cash</strong>
                 </div>
                 <span>₹ 00.00</span>
               </label>
@@ -143,7 +143,7 @@ const PaymentModal = ({ onClose }) => {
             <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div lassName="payment-left">
                 <input type="radio" name="payment" />
-                <strong style={{ color: "#3658BF", marginLeft: "6px" }}>Split</strong>
+                <strong style={{ color: "#3658BF", marginLeft: "8px" }}>Split</strong>
                 </div> 
                  <span>₹ 00.00</span>
             </label>

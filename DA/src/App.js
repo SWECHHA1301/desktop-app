@@ -10,7 +10,8 @@ import React from "react";
 // import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 // import OrderHistory from "./OrderHistory/OrderHistory";
 import MainContainer from "./MainContainer";
-import PaymentModal from "./PaymentModal";
+import PaymentModal from "./PopUps/PaymentModal";
+import ItemCancellation from "./PopUps/ItemCancellation";
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
 
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      {/* <MainContainer children={<PaymentModal />} /> */}
-      <PaymentModal />
+      <MainContainer children={<PaymentModal />} />
+      
     </div>
   );
 }
