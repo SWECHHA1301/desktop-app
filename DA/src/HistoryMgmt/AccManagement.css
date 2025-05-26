@@ -120,7 +120,8 @@ text-align: center;
 
 }
 
-.Account-section td ,th{
+.Account-section td ,
+.Account-section th{
     padding: 19px 0 19px 0;
     max-width: 140px;
     width: 100%;

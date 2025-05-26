@@ -14,7 +14,8 @@
     overflow-y: scroll;
 }
 
-.Tab-Section td ,th{
+.Tab-Section td ,
+.Tab-Section th{
     padding: 19px 0 19px 0;
     max-width: 140px;
     width: 100%;
@@ -112,7 +113,8 @@ height: 40px;
 @media screen and (max-width: 940px) {
    .tab-btn ,
    .Search-detail input,
-   .Tab-Section th, td{
+   .Tab-Section th, 
+   .Tab-Section td{
     font-size: 14px;
    }
   }
