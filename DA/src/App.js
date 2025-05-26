@@ -5,7 +5,7 @@ import React from "react";
 // import TableDashboard from "./Table Management/TableDashboard";
 // import PurchaseReceipt from "./Receipt/PurchaseReciept";
 // import CustomerList from "./CustomerDetails/CustomerList";
-// import OrderDashboard from "./OrderStatus/OrderDashboard";
+import OrderDashboard from "./OrderStatus/OrderDashboard";
 // import Dashboard from "./Dashboard/Dashboard";
 // import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 // import OrderHistory from "./OrderHistory/OrderHistory";
@@ -26,7 +26,7 @@ function App() {
 
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<PaymentModal />} />
+      <MainContainer children={<OrderDashboard />} />
       
     </div>
   );
