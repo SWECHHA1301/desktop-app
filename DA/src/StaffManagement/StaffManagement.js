@@ -27,7 +27,7 @@ export default function StaffManagement() {
   );
   return (
     <div className="staff-container">
-
+      
       <div className="staff-box">
         <div className="staff-header">Staff Management</div>
         
@@ -45,39 +45,45 @@ export default function StaffManagement() {
         <NativeDateRangePicker/>
          </div>
         </div>
-        <table className="staff-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Staff Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filterStaffList.map((staff, index) => (
-              <tr key={index}>
-                <td>{staff.id}</td>
-                <td className="staff-name">
-                  <img
+         
+       
+        <div className="staff-head">
+          
+              <p>#</p>
+              <div> </div>
+              <p>Staff Name</p>
+              <p>Email</p>
+              <p>Role</p>
+              <p>Actions</p>
+             
+           </div>
+
+        
+           
+
+           <div style={{overflowY:'scroll'}}>
+            {filterStaffList.map((item,index)=>(
+              <div className="staff-info"
+              key={index}>
+
+                <p>{item.id}</p>
+                 <p className="staff-profile"><img
                     src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
                     alt="avatar"
-                  />
-                  {staff.name}
-                </td>
-                <td>{staff.email}</td>
-                <td>
-                  <span className="staff-role">{staff.role}</span>
-                </td>
-                <td className="staff-actions">
-                  <FaEdit className="edit-icon" />
+                  /></p>
+                  <p>{item.name}</p>
+                   <p>{item.email}</p>
+                    <button>{item.role}</button>
+                     <p className="staff-actions">
+                       <FaEdit className="edit-icon" />
                   <FaTrash className="delete-icon" />
-                </td>
-              </tr>
+                     </p>
+              </div>
             ))}
-          </tbody>
-        </table>
+           </div>
+            
+          
+       
       
     </div>
   );
