@@ -29,7 +29,8 @@ function App() {
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
-        <MainContainer children={<Dashboard />}/>
+        {/* <MainContainer children={<Dashboard />}/> */}
+         <MainContainer children={<StaffManagement />}/>
        
     </div>
   );
