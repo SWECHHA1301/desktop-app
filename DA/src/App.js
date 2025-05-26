@@ -12,6 +12,7 @@ import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
+import AddSale from "./AddSale/AddSale";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
 
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<PurchaseReceipt />} />
+      <MainContainer children={<AddSale />} />
     </div>
   );
 }
