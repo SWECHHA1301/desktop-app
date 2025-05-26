@@ -13,7 +13,7 @@ import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
 import StaffManagement from "./StaffManagement/StaffManagement";
-
+import OrderHistory from './OrderHistory/OrderHistory'
 
 function App() {
   return (
@@ -30,7 +30,8 @@ function App() {
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
         {/* <MainContainer children={<Dashboard />}/> */}
-         <MainContainer children={<StaffManagement />}/>
+         {/* <MainContainer children={<StaffManagement />}/> */}
+         <MainContainer children={<OrderHistory/>}/>
        
     </div>
   );
