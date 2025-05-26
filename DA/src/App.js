@@ -2,17 +2,16 @@ import React from "react";
 // import Navbar from "./Common/Navbar";
 // import Sidebar from "./Common/Sidebar";
 // import ProductCard from "./Product/ProductCard";
-// import TableDashboard from "./Table Management/TableDashboard";
-// import PurchaseReceipt from "./Receipt/PurchaseReciept";
-// import CustomerList from "./CustomerDetails/CustomerList";
+import TableDashboard from "./Table Management/TableDashboard";
+import PurchaseReceipt from "./Receipt/PurchaseReciept";
+import CustomerList from "./CustomerDetails/CustomerList";
 import OrderDashboard from "./OrderStatus/OrderDashboard";
-// import Dashboard from "./Dashboard/Dashboard";
-// import OrderTypeSwitch from "./Common/OrderTypeSwitch";
-// import OrderHistory from "./OrderHistory/OrderHistory";
+import Dashboard from "./Dashboard/Dashboard";
+import OrderTypeSwitch from "./Common/OrderTypeSwitch";
+import OrderHistory from "./OrderHistory/OrderHistory";
 import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
-import ProductCard from "./Product/ProductCard";
 
 function App() {
   return (
@@ -27,8 +26,7 @@ function App() {
 
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<ProductCard />} />
-      
+      <MainContainer children={<OrderDashboard />} />
     </div>
   );
 }

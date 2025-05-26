@@ -87,21 +87,27 @@ const TableDashboard = () => {
                       table.status === "printed"
                         ? "printed"
                         : table.status === "running KOT"
-                        ? "kot"
-                        : "";
+                          ? "kot"
+                          : "";
 
                     return (
-                      <div key={i} className={`table-box ${statusClass}`}>
-                        {table.time ? (
-                          <>
-                            <div>{table.time}</div>
-                            <div>{table.id}</div>
-                            <div>₹{table.price}</div>
-                          </>
-                        ) : (
-                          <div className="empty-box">{table.id}</div>
-                        )}
+                      <div style={{
+                        position: 'relative'
+                      }} key={i} className={`table-box ${statusClass}`}>
+                        <div style={{
+                          textAlign: 'center'
+                        }}>
+                          {table.time ? (
+                            <>
+                              <div>{table.time}</div>
+                              <div>{table.id}</div>
+                              <div>₹{table.price}</div>
+                            </>
+                          ) : (
+                            <div className="empty-box">{table.id}</div>
+                          )}
 
+                        </div>
                         {/* Icons per status */}
                         {table.status === "printed" && (
                           <div className="icons">
@@ -128,6 +134,10 @@ const TableDashboard = () => {
 };
 
 export default TableDashboard;
+
+
+
+
 
 
 
