@@ -1,0 +1,84 @@
+.staff-container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1288px;
+ font-family: Arial, sans-serif;
+}
+
+.staff-box {
+  /* border-radius: 12px; */
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); */
+  overflow: hidden;
+}
+
+.staff-header {
+  font-size: 32px;
+  font-weight: bold;
+ color: #3658BF;
+ margin-bottom: 26px;
+ 
+}
+
+.staff-table {
+  width: 100%;
+  /* border-collapse: collapse; */
+  
+}
+.staff-table tr{
+    background-color: white;
+ border: 1px solid black;
+ border-radius: 10px;
+ margin-bottom: 8px;
+}
+
+.staff-table th {
+  padding: 20px 0;
+  text-align: center;
+  height: 70;
+}
+
+.staff-table td{
+    padding: 20px 92px;
+
+    text-align: center;
+  height: 70;
+}
+
+
+.staff-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.staff-name img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.staff-role {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+.staff-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.edit-icon {
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+.delete-icon {
+  color: #ef4444;
+  cursor: pointer;
+}

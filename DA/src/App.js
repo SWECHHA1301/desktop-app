@@ -12,6 +12,7 @@ import OrderDashboard from "./OrderStatus/OrderDashboard";
 import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
+import ProductCard from "./Product/ProductCard";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
 
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<OrderDashboard />} />
+      <MainContainer children={<ProductCard />} />
       
     </div>
   );
