@@ -1,5 +1,12 @@
 .add-sale-container {
   font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  max-width: 1318px;
+  height: 1520px;
+  display: flex;
+  flex-direction: column;
+
+ background-color: pink;
 }
 
 /* Header */
@@ -8,50 +15,72 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  width: 100%;
+  padding: 16px;
 }
 
 .breadcrumb {
   color: #3658BF;
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
+  align-items: center;
+  gap: 24px;
   flex-direction: row;
+  font-size: 16px;
+  line-height: 100%;
 }
 
 .save-button {
   background-color: #3658BF;
   color: white;
-  padding: 0.6rem 2rem;
-  font-size: 16px;
-  border-radius: 12px;
+  padding: 5px 8.5px 10px 8.5px;
+  font-size: 24px;
+  border-radius: 10px;
   border: 4px solid #3658BF;
   cursor: pointer;
+  max-width: 134px;
+  width:100%;
+ 
+ height: 49px;
+
 }
 
 /* Form Card */
 .form-box {
+  max-width: 857px;
+  height: 1415px;
   background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
+  /* padding: 0 24px; */
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .form-box h2 {
   color: #000;
+max-width:860px ;
+height: 60px;
 font-size: 24px;
 font-style: normal;
 font-weight: 700;
+padding : 10px 24px 0 24px;
+border-bottom: 1px solid #D4DAED;
 }
 
 /* Section Headers */
 .section {
-  margin-top: 2rem;
+  
+ 
+   padding: 16px 24px;
+   height: 128px;
 }
 
 .section-header {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  font-size: 18px;
+   font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  color: #000;
+  margin-bottom: 24px;
 }
 
 /* Info Row (Top Line) */
@@ -59,8 +88,11 @@ font-weight: 700;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  /* margin-top: 1rem;
+  margin-bottom: 1rem; */
+  padding: 8px 24px 8px 24px;
+  height: 58px;
+  border-bottom: 1px solid #D4DAED;
 }
 
 .info-row > div {
@@ -68,23 +100,36 @@ font-weight: 700;
 }
 
 /* Customer Box */
+
+
 .customer-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
-  background-color: #f4f4f4;
+  background-color:white;
   border-radius: 8px;
-}
+ border: 1px solid black;
+ height: 60px;
 
+}
+/* 
 .edit-btn {
   border: 1px solid #ccc;
   background: white;
   padding: 0.4rem 0.8rem;
   border-radius: 8px;
   cursor: pointer;
-}
+} */
 
+
+/* Item details section */
+.itemdetail-section{
+  height: 348px;
+  border-bottom: 1px solid #D4DAED;
+   border-top: 1px solid #D4DAED;
+   padding: 16px 24px;
+}
 /* Item Table */
 .item-table {
   width: 100%;
@@ -129,6 +174,12 @@ font-weight: 700;
   font-weight: bold;
 }
 
+.ordercharges-section{
+  height:189px ;
+  padding: 16px 24px;
+
+}
+
 /* Other Charges Grid */
 .charge-grid {
   display: grid;
@@ -144,9 +195,12 @@ font-weight: 700;
 }
 
 .total-amount {
-  margin-top: 1rem;
-  text-align: right;
+  height: 74px;
   font-weight: bold;
+  padding: 16px 24px;
+  border-bottom: 1px solid #D4DAED;
+  border-top: 1px solid #D4DAED;
+   max-width: 806px;
 }
 
 /* Payment Section */

@@ -15,18 +15,19 @@ export default function AddSale() {
     <div className="add-sale-container">
       <div className="header">
         <div className="breadcrumb">
+           <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
             <ChevronLeft style={{color: "white", width: "20px"}} /> <ChevronRight style={{color: "black", width: "20px"}}/>
-              Add Product</div>
+             </div> <p>Add Product</p></div>
         <button className="save-button">Save</button>
       </div>
-
+       
       <div className="form-box">
         <h2>Add Sale</h2>
 
         <div className="info-row">
-          <div><strong>Invoice No.</strong><div>1/24-25</div></div>
-          <div><strong>Date</strong><div>3/24/2025</div></div>
-          <div><strong>Billed By</strong><div>Airy</div></div>
+          <div><strong style={{color:'#939191'}}>Invoice No.</strong><div>1/24-25</div></div>
+          <div><strong style={{color:'#939191'}}>Date</strong><div>3/24/2025</div></div>
+          <div><strong style={{color:'#939191'}}>Billed By</strong><div>Airy</div></div>
         </div>
 
         <CustomerInfo />

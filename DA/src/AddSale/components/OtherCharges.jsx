@@ -2,7 +2,8 @@ import React from "react";
 
 export default function OtherCharges() {
   return (
-    <div className="section">
+    <>
+    <div className="ordercharges-section">
       <div className="section-header">Other Charges</div>
       <div className="charge-grid">
         <input placeholder="Shipping Charge" />
@@ -10,7 +11,11 @@ export default function OtherCharges() {
         <input placeholder="Packaging Charge" />
         <input placeholder="GST Rate" />
       </div>
-      <div className="total-amount">Total Amount: ₹18000.00</div>
+      
     </div>
+ <div className="total-amount"><button
+  style={{border:'1px solid black',borderRadius:'5px', padding:'16px',maxWidth:'809px',height:'42px'}}
+ >Total Amount: ₹18000.00</button></div>
+ </>
   );
 }

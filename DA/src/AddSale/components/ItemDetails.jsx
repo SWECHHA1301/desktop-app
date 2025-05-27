@@ -1,6 +1,6 @@
 export default function ItemDetails() {
   return (
-    <div className="section">
+    <div className="itemdetail-section">
       <div className="section-header">Item Details</div>
       <table className="item-table">
         <thead>
