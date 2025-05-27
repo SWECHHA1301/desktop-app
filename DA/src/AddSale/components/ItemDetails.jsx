@@ -1,3 +1,4 @@
+import {ChevronDown} from "lucide-react";
 export default function ItemDetails() {
   const rowStyle = {
     display: "flex",
@@ -31,10 +32,14 @@ export default function ItemDetails() {
 
   
 
-    <div style={{ padding: "16px 24px" ,borderTop:'2px solid #D4DAED',borderBottom:'2px solid #D4DAED',
+    <div style={{ padding: "16px 24px" ,borderTop:'1px solid #D4DAED',borderBottom:'1px solid #D4DAED',
        height: '348px' }}>
-      <div style={{ fontWeight: "500", fontSize: "16px", marginBottom: "12px" }}>
-        Item Details
+      <div style={{ fontWeight: "500", fontSize: "16px", marginBottom: "12px", display:'flex',
+        justifyContent:'space-between',alignItems:'center'
+      }}>
+
+        <p>Item Details</p>
+        <ChevronDown color="#939191"/>
       </div>
 
       {/* Header */}
