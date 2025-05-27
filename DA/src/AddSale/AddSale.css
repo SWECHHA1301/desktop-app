@@ -2,7 +2,7 @@
   font-family: 'Segoe UI', sans-serif;
   width: 100%;
   max-width: 1318px;
-  height: 1520px;
+  height: 1415px;
   display: flex;
   flex-direction: column;
 
@@ -70,7 +70,7 @@ border-bottom: 1px solid #D4DAED;
 /* Section Headers */
 .section {
   
- 
+   margin-bottom: 50px;
    padding: 16px 24px;
    height: 128px;
 }
@@ -234,12 +234,6 @@ border-bottom: 1px solid #D4DAED;
   cursor: pointer;
 }
 
-/* Delivery Section */
-.delivery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
 
 .delivery-grid input {
   width: 100%;

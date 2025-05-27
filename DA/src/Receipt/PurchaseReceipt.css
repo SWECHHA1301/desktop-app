@@ -483,6 +483,37 @@ height: 40px;
   border-bottom-right-radius: 20px;
 }
 
+.receipt-top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  background-color: #f5f7fc;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  font-size: 14px;
+}
+
+.receipt-top-left {
+  font-weight: 500;
+  padding-left: 4px;
+}
+
+.receipt-top-right {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.action-link {
+  color: #3658bf;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
 .receipt-summary-drawer {
   padding: 10px;
   margin-bottom: 12px;

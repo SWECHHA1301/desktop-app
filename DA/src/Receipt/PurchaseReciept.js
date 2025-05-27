@@ -202,6 +202,16 @@ const PurchaseReceipt = () => {
      borderColor: "#3658BF",
      borderRadius: 10,
   }}>
+
+<div className="receipt-top-actions">
+  <span className="receipt-top-left">Add</span>
+  <div className="receipt-top-right">
+    <span className="action-link">Discount</span>
+    <span className="action-link">Note</span>
+  </div>
+</div>
+
+
   <div className="receipt-summary-drawer">
     <div
       className="summary-toggle"

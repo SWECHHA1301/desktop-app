@@ -32,8 +32,8 @@ function App() {
       {/* <MainContainer children={<CustomerList />} /> */}
         {/* <MainContainer children={<Dashboard />}/> */}
          {/* <MainContainer children={<StaffManagement />}/> */}
-         {/* <MainContainer children={<OrderHistory/>}/> */}
-         <AddSale/>
+         <MainContainer children={<AddSale/>}/>
+         
        
     </div>
   );
