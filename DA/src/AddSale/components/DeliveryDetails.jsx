@@ -28,7 +28,7 @@ export default function ItemDetails() {
   const boldRight = { ...cellStyle, fontWeight: "bold", textAlign: "right" };
 
   return (
-    <div style={{ padding: "16px" }}>
+    <div style={{ padding: "16px" ,borderTop:'1px solid #D4DAED',borderBottom:'1px solid #D4DAED'}}>
       <div style={{ fontWeight: "600", fontSize: "16px", marginBottom: "12px" }}>
         Item Details
       </div>
