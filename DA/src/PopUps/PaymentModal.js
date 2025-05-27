@@ -39,8 +39,7 @@ const PaymentModal = ({ onClose }) => {
                       <input
                     className="tip-box"
                     type="text"
-                    value="₹00.00"
-                    readOnly
+                    defaultValue="₹00.00"
                     style={{
                       borderRadius: "20px",
                       border: "1px solid #797979",
@@ -89,15 +88,63 @@ const PaymentModal = ({ onClose }) => {
             </div>
 
 
-            <div className="payment-option no-border">
-             <label >
-              <div className="payment-left">
-               <input type="radio" name="payment" />
-               <strong style={{ color: "#3658BF", marginLeft: "6px" }}>Card</strong>
-               </div>
-             </label>
-             <p>Text</p>
-           </div>
+           <div
+  className="payment-option"
+  style={{
+    borderRadius: "10px",
+    border: "2px solid #3658BF",
+    padding: "10px",
+  }}
+>
+  <label style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+    <div className="payment-left" style={{ display: "flex", alignItems: "center" }}>
+      <input type="radio" name="payment" />
+      <strong style={{ color: "#3658BF", marginLeft: "8px" }}>Card</strong>
+      <div
+      style={{
+        width: "20px",
+        height: "20px",
+        marginLeft: "8px",
+        background: "url('PopUps/card.png')",
+        borderRadius: "4px",
+      }}
+    ></div>
+    </div>
+    <span>₹ 00.00</span>
+  </label>
+
+  <p style={{ marginTop: "5px", marginBottom: "10px" }}>Swipe and Pay</p>
+
+  <div className="card-info" style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", marginBottom: "5px", textAlign: "centre"}}>
+    <div>
+      <div style={{color: "#797979", fontWeight: "500"}}>Card last 4 digits</div>
+      <div style={{ fontWeight: "400", fontSize: "12px" }}>XXXX-XXXX-XXXX-1234</div>
+    </div>
+    <div>
+      <div style={{color: "#797979", fontWeight: "500"}}>Transaction ID</div>
+      <div style={{ fontWeight: "400", fontSize: "12px" }}>t266372XXXX</div>
+    </div>
+  </div>
+
+  <div className="card-status" style={{ marginTop: "10px",  marginLeft: "40px", fontSize: "12px", colo: "#797979" }}>
+    <div>Status</div>
+    <span
+      style={{
+        backgroundColor: "#F7DFB8",
+        color: "#E38417",
+        padding: "2px 8px",
+        borderRadius: "6px",
+        fontSize: "14px",
+        fontWeight: "bold",
+        display: "inline-block",
+        marginTop: "4px"
+      }}
+    >
+      pending
+    </span>
+  </div>
+</div>
+
 
             <div
               className="payment-option selected"
@@ -119,7 +166,9 @@ const PaymentModal = ({ onClose }) => {
               <div className="cash-inputs">
                 <div className="cash-row">
                   <span>Cash Received</span>
-                  <input type="text" value="₹ 00.00" readOnly className="cash-input"
+                  <input type="text"
+                   defaultValue="₹ 00.00"
+                  className="cash-input"
                   style={{
                     border: "1px solid #797979"
                   }} />
@@ -152,15 +201,15 @@ const PaymentModal = ({ onClose }) => {
             <div className="split-grid">
               <div className="split-row">
                 <span>Cash :</span>
-                <input type="text" value="₹ 00.00" readOnly className="split-input" />
+                <input type="text" defaultValue="₹ 00.00" className="split-input" />
               </div>
               <div className="split-row">
                 <span>UPI    :</span>
-                <input type="text" value="₹ 00.00" readOnly className="split-input" />
+                <input type="text" defaultValue="₹ 00.00"  className="split-input" />
               </div>
               <div className="split-row">
                 <span>Card   :</span>
-                <input type="text" value="₹ 00.00" readOnly className="split-input" />
+                <input type="text" defaultValue="₹ 00.00" className="split-input" />
               </div>
               <div className="split-row">
                 <span>Return :</span>

@@ -8,12 +8,11 @@ import CustomerList from "./CustomerDetails/CustomerList";
 import OrderDashboard from "./OrderStatus/OrderDashboard";
 import Dashboard from "./Dashboard/Dashboard";
 import OrderTypeSwitch from "./Common/OrderTypeSwitch";
-// import OrderHistory from "./OrderHistory/OrderHistory";
 import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
-import StaffManagement from "./StaffManagement/StaffManagement";
-import OrderHistory from './OrderHistory/OrderHistory'
+
+
 import AddSale from './AddSale/AddSale'
 
 function App() {
@@ -26,13 +25,13 @@ function App() {
       {/* <OrderDashboard /> */}
       {/* <Dashboard /> */}
       {/* <OrderTypeSwitch /> */}
-
+{/* <OrderHistory /> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
         {/* <MainContainer children={<Dashboard />}/> */}
          {/* <MainContainer children={<StaffManagement />}/> */}
-         <MainContainer children={<PurchaseReceipt />}/>
+         <MainContainer children={<PaymentModal />}/>
          
        
     </div>

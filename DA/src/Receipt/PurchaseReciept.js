@@ -124,7 +124,7 @@ const PurchaseReceipt = () => {
             : {}
         }
       >
-        {/* ⬇️ Move the onClick to the whole item-row */}
+     
         <div
           style={
             item.id === expandedItemId
@@ -135,7 +135,7 @@ const PurchaseReceipt = () => {
               : {}
           }
           className="item-row"
-          onClick={() => toggleExpand(item.id)} // 👈 Here!
+          onClick={() => toggleExpand(item.id)}
         >
           <div className="item-id">
             {expandedItemId === item.id ? (
@@ -149,7 +149,7 @@ const PurchaseReceipt = () => {
           <div className="item-price">₹{item.qty * item.price}</div>
           <button
             onClick={(e) => {
-              e.stopPropagation(); // ⛔ Prevent click bubbling to item-row
+              e.stopPropagation(); 
               handleRemove(item.id);
             }}
             className="remove-btn"

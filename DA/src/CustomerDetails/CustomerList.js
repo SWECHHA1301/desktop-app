@@ -45,7 +45,7 @@ export default function CustomerList() {
         <div key={index} className="drawer-card">
           <div
             className={`drawer-header ${
-              expandedIndex === index ? "selected" : ""
+              expandedIndex === index ? "list-selected" : ""
             }`}
             onClick={() => toggleDrawer(index)}
           >

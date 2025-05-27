@@ -77,7 +77,7 @@ flex-grow: 1;
     border: 1px solid black;
 }
 
-.selected {
+.list-selected {
   background: linear-gradient(270deg, #FFF 0%, rgba(154, 171, 223, 0.63) 92.79%, rgba(54, 88, 191, 0.25) 100%);
     border-left: 5px solid #3658BF;
 }
