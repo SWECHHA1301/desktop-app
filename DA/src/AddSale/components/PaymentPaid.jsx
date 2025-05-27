@@ -1,10 +1,11 @@
 import React from "react";
-import { AddPlus } from "../../Common/Icons";
-
+import {ChevronDown} from "lucide-react";
 export default function PaymentPaid() {
   return (
     <div className=" paymentpaid-section">
-      <div className="section-header">Payment Paid</div>
+      <div className="section-header"><p>Payment Paid</p>
+      <ChevronDown color="#939191"/>
+      </div>
       
      
       <div className="payment-grid">
@@ -18,8 +19,8 @@ export default function PaymentPaid() {
           }}>Payment</label>
 
          <div style={{display:'flex',flexDirection:'column',gap:'17px'}}>
-        <input placeholder="Cash" />
-       <input placeholder="Card" /></div></div>
+        <input placeholder="Cash" defaultValue='Cash'/>
+       <input placeholder="Card" defaultValue='Card'/></div></div>
 
        <div>
 <label style={{color:'#797979',fontSize:"14px",
@@ -29,8 +30,8 @@ export default function PaymentPaid() {
         <input placeholder="Amount" />
         <input placeholder="Amount" /></div></div>
         </div>
-        <button className="add-payment-btn"><AddPlus /> Add Payment Type</button>
+        <button className="add-payment-btn"><p>+ Add Payment Type</p></button>
       </div>
-    </div>
-  );
+ </div>
+ );
 }

@@ -1,49 +1,33 @@
 import React from "react";
-
+import {ChevronDown} from "lucide-react";
 export default function DeliveryDetails() {
-  const inputStyle = {
-    background: "#e8eafc",
-    border: "none",
-    borderRadius: "8px",
-    padding: "10px 12px",
-    fontSize: "14px",
-    width: "100%",
-    marginTop: "4px",
-    marginBottom: "16px",
-  };
-
   return (
-    <div style={{ padding: "1rem" }}>
-      <h3 style={{ marginBottom: "1rem" }}>Delivery Details</h3>
-
-      <div>
-        <label style={{ color: "#6b6b6b", fontSize: "14px" }}>
-          Buyers Order Number
-        </label>
-        <input type="text" value="8456600" style={inputStyle} readOnly />
-      </div>
-
-      <div>
-        <label style={{ color: "#6b6b6b", fontSize: "14px" }}>
-          Despatched Through
-        </label>
-        <input type="text" value="Speed Post" style={inputStyle} readOnly />
-      </div>
-
-      <div>
-        <label style={{ color: "#6b6b6b", fontSize: "14px" }}>
-          Delivery Note
-        </label>
-        <textarea
-          value="Glass,Handle with Care"
-          style={{
-            ...inputStyle,
-            height: "78px",
-            resize: "none",
-          }}
+    <div className="deliverydetails-section">
+      <div className="section-header">
+        <p>Delivery Details</p>
+         <ChevronDown color="#939191"/>
+          </div>
           
-        />
+      <div className="delivery-grid">
+
+        <div style={{display:'flex',flexDirection:'column',gap:'5px'}}>
+          <label for='ordernumber'>Buyers Order Number</label>
+        <input id='ordernumber' placeholder="Buyers Order Number" defaultValue="8456600" type=""/></div>
+
+        <div style={{display:'flex',flexDirection:'column',gap:'5px'}}>
+          <label for='Despatched'>Despatched Through</label>
+        <input  id='Despatched' placeholder="Despatched Through" defaultValue="Speed Post" type="text"/></div>
+       
+        <div style={{display:'flex',flexDirection:'column',gap:'5px'}}>
+         <label for="message">Delivery Note</label>
+          <input
+          style={{height:'78px' ,color:'black', textAlign:'left'
+          }}
+           id="message" defaultValue="Glass,Handle with Care" placeholder="Glass,Handle with Care"></input>
+
+        {/* <input placeholder="Delivery Note" defaultValue="Glass,Handle with Care" type="text"/> */}
+        </div>
       </div>
-    </div>
+</div>
   );
 }

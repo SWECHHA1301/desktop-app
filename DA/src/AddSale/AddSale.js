@@ -17,13 +17,13 @@ export default function AddSale() {
         <div className="breadcrumb">
            <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
             <ChevronLeft style={{color: "white", width: "20px"}} /> <ChevronRight style={{color: "black", width: "20px"}}/>
-             </div> <p>Add Product</p></div>
+             </div> <p>Add Sale</p></div>
         <button className="save-button"><p>Save</p></button>
       </div>
        
       <div className="form-box">
         <div style={{display:'flex',height: '60px',padding : '10px 24px ',alignItems:'center',justifyContent:'space-between',
-borderBottom: '1px solid #D4DAED'}}>
+         borderBottom: '1px solid #D4DAED'}}>
         <h2>Add Sale</h2>
         <ChevronDown color="#939191"/>
         </div>
