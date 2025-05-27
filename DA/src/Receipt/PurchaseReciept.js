@@ -196,17 +196,13 @@ const PurchaseReceipt = () => {
             </div>
           </div>
 
-          <div className="payment-section"
-          style={{
-     borderTopWidth: 5,
-     borderColor: "#3658BF",
-     borderRadius: 10,
-  }}>
+          <div className="payment-section">
 
 <div className="receipt-top-actions">
   <span className="receipt-top-left">Add</span>
   <div className="receipt-top-right">
     <span className="action-link">Discount</span>
+    <span className="action-link">Coupon Code</span>
     <span className="action-link">Note</span>
   </div>
 </div>

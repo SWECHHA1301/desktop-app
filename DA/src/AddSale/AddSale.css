@@ -88,8 +88,6 @@ font-weight: 700;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  /* margin-top: 1rem;
-  margin-bottom: 1rem; */
   padding: 8px 24px 8px 24px;
   height: 58px;
   border-bottom: 1px solid #D4DAED;
@@ -109,8 +107,8 @@ font-weight: 700;
   padding: 8px 16px;
   background-color:white;
   border-radius: 8px;
- border: 1px solid black;
- height: 60px;
+  border: 1px solid black;
+  height: 60px;
 }
 
 

@@ -32,7 +32,7 @@ function App() {
       {/* <MainContainer children={<CustomerList />} /> */}
         {/* <MainContainer children={<Dashboard />}/> */}
          {/* <MainContainer children={<StaffManagement />}/> */}
-         <MainContainer children={<AddSale/>}/>
+         <MainContainer children={<PurchaseReceipt />}/>
          
        
     </div>
