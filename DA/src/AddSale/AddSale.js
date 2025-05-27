@@ -3,7 +3,7 @@ import "./AddSale.css";
 import {
     ChevronLeft, ChevronRight
 } from "lucide-react";
-import {Pencile, Avatar} from "../Common/Icons"
+import {Pencile, Avatar, AddPlus} from "../Common/Icons"
 import CustomerInfo from "./components/CustomerInfo";
 import ItemDetails from "./components/ItemDetails";
 import OtherCharges from "./components/OtherCharges";

@@ -7,7 +7,7 @@ export default function ItemDetails() {
     padding: "8px 16px",
     borderRadius: "10px",
     marginBottom: "8px",
-    border: "1px solid #ccc",
+    border: "2px solid #000",
     fontSize: "14px",
   };
 
@@ -17,7 +17,7 @@ export default function ItemDetails() {
     justifyContent: "space-between",
     fontWeight: "bold",
     padding: "8px 16px",
-    border: "1px solid #000",
+    border: "2px solid #797979",
     borderRadius: "10px",
     marginBottom: "12px",
     fontSize: "14px",
@@ -31,7 +31,7 @@ export default function ItemDetails() {
 
   
 
-    <div style={{ padding: "16px 24px" ,borderTop:'1px solid #D4DAED',borderBottom:'1px solid #D4DAED',
+    <div style={{ padding: "16px 24px" ,borderTop:'2px solid #D4DAED',borderBottom:'2px solid #D4DAED',
        height: '348px' }}>
       <div style={{ fontWeight: "500", fontSize: "16px", marginBottom: "12px" }}>
         Item Details
@@ -75,6 +75,11 @@ export default function ItemDetails() {
             <option>Tax</option>
           </select>
         </div>
+      
+    
+      
+      
+
         <div style={{ ...cellStyle, color: "#797979"}}>9956.31 × 1 = 9956.3</div>
         <div style={boldRight}>₹ 9,198.73</div>
       </div>
@@ -91,6 +96,7 @@ export default function ItemDetails() {
           fontWeight: "500",
           display: "flex",
           gap: "8px",
+          marginTop: "14px",
         }}
       >
         + Add Row

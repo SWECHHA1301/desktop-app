@@ -1,4 +1,5 @@
 import React from "react";
+import { AddPlus } from "../../Common/Icons";
 
 export default function PaymentPaid() {
   return (
@@ -28,7 +29,7 @@ export default function PaymentPaid() {
         <input placeholder="Amount" />
         <input placeholder="Amount" /></div></div>
         </div>
-        <button className="add-payment-btn">+ Add Payment Type</button>
+        <button className="add-payment-btn"><AddPlus /> Add Payment Type</button>
       </div>
     </div>
   );

@@ -232,12 +232,14 @@ border-bottom: 1px solid #D4DAED;
 }
 
 .add-payment-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin-top: 16px;
-  align-self: flex-start;
+  padding: 3px 1px;
   background: white;
-  color: #2a4fff;
-  padding: 3px 0;
-  border: 1px solid #2a4fff;
+  color: #3658BF;
+  border: 1px solid #3658BF;
   border-radius: 5px;
   cursor: pointer;
   height: 30px;
