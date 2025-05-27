@@ -13,15 +13,10 @@ export default function OtherCharges() {
       </div>
       
     </div>
- <div style={{
-  display: "flex",
-  flexDirection: "row",
-  padding: "16px",
-
- }}><span
-  style={{border:'1px solid black',borderRadius:'5px', padding:'16px',width:'809px',height:'42px'}}
- >Total Amount: </span>
- <span >₹ 18000.00</span></div>
+ <div className="total-amount"><button
+  style={{border:'1px solid black',borderRadius:'5px', padding:' 8px 16px 16px 16px',width:'100%',height:'42px',
+  }}
+ >Total Amount: ₹18000.00</button></div>
  </>
   );
 }

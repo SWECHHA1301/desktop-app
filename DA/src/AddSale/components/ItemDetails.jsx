@@ -25,21 +25,25 @@ export default function ItemDetails() {
 
   const cellStyle = { flex: 1, textAlign: "left" };
 
-  const boldRight = { ...cellStyle, fontWeight: "bold", textAlign: "right" };
+  const boldRight = { ...cellStyle, fontWeight: "700", textAlign: "right" };
 
   return (
-    <div style={{ padding: "16px" }}>
-      <div style={{ fontWeight: "600", fontSize: "16px", marginBottom: "12px" }}>
+
+  
+
+    <div style={{ padding: "16px 24px" ,borderTop:'1px solid #D4DAED',borderBottom:'1px solid #D4DAED',
+       height: '348px' }}>
+      <div style={{ fontWeight: "500", fontSize: "16px", marginBottom: "12px" }}>
         Item Details
       </div>
 
       {/* Header */}
       <div style={headerStyle}>
-        <div style={cellStyle}>#</div>
+        <div style={{ ...cellStyle, color: "#797979", fontWeight: "600" }}>#</div>
         <div style={cellStyle}>Item Name</div>
-        <div style={{ ...cellStyle, color: "#256A11" }}>Discount in %</div>
-        <div style={cellStyle}>Tax in %</div>
-        <div style={cellStyle}>Subtotal</div>
+        <div style={{ ...cellStyle, color: "#256A11", fontWeight: "400" }}>Discount in %</div>
+        <div style={{ ...cellStyle, color: "#797979", fontWeight: "400" }}>Tax in %</div>
+        <div style={{ ...cellStyle, color: "#797979", fontWeight: "400" }}>Subtotal</div>
         <div style={boldRight}>Total Amount</div>
       </div>
 
@@ -48,8 +52,8 @@ export default function ItemDetails() {
         <div style={cellStyle}>#1</div>
         <div style={{ ...cellStyle, fontWeight: "600" }}>Samsung S10</div>
         <div style={{ ...cellStyle, color: "#256A11" }}>10 %</div>
-        <div style={cellStyle}>Gst@3.0%</div>
-        <div style={cellStyle}>9956.31 × 1 = 9956.3</div>
+        <div style={{ ...cellStyle, color: "#797979"}}>Gst@3.0%</div>
+        <div style={{ ...cellStyle, color: "#797979"}}>9956.31 × 1 = 9956.3</div>
         <div style={boldRight}>₹ 9,198.73</div>
       </div>
 
@@ -71,7 +75,7 @@ export default function ItemDetails() {
             <option>Tax</option>
           </select>
         </div>
-        <div style={cellStyle}>9956.31 × 1 = 9956.3</div>
+        <div style={{ ...cellStyle, color: "#797979"}}>9956.31 × 1 = 9956.3</div>
         <div style={boldRight}>₹ 9,198.73</div>
       </div>
 
@@ -111,5 +115,6 @@ export default function ItemDetails() {
         }}>₹ 18000.00</span>
       </div>
     </div>
+
   );
 }
