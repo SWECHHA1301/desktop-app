@@ -204,7 +204,7 @@ border-bottom: 1px solid #D4DAED;
 }
 
 .paymentpaid-section{
-  height: 205px;
+  height: 215px;
   padding: 16px 24px;
 }
 
@@ -212,7 +212,7 @@ border-bottom: 1px solid #D4DAED;
 .payment-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  
 }
 
 .payment-row {
@@ -234,25 +234,27 @@ border-bottom: 1px solid #D4DAED;
 }
 
 .add-payment-btn {
+  margin-top: 16px;
   align-self: flex-start;
   background: white;
   color: #2a4fff;
-  padding: 0.5rem 1rem;
+  padding: 3px 0;
   border: 1px solid #2a4fff;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   height: 30px;
   max-width: 394px;
+  width: 100%;
 }
 
-.deliverydetails-section{
+/* .deliverydetails-section{
   height: 287px;
   border-bottom: 1px solid #D4DAED;
   border-top: 1px solid #D4DAED;
   padding: 16px 24px;
 }
 /* Delivery Section */
-.delivery-grid {
+/* .delivery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
@@ -263,4 +265,4 @@ border-bottom: 1px solid #D4DAED;
   padding: 0.6rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-}
+} */ 
