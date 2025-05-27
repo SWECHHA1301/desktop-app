@@ -8,7 +8,7 @@ import CustomerInfo from "./components/CustomerInfo";
 import ItemDetails from "./components/ItemDetails";
 import OtherCharges from "./components/OtherCharges";
 import PaymentPaid from "./components/PaymentPaid";
-// import DeliveryDetails from "./components/DeliveryDetails";
+import DeliveryDetails from "./components/DeliveryDetails";
 
 export default function AddSale() {
   return (
@@ -34,7 +34,7 @@ export default function AddSale() {
         <ItemDetails />
         <OtherCharges />
         <PaymentPaid />
-        {/* <DeliveryDetails /> */}
+        <DeliveryDetails />
       </div>
     </div>
   );

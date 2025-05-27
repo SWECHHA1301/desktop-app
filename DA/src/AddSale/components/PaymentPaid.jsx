@@ -2,16 +2,23 @@ import React from "react";
 
 export default function PaymentPaid() {
   return (
-    <div className="section">
+    <div className=" paymentpaid-section">
       <div className="section-header">Payment Paid</div>
+      
+     
       <div className="payment-grid">
+        <div style={{display:'flex',justifyContents:'space-between'}}>
+        <p>Payment</p>
+        <p>Amount</p></div>
         <div className="payment-row">
-          <div>Cash</div>
-          <input placeholder="₹18000.00" />
-        </div>
-        <div className="payment-row">
-          <div>Card</div>
-          <input />
+         
+        <input placeholder="Cash" />
+       
+        <input placeholder="Amount" />
+          
+        <input placeholder="Card" />
+        
+        <input placeholder="Amount" />
         </div>
         <button className="add-payment-btn">+ Add Payment Type</button>
       </div>

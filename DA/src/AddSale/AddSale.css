@@ -200,7 +200,12 @@ border-bottom: 1px solid #D4DAED;
   padding: 16px 24px;
   border-bottom: 1px solid #D4DAED;
   border-top: 1px solid #D4DAED;
-   max-width: 806px;
+   width: 100%;
+}
+
+.paymentpaid-section{
+  height: 205px;
+  padding: 16px 24px;
 }
 
 /* Payment Section */
@@ -211,17 +216,21 @@ border-bottom: 1px solid #D4DAED;
 }
 
 .payment-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  
 }
 
 .payment-row input {
-  flex: 1;
-  padding: 0.6rem;
-  border-radius: 6px;
+  height: 27px;
+ padding: 9px 16px;
+  border-radius: 5px;
   border: 1px solid #ccc;
+  background-color: #E3E6EE;
+  color:black;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .add-payment-btn {
@@ -232,8 +241,16 @@ border-bottom: 1px solid #D4DAED;
   border: 1px solid #2a4fff;
   border-radius: 8px;
   cursor: pointer;
+  height: 30px;
+  max-width: 394px;
 }
 
+.deliverydetails-section{
+  height: 287px;
+  border-bottom: 1px solid #D4DAED;
+  border-top: 1px solid #D4DAED;
+  padding: 16px 24px;
+}
 /* Delivery Section */
 .delivery-grid {
   display: grid;
