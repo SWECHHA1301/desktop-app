@@ -11,9 +11,10 @@ import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
+import AddSale from "./AddSale/AddSale";
 
 
-import AddSale from './AddSale/AddSale'
+
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
       {/* <MainContainer children={<CustomerList />} /> */}
         {/* <MainContainer children={<Dashboard />}/> */}
          {/* <MainContainer children={<StaffManagement />}/> */}
-         <MainContainer children={<PaymentModal />}/>
+         <MainContainer children={<AddSale />}/>
          
        
     </div>
