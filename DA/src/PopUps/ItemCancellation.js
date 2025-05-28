@@ -5,34 +5,30 @@ import {
   ChevronDown,} from "lucide-react";
   
 
-const kotsItem=[
-  
-  {number:'1', name:'Pizza', volume:'1', value:'240',},
-  {number:'2', name:'Item 2', volume:'1' ,value:'240',},
-  {number:'3', name:'Burger', volume:'1', value:'240',},
-   {number:'4', name:'Item4', volume:'1', value:'240',},
+const kotsItem = [
+  { number: '1', name: 'Pizza', volume: 1, value: 240 },
+  { number: '2', name: 'Item 2', volume: 1, value: 240 },
+  { number: '3', name: 'Burger', volume: 1, value: 240 },
+  { number: '4', name: 'Item4', volume: 1, value: 240 },
+];
 
-
-    {number:'1', name:'Pizza',volume:'1', value:'240',},
-  {number:'2', name:'Item 2', volume:'1', value:'240',},
-  {number:'3', name:'Burger', volume:'1', value:'240',},
-   {number:'4', name:'Item4', volume:'1', value:'240',},
-]
 
 export default function ItemCancellation() {
 
+const [refundType, setRefundType] = useState(null); // 'complete' or 'partial'
+
+
    const [items, setItems] = useState(kotsItem);
 
-  const handleQtyChange = (number, direction) => {
-    setItems((prev) =>
-      prev.map((item) => {
-        if (item.number !== number) return item;
-        const newQty = direction === 'inc' ? item.volume + 1 : Math.max(1, item.volume - 1);
-        const newPrice = item.value * (direction === 'inc' ? 2 : item.volume > 1 ? 0.5 : 1);
-        return { ...item, volume: newQty, value: newPrice };
-      })
-    );
-  };
+ const handleQtyChange = (number, direction) => {
+  setItems((prev) =>
+    prev.map((item) => {
+      if (item.number !== number) return item;
+      const newQty = direction === 'inc' ? item.volume + 1 : Math.max(1, item.volume - 1);
+      return { ...item, volume: newQty };
+    })
+  );
+};
   return (
     <>
     <div className='modals-overlay'>
@@ -97,16 +93,16 @@ export default function ItemCancellation() {
         </tr>
       </thead>
       <tbody>
-        {kotsItem.map((item, index)=>(
+        {items.map((item, index)=>(
           <tr key={index} className='items-in-table'>
              <td>{item.number}</td>
           <td>{item.name}</td>
 
-          <td><button onClick={() => handleQtyChange(item.id, 'dec')}>-</button>
+          <td><button onClick={() => handleQtyChange(item.number, 'dec')}>-</button>
                 <span>{item.volume}</span>
-                <button onClick={() => handleQtyChange(item.id, 'inc')}>+</button></td>
+                <button onClick={() => handleQtyChange(item.number, 'inc')}>+</button></td>
          
-          <td>{item.value}</td>
+          <td>{item.value * item.volume}</td>
     <td>action</td>
           </tr>
         ))}
@@ -119,34 +115,66 @@ export default function ItemCancellation() {
       <h2>Refund Amount</h2>
       <p>480</p>
       </div>
+<div className='complete-refund'>
+  <input
+    type='radio'
+    id='complete'
+    name='refund'
+    value='complete'
+    checked={refundType === 'complete'}
+    onChange={() => setRefundType('complete')}
+  />
+  <label htmlFor='complete' className={refundType === 'complete' ? 'selected' : ''}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+      <p>Complete Refund</p>
+      <p>480</p>
+    </div>
+  </label>
+</div>
 
-        <div className='complete-refund'>
-      <input type='radio'/>
-      <label>
-        <div style={{display:'flex',alignItems:'center', gap:'32px'}}><p>Complete Refund</p>
-        <p>480</p>
-        </div></label>
-     </div>
+{refundType === 'complete' && (
+  <div className='slider-section show'>
+    <p>Amount</p>
+    <p>:</p>
+    <p>100</p>
+  </div>
+)}
 
-     <div className='partial-refund'>
-      <input type='radio'/>
-      <label>
-        Partial Refund
-      
-        </label>
-     </div>
 
-     <div className='final-amount'>
-      <p>
-        Amount
-      </p>
-      <p>:</p>
-      <p>100</p>
-     </div>
+<div className='partial-refund'>
+  <input
+    type='radio'
+    id='partial'
+    name='refund'
+    value='partial'
+    checked={refundType === 'partial'}
+    onChange={() => setRefundType('partial')}
+  />
+  <label htmlFor='partial' className={refundType === 'partial' ? 'selected' : ''}>
+    Partial Refund
+  </label>
+</div>
+
+
+
+ 
+{refundType === 'partial' && (
+  <div className='slider-section show'>
+     <p>Amount</p>
+    <p>:</p>
+    <p>100</p>
+  </div>
+)}
+
+
+
+
+
      </div>
        
    
       </div>
+      
 
       <div className='state-btn'>
         

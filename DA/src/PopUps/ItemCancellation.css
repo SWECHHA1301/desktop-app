@@ -11,7 +11,6 @@
   z-index: 999;
   margin-top: 30px;
 }
-
 .cancellation-container{
     width: 100%;
     max-width: 556px;
@@ -253,30 +252,33 @@ display: flex;
     line-height: 100%;
 }
 
-.final-amount{
-max-width: 283px;
-height: 32px;
-display: flex;
-margin-top: 8px;
-gap: 24px;
-margin-left: 51px;
+.slider-section {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  background: #f8f8f8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
 }
-.final-amount :nth-of-type(1),
-.final-amount :nth-of-type(2){
-font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-    color:#797979;
+
+.slider-section.show {
+  max-height: 150px; /* adjust height as needed */
+  opacity: 1;
+  
 }
-.final-amount :nth-of-type(3){
-     border: 1px solid black;
-     border-radius: 10px;
-     height: 26px;
-     padding: 4px 10px;
-     display: flex;
-     align-items: center;
-     max-width: 97px;
+
+
+
+/* Blue color for checked radio */
+input[type='radio']:checked {
+  accent-color: #007bff;
 }
+
+
 
 .state-btn{
 max-width: 556px;
