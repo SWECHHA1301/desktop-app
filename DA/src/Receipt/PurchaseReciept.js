@@ -97,19 +97,21 @@ const PurchaseReceipt = () => {
           </div>
 
           <div className="receipt-body">
-           
+       
             <div className="receipt-h">
               <span>S.No</span>
               <span>Food Name</span>
               <span>QTY</span>
               <span>Amount</span>
             </div>
-           
+     
+       
             <div className="receipt-info">
               <span className="ss">KOT : 1</span>
               <span className="ss">Time : 17:05</span>
               <span className="ss">Items : {items.length}</span>
             </div>
+            
             <div className="item-list-scrollable">
   {items.map((item) => (
     <div key={item.id} style={{ marginBottom: "8px" }}>

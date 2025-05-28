@@ -203,6 +203,9 @@ height: 40px;
   padding-top: 8px;
 }
 
+
+
+
 .receipt-h {
   display: flex;
   width: 100%;
@@ -211,9 +214,9 @@ height: 40px;
   align-items: center;
   font-size: 14px;
   font-weight: 500;
+  background: #E6E8EF;
   margin-bottom: 8px;
   border-radius: 10px;
-  background: #E6E8EF;
   padding-left: 10px;
   padding-right: 10px;
    position: sticky;
