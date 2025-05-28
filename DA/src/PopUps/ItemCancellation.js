@@ -35,6 +35,7 @@ export default function ItemCancellation() {
   };
   return (
     <>
+    <div className='modals-overlay'>
     <div className='cancellation-container'>
       <div className='item-cancellation'>
       <h2>Item Cancellation</h2>
@@ -158,6 +159,7 @@ export default function ItemCancellation() {
         
       </div>
 
+    </div>
     </div>
     </>
   )
