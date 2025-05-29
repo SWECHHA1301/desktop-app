@@ -36,8 +36,8 @@ function App() {
       {/* <MainContainer children={<StaffManagement />}/> */}
 
       {/* <MainContainer children={<PaymentModal />}/> */}
-      <MainContainer children={<ItemCancellation />}/>
-      {/* <MainContainer children={<AddSale/>}/> */}
+      {/* <MainContainer children={<ItemCancellation />}/> */}
+      <MainContainer children={<AddSale/>}/>
          
       
       
