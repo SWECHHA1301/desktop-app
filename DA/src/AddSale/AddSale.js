@@ -40,9 +40,11 @@ export default function AddSale() {
           </div>
 
           <div className="info-row">
+            <div style={{display: 'flex',
+  justifyContent: 'space-between', maxWidth:'750px'}}>
             <div><strong style={{ color: '#939191' }}>Invoice No.</strong><div>1/24-25</div></div>
             <div><strong style={{ color: '#939191' }}>Date</strong><div>3/24/2025</div></div>
-            <div><strong style={{ color: '#939191' }}>Billed By</strong><div>Airy</div></div>
+            <div><strong style={{ color: '#939191' }}>Billed By</strong><div>Airy</div></div></div>
           </div>
 
           <CustomerInfo />

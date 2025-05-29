@@ -47,6 +47,7 @@
 
 /* Form Card */
 .form-box {
+  width: 100%;
   max-width: 857px;
   height: 1430px;
   background: #ffffff;
@@ -85,17 +86,16 @@ font-weight: 700;
 
 /* Info Row (Top Line) */
 .info-row {
-  display: flex;
-  justify-content: space-between;
+  
   font-size: 14px;
   padding: 8px 24px 8px 24px;
   height: 58px;
   border-bottom: 1px solid #D4DAED;
 }
 
-.info-row > div {
+/* .info-row > div {
   flex: 1;
-}
+} */
 
 /* Customer Box */
 
