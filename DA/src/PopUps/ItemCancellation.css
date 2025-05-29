@@ -129,7 +129,7 @@ font-weight: 500;
     line-height: 100%;
     color: #797979;
 }
-.item-list button{
+.kot-btn{
     max-width: 71px;
     height: 26px;
     padding: 8px 16px;
@@ -142,6 +142,11 @@ font-weight: 500;
     display: flex;
     align-items: center;
     
+}
+.kot-btn.active {
+  border: 2px solid   #3658BF; 
+  border-radius: 5px;
+  
 }
 
 
@@ -264,11 +269,37 @@ display: flex;
   margin-top: 8px;
 }
 
+.amount-input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.rupee-symbol {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #797979;
+  font-size: 14px;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+.amount-input {
+    font-weight: 400;
+    max-width: 97px;
+  padding-left: 20px; 
+  height: 26px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #797979;
+}
+
 
 
 /* Blue color for checked radio */
 input[type='radio']:checked {
-  accent-color: #007bff;
+  accent-color: #3658BF;
 }
 
 
@@ -319,6 +350,20 @@ padding-right: 24px;
 
 .highlight-kot {
   background-color: #FDEBEB;
-  border-top: 1px solid #FF8080;
-  border-bottom: 1px solid #FF8080;
+  border-top: 2px solid #FF8080;
+  border-bottom: 2px solid #FF8080;
+  color: #797979;
+}
+
+.cancel-icon {
+  color: #797979;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.cancel-icon:hover {
+  transform: scale(1.1);
+  color:  #ff4d4d;
 }
