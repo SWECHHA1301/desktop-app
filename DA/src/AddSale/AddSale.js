@@ -36,7 +36,7 @@ export default function AddSale() {
             borderBottom: '1px solid #D4DAED'
           }}>
             <h2>Add Sale</h2>
-            <ChevronDown color="#939191" />
+            
           </div>
 
           <div className="info-row">

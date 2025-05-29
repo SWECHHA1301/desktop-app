@@ -63,7 +63,6 @@
 
 .customersection {
    padding: 16px 24px;
-   height: 135px;
 }
 
 .section-header {
@@ -97,10 +96,8 @@
   height: 60px;
 }
 
-.ordercharges-section{
-  height:250px ;
+.ordercharges-section {
   padding: 16px 24px;
-
 }
 
 
@@ -129,6 +126,7 @@
   color: #797979;
   line-height: 100%;
 }
+
 .total-amount-btn {
   height: 74px;
   font-weight: bold;
@@ -139,7 +137,6 @@
 }
 
 .paymentpaid-section{
-  height: 225px;
   padding: 16px 24px;
 }
 
@@ -170,7 +167,6 @@
 
 
  .deliverydetails-section{
-  height: 310px;
   border-bottom: 1px solid #D4DAED;
   border-top: 1px solid #D4DAED;
   padding: 16px 24px;
