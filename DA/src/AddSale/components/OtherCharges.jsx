@@ -26,8 +26,10 @@ export default function OtherCharges({ setIsDrawerOpen }) {
         </div>
       </div>
 
-       <button className="add-payment-btn" onClick={() => setIsDrawerOpen(true)}>
-          <p>+ Add Payment Type</p>
+       <button className="add-payment-btn" onClick={() => setIsDrawerOpen(true)} style={{maxWidth:'390px'}}>
+           <div style={{display:'flex',flexDirection:'row',alignItems:'center',gap:'16.5px'}}>
+            <p className="add-payment-icon"><p>+</p></p>
+          <p> Add Payment Type</p></div>
         </button>
       
  </div>
