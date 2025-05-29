@@ -8,7 +8,6 @@
   align-items: center;
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -45,29 +44,23 @@
   align-items: center;
 }
 
-/* Form Card */
 .form-box {
   width: 100%;
   max-width: 857px;
   height: 1430px;
   background: #ffffff;
-  /* padding: 0 24px; */
   border-radius: 10px;
   box-shadow: 0 4px 4px #00000040;
 }
 
 .form-box h2 {
   color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+ }
 
 
-font-size: 24px;
-font-style: normal;
-font-weight: 700;
-
-
-}
-
-/* Section Headers */
 .customersection {
    padding: 16px 24px;
    height: 135px;
@@ -84,7 +77,6 @@ font-weight: 700;
   align-items: center;
 }
 
-/* Info Row (Top Line) */
 .info-row {
   
   font-size: 14px;
@@ -92,12 +84,6 @@ font-weight: 700;
   height: 58px;
   border-bottom: 1px solid #D4DAED;
 }
-
-/* .info-row > div {
-  flex: 1;
-} */
-
-/* Customer Box */
 
 
 .customer-box {
@@ -111,19 +97,13 @@ font-weight: 700;
   height: 60px;
 }
 
-
-
-
-
-
-
 .ordercharges-section{
   height:250px ;
   padding: 16px 24px;
 
 }
 
-/* Other Charges Grid */
+
 .charge-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -163,7 +143,6 @@ font-weight: 700;
   padding: 16px 24px;
 }
 
-/* Payment Section */
 .payment-grid {
   display: flex;
   flex-direction: column;
@@ -213,7 +192,7 @@ font-weight: 700;
   border-top: 1px solid #D4DAED;
   padding: 16px 24px;
 }
-/* Delivery Section */
+
  .delivery-grid {
   display: flex;
   flex-direction: column;
@@ -239,10 +218,6 @@ font-weight: 700;
   font-weight: 400;
 }
 
-
-
-/* Container for shifting + drawer */
-/* Container for shifting + drawer */
 .form-drawer-wrapper {
   display: flex;
   position: relative;
@@ -250,12 +225,10 @@ font-weight: 700;
   margin: 0 auto;
 }
 
-/* Shift .form-box to the left when drawer is open */
 .form-drawer-wrapper.drawer-open .form-box {
   transform: translateX(-320px);
 }
 
-/* Main form box */
 .form-box {
   width: 857px;
   height: 1530px;
@@ -266,10 +239,9 @@ font-weight: 700;
   z-index: 1;
 }
 
-/* Drawer aligned to form-box height */
 .payment-drawer {
   width: 320px;
-  height: 1430px; /* Matches form-box height */
+  height: 1430px; 
   background-color: #fff;
   border-left: 1px solid #ccc;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
@@ -283,7 +255,6 @@ font-weight: 700;
   justify-content: flex-start;
 }
 
-/* Drawer content */
 .drawer-header {
   display: flex;
   justify-content: space-between;
@@ -304,7 +275,6 @@ font-weight: 700;
   font-size: 14px;
 }
 
-/* Drawer Button */
 .add-payment-btn {
   background-color: white;
   color: #3658BF;
