@@ -8,8 +8,9 @@ export default function ItemDetails() {
     padding: "8px 16px",
     borderRadius: "10px",
     marginBottom: "8px",
-    border: "1px solid #ccc",
+    border: "2px solid #797979",
     fontSize: "14px",
+    height:'47px',
   };
 
   const headerStyle = {
@@ -18,10 +19,11 @@ export default function ItemDetails() {
     justifyContent: "space-between",
     fontWeight: "bold",
     padding: "8px 16px",
-    border: "1px solid #000",
+    border: "2px solid #000",
     borderRadius: "10px",
     marginBottom: "12px",
     fontSize: "14px",
+    height:'39px',
   };
 
   const cellStyle = { flex: 1, textAlign: "left" };
@@ -108,15 +110,19 @@ export default function ItemDetails() {
           flexDirection: "column",
           width: "390px",
           height: "27px",
+          marginTop:'24px',
+          gap:'8px'
         }}
       >
-        <span>Net Amount: </span>
+        <span style={{color:'#797979'}}>Net Amount: </span>
         <span 
         style={{
           borderRadius: "5px",
           border: "1px solid #D4DAED",
           backgroundColor: "#D4DAED",
           textAlign: "right",
+          padding:'0 16px',
+          height:'27px'
         }}>₹ 18000.00</span>
       </div>
     </div>

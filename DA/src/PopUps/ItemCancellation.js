@@ -5,33 +5,43 @@ import {
   ChevronDown,} from "lucide-react";
   
 
-const kotsItem=[
-  
-  {number:'1', name:'Pizza', volume:'1', value:'240',},
-  {number:'2', name:'Item 2', volume:'1' ,value:'240',},
-  {number:'3', name:'Burger', volume:'1', value:'240',},
-   {number:'4', name:'Item4', volume:'1', value:'240',},
+const kotsItem = [
+  { number: '1', name: 'Pizza', volume: 1, value: 240 },
+  { number: '2', name: 'Item 2', volume: 1, value: 340 },
+  { number: '3', name: 'Burger', volume: 1, value: 270 },
+  { number: '4', name: 'Item4', volume: 1, value: 140 },
 
+  { number: '5', name: 'Pizza', volume: 1, value: 440 },
+  { number: '6', name: 'Item 2', volume: 1, value: 210 },
+  { number: '7', name: 'Burger', volume: 1, value: 270 },
+  { number: '8', name: 'Item4', volume: 1, value: 150 },
+];
 
-    {number:'1', name:'Pizza',volume:'1', value:'240',},
-  {number:'2', name:'Item 2', volume:'1', value:'240',},
-  {number:'3', name:'Burger', volume:'1', value:'240',},
-   {number:'4', name:'Item4', volume:'1', value:'240',},
-]
+const KOT1 = kotsItem.filter(item => ['1', '7', '3', '5'].includes(item.number));
+
 
 export default function ItemCancellation() {
 
-   const [items, setItems] = useState(kotsItem);
+const [refundType, setRefundType] = useState(null); // 'complete' or 'partial'
 
-  const handleQtyChange = (number, direction) => {
-    setItems((prev) =>
-      prev.map((item) => {
-        if (item.number !== number) return item;
-        const newQty = direction === 'inc' ? item.volume + 1 : Math.max(1, item.volume - 1);
-        const newPrice = item.value * (direction === 'inc' ? 2 : item.volume > 1 ? 0.5 : 1);
-        return { ...item, volume: newQty, value: newPrice };
-      })
-    );
+const [items, setItems] = useState(kotsItem);
+  const [selectedKOTItems, setSelectedKOTItems] = useState([]);
+
+
+ const handleQtyChange = (number, direction) => {
+  setItems((prev) =>
+    prev.map((item) => {
+      if (item.number !== number) return item;
+      const newQty = direction === 'inc' ? item.volume + 1 : Math.max(1, item.volume - 1);
+      return { ...item, volume: newQty };
+    })
+  );
+};
+
+const handleKOTClick = (kotName) => {
+    if (kotName === 'KOT1') {
+      setSelectedKOTItems(KOT1.map(item => item.number));
+    }
   };
   return (
     <>
@@ -79,7 +89,7 @@ export default function ItemCancellation() {
      <div className='item-list'>
       <p>Item List</p>
       <p>:</p>
-      <button>KOT1</button>
+      <button onClick={() => handleKOTClick('KOT1')}>KOT1</button>
       <button>KOT2</button>
       <button>KOT3</button>
      </div>
@@ -96,17 +106,18 @@ export default function ItemCancellation() {
         </tr>
       </thead>
       <tbody>
-        {kotsItem.map((item, index)=>(
-          <tr key={index} className='items-in-table'>
-             <td>{item.number}</td>
+        {items.map((item, index)=>(
+          <tr key={index}
+                  className={`items-in-table ${selectedKOTItems.includes(item.number) ? 'highlight-kot' : ''}`}>
+             <td >{item.number}</td>
           <td>{item.name}</td>
 
-          <td><button onClick={() => handleQtyChange(item.id, 'dec')}>-</button>
-                <span>{item.volume}</span>
-                <button onClick={() => handleQtyChange(item.id, 'inc')}>+</button></td>
+          <td><button onClick={() => handleQtyChange(item.number, 'dec')}>-</button>
+                <span style={{padding:'0 23px'}}>{item.volume}</span>
+                <button onClick={() => handleQtyChange(item.number, 'inc')}>+</button></td>
          
-          <td>{item.value}</td>
-    <td>action</td>
+          <td>₹ {item.value * item.volume}</td>
+    <td></td>
           </tr>
         ))}
       </tbody>
@@ -116,36 +127,62 @@ export default function ItemCancellation() {
      <div className='refund-amount'>
       <div className='refund-head'>
       <h2>Refund Amount</h2>
-      <p>480</p>
+      {/* <p>480</p> */}
       </div>
+<div className='complete-refund'>
+  <input
+    type='radio'
+    id='complete'
+    name='refund'
+    value='complete'
+    checked={refundType === 'complete'}
+    onChange={() => setRefundType('complete')}
+  />
+  
+    <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+      <p>Complete Refund</p>
+      <p>₹ 480</p>
+    </div>
 
-        <div className='complete-refund'>
-      <input type='radio'/>
-      <label>
-        <div style={{display:'flex',alignItems:'center', gap:'32px'}}><p>Complete Refund</p>
-        <p>480</p>
-        </div></label>
-     </div>
+</div>
 
-     <div className='partial-refund'>
-      <input type='radio'/>
-      <label>
-        Partial Refund
-      
-        </label>
-     </div>
 
-     <div className='final-amount'>
-      <p>
-        Amount
-      </p>
-      <p>:</p>
-      <p>100</p>
-     </div>
+
+
+<div className='partial-refund'>
+  <input
+    type='radio'
+    id='partial'
+    name='refund'
+    value='partial'
+    checked={refundType === 'partial'}
+    onChange={() => setRefundType('partial')}
+  />
+  <label htmlFor='partial' className={refundType === 'partial' ? 'selected' : ''}>
+    Partial Refund
+  </label>
+</div>
+
+
+
+ 
+{refundType === 'partial' && (
+  <div className='slider-section show'>
+     <p > Amount</p>
+    <p>:</p>
+    <p>₹ 100</p>
+  </div>
+)}
+
+
+
+
+
      </div>
        
    
       </div>
+      
 
       <div className='state-btn'>
         

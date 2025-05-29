@@ -144,6 +144,8 @@ font-weight: 500;
     
 }
 
+
+
 .item-cancellation-table{
     width: 100%;
     max-width: 424px;
@@ -181,9 +183,11 @@ border-top:1px solid #939191;
 border-bottom:1px solid #939191 ;
 }
 .items-in-table td{
-    max-width: 50px;
+    padding: 8px 12px;
     text-align: center;
 }
+
+
 
 
 .refund-amount{
@@ -239,30 +243,35 @@ display: flex;
     line-height: 100%;
 }
 
-.final-amount{
-max-width: 283px;
-height: 32px;
-display: flex;
-margin-top: 8px;
-gap: 24px;
-margin-left: 51px;
+.slider-section {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  background: #f8f8f8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px 0 50px;
+  height: 32px;
+  color: #797979;
 }
-.final-amount :nth-of-type(1),
-.final-amount :nth-of-type(2){
-font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-    color:#797979;
+
+.slider-section.show {
+  max-height: 150px; /* adjust height as needed */
+  opacity: 1;
+  margin-top: 8px;
 }
-.final-amount :nth-of-type(3){
-     border: 1px solid black;
-     border-radius: 10px;
-     height: 26px;
-     padding: 4px 10px;
-     display: flex;
-     align-items: center;
-     max-width: 97px;
+
+
+
+/* Blue color for checked radio */
+input[type='radio']:checked {
+  accent-color: #007bff;
 }
+
+
 
 .state-btn{
 max-width: 556px;
@@ -306,4 +315,10 @@ padding-right: 24px;
     border-radius: 10px;
      align-items: center;
      padding: 11.5px 8px;
+}
+
+.highlight-kot {
+  background-color: #FDEBEB;
+  border-top: 1px solid #FF8080;
+  border-bottom: 1px solid #FF8080;
 }
