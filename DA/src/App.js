@@ -15,7 +15,7 @@ import AddSale from "./AddSale/AddSale";
 
 
 import StaffManagement from "./StaffManagement/StaffManagement";
-import AddSale from "./AddSale/AddSale";
+
 
 
 function App() {
@@ -36,11 +36,11 @@ function App() {
       {/* <MainContainer children={<StaffManagement />}/> */}
 
       {/* <MainContainer children={<PaymentModal />}/> */}
-      <MainContainer children={<ItemCancellation />}/>
-      {/* <MainContainer children={<AddSale/>}/> */}
+      {/* <MainContainer children={<ItemCancellation />}/> */}
+      <MainContainer children={<AddSale/>}/>
          
       
-      {/* <MainContainer children={<ItemCancellation />} /> */}
+      
     </div>
   );
 }
