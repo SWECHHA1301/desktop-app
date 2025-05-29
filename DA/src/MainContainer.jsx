@@ -6,11 +6,6 @@ const MainContainer = ({ children }) => {
     return (
         <div>
             <Navbar />
-            <div
-                style={{
-                    height: '8vh'
-                }}
-            />
             <div style={{
                 display: 'flex',
                 flexDirection: 'row'

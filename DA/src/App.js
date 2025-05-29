@@ -1,7 +1,7 @@
 import React from "react";
 // import Navbar from "./Common/Navbar";
 // import Sidebar from "./Common/Sidebar";
-// import ProductCard from "./Product/ProductCard";
+import ProductCard from "./Product/ProductCard";
 import TableDashboard from "./Table Management/TableDashboard";
 import PurchaseReceipt from "./Receipt/PurchaseReciept";
 import CustomerList from "./CustomerDetails/CustomerList";
@@ -13,6 +13,9 @@ import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
 import AddSale from "./AddSale/AddSale";
 
+
+import StaffManagement from "./StaffManagement/StaffManagement";
+import AddSale from "./AddSale/AddSale";
 
 
 function App() {
@@ -31,11 +34,13 @@ function App() {
       {/* <MainContainer children={<CustomerList />} /> */}
       {/* <MainContainer children={<Dashboard />}/> */}
       {/* <MainContainer children={<StaffManagement />}/> */}
+
       {/* <MainContainer children={<PaymentModal />}/> */}
       <MainContainer children={<ItemCancellation />}/>
       {/* <MainContainer children={<AddSale/>}/> */}
          
-       
+      
+      {/* <MainContainer children={<ItemCancellation />} /> */}
     </div>
   );
 }
