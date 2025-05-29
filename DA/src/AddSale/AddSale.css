@@ -237,3 +237,79 @@ font-weight: 700;
   font-size: 12px;
   font-weight: 400;
 }
+
+
+
+/* Container for shifting + drawer */
+/* Container for shifting + drawer */
+.form-drawer-wrapper {
+  display: flex;
+  position: relative;
+  max-width: 1318px;
+  margin: 0 auto;
+}
+
+/* Shift .form-box to the left when drawer is open */
+.form-drawer-wrapper.drawer-open .form-box {
+  transform: translateX(-320px);
+}
+
+/* Main form box */
+.form-box {
+  width: 857px;
+  height: 1430px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px #00000040;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Drawer aligned to form-box height */
+.payment-drawer {
+  width: 320px;
+  height: 1430px; /* Matches form-box height */
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Drawer content */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.drawer-close {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.drawer-body input {
+  padding: 9px 16px;
+  background-color: #E3E6EE;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Drawer Button */
+.add-payment-btn {
+  background-color: white;
+  color: #3658BF;
+  border: 1px solid #3658BF;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

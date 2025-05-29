@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1288px;
  font-family: Arial, sans-serif;
- height: 1200px;
+ max-height: calc(92vh - 48px);
 }
 
 .staff-box {
@@ -59,7 +59,7 @@
    align-items: center;
    padding: 0 24px;
    margin-bottom: 16px;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
    
 }
