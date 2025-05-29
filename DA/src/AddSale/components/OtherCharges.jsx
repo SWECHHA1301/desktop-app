@@ -1,6 +1,6 @@
 import React from "react";
 import {ChevronDown} from "lucide-react";
-export default function OtherCharges() {
+export default function OtherCharges({ setIsDrawerOpen }) {
   return (
     <>
     <div className="ordercharges-section">
@@ -25,6 +25,10 @@ export default function OtherCharges() {
         <input placeholder="GST Rate" />
         </div>
       </div>
+
+       <button className="add-payment-btn" onClick={() => setIsDrawerOpen(true)}>
+          <p>+ Add Payment Type</p>
+        </button>
       
  </div>
  <div className="total-amount-btn"><button

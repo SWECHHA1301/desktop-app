@@ -178,6 +178,7 @@ export default function ItemDetails() {
           width: "390px",
           height: "27px",
           gap: "8px",
+          marginBottom: "24px"
         }}
       >
         <span style={{ color: "#797979" }}>Net Amount: </span>
@@ -187,7 +188,7 @@ export default function ItemDetails() {
             border: "1px solid #D4DAED",
             backgroundColor: "#D4DAED",
             textAlign: "right",
-            padding: "0 16px",
+            padding: "0px 16px",
             height: "27px",
           }}
         >

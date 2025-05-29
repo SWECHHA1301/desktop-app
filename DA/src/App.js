@@ -11,8 +11,12 @@ import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
-import StaffManagement from "./StaffManagement/StaffManagement";
 import AddSale from "./AddSale/AddSale";
+
+
+import StaffManagement from "./StaffManagement/StaffManagement";
+
+
 
 function App() {
   return (
@@ -30,7 +34,13 @@ function App() {
       {/* <MainContainer children={<CustomerList />} /> */}
       {/* <MainContainer children={<Dashboard />}/> */}
       {/* <MainContainer children={<StaffManagement />}/> */}
-      <MainContainer children={<AddSale />} />
+
+      {/* <MainContainer children={<PaymentModal />}/> */}
+      {/* <MainContainer children={<ItemCancellation />}/> */}
+      <MainContainer children={<AddSale/>}/>
+         
+      
+      
     </div>
   );
 }

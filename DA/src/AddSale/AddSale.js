@@ -27,7 +27,8 @@ export default function AddSale() {
           <button className="save-button"><p>Save</p></button>
         </div>
 
-              <div className={`add-sale-container ${isDrawerOpen ? 'shift-left' : ''}`}>
+            <div className={`add-sale-container ${isDrawerOpen ? 'shift-left' : ''}`}>
+
         <div className="form-box">
           <div style={{
             display: 'flex', height: '60px', padding: '10px 24px',
@@ -46,7 +47,7 @@ export default function AddSale() {
 
           <CustomerInfo />
           <ItemDetails />
-          <OtherCharges />
+          <OtherCharges setIsDrawerOpen={setIsDrawerOpen} />
           <PaymentPaid setIsDrawerOpen={setIsDrawerOpen} />
           <DeliveryDetails />
         </div>
