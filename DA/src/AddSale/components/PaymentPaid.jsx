@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown ,Bell} from "lucide-react";
 
 export default function PaymentPaid({ setIsDrawerOpen }) {
   return (
@@ -18,7 +18,6 @@ export default function PaymentPaid({ setIsDrawerOpen }) {
               <input placeholder="Card" defaultValue='Card' />
             </div>
           </div>
-
           <div>
             <label style={{ color: '#797979', fontSize: "14px", fontWeight: '400' }}>Amount</label>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '17px' }}>
@@ -29,7 +28,9 @@ export default function PaymentPaid({ setIsDrawerOpen }) {
         </div>
 
         <button className="add-payment-btn" onClick={() => setIsDrawerOpen(true)}>
-          <p>+ Add Payment Type</p>
+          <div style={{display:'flex',flexDirection:'row',alignItems:'center',gap:'16.5px'}}>
+            <div className="add-payment-icon"><p>+</p></div>
+          <p> Add Payment Type</p></div>
         </button>
       </div>
     </div>

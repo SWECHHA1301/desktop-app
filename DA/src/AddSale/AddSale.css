@@ -167,24 +167,7 @@
   font-weight: 400;
 }
 
-.add-payment-btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 16px;
-  padding: 3px 1px;
-  background: white;
-  color: #3658BF;
-  border: 1px solid #3658BF;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 30px;
-  max-width: 394px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 
  .deliverydetails-section{
   height: 310px;
@@ -279,7 +262,29 @@
   background-color: white;
   color: #3658BF;
   border: 1px solid #3658BF;
-  height: 40px;
+  height: 30px;
   border-radius: 5px;
   cursor: pointer;
+   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 3px 1px;
+  max-width: 394px;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.add-payment-icon{
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: 2px solid #3658BF;
+ display: flex;
+ align-items: center;
+ justify-items: center;
+ padding: 0 0 3px 1px;
+ font-size: 20px;
 }
