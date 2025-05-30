@@ -1,0 +1,49 @@
+import React, { useState } from "react";
+import "./AddProduct.css";
+import ProductInfo from "./components/ProductInfo";
+import VariantDetails from "./components/VariantDetails";
+import VariantDrawer from "./components/VariantDrawer";
+import { ProductDetails } from './components/ProductDetails';
+import { InventoryDetails } from './components/InventoryDetails';
+import { CategorySection } from './components/CategorySection';
+import { TaxesSection } from './components/TaxesSection';
+import { InventoryStatus } from './components/InventoryStatus';
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+export default function AddProduct() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  return (
+    <div className="ap-wrapper">
+      <div className="ap-header">
+        <div className="ap-breadcrumb">
+          <ChevronLeft style={{ color: "white", width: "20px" }} />
+          <ChevronRight style={{ color: "black", width: "20px" }} />
+          <p>Add Product</p>
+        </div>
+        <button className="ap-save-btn">Save</button>
+      </div>
+
+      <div className={`ap-form-layout ${drawerOpen ? "drawer-open" : ""}`}>
+
+        <div className="ap-form-main">
+            <div className="ap-title">
+            <h2 >New Entry</h2>
+            </div>
+          <ProductInfo />
+          <ProductDetails />
+          <VariantDetails openDrawer={() => setDrawerOpen(true)} />
+          <InventoryDetails />
+          <CategorySection />
+          <TaxesSection />
+          <InventoryStatus />
+        </div>
+
+        {drawerOpen && (
+          <VariantDrawer closeDrawer={() => setDrawerOpen(false)} />
+        )}
+      </div>
+    </div>
+  );
+}

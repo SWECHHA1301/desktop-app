@@ -16,6 +16,7 @@ import AddSale from "./AddSale/AddSale";
 import StaffManagement from "./StaffManagement/StaffManagement";
 import OrderHistory from "./OrderHistory/OrderHistory";
 import AccManagement from "./HistoryMgmt/AccManagement";
+import AddProduct from "./AddProduct/AddProduct";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
       {/* <MainContainer children={<Dashboard />}/> */}
-      <MainContainer children={<StaffManagement />}/>
+      {/* <MainContainer children={<StaffManagement />}/> */}
 
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
@@ -43,8 +44,9 @@ function App() {
 
          
       
-  
+
       <MainContainer children={<OrderDashboard />}/>
+
     </div>
   );
 }
