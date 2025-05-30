@@ -33,12 +33,23 @@ function App() {
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
       {/* <MainContainer children={<Dashboard />}/> */}
-      {/* <MainContainer children={<StaffManagement />}/> */}
+      <MainContainer children={<StaffManagement />}/>
 
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
+<<<<<<< HEAD
       <MainContainer children={<AddProduct />} />
+=======
+    {/* <MainContainer children={<AddSale/>}/> */}
+   
+      
+
+         
+      
+  
+      <MainContainer children={<OrderDashboard />
+>>>>>>> 9718e795145176c10cdd3a845a5dd5c138a7f01b
     </div>
   );
 }
