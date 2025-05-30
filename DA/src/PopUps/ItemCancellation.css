@@ -253,11 +253,11 @@ display: flex;
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.4s ease;
-  background: #f8f8f8;
+  
   border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11.5px;
   padding: 0 16px 0 50px;
   height: 32px;
   color: #797979;

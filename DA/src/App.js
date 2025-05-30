@@ -37,14 +37,12 @@ function App() {
       {/* <MainContainer children={<AccManagement/>}/> */}
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
-<<<<<<< HEAD
-
+    
    {/* <MainContainer children={<OrderHistory/>}/> */}
-=======
-      {/* <MainContainer children={<OrderHistory/>}/> */}
->>>>>>> 19bbde72daec34d701308136a36d69847e28fa8d
+
+      
    
-        <MainContainer children={<AddProduct />}/>
+        <MainContainer children={<ItemCancellation/>}/>
 
 
     </div>
