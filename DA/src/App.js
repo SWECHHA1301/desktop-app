@@ -34,18 +34,14 @@ function App() {
       {/* <MainContainer children={<CustomerList />} /> */}
       {/* <MainContainer children={<Dashboard />}/> */}
       {/* <MainContainer children={<StaffManagement />}/> */}
-
+ {/* <MainContainer children={<AccManagement/>}/> */}
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
+   <MainContainer children={<OrderHistory/>}/>
    
-   
-      
+        {/* <MainContainer children={<AddProduct />}/> */}
 
-         
-      
-
-      <MainContainer children={<AddProduct/>}/>
 
     </div>
   );
