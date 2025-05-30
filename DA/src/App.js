@@ -11,7 +11,7 @@ import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
-import AddSale from "./AddSale/AddSale";
+
 
 import StaffManagement from "./StaffManagement/StaffManagement";
 import OrderHistory from "./OrderHistory/OrderHistory";
@@ -38,14 +38,10 @@ function App() {
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
-    {/* <MainContainer children={<AddSale/>}/> */}
+   
    
         <MainContainer children={<AddProduct />}/>
 
-         
-      
-
-      {/* <MainContainer children={<OrderDashboard />}/> */}
 
     </div>
   );
