@@ -1,6 +1,7 @@
 import React from "react";
 // import DateCalendar from '../Common/Calendar/DateCalendar';
 import "./AccManagement.css";
+import NativeDateRangePicker from "../Common/NativeDateRangePicker";
 const details = [
   {
     Number: "1",
@@ -66,7 +67,9 @@ export default function AccManagement() {
       <div className="Account-section">
         <div className="Account-nav">
           <h2 className="nav-title">Account Management</h2>
-          <div style={{ paddingBottom: "16px" }}>{/* <DateCalendar/> */}</div>
+          <div style={{ paddingBottom: "16px" }}>
+            <NativeDateRangePicker/>
+          </div>
         </div>
 
         <div className="trancation-info">
@@ -88,33 +91,48 @@ export default function AccManagement() {
             </button>
           </div>
 
-          <div className="main-tab">
-            <table>
-              <thead>
-                <tr style={{ borderRadius: "10px 10px 0 0" }}>
-                  <th>No.</th>
-                  <th>Order ID</th>
-                  <th>Order Date</th>
-                  <th>Order Type</th>
-                  <th>Payment Method</th>
-                  <th>Total Payment</th>
-                </tr>
-              </thead>
-              <tbody>
-                {details.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.Number}</td>
-                    <td>{item.Id}</td>
-                    <td style={{ color: "#3658BF" }}>{item.Date}</td>
-                    <td>{item.Type}</td>
-                    <td>{item.Method}</td>
-                    <td>{item.total}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+         <div className="main-tab">
+  <table className="table-header">
+    <thead >
+      <tr>
+        <th>No.</th>
+        <th>Order ID</th>
+        <th>Order Date</th>
+        <th>Order Type</th>
+        <th>Payment Method</th>
+        <th>Total Payment</th>
+      </tr>
+    </thead>
+  </table>
+  <div className="table-body-wrapper">
+    <table className="table-body">
+      <tbody>
+        {details.map((item, index) => (
+          <tr key={index}>
+            <td>{item.Number}</td>
+            <td>{item.Id}</td>
+            <td style={{ color: "#3658BF" }}>{item.Date}</td>
+            <td>{item.Type}</td>
+            <td>{item.Method}</td>
+            <td>{item.total}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
         </div>
+
+
+
+
+
       </div>
     </>
   );
