@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./AddProduct.css";
+import { PencilLine } from "../Common/Icons";
 import ProductInfo from "./components/ProductInfo";
 import VariantDetails from "./components/VariantDetails";
 import VariantDrawer from "./components/VariantDrawer";

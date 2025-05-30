@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, PencilLine } from "lucide-react";
+
 
 export default function VariantDetails({ openDrawer }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -11,7 +12,6 @@ export default function VariantDetails({ openDrawer }) {
   return (
     <div
       style={{
-        borderTop: "1px solid #D4DAED",
         borderBottom: "1px solid #D4DAED",
         padding: "16px",
         marginTop: "8px",
@@ -85,6 +85,7 @@ export default function VariantDetails({ openDrawer }) {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
+                  backgroundColor: "#D4DAED"
                 }}
               >
                 Red <span style={{ fontWeight: "bold" }}>x</span>
@@ -100,16 +101,17 @@ export default function VariantDetails({ openDrawer }) {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
+                  backgroundColor: "#D4DAED"
                 }}
               >
-                Blue <span style={{ fontWeight: "bold" }}>x</span>
+                Blue <span style={{ fontWeight: "bold", color: "#797979" }}>x</span>
               </span>
             </div>
 
             {/* Edit and Clear icons (for UI look) */}
             <div style={{ position: "absolute", top: "8px", right: "10px", display: "flex", gap: "10px" }}>
-              <span style={{ cursor: "pointer" }}>✎</span>
-              <span style={{ cursor: "pointer" }}>✖</span>
+              <span style={{ cursor: "pointer" }}><PencilLine style={{color: '#797979'}}/></span>
+              <span style={{ cursor: "pointer", color: "#3658BF" }}>✖</span>
             </div>
           </div>
 
@@ -118,7 +120,7 @@ export default function VariantDetails({ openDrawer }) {
             onClick={openDrawer}
             style={{
               border: "1px solid #3658BF",
-              color: "#2B50EC",
+              color: "#3658BF",
               backgroundColor: "transparent",
               padding: "8px 12px",
               borderRadius: "6px",
@@ -132,8 +134,7 @@ export default function VariantDetails({ openDrawer }) {
               maxWidth: "812px",
             }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "16px" }}>＋</span>
-            Add Variant Attributes
+            <span style={{ fontWeight: "bold", fontSize: "16px" }}>＋ Add Variant Attributes</span>
           </button>
         </>
       )}
