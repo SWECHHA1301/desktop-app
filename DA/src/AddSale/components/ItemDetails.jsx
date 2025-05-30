@@ -1,8 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+const initialRow = {
+  item1: {
+    itemName: '',
+    gst: '',
+    quantity: '',
+    discount: ''
+  }
+}
+
 export default function ItemDetails() {
-  const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState(initialRow);
   const [isExpanded, setIsExpanded] = useState(true);
   const contentRef = useRef(null);
   const [maxHeight, setMaxHeight] = useState("none");
@@ -16,7 +25,15 @@ export default function ItemDetails() {
   }, [isExpanded, rows]);
 
   const handleAddRow = () => {
-    setRows((prevRows) => [...prevRows, {}]);
+    setRows((prevRows) => ({
+      ...prevRows,
+      [`item${Object.keys(prevRows).length + 1}`]: {
+        itemName: '',
+        gst: '',
+        quantity: '',
+        discount: ''
+      }
+    }));
   };
 
   const rowStyle = {
@@ -47,6 +64,17 @@ export default function ItemDetails() {
 
   const cellStyle = { flex: 1, textAlign: "left" };
   const boldRight = { ...cellStyle, fontWeight: "700", textAlign: "right" };
+
+  const handleTextChange = (e, key) => {
+    const { name, value } = e.target;
+    setRows({
+      ...rows,
+      [key]: {
+        ...rows?.[key],
+        [name]: value
+      }
+    })
+  }
 
   return (
     <div
@@ -111,76 +139,54 @@ export default function ItemDetails() {
             marginBottom: "16px",
           }}
         >
-          {/* Static Row */}
-          <div style={rowStyle}>
-            <div style={cellStyle}>#1</div>
-            <div style={{ ...cellStyle, fontWeight: "600" }}>Samsung S10</div>
-            <div style={{ ...cellStyle, color: "#256A11" }}>10 %</div>
-            <div style={{ ...cellStyle, color: "#797979" }}>Gst@3.0%</div>
-            <div style={{ ...cellStyle, color: "#797979" }}>1</div>
-            <div style={{ ...cellStyle, color: "#797979" }}>
-              9956.31 × 1 = 9956.3
-            </div>
-            <div style={boldRight}>₹ 9,198.73</div>
-          </div>
-
-          {/* Input Row */}
-          <div style={rowStyle}>
-            <div style={cellStyle}>#2</div>
-            <div style={cellStyle}>
-              <select style={{ padding: "4px", borderRadius: "4px" }}>
-                <option>Item</option>
-              </select>
-            </div>
-            <div style={cellStyle}>
-              <select style={{ padding: "4px", borderRadius: "4px" }}>
-                <option>Discount</option>
-              </select>
-            </div>
-            <div style={cellStyle}>
-              <select style={{ padding: "4px", borderRadius: "4px" }}>
-                <option>Tax</option>
-              </select>
-            </div>
-            <div style={cellStyle}>
-              <select style={{ padding: "4px", borderRadius: "4px" }}>
-                <option>QTY</option>
-              </select>
-            </div>
-            <div style={{ ...cellStyle, color: "#797979" }}>
-              9956.31 × 1 = 9956.3
-            </div>
-            <div style={boldRight}>₹ 9,198.73</div>
-          </div>
 
           {/* Dynamic Rows */}
-          {rows.map((_, index) => (
+          {Object.keys(rows).map((key, index) => (
             <div key={index} style={rowStyle}>
-              <div style={cellStyle}>#{index + 3}</div>
+              <div style={cellStyle}>#{index + 1}</div>
               <div style={cellStyle}>
-                <select style={{ padding: "4px", borderRadius: "4px" }}>
-                  <option>Item</option>
-                </select>
+                <input
+                  value={
+                    rows?.[key].itemName
+                  }
+                  name="itemName"
+                  onChange={(e) => handleTextChange(e, key)}
+                />
               </div>
               <div style={cellStyle}>
-                <select style={{ padding: "4px", borderRadius: "4px" }}>
-                  <option>Discount</option>
-                </select>
+                <input
+                  value={
+                    rows?.[key].quantity
+                  }
+                  name="quantity"
+                  onChange={(e) => handleTextChange(e, key)}
+
+                />
               </div>
               <div style={cellStyle}>
-                <select style={{ padding: "4px", borderRadius: "4px" }}>
-                  <option>Tax</option>
-                </select>
+                <input
+                  value={
+                    rows?.[key].discount
+                  }
+                  name="discount"
+                  onChange={(e) => handleTextChange(e, key)}
+
+                />
               </div>
               <div style={cellStyle}>
-                <select style={{ padding: "4px", borderRadius: "4px" }}>
-                  <option>QTY</option>
-                </select>
+                <input
+                  value={
+                    rows?.[key].gst
+                  }
+                  name="gst"
+                  onChange={(e) => handleTextChange(e, key)}
+
+                />
               </div>
               <div style={{ ...cellStyle, color: "#797979" }}>
-                9956.31 × 1 = 9956.3
+                {rows?.[key].amount * rows?.[key].quantity}
               </div>
-              <div style={boldRight}>₹ 9,198.73</div>
+              <div style={boldRight}>₹ {rows?.[key].amount * rows?.[key].quantity}</div>
             </div>
           ))}
 
@@ -225,7 +231,7 @@ export default function ItemDetails() {
               textAlign: "right",
               padding: "0px 16px",
               height: "27px",
-              
+
             }}
           >
             ₹ 18000.00

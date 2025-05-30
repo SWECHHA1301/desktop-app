@@ -13,12 +13,9 @@ import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
 import AddSale from "./AddSale/AddSale";
 
-
 import StaffManagement from "./StaffManagement/StaffManagement";
-
-
-
-
+import OrderHistory from "./OrderHistory/OrderHistory";
+import AccManagement from "./HistoryMgmt/AccManagement";
 
 function App() {
   return (
@@ -40,13 +37,7 @@ function App() {
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
-    <MainContainer children={<AddSale/>}/>
-   
-      
-
-         
-      
-      
+      <MainContainer children={<OrderDashboard />} />
     </div>
   );
 }
