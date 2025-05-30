@@ -40,12 +40,12 @@ function App() {
 
     {/* <MainContainer children={<AddSale/>}/> */}
    
-      
+        <MainContainer children={<AddProduct />}/>
 
          
       
 
-      <MainContainer children={<OrderDashboard />}/>
+      {/* <MainContainer children={<OrderDashboard />}/> */}
 
     </div>
   );
