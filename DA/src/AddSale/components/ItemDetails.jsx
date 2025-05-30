@@ -1,14 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-
-export default function ItemDetails() {
-
-
-
-  
-  const [rows, setRows] = useState([]);
-
 const initialRow = {
   item1: {
     itemName: '',
@@ -73,7 +65,6 @@ export default function ItemDetails() {
   const cellStyle = { flex: 1, textAlign: "left" };
   const boldRight = { ...cellStyle, fontWeight: "700", textAlign: "right" };
 
-
   const handleTextChange = (e, key) => {
     const { name, value } = e.target;
     setRows({
@@ -84,7 +75,6 @@ export default function ItemDetails() {
       }
     })
   }
-
 
   return (
     <div
@@ -150,67 +140,10 @@ export default function ItemDetails() {
           }}
         >
 
-          {/* Static Row */}
-          <div style={rowStyle}>
-            <div style={cellStyle}>#1</div>
-            <div style={{ ...cellStyle, fontWeight: "600" }}>Samsung S10</div>
-            <div style={{ ...cellStyle, color: "#256A11" }}>10 %</div>
-            <div style={{ ...cellStyle, color: "#797979" }}>Gst@3.0%</div>
-            <div style={{ ...cellStyle, color: "#797979" }}>1</div>
-            <div style={{ ...cellStyle, color: "#797979" }}>
-              9956.31 × 1 = 9956.3
-            </div>
-            <div style={boldRight}>₹ 9,198.73</div>
-          </div>
-
-          {/* Input Row */}
-          <div style={rowStyle}>
-            <div style={cellStyle}>#2</div>
-
-
-
-
-            <div style={cellStyle}>
-              <select style={{ padding: "4px", borderRadius: "4px" }}>
-                <option>Item</option>
-              </select>
-            </div>
-
-
-
-
-            
-            <div style={cellStyle}>
-              <select style={{ padding: "4px", borderRadius: "4px" }}>
-                <option>Discount</option>
-              </select>
-            </div>
-            <div style={cellStyle}>
-              <select style={{ padding: "4px", borderRadius: "4px" }}>
-                <option>Tax</option>
-              </select>
-            </div>
-            <div style={cellStyle}>
-              <select style={{ padding: "4px", borderRadius: "4px" }}>
-                <option>QTY</option>
-              </select>
-            </div>
-            <div style={{ ...cellStyle, color: "#797979" }}>
-              9956.31 × 1 = 9956.3
-            </div>
-            <div style={boldRight}>₹ 9,198.73</div>
-          </div>
-
-
           {/* Dynamic Rows */}
           {Object.keys(rows).map((key, index) => (
             <div key={index} style={rowStyle}>
-
-              <div style={cellStyle}>#{index + 3}</div>
-
-
               <div style={cellStyle}>#{index + 1}</div>
-
               <div style={cellStyle}>
                 <input
                   value={
@@ -220,8 +153,6 @@ export default function ItemDetails() {
                   onChange={(e) => handleTextChange(e, key)}
                 />
               </div>
-
-              
               <div style={cellStyle}>
                 <input
                   value={
@@ -310,4 +241,3 @@ export default function ItemDetails() {
     </div>
   );
 }
-

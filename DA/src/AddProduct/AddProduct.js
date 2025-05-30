@@ -3,7 +3,7 @@ import "./AddProduct.css";
 import ProductInfo from "./components/ProductInfo";
 import VariantDetails from "./components/VariantDetails";
 import VariantDrawer from "./components/VariantDrawer";
-import { ProductDetails } from './components/ProductDetails';
+import { Details } from './components/Details';
 import { InventoryDetails } from './components/InventoryDetails';
 import { CategorySection } from './components/CategorySection';
 import { TaxesSection } from './components/TaxesSection';
@@ -32,7 +32,7 @@ export default function AddProduct() {
             <h2 >New Entry</h2>
             </div>
           <ProductInfo />
-          <ProductDetails />
+          <Details />
           <VariantDetails openDrawer={() => setDrawerOpen(true)} />
           <InventoryDetails />
           <CategorySection />
