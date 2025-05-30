@@ -44,7 +44,7 @@ function App() {
          
       
   
-      <MainContainer children={<OrderDashboard />
+      <MainContainer children={<OrderDashboard />}/>
     </div>
   );
 }
