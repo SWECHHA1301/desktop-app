@@ -113,11 +113,11 @@ const PurchaseReceipt = () => {
             </div>
             
             <div className="item-list-scrollable">
-  {items.map((item) => (
-    <div key={item.id} style={{ marginBottom: "8px" }}>
-      <div
-        style={
-          item.id === expandedItemId
+            {items.map((item) => (
+            <div key={item.id} style={{ marginBottom: "8px" }}>
+            <div
+            style={
+            item.id === expandedItemId
             ? {
                 borderLeftWidth: 5,
                 borderColor: "#3658BF",
@@ -263,7 +263,7 @@ const PurchaseReceipt = () => {
       </button>
     </div>
     <div className="receipt-actions">
-      <button className="btn kot-btn">
+      <button className="btn kot-btns">
         KOT <span>⏸</span>
       </button>
       <button className="btn proceed-btn">

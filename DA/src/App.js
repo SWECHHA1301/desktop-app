@@ -16,6 +16,7 @@ import AddSale from "./AddSale/AddSale";
 import StaffManagement from "./StaffManagement/StaffManagement";
 import OrderHistory from "./OrderHistory/OrderHistory";
 import AccManagement from "./HistoryMgmt/AccManagement";
+import AddProduct from "./AddProduct/AddProduct";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
-      <MainContainer children={<OrderDashboard />} />
+      <MainContainer children={<AddProduct />} />
     </div>
   );
 }
