@@ -18,6 +18,8 @@ import StaffManagement from "./StaffManagement/StaffManagement";
 
 
 
+
+
 function App() {
   return (
     <div className="app">
@@ -37,7 +39,7 @@ function App() {
 
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
-      <MainContainer children={<AddSale/>}/>
+    <MainContainer children={<AddSale/>}/>
          
       
       

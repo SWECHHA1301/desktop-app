@@ -27,7 +27,12 @@ export default function AddSale() {
           <button className="save-button"><p>Save</p></button>
         </div>
 
-            <div className={`add-sale-container ${isDrawerOpen ? 'shift-left' : ''}`}>
+            
+
+
+       <div className="form-drawer-wrapper">
+
+<div className={`drawer-wrapper ${isDrawerOpen ? 'shift-left' : ''}`}>
 
         <div className="form-box">
           <div style={{
@@ -38,7 +43,7 @@ export default function AddSale() {
             <h2>Add Sale</h2>
             <ChevronDown color="#939191" />
           </div>
-
+       
           <div className="info-row">
             <div style={{display: 'flex',
   justifyContent: 'space-between', maxWidth:'750px'}}>
@@ -53,7 +58,8 @@ export default function AddSale() {
           <PaymentPaid setIsDrawerOpen={setIsDrawerOpen} />
           <DeliveryDetails />
         </div>
-      </div>
+</div>
+
 
       {isDrawerOpen && (
         <div className="payment-drawer">
@@ -66,6 +72,10 @@ export default function AddSale() {
                       </button>
         </div>
       )}
+
+      </div>
+
+
     </div>
   );
 }
