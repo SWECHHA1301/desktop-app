@@ -63,7 +63,7 @@
   font-size: 18px;
 }
 
-.ap-section input,
+/* .ap-section input,
 .ap-section textarea {
   display: block;
   width: 100%;
@@ -74,7 +74,7 @@
   border: 1px solid #ccc;
   background: #E3E6EE;
   border-radius: 6px;
-}
+} */
 
 .ap-add-variant-btn {
   background: #fff;
