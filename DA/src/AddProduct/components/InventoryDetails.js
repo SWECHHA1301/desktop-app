@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp} from "lucide-react";
+import { BarcodeReader } from "../../Common/Icons";
 
 export function InventoryDetails() {
   const [isOpen, setIsOpen] = useState(true);
@@ -101,7 +102,7 @@ export function InventoryDetails() {
             >
               <input
                 type="text"
-                value="84562084566051"
+                defaultValue="84562084566051"
                 style={{
                   width: "300px",
                   padding: "8px",
@@ -109,7 +110,6 @@ export function InventoryDetails() {
                   border: "1px solid #ccc",
                   fontSize: "14px",
                 }}
-                readOnly
               />
               <span
                 style={{
@@ -121,7 +121,7 @@ export function InventoryDetails() {
               >
                 Assign Code
               </span>
-              <span style={{ fontSize: "18px", color: "#2B50EC" }}>📷</span>
+              <span style={{ fontSize: "18px", color: "#2B50EC" }}><BarcodeReader/></span>
             </div>
           </div>
 
@@ -140,9 +140,10 @@ export function InventoryDetails() {
               </label>
               <input
                 type="number"
-                value="20"
+                defaultValue="20"
                 style={{
-                  width: "140px",
+                  width: "321px",
+                  height: "27px",
                   padding: "8px",
                   borderRadius: "6px",
                   border: "1px solid #ccc",
@@ -164,9 +165,10 @@ export function InventoryDetails() {
               </label>
               <input
                 type="number"
-                value="10"
+                defaultValue="20"
                 style={{
-                  width: "140px",
+                  width: "321px",
+                  height: "27px",
                   padding: "8px",
                   borderRadius: "6px",
                   border: "1px solid #ccc",

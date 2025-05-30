@@ -44,11 +44,6 @@ export function TaxesSection() {
               fontSize: "14px",
               color: "#666",
               appearance: "none",
-              backgroundImage:
-                "url('data:image/svg+xml;utf8,<svg fill=\"gray\" height=\"16\" viewBox=\"0 0 24 24\" width=\"16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/></svg>')",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "right 10px center",
-              backgroundSize: "16px",
             }}
           >
             <option>HSN/SAC</option>
@@ -66,12 +61,6 @@ export function TaxesSection() {
               backgroundColor: "#F1F3F7",
               fontSize: "14px",
               color: "#666",
-              appearance: "none",
-              backgroundImage:
-                "url('data:image/svg+xml;utf8,<svg fill=\"gray\" height=\"16\" viewBox=\"0 0 24 24\" width=\"16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/></svg>')",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "right 10px center",
-              backgroundSize: "16px",
             }}
           >
             <option>GST @ 0.00%</option>
