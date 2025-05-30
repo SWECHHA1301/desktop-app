@@ -57,4 +57,17 @@ export const AddPlus = () => (
 </svg>
 );
 
+export const PencilLine = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none">
+<g clip-path="url(#clip0_1275_7403)">
+<path d="M4.44591 15.5227L15.9563 4.01236L14.3515 2.40758L2.84113 13.9179V15.5227H4.44591ZM5.38676 17.7926H0.571289V12.9771L13.5491 -0.000718534C13.7619 -0.213483 14.0506 -0.333008 14.3515 -0.333008C14.6524 -0.333008 14.9411 -0.213483 15.1539 -0.000718534L18.3646 3.20997C18.5773 3.4228 18.6969 3.71142 18.6969 4.01236C18.6969 4.3133 18.5773 4.60192 18.3646 4.81475L5.38676 17.7926ZM0.571289 20.0624H20.9999V22.3322H0.571289V20.0624Z" fill="#797979"/>
+</g>
+<defs>
+<clipPath id="clip0_1275_7403">
+<rect width="20.4286" height="22" fill="white" transform="translate(0.571289)"/>
+</clipPath>
+</defs>
+</svg>
+);
+
 export default UserAvatarIcon;

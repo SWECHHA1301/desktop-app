@@ -1,7 +1,7 @@
 .ap-wrapper {
   font-family: 'Segoe UI', sans-serif;
   padding: 16px;
-  max-width: 1400px;
+  max-width: 1520px;
   margin: auto;
 }
 
@@ -41,7 +41,7 @@
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 24px;
+  /* padding: 0 24px; */
   max-width: 860px;
   height: 1415px;
   width: 100%;
@@ -52,6 +52,9 @@
   font-weight: 700;
   height: 60px;
   border-bottom: 1px solid #D4DAED;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
 }
 
 
@@ -101,4 +104,16 @@
   background: #E3E6EE;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.btn-icon {
+    width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: 2px solid #3658BF;
+ display: flex;
+ align-items: center;
+ justify-items: center;
+ padding: 0 0 3px 1px;
+ font-size: 20px;
 }

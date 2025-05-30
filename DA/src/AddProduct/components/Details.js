@@ -3,8 +3,8 @@ export function Details() {
     <div
       style={{
         borderBottom: '1px solid #D4DAED',
-        padding: '16px',
-        marginTop: '8px',
+        padding: '16px 24px',
+        // marginTop: '8px',
       }}
     >
       <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px' }}>Details</h3>
