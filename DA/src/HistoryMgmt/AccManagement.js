@@ -94,7 +94,7 @@ export default function AccManagement() {
          <div className="main-tab">
   <table className="table-header">
     <thead >
-      <tr>
+      <tr style={{ borderRadius: "10px 10px 0 0", }}> 
         <th>No.</th>
         <th>Order ID</th>
         <th>Order Date</th>

@@ -8,11 +8,22 @@
 .Tab-Section{
     background-color: white;
     width: 100%;
-    border-radius: 10px;
+  
     padding: 24px;
     height: calc(92vh - 104px);
-    overflow-y: auto;
+    /* overflow-y: auto; */
     
+}
+
+.table-container {
+  width: 100%;
+ overflow: hidden;
+}
+
+.order-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
 }
 
 .Tab-Section td ,
@@ -26,12 +37,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+      white-space: nowrap;
 }
  
 .Tab-Section th{
 color: #306CFE;
-
+border-radius: 10px 10px 0 0;
 }
 .Tab-Section tr{
     display: flex;
@@ -40,16 +51,21 @@ justify-content: space-between;
   border-collapse: collapse;
   background-color: white;
 }
-.Tab-Section table{
- width:100%;
- 
 
-}
 .Tab-Section tr :nth-of-type(1){
     width: 100%;
     max-width: 60px;
 }
 
+.table-scroll {
+  max-height: 300px; 
+  overflow-y: auto;
+}
+
+.table-scroll table {
+  width: 100%;
+  table-layout: fixed;
+}
 .tab-sec {
     width: 100%;
     margin-bottom: 16px;
