@@ -35,12 +35,12 @@ function App() {
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
       {/* <MainContainer children={<Dashboard />}/> */}
-      {/* <MainContainer children={<StaffManagement />}/> */}
+      <MainContainer children={<StaffManagement />}/>
 
       {/* <MainContainer children={<PaymentModal />}/> */}
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
-    <MainContainer children={<AddSale/>}/>
+    {/* <MainContainer children={<AddSale/>}/> */}
    
       
 

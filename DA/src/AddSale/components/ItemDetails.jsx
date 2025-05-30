@@ -1,7 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+
 export default function ItemDetails() {
+
+
+
+  
   const [rows, setRows] = useState([]);
   const [isExpanded, setIsExpanded] = useState(true);
   const contentRef = useRef(null);
@@ -47,6 +52,9 @@ export default function ItemDetails() {
 
   const cellStyle = { flex: 1, textAlign: "left" };
   const boldRight = { ...cellStyle, fontWeight: "700", textAlign: "right" };
+
+
+  
 
   return (
     <div
@@ -127,11 +135,20 @@ export default function ItemDetails() {
           {/* Input Row */}
           <div style={rowStyle}>
             <div style={cellStyle}>#2</div>
+
+
+
+
             <div style={cellStyle}>
               <select style={{ padding: "4px", borderRadius: "4px" }}>
                 <option>Item</option>
               </select>
             </div>
+
+
+
+
+            
             <div style={cellStyle}>
               <select style={{ padding: "4px", borderRadius: "4px" }}>
                 <option>Discount</option>
@@ -157,11 +174,14 @@ export default function ItemDetails() {
           {rows.map((_, index) => (
             <div key={index} style={rowStyle}>
               <div style={cellStyle}>#{index + 3}</div>
+
               <div style={cellStyle}>
                 <select style={{ padding: "4px", borderRadius: "4px" }}>
                   <option>Item</option>
                 </select>
               </div>
+
+              
               <div style={cellStyle}>
                 <select style={{ padding: "4px", borderRadius: "4px" }}>
                   <option>Discount</option>
