@@ -17,6 +17,7 @@ import StaffManagement from "./StaffManagement/StaffManagement";
 import OrderHistory from "./OrderHistory/OrderHistory";
 import AccManagement from "./HistoryMgmt/AccManagement";
 import AddProduct from "./AddProduct/AddProduct";
+import ManageProduct from "./ManageProduct/ManageProduct";
 
 function App() {
   return (
@@ -41,10 +42,9 @@ function App() {
    {/* <MainContainer children={<OrderHistory/>}/> */}
 
       {/* <MainContainer children={<AddProduct/>}/> */}
-      <MainContainer children={<OrderDashboard />}/>
    
         {/* <MainContainer children={<ItemCancellation/>}/> */}
-
+ <MainContainer children={<ManageProduct/>}/>
 
     </div>
   );
