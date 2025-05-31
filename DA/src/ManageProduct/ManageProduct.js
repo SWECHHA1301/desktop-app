@@ -63,7 +63,7 @@ export default function ProductGrid() {
               backgroundColor: "#fff",
               borderRadius: "10px",
             //   padding: "10px",
-            maxMidth:'300px',
+            maxMidth:'323px',
             maxHeight:'293px',
               boxShadow: "4px 4px 4px #3658BF",
               
@@ -106,7 +106,7 @@ export default function ProductGrid() {
           style={{
             // padding: "10px 20px",
             width:'246px',
-            height:'50px',
+            height:'70px',
             backgroundColor: "#007bff",
             color: "#fff",
             border: "none",

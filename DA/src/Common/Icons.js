@@ -84,4 +84,10 @@ export const BarcodeReader = () => (
 </svg>
 );
 
+export const Barcode = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+<path d="M0.875 16.625V4.375H2.625V16.625H0.875ZM3.5 16.625V4.375H5.25V16.625H3.5ZM6.125 16.625V4.375H7V16.625H6.125ZM8.75 16.625V4.375H10.5V16.625H8.75ZM11.375 16.625V4.375H14V16.625H11.375ZM14.875 16.625V4.375H15.75V16.625H14.875ZM17.5 16.625V4.375H20.125V16.625H17.5Z" fill="black"/>
+</svg> 
+);
+
 export default UserAvatarIcon;

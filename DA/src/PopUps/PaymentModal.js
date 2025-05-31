@@ -43,7 +43,8 @@ const PaymentModal = ({ onClose }) => {
                     style={{
                       borderRadius: "20px",
                       border: "1px solid #797979",
-                      padding: "3px 8px"
+                      padding: "3px 8px",
+                      textAlign: "right"
                     }}
                    />
                     ) : (
@@ -209,10 +210,12 @@ const PaymentModal = ({ onClose }) => {
               </div>
               <div className="split-row">
                 <span>Card   :</span>
+              
                 <input type="text" defaultValue="₹ 00.00" className="split-input" />
               </div>
               <div className="split-row">
                 <span>Return :</span>
+                <span className="rupee-symbol">₹</span>
                 <span>₹ 00.00</span>
               </div>
           </div>
@@ -224,7 +227,7 @@ const PaymentModal = ({ onClose }) => {
 
         <div className="modal-footer">
           <button className="cancel-btn">Cancel</button>
-          <button className="save-btn">Save</button>
+          <button className="save-btns">Save</button>
           <button className="save-print-btn">Save & Print</button>
           <button className="save-ebill-btn">Save & eBill</button>
         </div>

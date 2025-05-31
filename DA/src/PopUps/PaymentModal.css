@@ -232,7 +232,7 @@
 
 
 .cancel-btn,
-.save-btn,
+.save-btns,
 .save-print-btn,
 .save-ebill-btn {
   padding: 8px 12px;
@@ -246,7 +246,7 @@
   border: 1px solid #ccc;
 }
 
-.save-btn,
+.save-btns,
 .save-print-btn,
 .save-ebill-btn {
   background: #3f51b5;
@@ -320,6 +320,8 @@ margin-left: 25px;
   width: 100px;
   text-align: right;
 }
+
+
 
 
 

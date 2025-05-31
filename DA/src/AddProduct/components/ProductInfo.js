@@ -10,10 +10,10 @@ export default function ProductInfo() {
       <div className="header"  onClick={() => setIsOpen(!isOpen)}>
         <h3 className="section-title">Product Info</h3>
         <div className="toggle-icon">
-          {isOpen ? <ChevronUp size={20} 
+          {isOpen ? <ChevronDown 
         style={{
           color: "#939191"
-          }}/> : <ChevronDown size={20} 
+          }}/> : <ChevronUp  
           style={{
             color: "#939191"}} />}
         </div>

@@ -14,24 +14,21 @@ const orders = [
 
 const OrderCard = ({ table, status, type, isSelected, onClick }) => (
   <div className={`order-container ${isSelected ? 'selected' : ''}`} onClick={onClick}>
-    <div className={`order-card ${status.toLowerCase()}`}>
-
+    <div className={`order-cards ${status.toLowerCase()}`}>
       <div className="order-header">
-        <span className="order-table">Table No.-{table}</span>
+        <span className="order-tables">Table No.-{table}</span>
         <div className="order-time">
-          <div style={{display:'flex'}}> <p>Time</p> <p>:</p></div>
-          <div style={{display:'flex'}}><p>Date</p> <p>:</p></div>
+          <div>Time :</div>
+          <div>Date :</div>
         </div>
       </div>
-       
-       <div style={{padding:'0 16px'}}>
+      <div style={{padding:'0 16px'}}>
       <div className="order-info">KOT-xxx | Bill-xx4</div>
-      <div className="order-type-row">
-        <span className="order-type">Type - {type}</span>
+      <div className="order-types-row">
+        <span className="order-types">Type - {type}</span>
         <span className={`order-status ${status.toLowerCase()}`}>{status}</span>
       </div>
       </div>
-
     </div>
   </div>
 );
@@ -47,7 +44,7 @@ export default function OrderDashboard() {
     : orders.filter(order => order.type === activeTab);
 
   return (
-    <div className="dashboard-order">
+    <div className="dashboard-orders">
       <div className="tabs">
         {['All', 'Dine in', 'Take Away'].map(tab => (
           <button
@@ -59,6 +56,7 @@ export default function OrderDashboard() {
           </button>
         ))}
       </div>
+      <div className="orders-scrollable">
       <div className="orders-grid">
         {filteredOrders.map((order, index) => (
           <OrderCard
@@ -69,9 +67,11 @@ export default function OrderDashboard() {
           />
         ))}
       </div>
+      </div>
     </div>
   );
 }
+
 
 
 
