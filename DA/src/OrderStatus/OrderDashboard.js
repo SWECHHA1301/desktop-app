@@ -15,18 +15,23 @@ const orders = [
 const OrderCard = ({ table, status, type, isSelected, onClick }) => (
   <div className={`order-container ${isSelected ? 'selected' : ''}`} onClick={onClick}>
     <div className={`order-card ${status.toLowerCase()}`}>
+
       <div className="order-header">
         <span className="order-table">Table No.-{table}</span>
         <div className="order-time">
-          <div>Time :</div>
-          <div>Date :</div>
+          <div style={{display:'flex'}}> <p>Time</p> <p>:</p></div>
+          <div style={{display:'flex'}}><p>Date</p> <p>:</p></div>
         </div>
       </div>
+       
+       <div style={{padding:'0 16px'}}>
       <div className="order-info">KOT-xxx | Bill-xx4</div>
       <div className="order-type-row">
         <span className="order-type">Type - {type}</span>
         <span className={`order-status ${status.toLowerCase()}`}>{status}</span>
       </div>
+      </div>
+
     </div>
   </div>
 );
