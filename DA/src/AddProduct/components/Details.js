@@ -18,10 +18,10 @@ export function Details() {
         }}
       >
         <h3 style={{ fontSize: "16px", fontWeight: "500", margin: 0 }}>Details</h3>
-        {isOpen ? <ChevronUp size={20} 
+        {isOpen ? <ChevronDown 
         style={{
           color: "#939191"
-          }}/> : <ChevronDown size={20} 
+          }}/> : <ChevronUp  
           style={{
             color: "#939191"}} />}
       </div>

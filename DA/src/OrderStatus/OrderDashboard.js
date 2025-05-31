@@ -14,7 +14,7 @@ const orders = [
 
 const OrderCard = ({ table, status, type, isSelected, onClick }) => (
   <div className={`order-container ${isSelected ? 'selected' : ''}`} onClick={onClick}>
-    <div className={`order-card ${status.toLowerCase()}`}>
+    <div className={`order-cards ${status.toLowerCase()}`}>
       <div className="order-header">
         <span className="order-table">Table No.-{table}</span>
         <div className="order-time">
@@ -23,8 +23,8 @@ const OrderCard = ({ table, status, type, isSelected, onClick }) => (
         </div>
       </div>
       <div className="order-info">KOT-xxx | Bill-xx4</div>
-      <div className="order-type-row">
-        <span className="order-type">Type - {type}</span>
+      <div className="order-types-row">
+        <span className="order-types">Type - {type}</span>
         <span className={`order-status ${status.toLowerCase()}`}>{status}</span>
       </div>
     </div>
@@ -42,7 +42,7 @@ export default function OrderDashboard() {
     : orders.filter(order => order.type === activeTab);
 
   return (
-    <div className="dashboard-order">
+    <div className="dashboard-orders">
       <div className="tabs">
         {['All', 'Dine in', 'Take Away'].map(tab => (
           <button

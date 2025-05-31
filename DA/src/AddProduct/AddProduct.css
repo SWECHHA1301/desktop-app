@@ -1,6 +1,6 @@
 .ap-wrapper {
   font-family: 'Segoe UI', sans-serif;
-  padding: 16px;
+  /* padding: 16px; */
   max-width: 1520px;
   margin: auto;
 }
@@ -127,7 +127,6 @@ textarea {
 
 .btn-group {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: 10px;
   gap: 8px;
