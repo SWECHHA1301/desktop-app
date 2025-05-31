@@ -13,8 +13,8 @@ export default function VariantDetails({ openDrawer }) {
     <div
       style={{
         borderBottom: "1px solid #D4DAED",
-        padding: "16px",
-        marginTop: "8px",
+        padding: "16px 24px",
+        // marginTop: "8px",
       }}
     >
       {/* Title Row with Chevron */}
@@ -27,21 +27,21 @@ export default function VariantDetails({ openDrawer }) {
           cursor: "pointer",
         }}
       >
-        <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px" }}>
+        <h3 style={{ fontSize: "16px", fontWeight: "600",  }}>
           Variant Details
         </h3>
         <span style={{ fontSize: "18px", userSelect: "none" }}>
-          {isOpen ? <ChevronDown /> : <ChevronUp />}
+          {isOpen ? <ChevronDown style={{color:"#939191"}}/> : <ChevronUp style={{color:"#939191"}} />}
         </span>
       </div>
 
       {/* Collapsible Section */}
       {isOpen && (
         <>
-          <label style={{ fontSize: "14px", marginBottom: "6px", display: "block" }}>
+          <label style={{ fontSize: "14px", marginBottom: "4px", marginTop:'24px',display: "block", color:'#797979'}}>
             Has Variant
           </label>
-          <div style={{ display: "flex", gap: "20px", marginBottom: "16px" }}>
+          <div style={{ display: "flex", gap: "20px", marginBottom: "16px" ,fontSize:'16px'}}>
             <label style={{ display: "flex", alignItems: "center", gap: "4px" }}>
               <input type="radio" name="variant" /> Yes
             </label>
@@ -60,7 +60,7 @@ export default function VariantDetails({ openDrawer }) {
               maxWidth: "812px",
               position: "relative",
               height: "99px",
-              padding: "16px 24px"
+              padding: "16px "
             }}
           >
             <label
@@ -129,12 +129,26 @@ export default function VariantDetails({ openDrawer }) {
               fontWeight: "500",
               display: "flex",
               alignItems: "center",
+              justifyContent:'center',
               gap: "6px",
               width: "100%",
               maxWidth: "812px",
+              height:'30px',
             }}
           >
-            <span style={{ fontWeight: "bold", fontSize: "16px" }}>＋ Add Variant Attributes</span>
+            <span style={{ fontWeight: "700", fontSize: "12px" ,display:'flex',gap:'16px', alignItems:'center'}}>
+              <p style={{
+                width: '20px',
+  height: '20px',
+  borderRadius:'50px',
+  border: '2px solid #3658BF',
+   fontSize: '20px',
+   display: 'flex',
+ alignItems: 'center',
+ justifyContent: 'center',
+paddingBottom:'2px'
+              }}><p>＋</p></p> 
+              <p>Add Variant Attributes</p></span>
           </button>
         </>
       )}

@@ -8,8 +8,8 @@ export function CategorySection() {
     <div
       style={{
         borderBottom: "1px solid #D4DAED",
-        padding: "16px",
-        marginTop: "8px",
+        padding: "16px 24px",
+        // marginTop: "8px",
       }}
     >
       {/* Title and toggle chevron */}
@@ -22,15 +22,15 @@ export function CategorySection() {
           cursor: "pointer",
         }}
       >
-        <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px" }}>
+        <h3 style={{ fontSize: "16px", fontWeight: "600",}}>
           Category
         </h3>
-        <span style={{ fontSize: "18px", userSelect: "none" }}>{isOpen ? <ChevronDown /> : <ChevronUp />}</span>
+        <span style={{ fontSize: "18px", userSelect: "none" }}>{isOpen ? <ChevronDown style={{color:"#939191"}}/> : <ChevronUp style={{color:"#939191"}}/>}</span>
       </div>
 
       {/* Dropdown field */}
       {isOpen && (
-        <div>
+        <div style={{marginTop:'24px'}}>
           <select
             style={{
               width: "300px",
@@ -40,7 +40,7 @@ export function CategorySection() {
               backgroundColor: "#F1F3F7",
               fontSize: "14px",
               color: "#666",
-              marginTop: "8px",
+
             }}
           >
             <option value="">Category *</option>

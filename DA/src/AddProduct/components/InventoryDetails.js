@@ -9,8 +9,8 @@ export function InventoryDetails() {
     <div
       style={{
         borderBottom: "1px solid #D4DAED",
-        padding: "16px",
-        marginTop: "8px",
+        padding: "16px 24px",
+        // marginTop: "8px",
       }}
     >
       {/* Title row with chevron */}
@@ -23,20 +23,20 @@ export function InventoryDetails() {
           cursor: "pointer",
         }}
       >
-        <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px" }}>
+        <h3 style={{ fontSize: "16px", fontWeight: "600", }}>
           Inventory Detail
         </h3>
-        <span style={{ fontSize: "18px", userSelect: "none" }}>{isOpen ? <ChevronDown /> : <ChevronUp />}</span>
+        <span style={{ fontSize: "18px", userSelect: "none" }}>{isOpen ? <ChevronDown style={{color:"#939191"}}/> : <ChevronUp style={{color:"#939191"}} />}</span>
       </div>
 
       {isOpen && (
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" ,marginTop:'24px'}}>
           {/* Product Price */}
           <div>
             <label
               style={{
                 fontSize: "13px",
-                color: "#666",
+                color: "#797979",
                 display: "block",
                 marginBottom: "4px",
               }}
@@ -44,14 +44,18 @@ export function InventoryDetails() {
               Product Price *
             </label>
             <input
+            
               type="text"
               placeholder="Product Price *"
               style={{
-                width: "300px",
+                width: "321px",
                 padding: "8px",
-                borderRadius: "6px",
+                borderRadius: "5px",
                 border: "1px solid #ccc",
-                fontSize: "14px",
+                fontSize: "12px",
+                height:'27px',
+                color:"black",
+                backgroundColor:'#E3E6EE',
               }}
             />
           </div>
@@ -61,7 +65,7 @@ export function InventoryDetails() {
             <label
               style={{
                 fontSize: "13px",
-                color: "#666",
+                color: "#797979",
                 display: "block",
                 marginBottom: "4px",
               }}
@@ -72,11 +76,14 @@ export function InventoryDetails() {
               type="text"
               placeholder="Discount Percent"
               style={{
-                width: "300px",
+                width: "321px",
                 padding: "8px",
-                borderRadius: "6px",
+                borderRadius: "5px",
                 border: "1px solid #ccc",
-                fontSize: "14px",
+                fontSize: "12px",
+                 height:'27px',
+                color:"black",
+                backgroundColor:'#E3E6EE',
               }}
             />
           </div>
@@ -86,7 +93,7 @@ export function InventoryDetails() {
             <label
               style={{
                 fontSize: "13px",
-                color: "#666",
+               color: "#797979",
                 display: "block",
                 marginBottom: "4px",
               }}
@@ -104,11 +111,14 @@ export function InventoryDetails() {
                 type="text"
                 defaultValue="84562084566051"
                 style={{
-                  width: "300px",
+                  width: "321px",
                   padding: "8px",
-                  borderRadius: "6px",
+                  borderRadius: "5px",
                   border: "1px solid #ccc",
-                  fontSize: "14px",
+                  fontSize: "12px",
+                   height:'27px',
+                color:"black",
+                backgroundColor:'#E3E6EE',
                 }}
               />
               <span
@@ -131,7 +141,7 @@ export function InventoryDetails() {
               <label
                 style={{
                   fontSize: "13px",
-                  color: "#666",
+                   color: "#797979",
                   display: "block",
                   marginBottom: "4px",
                 }}
@@ -145,9 +155,11 @@ export function InventoryDetails() {
                   width: "321px",
                   height: "27px",
                   padding: "8px",
-                  borderRadius: "6px",
+                  borderRadius: "5px",
                   border: "1px solid #ccc",
-                  fontSize: "14px",
+                  fontSize: "12px",
+                      color:"black",
+                backgroundColor:'#E3E6EE',
                 }}
               />
             </div>
@@ -156,7 +168,7 @@ export function InventoryDetails() {
               <label
                 style={{
                   fontSize: "13px",
-                  color: "#666",
+                     color: "#797979",
                   display: "block",
                   marginBottom: "4px",
                 }}
@@ -167,12 +179,14 @@ export function InventoryDetails() {
                 type="number"
                 defaultValue="20"
                 style={{
-                  width: "321px",
+                  width: "301px",
                   height: "27px",
                   padding: "8px",
-                  borderRadius: "6px",
+                  borderRadius: "5px",
                   border: "1px solid #ccc",
-                  fontSize: "14px",
+                  fontSize: "12px",
+                      color:"black",
+                backgroundColor:'#E3E6EE',
                 }}
               />
             </div>

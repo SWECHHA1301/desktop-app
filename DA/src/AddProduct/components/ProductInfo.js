@@ -49,7 +49,7 @@ export default function ProductInfo() {
           padding: 16px 24px;
           border-top: 1px solid #d4daed;
           border-bottom: 1px solid #d4daed;
-          // margin-top: 8px;
+          margin-top: 8px;
           // height:302px;
         }
         .section-title {
@@ -64,7 +64,7 @@ export default function ProductInfo() {
         .left-column {
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 4px;
         }
         .field {
           display: flex;
@@ -130,6 +130,7 @@ export default function ProductInfo() {
           margin-top: 56px;
           display: flex;
           flex-direction: column;
+        
         }
         .input-select {
           border-radius: 5px;
