@@ -80,13 +80,13 @@ export default function ProductGrid() {
               }}
             />
             <div style={{margin:'8px',}}>
-            <p style={{ marginBottom:'12px', fontWeight: "700",fontSize:'16px', color:'#797979'}}>{product.name}</p>
-            <p style={{ marginBottom:'12px' ,fontWeight: "700",fontSize:'14px', color:'#797979'}}>Stock Quantity: <span style={{ color: "green" }}>{product.stock}</span></p>
+            <p style={{ marginBottom:'12px', fontWeight: "700",fontSize:'20px', color:'#797979'}}>{product.name}</p>
+            <p style={{ marginBottom:'10px' ,fontWeight: "700",fontSize:'16px', color:'#797979'}}>Stock Quantity: <span style={{ color: "green" }}>{product.stock}</span></p>
             <div style={{display:'flex',justifyContent:'space-between'}}>
             <p style={{fontWeight: "700",fontSize:'14px', color:'#797979'}}>{product.barcode}</p>
-            <p style={{ margin:'0 10px 0 0',fontWeight: "700",fontSize:'14px', color:'#797979'}}><del>{product.price}</del></p>
+            <p style={{ margin:'0 10px 0 0',fontWeight: "700",fontSize:'16px', color:'#797979'}}><del>{product.price}</del></p>
             </div>
-            <div style={{ margin: "5px 0", fontWeight: "bold", display:'flex', alignItems:'end' }}><p>{product.actualprice}</p></div>
+            <div style={{ margin:'0 10px 0 0', fontWeight: "700", fontSize:'24px',display:'flex', justifyContent:'end' ,alignItems:'center'}}><p>{product.actualprice}</p></div>
             </div>
           </div>
         ))}
