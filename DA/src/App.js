@@ -41,10 +41,10 @@ function App() {
     
    {/* <MainContainer children={<OrderHistory/>}/> */}
 
-      <MainContainer children={<AddProduct/>}/>
+      {/* <MainContainer children={<AddProduct/>}/> */}
    
         {/* <MainContainer children={<ItemCancellation/>}/> */}
- {/* <MainContainer children={<ManageProduct/>}/> */}
+ <MainContainer children={<ManageProduct/>}/>
 
     </div>
   );
