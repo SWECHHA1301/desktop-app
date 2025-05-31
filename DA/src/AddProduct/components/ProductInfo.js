@@ -1,79 +1,127 @@
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
 export default function ProductInfo() {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
-    <div className="product-info">
-      <h3 className="section-title">Product Info</h3>
+    <div className="product-info-wrapper">
+      {/* Header with toggle */}
+      <div className="header"  onClick={() => setIsOpen(!isOpen)}>
+        <h3 className="section-title">Product Info</h3>
+        <div className="toggle-icon">
+          {isOpen ? <ChevronUp size={20} 
+        style={{
+          color: "#939191"
+          }}/> : <ChevronDown size={20} 
+          style={{
+            color: "#939191"}} />}
+        </div>
+      </div>
 
-      {/* Top Grid */}
-      <div className="grid-row">
-        {/* Left Inputs */}
-        <div className="left-column">
-          <div className="field">
-            <label>Product Name *</label>
-            <input type="text" className="input-field" />
+      {/* Collapsible content */}
+      <div className={`collapsible ${isOpen ? "open" : "closed"}`}>
+        {/* Top Grid */}
+        <div className="grid-row">
+          <div className="left-column">
+            <div className="field">
+              <label>Product Name *</label>
+              <input type="text" className="input-field" />
+            </div>
+            <div className="field">
+              <label>Product Code</label>
+              <input type="text" className="input-field" />
+            </div>
           </div>
 
-          <div className="field">
-            <label>Product Code</label>
-            <input type="text" className="input-field" />
+          {/* Image Upload */}
+          <div className="upload-container">
+            <div className="upload-box">
+              <div className="image-placeholder" />
+              <div className="upload-plus">+</div>
+            </div>
           </div>
         </div>
 
-        {/* Image Upload */}
-        <div className="upload-container">
-          <div className="upload-box">
-            <div className="image-placeholder" />
-            <div className="upload-plus">+</div>
+        {/* Bottom Grid */}
+        <div className="grid-row">
+          <div className="left-column">
+            <label>Product Description</label>
+            <textarea className="input-field description-textarea" />
+          </div>
+
+          <div className="product-type-container">
+            <label>Product Type</label>
+            <select className="input-select">
+              <option>Product</option>
+              <option>Service</option>
+            </select>
           </div>
         </div>
       </div>
 
-      {/* Bottom Grid */}
-      <div className="grid-row">
-        <div className="left-column">
-          <label>Product Description</label>
-          <textarea className="input-field description-textarea" />
-        </div>
-
-        <div className="product-type-container">
-          <label>Product Type</label>
-          <select className="input-select">
-            <option>Product</option>
-            <option>Service</option>
-          </select>
-        </div>
-      </div>
-
-      {/* Responsive Styles */}
       <style jsx>{`
-        .product-info {
-          padding: 16px 24px;
+        .product-info-wrapper {
           border-top: 1px solid #d4daed;
           border-bottom: 1px solid #d4daed;
           margin-top: 8px;
-          // height:302px;
         }
+
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 24px;
+        }
+
         .section-title {
           font-size: 16px;
           font-weight: 600;
-          margin-bottom: 16px;
+          margin: 0;
         }
+
+        .toggle-icon {
+          cursor: pointer;
+        }
+
+        .collapsible {
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+          padding: 0 24px;
+        }
+
+        .collapsible.open {
+          max-height: 1000px;
+          padding-bottom: 16px;
+        }
+
+        .collapsible.closed {
+          max-height: 0;
+          padding-bottom: 0;
+        }
+
         .grid-row {
           display: grid;
           grid-template-columns: 1fr 160px;
+         
         }
+
         .left-column {
           display: flex;
           flex-direction: column;
-          gap: 4px;
+          gap: 8px;
         }
+
         .field {
           display: flex;
           flex-direction: column;
         }
+
         label {
           font-size: 14px;
           margin-bottom: 4px;
         }
+
         .input-field {
           width: 390px;
           height: 27px;
@@ -82,15 +130,18 @@ export default function ProductInfo() {
           border: 1px solid #ccc;
           background-color: #e3e6ee;
         }
+
         .description-textarea {
           height: 93px;
           resize: none;
         }
+
         .upload-container {
           display: flex;
           justify-content: center;
           align-items: flex-start;
         }
+
         .upload-box {
           width: 164px;
           height: 135px;
@@ -103,12 +154,14 @@ export default function ProductInfo() {
           align-items: center;
           justify-content: center;
         }
+
         .image-placeholder {
           width: 60px;
           height: 40px;
           background-color: #aaa;
           border-radius: 4px;
         }
+
         .upload-plus {
           position: absolute;
           bottom: -8px;
@@ -125,13 +178,14 @@ export default function ProductInfo() {
           font-size: 14px;
           cursor: pointer;
         }
+
         .product-type-container {
           margin-left: -194px;
           margin-top: 56px;
           display: flex;
           flex-direction: column;
-        
         }
+
         .input-select {
           border-radius: 5px;
           border: 1px solid #ccc;
@@ -140,19 +194,21 @@ export default function ProductInfo() {
           width: 360px;
         }
 
-        /* Responsive for small screens */
         @media (max-width: 768px) {
           .grid-row {
             grid-template-columns: 1fr;
           }
+
           .upload-box {
             right: 0;
             margin-top: 16px;
           }
+
           .product-type-container {
             margin-left: 0;
             margin-top: 16px;
           }
+
           .input-field,
           .input-select {
             width: 100%;
@@ -161,4 +217,4 @@ export default function ProductInfo() {
       `}</style>
     </div>
   );
-} 
+}

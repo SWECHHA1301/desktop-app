@@ -41,9 +41,7 @@
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  /* padding: 0 24px; */
   max-width: 860px;
-  /* height: 1415px; */
   width: 100%;
 }
 
@@ -75,7 +73,7 @@
   width: 320px;
   background: white;
   box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-  padding: 24px;
+  padding: 16px 24px;
   border-radius: 10px;
 }
 
@@ -83,15 +81,88 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 7px;
+  height: 45px;
+  border-bottom: 1px solid #D4DAED;
 }
 
-.ap-drawer-body input,
-.ap-drawer-body textarea {
-  width: 100%;
+.ap-drawer-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #D4DAED;
+  border-top: 1px solid #D4DAED;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 16px;
-  padding: 8px;
-  background: #E3E6EE;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #797979;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border-radius: 5px;
+  background: #E3E6EE;
+  font-size: 14px;
+  outline: none;
+}
+.input {
+  height: 27px;
+}
+
+textarea {
+  resize: vertical;
+  height: 93px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  gap: 8px;
+  text-align: center;
+}
+
+.add-more-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #3658BF;
+  background: white;
+  color: #3658BF;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  height: 28px;
+  width: 209px;
+}
+
+.save-btn {
+  padding: 8px 20px;
+  background: #3658BF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  height: 28px;
+  
+  
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
