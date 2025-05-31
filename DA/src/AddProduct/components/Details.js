@@ -55,7 +55,7 @@ export function Details() {
           <select
             style={{
               backgroundColor: "#E3E6EE",
-              border: "none",
+              border: "1px solid #ccc",
               padding: "9px 16px",
               borderRadius: "5px",
               width: "100%",

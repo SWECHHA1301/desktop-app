@@ -73,7 +73,7 @@
   width: 320px;
   background: white;
   box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-  padding: 16px 24px;
+  /* padding: 16px 24px; */
   border-radius: 10px;
 }
 
@@ -81,8 +81,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 7px;
-  height: 45px;
+  padding: 0 24px;
+  height: 60px;
   border-bottom: 1px solid #D4DAED;
 }
 
@@ -92,6 +92,8 @@
   flex-direction: column;
   border-bottom: 1px solid #D4DAED;
   border-top: 1px solid #D4DAED;
+  margin-top: 8px;
+  padding: 16px 24px;
 }
 
 .form-group {
@@ -101,7 +103,7 @@
 }
 
 .form-group label {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   font-size: 14px;
   font-weight: 400;
   color: #797979;
@@ -109,34 +111,41 @@
 
 input,
 textarea {
-  padding: 10px;
-  border-radius: 6px;
+  /* padding: 10px; */
+  /* border-radius: 6px; */
   border-radius: 5px;
   background: #E3E6EE;
   font-size: 14px;
   outline: none;
+  border: 1px solid #ccc;
+ padding: 0 10px;
 }
 .input {
   height: 27px;
+  width: 379px;
+ 
 }
 
 textarea {
   resize: vertical;
   height: 93px;
+  
 }
 
 .btn-group {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  
   gap: 8px;
   text-align: center;
+  padding: 16px 24px;
 }
 
 .add-more-btn {
   display: flex;
   align-items: center;
-  padding: 8px 12px;
+  justify-content: center;
+  /* padding: 8px 12px; */
   border: 1px solid #3658BF;
   background: white;
   color: #3658BF;
@@ -145,19 +154,22 @@ textarea {
   cursor: pointer;
   height: 28px;
   width: 209px;
+  font-weight: 700;
 }
 
 .save-btn {
-  padding: 8px 20px;
+  /* padding: 8px 20px; */
   background: #3658BF;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   font-weight: 500;
   cursor: pointer;
   height: 28px;
-  
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .close-btn {

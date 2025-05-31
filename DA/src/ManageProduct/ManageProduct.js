@@ -1,8 +1,7 @@
 
 import React from "react";
 import {ChevronLeft ,ChevronRight} from 'lucide-react'
-import { Barcode } from "../Common/Icons";
-
+import { BarcodeIcon } from "lucide-react";
 const products = Array.from({ length: 16 }, (_, i) => ({
   id: i,
   name: "Product Name",
@@ -10,7 +9,7 @@ const products = Array.from({ length: 16 }, (_, i) => ({
   barcode: "27845884583",
   price: "₹52",
   actualprice:'₹52',
-  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Cadbury_Dairy_Milk_Bar.jpg/320px-Cadbury_Dairy_Milk_Bar.jpg"
+  img: "https://th.bing.com/th/id/OIP.egsUk-BcmvCjh7-aFIlhhAHaHa?w=194&h=194&c=7&r=0&o=5&dpr=1.5&pid=1.7"
 }));
 
 export default function ProductGrid() {
@@ -33,7 +32,7 @@ export default function ProductGrid() {
   flexDirection:' row',
   
       }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" ,position:'relative'}}>
             <ChevronLeft style={{ color: "white", width: "20px" }} />
             <ChevronRight style={{ color: "black", width: "20px" }} />
           </div>
@@ -53,7 +52,8 @@ export default function ProductGrid() {
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
           gap: "20px",
-          marginTop:'32px'
+          marginTop:'32px',
+        
         }}
       >
         {products.map((product) => (
@@ -63,7 +63,7 @@ export default function ProductGrid() {
               backgroundColor: "#fff",
               borderRadius: "10px",
             //   padding: "10px",
-            maxMidth:'300px',
+            maxMidth:'323px',
             maxHeight:'293px',
               boxShadow: "4px 4px 4px #3658BF",
               
@@ -83,36 +83,50 @@ export default function ProductGrid() {
             />
             <div style={{margin:'8px',}}>
             <p style={{ marginBottom:'12px', fontWeight: "700",fontSize:'20px', color:'#797979'}}>{product.name}</p>
-            <p style={{ marginBottom:'10px' ,fontWeight: "700",fontSize:'16px', color:'#797979'}}>Stock Quantity: <span style={{ color: "green" }}>{product.stock}</span></p>
+
+            <p style={{ marginBottom:'10px' ,fontWeight: "700",fontSize:'16px', color:'#797979'}}>
+              Stock Quantity: <span style={{ color: "green" }}>{product.stock}</span></p>
+
             <div style={{display:'flex',justifyContent:'space-between'}}>
-            <p style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "8px",
-              fontWeight: "700",
-              fontSize:'14px',
-               color:'#797979'}}><Barcode />{product.barcode}</p>
+            <div style={{fontWeight: "700",fontSize:'14px', color:'#797979', display:'flex',gap:'4px'}}>
+             <BarcodeIcon size={20} style={{color:'black'}}/>
+              <p>{product.barcode}</p></div>
             <p style={{ margin:'0 10px 0 0',fontWeight: "700",fontSize:'16px', color:'#797979'}}><del>{product.price}</del></p>
             </div>
-            <div style={{ margin:'0 10px 0 0', fontWeight: "700", fontSize:'24px',display:'flex', justifyContent:'end' ,alignItems:'center'}}><p>{product.actualprice}</p></div>
+
+            <div style={{ margin:'0 10px 0 0', fontWeight: "700", fontSize:'24px',display:'flex', justifyContent:'end' ,alignItems:'center'}}>
+              <p>{product.actualprice}</p></div>
             </div>
           </div>
         ))}
-      </div>
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
+
+        
+      <div style={{display:'flex',position:'absolute', top:'90%',left:'77.5%' }}>
         <button
           style={{
-            padding: "10px 20px",
-            backgroundColor: "#3658BF",
+            // padding: "10px 20px",
+            width:'246px',
+            height:'70px',
+            backgroundColor: "#007bff",
             color: "#fff",
             border: "none",
             borderRadius: "20px",
-            cursor: "pointer"
+            cursor: "pointer",
+            backgroundColor:'#3658BF',
+            display:'flex',
+            gap:'16px',
+            alignItems:'center',
+            justifyContent:'center'
           }}
         >
-          + Add Products
+         <p> +</p><p>Add Products</p> 
         </button>
       </div>
+      </div>
+
+
+
+
     </div>
   );
 }

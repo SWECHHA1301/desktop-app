@@ -26,7 +26,7 @@ export function TaxesSection() {
           Taxes
         </h3>
         <span style={{ fontSize: "18px", userSelect: "none" }}>
-          {isOpen ? <ChevronDown style={{color:"#939191"}} /> : <ChevronUp  style={{color:"#939191"}}/>}
+            {isOpen ? <ChevronDown style={{ color: "#939191" }} size={20} /> : <ChevronUp style={{ color: "#939191" }} size={20} />}
         </span>
       </div>
 
@@ -34,12 +34,14 @@ export function TaxesSection() {
       {isOpen && (
         <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" ,marginTop:'24px'}}>
           {/* GST (HSN/SAC) */}
+          <div>
+            <p style={{fontSize:'14px',fontWeight:'400',color:'#797979',marginBottom:'4px'}}>GST</p>
           <select
             style={{
               width:'321px',
               height:'27px',
               backgroundColor: "#E3E6EE",
-              flex: "1",
+              // flex: "1",
               padding:' 0 16px',
               borderRadius: "5px",
             border: "1px solid #ccc ",
@@ -52,14 +54,16 @@ export function TaxesSection() {
             <option>HSN 1001</option>
             <option>SAC 9988</option>
           </select>
-
+</div>
           {/* GST Rate */}
+<div>
+            <p style={{fontSize:'14px',fontWeight:'400',color:'#797979',marginBottom:'4px'}}>GST Rate</p>
           <select
             style={{
-              width:'321px',
+              width:'301px',
               height:'27px',
               backgroundColor: "#E3E6EE",
-              flex: "1",
+              // flex: "1",
               padding:' 0 16px',
               borderRadius: "5px",
             border: "1px solid #ccc ",
@@ -73,6 +77,7 @@ export function TaxesSection() {
             <option>GST @ 12%</option>
             <option>GST @ 18%</option>
           </select>
+          </div>
         </div>
       )}
     </div>
