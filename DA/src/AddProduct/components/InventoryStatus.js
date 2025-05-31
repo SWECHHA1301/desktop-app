@@ -9,9 +9,9 @@ export function InventoryStatus() {
     <div
       style={{
         borderBottom: "1px solid #D4DAED",
-        padding: "16px",
-        marginTop: "8px",
-        borderRadius: "8px",
+        padding: "16px 24px",
+        // marginTop: "8px",
+        // borderRadius: "8px",
       }}
     >
       {/* Header with chevron */}
@@ -24,18 +24,21 @@ export function InventoryStatus() {
           cursor: "pointer",
         }}
       >
-        <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px" }}>
+        <h3 style={{ fontSize: "16px", fontWeight: "600", }}>
           Inventory
         </h3>
         <span style={{ fontSize: "18px", userSelect: "none" }}>
-          {isOpen ? <ChevronDown /> : <ChevronUp />}
+          {isOpen ? <ChevronDown  style={{color:"#939191"}}/> : <ChevronUp  style={{color:"#939191"}}/>}
         </span>
       </div>
 
       {/* Radio Inputs */}
       {isOpen && (
-        <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
-          <label style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+        
+        <div style={{ display: "flex", flexDirection:'column', marginTop:'24px'}}>
+          <div style={{color:'#797979',fontSize:'14px',fontWeight:'400'}}><p>Availability</p></div>
+          <div style={{display:'flex', gap:'24px'}}>
+          <label style={{ display: "flex", alignItems: "center", gap: "6px", fontSize:'16px',fontWeight:'400' }}>
             <input
               type="radio"
               name="availability"
@@ -43,10 +46,11 @@ export function InventoryStatus() {
               checked={availability === "InStock"}
               onChange={(e) => setAvailability(e.target.value)}
             />
+            
             InStock
           </label>
 
-          <label style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: "6px" ,fontSize:'16px',fontWeight:'400'}}>
             <input
               type="radio"
               name="availability"
@@ -56,6 +60,7 @@ export function InventoryStatus() {
             />
             Out Of Stock
           </label>
+          </div>
         </div>
       )}
     </div>

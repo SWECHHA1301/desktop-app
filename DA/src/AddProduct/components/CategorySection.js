@@ -30,17 +30,17 @@ export function CategorySection() {
 
       {/* Dropdown field */}
       {isOpen && (
-        <div style={{marginTop:'24px'}}>
+        <div style={{marginTop:'24px',}}>
           <select
             style={{
-              width: "300px",
-              padding: "10px",
-              borderRadius: "8px",
-              border: "1px solid #E0E3EA",
-              backgroundColor: "#F1F3F7",
-              fontSize: "14px",
-              color: "#666",
-
+              width: "321px",
+              padding:'0 16px',
+              borderRadius: "5px",
+              border: "1px solid #ccc ",
+              backgroundColor: "#E3E6EE",
+              fontSize: "12px",
+              color: "#797979",
+height:'27px',
             }}
           >
             <option value="">Category *</option>

@@ -8,8 +8,8 @@ export function TaxesSection() {
     <div
       style={{
         borderBottom: "1px solid #D4DAED",
-        padding: "16px",
-        marginTop: "8px",
+        padding: "16px 24px",
+        // marginTop: "8px",
       }}
     >
       {/* Header with toggle chevron */}
@@ -22,26 +22,28 @@ export function TaxesSection() {
           cursor: "pointer",
         }}
       >
-        <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px" }}>
+        <h3 style={{ fontSize: "16px", fontWeight: "600", }}>
           Taxes
         </h3>
         <span style={{ fontSize: "18px", userSelect: "none" }}>
-          {isOpen ? <ChevronDown /> : <ChevronUp />}
+          {isOpen ? <ChevronDown style={{color:"#939191"}} /> : <ChevronUp  style={{color:"#939191"}}/>}
         </span>
       </div>
 
       {/* Inputs */}
       {isOpen && (
-        <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" ,marginTop:'24px'}}>
           {/* GST (HSN/SAC) */}
           <select
             style={{
+              width:'321px',
+              height:'27px',
+              backgroundColor: "#E3E6EE",
               flex: "1",
-              padding: "10px",
-              borderRadius: "8px",
-              border: "1px solid #E0E3EA",
-              backgroundColor: "#F1F3F7",
-              fontSize: "14px",
+              padding:' 0 16px',
+              borderRadius: "5px",
+            border: "1px solid #ccc ",
+             fontSize: "12px",
               color: "#666",
               appearance: "none",
             }}
@@ -54,13 +56,16 @@ export function TaxesSection() {
           {/* GST Rate */}
           <select
             style={{
+              width:'321px',
+              height:'27px',
+              backgroundColor: "#E3E6EE",
               flex: "1",
-              padding: "10px",
-              borderRadius: "8px",
-              border: "1px solid #E0E3EA",
-              backgroundColor: "#F1F3F7",
-              fontSize: "14px",
+              padding:' 0 16px',
+              borderRadius: "5px",
+            border: "1px solid #ccc ",
+             fontSize: "12px",
               color: "#666",
+              appearance: "none",
             }}
           >
             <option>GST @ 0.00%</option>
