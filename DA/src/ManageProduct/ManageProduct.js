@@ -8,7 +8,7 @@ const products = Array.from({ length: 16 }, (_, i) => ({
   barcode: "27845884583",
   price: "₹52",
   actualprice:'₹52',
-  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Cadbury_Dairy_Milk_Bar.jpg/320px-Cadbury_Dairy_Milk_Bar.jpg"
+  img: "https://th.bing.com/th/id/OIP.egsUk-BcmvCjh7-aFIlhhAHaHa?w=194&h=194&c=7&r=0&o=5&dpr=1.5&pid=1.7"
 }));
 
 export default function ProductGrid() {
@@ -91,20 +91,31 @@ export default function ProductGrid() {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
+
+
+      <div style={{display:'flex',justifyContent:'flex-end',position:'sticky' }}>
         <button
           style={{
-            padding: "10px 20px",
+            // padding: "10px 20px",
+            width:'246px',
+            height:'50px',
             backgroundColor: "#007bff",
             color: "#fff",
             border: "none",
-            borderRadius: "5px",
-            cursor: "pointer"
+            borderRadius: "20px",
+            cursor: "pointer",
+            backgroundColor:'#3658BF',
+            display:'flex',
+            gap:'16px',
+            alignItems:'center',
+            justifyContent:'center'
           }}
         >
-          + Add Products
+         <p> +</p><p>Add Products</p> 
         </button>
       </div>
+
+
     </div>
   );
 }
