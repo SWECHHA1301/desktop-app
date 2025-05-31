@@ -93,7 +93,7 @@ export default function ProductGrid() {
       </div>
 
 
-      <div style={{display:'flex',justifyContent:'flex-end',position:'sticky' }}>
+      <div style={{display:'flex',justifyContent:'flex-end',position:'sticky', }}>
         <button
           style={{
             // padding: "10px 20px",

@@ -25,7 +25,7 @@ export function CategorySection() {
         <h3 style={{ fontSize: "16px", fontWeight: "600",}}>
           Category
         </h3>
-        <span style={{ fontSize: "18px", userSelect: "none" }}>{isOpen ? <ChevronDown style={{color:"#939191"}}/> : <ChevronUp style={{color:"#939191"}}/>}</span>
+        <span style={{ fontSize: "18px", userSelect: "none" }}>  {isOpen ? <ChevronDown style={{ color: "#939191" }} size={20} /> : <ChevronUp style={{ color: "#939191" }} size={20} />}</span>
       </div>
 
       {/* Dropdown field */}

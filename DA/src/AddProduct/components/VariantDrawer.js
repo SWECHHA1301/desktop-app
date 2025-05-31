@@ -12,7 +12,7 @@ export default function VariantDrawer({ closeDrawer }) {
       </div>
 
       <div className="ap-drawer-body">
-        <h4 style={{ fontWeight: "600", marginBottom: "10px" }}>#1 Add Variant Attribute</h4>
+        <h4 style={{ fontWeight: "600", marginBottom: "10px" }}># 1 Add Variant Attribute</h4>
 
         <div className="form-group">
           <label>Attribute Name</label>
@@ -29,6 +29,8 @@ export default function VariantDrawer({ closeDrawer }) {
           <textarea  />
         </div>
 
+      
+      </div>
         <div className="btn-group">
           <button className="add-more-btn">
             <Plus size={16} style={{ marginRight: "4px" }} />
@@ -36,7 +38,6 @@ export default function VariantDrawer({ closeDrawer }) {
           </button>
           <button className="save-btn">Save</button>
         </div>
-      </div>
     </div>
   );
 }
