@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp} from "lucide-react";
+import { ChevronDown, ChevronRight} from "lucide-react";
 
 export function InventoryStatus() {
   const [isOpen, setIsOpen] = useState(true);
@@ -10,8 +10,7 @@ export function InventoryStatus() {
       style={{
         borderBottom: "1px solid #D4DAED",
         padding: "16px 24px",
-        // marginTop: "8px",
-        // borderRadius: "8px",
+      
       }}
     >
       {/* Header with chevron */}
@@ -28,7 +27,7 @@ export function InventoryStatus() {
           Inventory
         </h3>
         <span style={{ fontSize: "18px", userSelect: "none" }}>
-           {isOpen ? <ChevronDown style={{ color: "#939191" }} size={20} /> : <ChevronUp style={{ color: "#939191" }} size={20} />}
+           {isOpen ? <ChevronDown style={{ color: "#939191" }}/> : <ChevronRight style={{ color: "#939191" }} />}
         </span>
       </div>
 

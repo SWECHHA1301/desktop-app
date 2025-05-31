@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronRight} from "lucide-react";
 
 export function Details() {
   const [isOpen, setIsOpen] = useState(true);
@@ -21,7 +21,7 @@ export function Details() {
         {isOpen ? <ChevronDown 
         style={{
           color: "#939191"
-          }}/> : <ChevronUp  
+          }}/> : <ChevronRight  
           style={{
             color: "#939191"}} />}
       </div>
@@ -42,15 +42,17 @@ export function Details() {
             gap: "8px",
           }}
         >
+          
           <label
             style={{
               fontSize: "14px",
-              marginBottom: "4px",
               color: "#797979",
             }}
           >
             Unit type
           </label>
+
+          <div style={{display: "flex", flexDirection: "row", gap: "8px"}}>
 
           <select
             style={{
@@ -63,22 +65,22 @@ export function Details() {
               fontSize: "12px",
             }}
           >
-            <option>Unit</option>
+            <option>Primary Unit</option>
           </select>
 
-          <div style={{ display: "flex", marginLeft: "16px" }}>
-            <div style={{ fontSize: "12px", color: "#555" }}>
-              <div style={{ marginBottom: "4px", display: "flex", gap: "20px" }}>
-                <span style={{ fontWeight: "400", width: "88px" }}>Primary Unit</span>
-                <p>:</p>
-                <span style={{ color: "black" }}>in unit</span>
-              </div>
-              <div style={{ display: "flex", gap: "20px" }}>
-                <span style={{ fontWeight: "400", width: "88px" }}>Secondary Unit</span>
-                <p>:</p>
-                <span style={{ color: "black" }}>in unit</span>
-              </div>
-            </div>
+           <select
+            style={{
+              backgroundColor: "#E3E6EE",
+              border: "1px solid #ccc",
+              padding: "9px 16px",
+              borderRadius: "5px",
+              width: "100%",
+              maxWidth: "390px",
+              fontSize: "12px",
+            }}
+          >
+            <option>Secondary Unit</option>
+          </select>
           </div>
         </div>
       </div>

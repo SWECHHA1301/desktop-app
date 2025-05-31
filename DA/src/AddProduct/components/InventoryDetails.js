@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { BarcodeReader } from "../../Common/Icons";
 
 export function InventoryDetails() {
@@ -25,7 +25,7 @@ export function InventoryDetails() {
           Inventory Detail
         </h3>
         <span style={{ fontSize: "18px", userSelect: "none" }}>
-         {isOpen ? <ChevronDown style={{ color: "#939191" }} size={20} /> : <ChevronUp style={{ color: "#939191" }} size={20} />}
+         {isOpen ? <ChevronDown style={{ color: "#939191" }} /> : <ChevronRight style={{ color: "#939191" }} />}
         </span>
       </div>
 
@@ -39,10 +39,35 @@ export function InventoryDetails() {
           }}
         >
           {/* Product Price */}
-          <div>
-            <label style={labelStyle}>Product Price *</label>
-            <input type="text" placeholder="Product Price *" style={inputStyle} />
-          </div>
+          {/* Product Price with Tax Selector */}
+<div>
+  <label style={labelStyle}>Product Price *</label>
+  <div style={{ position: "relative", width: "321px" }}>
+    <input
+      type="text"
+      placeholder="Product Price *"
+      style={{ ...inputStyle, paddingRight: "110px" }}
+    />
+    <select
+      style={{
+        position: "absolute",
+        right: "8px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        height: "24px",
+        fontSize: "12px",
+        padding: "2px 6px",
+        backgroundColor: "#E3E6EE",
+        color: "#797979",
+        cursor: "pointer",
+      }}
+    >
+      <option value="with-tax">With Tax</option>
+      <option value="without-tax">Without Tax</option>
+    </select>
+  </div>
+</div>
+
 
           {/* Discount Percent */}
           <div>

@@ -1,21 +1,32 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronRight, Pencil } from "lucide-react";
 
 export default function ProductInfo() {
   const [isOpen, setIsOpen] = useState(true);
+  const [previewUrl, setPreviewUrl] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   return (
     <div className="product-info-wrapper">
       {/* Header with toggle */}
-      <div className="header"  onClick={() => setIsOpen(!isOpen)}>
+      <div className="header" onClick={() => setIsOpen(!isOpen)}>
         <h3 className="section-title">Product Info</h3>
         <div className="toggle-icon">
-          {isOpen ? <ChevronDown 
-        style={{
-          color: "#939191"
-          }}/> : <ChevronUp  
-          style={{
-            color: "#939191"}} />}
+          {isOpen ? (
+            <ChevronDown style={{ color: "#939191" }} />
+          ) : (
+            <ChevronRight style={{ color: "#939191" }} />
+          )}
         </div>
       </div>
 
@@ -37,8 +48,24 @@ export default function ProductInfo() {
           {/* Image Upload */}
           <div className="upload-container">
             <div className="upload-box">
-              <div className="image-placeholder" />
-              <div className="upload-plus">+</div>
+              {previewUrl ? (
+                <img src={previewUrl} alt="Preview" className="image-preview" />
+              ) : (
+                <div className="image-placeholder" />
+              )}
+              <label className="upload-icon">
+                {previewUrl ? (
+                  <Pencil size={14} color="#333" />
+                ) : (
+                  <span className="plus-sign">+</span>
+                )}
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  style={{ display: "none" }}
+                />
+              </label>
             </div>
           </div>
         </div>
@@ -103,7 +130,6 @@ export default function ProductInfo() {
         .grid-row {
           display: grid;
           grid-template-columns: 1fr 160px;
-         
         }
 
         .left-column {
@@ -143,7 +169,8 @@ export default function ProductInfo() {
         }
 
         .upload-box {
-          width: 164px;
+          max-width: 164px;
+          width: 100%;
           height: 135px;
           border: 2px solid #797979;
           border-radius: 10px;
@@ -153,6 +180,7 @@ export default function ProductInfo() {
           display: flex;
           align-items: center;
           justify-content: center;
+          overflow: hidden;
         }
 
         .image-placeholder {
@@ -162,12 +190,19 @@ export default function ProductInfo() {
           border-radius: 4px;
         }
 
-        .upload-plus {
+        .image-preview {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+
+        .upload-icon {
           position: absolute;
-          bottom: -8px;
-          right: -8px;
-          width: 20px;
-          height: 20px;
+          bottom: -5px;
+          right: -1px;
+          width: 24px;
+          height: 24px;
           border-radius: 50%;
           background-color: #fff;
           border: 1px solid #888;
@@ -177,11 +212,18 @@ export default function ProductInfo() {
           font-weight: bold;
           font-size: 14px;
           cursor: pointer;
+          z-index: 2;
+        }
+
+        .plus-sign {
+          font-size: 18px;
+          font-weight: bold;
+          margin-top: -2px;
         }
 
         .product-type-container {
           margin-left: -194px;
-          margin-top: 56px;
+          margin-top: 75px;
           display: flex;
           flex-direction: column;
         }
@@ -202,6 +244,7 @@ export default function ProductInfo() {
           .upload-box {
             right: 0;
             margin-top: 16px;
+            margin-bottom: 10px;
           }
 
           .product-type-container {

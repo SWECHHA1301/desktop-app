@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp} from "lucide-react";
+import { ChevronDown, ChevronRight} from "lucide-react";
 
 export function TaxesSection() {
   const [isOpen, setIsOpen] = useState(true);
@@ -26,7 +26,7 @@ export function TaxesSection() {
           Taxes
         </h3>
         <span style={{ fontSize: "18px", userSelect: "none" }}>
-            {isOpen ? <ChevronDown style={{ color: "#939191" }} size={20} /> : <ChevronUp style={{ color: "#939191" }} size={20} />}
+            {isOpen ? <ChevronDown style={{ color: "#939191" }} /> : <ChevronRight style={{ color: "#939191" }} />}
         </span>
       </div>
 
@@ -41,7 +41,7 @@ export function TaxesSection() {
               width:'321px',
               height:'27px',
               backgroundColor: "#E3E6EE",
-              // flex: "1",
+           
               padding:' 0 16px',
               borderRadius: "5px",
             border: "1px solid #ccc ",
@@ -63,7 +63,7 @@ export function TaxesSection() {
               width:'301px',
               height:'27px',
               backgroundColor: "#E3E6EE",
-              // flex: "1",
+            
               padding:' 0 16px',
               borderRadius: "5px",
             border: "1px solid #ccc ",
