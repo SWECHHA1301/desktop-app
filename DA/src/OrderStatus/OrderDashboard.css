@@ -16,12 +16,14 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .tabs {
   display: flex;
   gap: 16px;
   margin-bottom: 24px;
+  flex-shrink: 0;
 }
 
 .tab-button {
@@ -43,6 +45,11 @@ body {
 .tab-button.active {
   background-color: white;
   color: black;
+}
+
+.orders-scrollable {
+  flex: 1;
+  overflow-y: auto;
 }
 
 .orders-grid {
@@ -74,7 +81,7 @@ body {
   font-weight: bold;
 }
 
-.order-table {
+.order-tables {
   font-size: 16px;
 }
 

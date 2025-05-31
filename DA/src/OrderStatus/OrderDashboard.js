@@ -16,7 +16,7 @@ const OrderCard = ({ table, status, type, isSelected, onClick }) => (
   <div className={`order-container ${isSelected ? 'selected' : ''}`} onClick={onClick}>
     <div className={`order-cards ${status.toLowerCase()}`}>
       <div className="order-header">
-        <span className="order-table">Table No.-{table}</span>
+        <span className="order-tables">Table No.-{table}</span>
         <div className="order-time">
           <div>Time :</div>
           <div>Date :</div>
@@ -54,6 +54,7 @@ export default function OrderDashboard() {
           </button>
         ))}
       </div>
+      <div className="orders-scrollable">
       <div className="orders-grid">
         {filteredOrders.map((order, index) => (
           <OrderCard
@@ -63,6 +64,7 @@ export default function OrderDashboard() {
             onClick={() => setSelectedIndex(index)}
           />
         ))}
+      </div>
       </div>
     </div>
   );
