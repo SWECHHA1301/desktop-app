@@ -205,13 +205,13 @@ const handleCancelItem = (number) => {
 
             {refundType === 'partial' && (
               <div className='slider-section show'>
-  <p>Amount</p>
-  <p>:</p>
-  <div className="amount-input-wrapper">
-    <span className="rupee-symbol">₹</span>
-    <input  className="amount-input" defaultValue={100} />
-  </div>
-</div>
+             <p>Amount</p>
+             <p>:</p>
+             <div className="amount-input-wrapper">
+               <span className="rupee-symbol">₹</span>
+               <input  className="amount-input" defaultValue={100} />
+             </div>
+           </div>
 
             )}
 
