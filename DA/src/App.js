@@ -18,6 +18,10 @@ import OrderHistory from "./OrderHistory/OrderHistory";
 import AccManagement from "./HistoryMgmt/AccManagement";
 import AddProduct from "./AddProduct/AddProduct";
 import ManageProduct from "./ManageProduct/ManageProduct";
+import OrderCancellation from "./PopUps/OrderCancellation";
+import ApplyDiscount from "./PopUps/ApplyDiscount";
+import AddNoteModal from "./PopUps/AddNoteModal";
+import FoodVariationModal from "./PopUps/FoodVariationModal";
 
 function App() {
   return (
@@ -32,7 +36,7 @@ function App() {
       {/* <OrderHistory /> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<CustomerList />} />
+      {/* <MainContainer children={<CustomerList />} /> */}
       {/* <MainContainer children={<Dashboard />}/> */}
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
@@ -47,6 +51,8 @@ function App() {
         {/* <MainContainer children={<ItemCancellation/>}/> */}
  {/* <MainContainer children={<ManageProduct/>}/> */}
  {/* <MainContainer children={<OrderDashboard/>}/> */}
+  {/* <MainContainer children={<OrderCancellation />} /> */}
+    <MainContainer children={<FoodVariationModal />} />
        
        {/* <MainContainer children={<ManageProduct/>}/> */}
 
