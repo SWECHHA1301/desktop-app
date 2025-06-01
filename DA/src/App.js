@@ -32,8 +32,8 @@ function App() {
       {/* <OrderHistory /> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      <MainContainer children={<CustomerList />} />
-      {/* <MainContainer children={<Dashboard />}/> */}
+      {/* <MainContainer children={<CustomerList />} /> */}
+      <MainContainer children={<Dashboard />}/>
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
      

@@ -1,190 +1,142 @@
-.Pay-Info{
-     display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 24px;
-  
+.Pay-Info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+ 
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.paymentMethod{
-    width: 100%;
-    max-width: 640px;
-    height: 594px;
-    background-color: white;
-    box-shadow:  4px 4px 4px 0 #00000040;
-    border-radius: 10px;
-    padding-bottom: 24px ;
+.paymentMethod,
+.Account-manage {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px 0 #3658bf40;
+ 
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.pay-method{
-     background-color: #D4DAED;
-    color:#3658BF;
-    border-bottom: 1px solid #000000;
-    border-radius: 10px 10px 0 0;
-     height: 77px;
-     display: flex;
-    align-items: center;
-    justify-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
+.pay-method {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+   padding: 16px;
+   background-color: rgb(212, 218, 237);
 }
 
-.pay-method p{
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 100%;
-    
-}
-
-.Days{
-    background-color: white;
-    padding: 4px 8px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 101px;
-    height: 27px;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    justify-content: space-between;
-    gap: 8px;
-}
-.Days p{
-     
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 100%;
-}
-
-.breakdown{
-    display: flex;
-    flex-direction: column;
-    padding: 0 16px;
-    gap:16px;
-}
-
-.pay-graph{
-    width: 100%;
-    max-width: 244.94px;
-    height: 244px;
-    margin-top: 16px;
-    
-}
-
-.pay-table{
-    background-color: white;
-     width: 100%;
-    max-width: 608px;
-    height: 200px;
-    border-radius: 10px;
-    box-shadow:  0 4px 4px 0 #3658BF;
-
-    }
-
-    .table-block{
-    display: flex;
-    align-items: center;
-    padding: 0 32px;
-    justify-content: center;
-    justify-items:center ;
-    
-}
-.table-block td{
-    padding-bottom: 32px;
-    width: 100%;
-    text-align: center;
-      height: 50px;
- color:#3658BF;
-  font-size: 15px;
+.pay-method p {
+  font-size: 18px;
   font-weight: 700;
-line-height: 100%;
-max-width: 140px;
-}
-   
-
-    .block-Item-head{
-    background-color: #D4DAED;
-    color:#4A4A4A;
-    width: 100%;
-   margin-bottom: 16px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding: 0 32px;
-     height: 50px;
-     border-radius: 10px 10px 0 0 ;
-      font-size: 15px;
-    font-weight: 700;
-    line-height: 100%;
-    }
-    
-.block-Item-head th{
-     max-width: 140px;
-}
-    
-
-.Account-manage{
-    width:100%;
-    max-width:640px;
-    height: 246px;
-    border-radius: 10px;
-    box-shadow:  4px 4px 4px 0 #3658BF40;
-    background-color: white;
+  color: #3658bf;
 }
 
-.Account-title{
-    background-color: #D4DAED;
-    color:#3658BF;
-    border-bottom: 1px solid #000000;
-    border-radius: 10px 10px 0 0;
-    height: 72px;
-      display: flex;
-    align-items: center;
-    justify-items: center;
-     padding: 0 20px;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 100%;
+.Days {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
 }
 
-.Acc-table{
-    width: 100%;
-}
-.account-table-head{
-    background-color: #D4DAED;
-    color:#4A4A4A;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 0 25px;
-     height: 65px;
-     font-size: 15px;
-    font-weight: 700;
-    line-height: 100%;
-    width: 100%;
-
-    
-}
-.account-table-head th{
-padding:0;
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.account-Items{
-    width: 100%;
-     padding: 0 25px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-
-    color: black;
- font-size: 15px;
- font-weight: 700;
-    line-height: 100%;
+.pay-graph {
+  width: 100%;
+  height: 200px;
+  background-color: #3658bf;
+  border-radius: 10px;
 }
-.account-Items td{
-     width: 100%;
-     max-width: 140px;
- text-align: center;
+
+/* Tables: Responsive with horizontal scroll */
+.pay-table,
+.Acc-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.pay-table thead,
+.Acc-table thead {
+  background-color: #d4daed;
+}
+
+.block-Item-head,
+.account-table-head {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.table-block,
+.account-Items {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3658bf;
+}
+
+.table-block td,
+.account-Items td,
+.block-Item-head th,
+.account-table-head th {
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.Account-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3658bf;
+ 
+  border-bottom: 1px solid #000;
+  padding-bottom: 12px;
+  padding: 16px;
+   background-color: rgb(212, 218, 237);
+}
+
+.Acc-table th p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Scrollable for small screens */
+.pay-table,
+.Acc-table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .pay-method {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .Days {
+    font-size: 13px;
+  }
+
+  .pay-graph {
+    height: 160px;
+  }
+
+  .Account-title,
+  .pay-method p {
+    font-size: 16px;
+  }
+
+  .table-block td,
+  .account-Items td {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
 }
