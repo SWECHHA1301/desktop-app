@@ -144,7 +144,6 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 8px 12px; */
   border: 1px solid #3658BF;
   background: white;
   color: #3658BF;
@@ -176,3 +175,4 @@ textarea {
   border: none;
   cursor: pointer;
 }
+
