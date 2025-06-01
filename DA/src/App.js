@@ -32,7 +32,7 @@ function App() {
       {/* <OrderHistory /> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      {/* <MainContainer children={<CustomerList />} /> */}
+      <MainContainer children={<CustomerList />} />
       {/* <MainContainer children={<Dashboard />}/> */}
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
@@ -41,7 +41,7 @@ function App() {
     
    {/* <MainContainer children={<OrderHistory/>}/> */}
 
-      <MainContainer children={<AddProduct/>}/>
+      {/* <MainContainer children={<PaymentModal/>}/> */}
    
 
         {/* <MainContainer children={<ItemCancellation/>}/> */}

@@ -5,13 +5,14 @@
   align-items: center;
   margin-bottom: 24px;
   width: 100%;
-  /* max-width: 1288px; */
+  overflow: hidden;
   flex-wrap: wrap;
 }
 
-.drawer-scroll-area {
-  overflow-y: auto;
+.customer-list-scroll-area {
   flex-grow: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 220px); /* adjust based on header & actions height */
   padding-right: 8px;
 }
 
@@ -23,6 +24,7 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 margin-bottom: 24px;
+overflow: hidden;
 }
 
 .customer-actions {
@@ -32,7 +34,7 @@ margin-bottom: 24px;
   align-items: center;
   margin-bottom: 24px;
   width: 100%;
-  /* max-width: 1288px; */
+  overflow: hidden;
 }
 
 
@@ -59,12 +61,13 @@ margin-bottom: 24px;
   /* border: 1px solid #3658BF; */
 }
 
-.search-input {
+.search-inputs {
 flex-grow: 1;
   height: 40px;
   border-radius: 10px;
   padding: 0 12px;
   border: 1px solid #ccc;
+  background-color: #FFF;
   font-size: 14px;
 }
 
