@@ -157,8 +157,6 @@
 .payment-option {
   padding: 10px;
   width: 279px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
   margin-left: 30px;
 }
 
@@ -166,22 +164,11 @@
   border: 2px solid #3658BF;
 }
 
-.payment-option.no-border {
-  border: none;
-  box-shadow: none;
-}
-
 .qr-code {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-}
-
-.payment-option {
-  border-radius: 10px;
-  border: 2px solid #3658BF;
-  padding: 10px;
 }
 
 .payment-left {

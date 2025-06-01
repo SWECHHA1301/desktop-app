@@ -212,3 +212,12 @@ export default function VariantDetails({ openDrawer }) {
 }
 
 
+
+
+
+
+
+
+
+
+

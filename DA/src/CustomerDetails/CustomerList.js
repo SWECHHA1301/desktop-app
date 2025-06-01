@@ -37,10 +37,11 @@ export default function CustomerList() {
             {tab}
           </button>
         ))}
-        <input className="search-input" placeholder="Search" />
+        <input className="search-inputs" placeholder="Search" />
         <NativeDateRangePicker />
       </div>
 
+      <div className="customer-list-scroll-area">
       {customers.map((cust, index) => (
         <div key={index} className="drawer-card">
           <div
@@ -117,6 +118,7 @@ export default function CustomerList() {
           )}
         </div>
       ))}
+      </div>
     </div>
   );
 }
