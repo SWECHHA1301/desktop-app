@@ -78,9 +78,9 @@ export default function PayMethod() {
 
 <table className='pay-table'>
   
-   <thead >
-      <tr className='block-Item-head'> <th>Method</th>
-       <th>Value()</th>
+   <thead style={{width:'100%',}}>
+      <tr className='block-Item-head'> <th >Method</th>
+       <th>Value(₹)</th>
        <th>Percentage</th>
        </tr>
       </thead>
@@ -109,10 +109,10 @@ export default function PayMethod() {
        <th>Counter</th>
        <th>Transaction</th>
 
-       <th style={{display:'flex', flexDirection:'column'}}> <p>UPI</p> <p>( )</p></th>
-      <th style={{display:'flex', flexDirection:'column'}}><p>Card</p> <p>( )</p></th>
-       <th style={{display:'flex', flexDirection:'column'}}><p>Total Sales</p> <p>( )</p></th>
-      <th style={{display:'flex', flexDirection:'column'}}><p>Orders</p> <p>( )</p></th>
+       <th > <p>UPI</p> <p>(₹)</p></th>
+      <th ><p>Card</p> <p>(₹)</p></th>
+       <th ><p>Total Sales</p> <p>(₹)</p></th>
+      <th ><p>Orders</p> <p>(₹)</p></th>
       
       </tr></thead>
       <tbody>
