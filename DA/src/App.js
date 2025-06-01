@@ -9,9 +9,8 @@ import React from "react";
 // import Dashboard from "./Dashboard/Dashboard";
 // import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 import MainContainer from "./MainContainer";
-// import PaymentModal from "./PopUps/PaymentModal";
-// import ItemCancellation from "./PopUps/ItemCancellation";
-
+import PaymentModal from "./PopUps/PaymentModal";
+import ItemCancellation from "./PopUps/ItemCancellation";
 
 // import StaffManagement from "./StaffManagement/StaffManagement";
 // import OrderHistory from "./OrderHistory/OrderHistory";
@@ -24,7 +23,7 @@ import AddNoteModal from "./PopUps/AddNoteModal";
 import FoodVariationModal from "./PopUps/FoodVariationModal";
 import AddExpense from "./AddExpenses/AddExpense";
 import PaymentPage from "./PaymentPage/PaymentPage";
-import AddSale  from "./AddSale/AddSale"
+import AddSale from "./AddSale/AddSale";
 function App() {
   return (
     <div className="app">
@@ -38,36 +37,23 @@ function App() {
       {/* <OrderHistory /> */}
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
-      {/* <MainContainer children={<CustomerList />} /> */}
-
+      <MainContainer children={<CustomerList />} />
       {/* <MainContainer children={<Dashboard />}/> */}
-
-      
 
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
-     
+
       {/* <MainContainer children={<ItemCancellation />}/> */}
-    
-   {/* <MainContainer children={<OrderHistory/>}/> */}
+
+      {/* <MainContainer children={<OrderHistory/>}/> */}
 
       {/* <MainContainer children={<PaymentModal/>}/> */}
-   
 
-     
- {/* <MainContainer children={<ManageProduct/>}/> */}
- {/* <MainContainer children={<OrderDashboard/>}/> */}
-  {/* <MainContainer children={<OrderCancellation />} /> */}
-    {/* <MainContainer children={<FoodVariationModal />} /> */}
-       
-       <MainContainer children={<AddExpense/>}/>
+      {/* <MainContainer children={<ItemCancellation/>}/> */}
+      {/* <MainContainer children={<ManageProduct/>}/> */}
+      {/* <MainContainer children={<OrderDashboard/>}/> */}
 
- {/* <MainContainer children={<PaymentPage/>}/>
- <MainContainer children={<AddNoteModal/>}/> */}
-
-
-
-{/* <MainContainer children={<AddSale/>}/> */}
+      {/* <MainContainer children={<ManageProduct/>}/> */}
     </div>
   );
 }
