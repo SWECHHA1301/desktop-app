@@ -104,7 +104,7 @@ export default function PayMethod() {
           <p>Account Management</p>
         </div>
         <table className='Acc-table'>
-          <thead>
+          <thead style={{width:'100%',}}>
          <tr className='account-table-head'>
        <th>Counter</th>
        <th>Transaction</th>

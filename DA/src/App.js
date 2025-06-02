@@ -22,6 +22,7 @@ import OrderCancellation from "./PopUps/OrderCancellation";
 import ApplyDiscount from "./PopUps/ApplyDiscount";
 import AddNoteModal from "./PopUps/AddNoteModal";
 import FoodVariationModal from "./PopUps/FoodVariationModal";
+import AddExpense from "./AddExpenses/AddExpense";
 
 function App() {
   return (
@@ -37,11 +38,11 @@ function App() {
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
-<<<<<<< HEAD
+
       {/* <MainContainer children={<Dashboard />}/> */}
-=======
-      <MainContainer children={<Dashboard />}/>
->>>>>>> b890aa60ebc84973e4c6451016fd16dd17b5699d
+
+      
+
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
      
@@ -52,13 +53,13 @@ function App() {
       {/* <MainContainer children={<PaymentModal/>}/> */}
    
 
-        {/* <MainContainer children={<ItemCancellation/>}/> */}
+     
  {/* <MainContainer children={<ManageProduct/>}/> */}
  {/* <MainContainer children={<OrderDashboard/>}/> */}
   {/* <MainContainer children={<OrderCancellation />} /> */}
-    <MainContainer children={<FoodVariationModal />} />
+    {/* <MainContainer children={<FoodVariationModal />} /> */}
        
-       {/* <MainContainer children={<ManageProduct/>}/> */}
+       <MainContainer children={<AddExpense/>}/>
 
 
 
