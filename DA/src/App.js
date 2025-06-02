@@ -61,7 +61,7 @@ function App() {
     {/* <MainContainer children={<FoodVariationModal />} /> */}
        
        {/* <MainContainer children={<AddExpense/>}/> */}
- <MainContainer children={<ApplyDiscount/>}/>
+ <MainContainer children={<AddNoteModal/>}/>
 
 
     </div>
