@@ -23,6 +23,7 @@ import ApplyDiscount from "./PopUps/ApplyDiscount";
 import AddNoteModal from "./PopUps/AddNoteModal";
 import FoodVariationModal from "./PopUps/FoodVariationModal";
 import AddExpense from "./AddExpenses/AddExpense";
+import PaymentPage from "./PaymentPage/PaymentPage";
 
 function App() {
   return (
@@ -60,7 +61,7 @@ function App() {
     {/* <MainContainer children={<FoodVariationModal />} /> */}
        
        <MainContainer children={<AddExpense/>}/>
-
+ {/* <MainContainer children={<PaymentPage/>}/> */}
 
 
     </div>

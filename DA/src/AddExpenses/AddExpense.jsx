@@ -1,78 +1,78 @@
-import React from 'react'
-import { ChevronLeft, ChevronRight ,ChevronDown} from "lucide-react";
-import SaveButton from '../Common/SaveButton'
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import SaveButton from '../Common/SaveButton';
 import OtherCharges from './components/OtherCharges';
 import PaymentPaid from './components/PaymentPaid';
-
+import './AddExpense.css'; // Ensure your drawer CSS is imported here
 
 export default function AddExpense() {
-  
-  return (
-    <>
-    <div style={{width:'100%',maxWidth:'1318px',height:'885px',backgroundColor:'#D4DAED',padding:'16px 24px',
-    }}>
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'24px',}}>
-       
- <div style={{
-     display: 'flex',
-  alignItems:'center',
-  gap: '8px',
-  fontWeight: '700',
-  fontsize: '16px',
-  color:' #3658BF',
- }}>
+  return (
+    <div style={{ width: '100%', maxWidth: '1318px', height: '885px', backgroundColor: '#D4DAED', padding: '16px 24px' }}>
+      {/* Header */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          fontWeight: '700',
+          fontSize: '16px',
+          color: '#3658BF',
+        }}>
           <ChevronLeft style={{ color: "white", width: "20px" }} />
           <ChevronRight style={{ color: "black", width: "20px" }} />
           <p>Add Product</p>
         </div>
-         <SaveButton/>
-         </div>
+        <SaveButton />
+      </div>
 
-         <div style={{maxWidth:'860px',backgroundColor:'#fff',
-            borderRadius:'10px',boxShadow:'0 4px 4px 0 #00000040', paddingBottom:'16px'
-         }}>
-           {/* heading */}
-           <div>
-           <p style={{fontSize:'24px',fontWeight:'700',lineHeight:'100%',padding:'21px 32px',
-            borderBottom:'1px solid #D4DAED'}}>Add Sale</p>
-           </div>
-           {/* invoice no. */}
-           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',
-             padding:'8px 16px', borderBottom:'1px solid #D4DAED'}}>
+      {/* Layout container */}
+      <div className={isDrawerOpen ? 'addexpense-layout-open' : 'addexpense-layout'}>
+        {/* Main Form Card */}
+        <div className="addexpense-form-box">
+          <p style={{
+            fontSize: '24px', fontWeight: '700', lineHeight: '100%', padding: '21px 32px',
+            borderBottom: '1px solid #D4DAED'
+          }}>Add Sale</p>
 
-            <div style={{display:'flex',flexDirection:'column',gap:'8px',}}>
-                <p style={{fontSize:'12px',fontWeight:'400',lineHeight:'100%',color:'#939191'}}>Invoice No.</p>
-                <p  style={{fontSize:'16px',fontWeight:'700',lineHeight:'100%'}}>1/24-25</p>
+          <div style={{
+            display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+            padding: '8px 16px', borderBottom: '1px solid #D4DAED'
+          }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <p style={{ fontSize: '12px', fontWeight: '400', lineHeight: '100%', color: '#939191' }}>Invoice No.</p>
+              <p style={{ fontSize: '16px', fontWeight: '700', lineHeight: '100%' }}>1/24-25</p>
             </div>
-
-            <div style={{display:'flex',flexDirection:'column',gap:'8px',marginRight:'20px'}}>
-                <div style={{display:'flex',alignItems:'center',gap:'2px'}}>
-                    <p style={{fontSize:'12px',fontWeight:'400',lineHeight:'100%',color:'#939191'}}>Date</p>
-                    <p style={{fontSize:'10px',fontWeight:'400',lineHeight:'100%',color:'#939191'}}>(DD/MM/YYYY)</p>
-                </div>
-                <p  style={{fontSize:'16px',fontWeight:'700',lineHeight:'100%'}}>3/05/2025</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginRight: '20px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
+                <p style={{ fontSize: '12px', fontWeight: '400', lineHeight: '100%', color: '#939191' }}>Date</p>
+                <p style={{ fontSize: '10px', fontWeight: '400', lineHeight: '100%', color: '#939191' }}>(DD/MM/YYYY)</p>
+              </div>
+              <p style={{ fontSize: '16px', fontWeight: '700', lineHeight: '100%' }}>3/05/2025</p>
             </div>
+          </div>
 
-           </div>
-           
-           <OtherCharges/>
-           <PaymentPaid/>
+          <OtherCharges />
+          <PaymentPaid setIsDrawerOpen={setIsDrawerOpen} />
+        </div>
 
-
-         
-
-         </div>
-   
-   
-   
-   
+        {/* Drawer */}
+        {isDrawerOpen && (
+          <div className="addexpense-payment-drawer">
+            <div className="addexpense-drawer-header">
+              <h3 style={{ fontSize: '16px', fontWeight: '600' }}>Add Payment Type</h3>
+              <span className="addexpense-drawer-close" onClick={() => setIsDrawerOpen(false)}>×</span>
+            </div>
+            <div className="addexpense-drawer-body">
+              <label>Payment Type</label>
+              <input type="text" placeholder="e.g. UPI / Wallet / etc." />
+              <label>Amount</label>
+              <input type="number" placeholder="e.g. ₹500" />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
-
-
-
-
-    </>
-
-  )
+  );
 }
