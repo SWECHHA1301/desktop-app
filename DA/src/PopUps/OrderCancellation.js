@@ -1,19 +1,38 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
 
-export default function OrderCancellation() {
+export default function OrderCancellation({ onClose }) {
   const [refundType, setRefundType] = useState('partial');
 
   const styles = {
-    container: {
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 1000,
+    },
+    modalContainer: {
       width: '100%',
       maxWidth: '556px',
-      height: 'auto',
+      height: '544px',
       backgroundColor: '#ffffff',
       borderRadius: '10px',
-      boxShadow: '8px 8px 4px 0 #3658BF40',
       display: 'flex',
       flexDirection: 'column',
+      position: 'relative',
+    },
+    closeButton: {
+      position: 'absolute',
+      top: '12px',
+      right: '12px',
+      cursor: 'pointer',
+      color: 'white',
     },
     header: {
       backgroundColor: '#3658BF',
@@ -29,45 +48,50 @@ export default function OrderCancellation() {
       color: 'white',
     },
     main: {
-      padding: '24px 40px 0 40px',
+      padding: '24px 40px 0 30px',
       flex: 1,
     },
     row: {
       display: 'flex',
       alignItems: 'center',
-      gap: '16px',
+      gap: '24px',
       marginBottom: '16px',
     },
     label: {
-      fontWeight: 600,
+      fontWeight: 700,
       color: '#000',
+      fontSize: '16px',
     },
     value: {
       color: '#000',
+      fontWeight: '500',
     },
-    selectBtn: {
+    selectWrapper: {
+      position: 'relative',
       display: 'flex',
-      padding: '6px 12px',
+      alignItems: 'center',
+    },
+    select: {
+      appearance: 'none',
+      WebkitAppearance: 'none',
+      MozAppearance: 'none',
+      width: '100%',
+      height: '30px',
+      padding: '4px 28px 4px 10px',
       border: '1px solid #797979',
       borderRadius: '5px',
-      alignItems: 'center',
-      gap: '8px',
-      fontSize: '14px',
       color: '#797979',
-      background: 'none',
-      cursor: 'pointer',
+      fontSize: '14px',
+      background: 'white',
+    },
+    chevron: {
+      position: 'absolute',
+      right: '8px',
+      pointerEvents: 'none',
     },
     divider: {
       borderTop: '1px solid #ccc',
       margin: '16px 0',
-    },
-    select: {
-      width: '100%',
-      height: '32px',
-      border: '1px solid #797979',
-      borderRadius: '5px',
-      padding: '0 8px',
-      color: '#797979',
     },
     refundSection: {
       marginTop: '16px',
@@ -129,60 +153,114 @@ export default function OrderCancellation() {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <h2 style={styles.headerText}>Order Cancellation</h2>
-      </div>
-
-      <div style={styles.main}>
-        <div style={styles.row}>
-          <span style={styles.label}>Table Number :</span>
-          <button style={styles.selectBtn}>Non AC <ChevronDown size={16} /></button>
-          <button style={styles.selectBtn}>T 2 <ChevronDown size={16} /></button>
+    <div style={styles.overlay}>
+      <div style={styles.modalContainer}>
+        {/* Close Icon (optional) */}
+        <div onClick={onClose} style={styles.closeButton}>
+          <X size={20} />
         </div>
 
-        <div style={styles.row}><span style={styles.label}>Name :</span><span style={styles.value}>Airy</span></div>
-        <div style={styles.row}><span style={styles.label}>Phone No. :</span><span style={styles.value}>8263200401</span></div>
-        <div style={styles.row}><span style={styles.label}>No. of items :</span><span style={styles.value}>6</span></div>
-
-        <div style={styles.divider}></div>
-
-        <div style={styles.row}>
-          <select style={styles.select}>
-            <option>Reasons</option>
-          </select>
+        <div style={styles.header}>
+          <h2 style={styles.headerText}>Order Cancellation</h2>
         </div>
 
-        <div style={styles.refundSection}>
-          <h3 style={styles.label}>Refund Amount ₹ 480</h3>
-
-          <div style={styles.radioRow}>
-            <input type="radio" id="complete" name="refund" value="complete" checked={refundType === 'complete'} onChange={() => setRefundType('complete')} />
-            <label htmlFor="complete">Complete Refund</label>
-            <span>₹ 480</span>
-          </div>
-
-          <div style={styles.radioRow}>
-            <input type="radio" id="partial" name="refund" value="partial" checked={refundType === 'partial'} onChange={() => setRefundType('partial')} />
-            <label htmlFor="partial">Partial Refund</label>
-          </div>
-
-          {refundType === 'partial' && (
-            <div style={styles.radioRow}>
-              <span>Amount :</span>
-              <div style={styles.rupeePrefix}>
-                <span style={styles.rupeeSymbol}>₹</span>
-                <input type="number" defaultValue={100} style={styles.amountInput} />
-              </div>
+        <div style={styles.main}>
+          {/* Table Number Section */}
+          <div style={styles.row}>
+            <span style={styles.label}>Table Number :</span>
+            <div style={styles.selectWrapper}>
+              <select style={styles.select}>
+                <option>Non AC</option>
+                <option>AC</option>
+              </select>
+              <ChevronDown size={16} style={styles.chevron} />
             </div>
-          )}
-        </div>
-      </div>
+            <div style={styles.selectWrapper}>
+              <select style={styles.select}>
+                <option>T 1</option>
+                <option>T 2</option>
+                <option>T 3</option>
+              </select>
+              <ChevronDown size={16} style={styles.chevron} />
+            </div>
+          </div>
 
-      <div style={styles.footer}>
-        <button style={styles.cancelBtn}>Cancel</button>
-        <button style={styles.confirmBtn}>Confirm Cancellation</button>
+          {/* Customer Details */}
+          <h4 style={{ fontWeight: 700, fontSize: '16px', marginBottom: '10px' }}>Customer Details</h4>
+          <div style={styles.row}>
+            <span style={{ ...styles.label, paddingLeft: '10px', color: '#797979' }}>Name :</span>
+            <span style={{ ...styles.value, marginRight: '24px' }}>Airy</span>
+            <span style={{ ...styles.label, color: '#797979' }}>Phone No. :</span>
+            <span style={styles.value}>8263200401</span>
+          </div>
+          <div style={styles.row}>
+            <span style={{ ...styles.label, paddingLeft: '10px', color: '#797979' }}>No. of items :</span>
+            <span style={styles.value}>6</span>
+          </div>
+
+          <div style={styles.divider}></div>
+
+          {/* Reasons */}
+          <div style={{ marginBottom: '16px' }}>
+            <span style={{ ...styles.label, display: 'block', marginBottom: '8px' }}>Reasons</span>
+            <div style={{ ...styles.selectWrapper, maxWidth: '363px', marginLeft: '55px' }}>
+              <select style={{ ...styles.select, width: '100%', height: '26px', borderRadius: 10 }}>
+                <option>Select a reason</option>
+              </select>
+              <ChevronDown size={16} style={styles.chevron} />
+            </div>
+          </div>
+
+          {/* Refund Section */}
+          <div style={styles.refundSection}>
+            <div style={{ display: 'flex', fontWeight: 700 }}>
+              <h3 style={styles.label}>Refund Amount </h3>
+              <h3 style={{ marginLeft: '20px' }}>₹ 480</h3>
+            </div>
+
+            <div style={styles.radioRow}>
+              <input
+                type="radio"
+                id="complete"
+                name="refund"
+                value="complete"
+                checked={refundType === 'complete'}
+                onChange={() => setRefundType('complete')}
+              />
+              <label htmlFor="complete">Complete Refund</label>
+              <span style={{ marginLeft: '20px' }}>₹ 480</span>
+            </div>
+
+            <div style={styles.radioRow}>
+              <input
+                type="radio"
+                id="partial"
+                name="refund"
+                value="partial"
+                checked={refundType === 'partial'}
+                onChange={() => setRefundType('partial')}
+              />
+              <label htmlFor="partial">Partial Refund</label>
+            </div>
+
+            {refundType === 'partial' && (
+              <div style={styles.radioRow}>
+                <span>Amount :</span>
+                <div style={styles.rupeePrefix}>
+                  <span style={styles.rupeeSymbol}>₹</span>
+                  <input type="number" defaultValue={100} style={styles.amountInput} />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div style={styles.footer}>
+          <button style={styles.cancelBtn} onClick={onClose}>Cancel</button>
+          <button style={styles.confirmBtn}>Confirm Cancellation</button>
+        </div>
       </div>
     </div>
   );
 }
+
