@@ -37,11 +37,7 @@ function App() {
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
-<<<<<<< HEAD
       {/* <MainContainer children={<Dashboard />}/> */}
-=======
-      <MainContainer children={<Dashboard />}/>
->>>>>>> b890aa60ebc84973e4c6451016fd16dd17b5699d
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
      
@@ -56,7 +52,7 @@ function App() {
  {/* <MainContainer children={<ManageProduct/>}/> */}
  {/* <MainContainer children={<OrderDashboard/>}/> */}
   {/* <MainContainer children={<OrderCancellation />} /> */}
-    <MainContainer children={<FoodVariationModal />} />
+    {/* <MainContainer children={<FoodVariationModal />} /> */}
        
        {/* <MainContainer children={<ManageProduct/>}/> */}
 
