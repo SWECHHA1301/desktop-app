@@ -1,12 +1,15 @@
 import React from 'react';
+import { useState } from 'react';
+
 import { ChevronLeft, ChevronRight ,ChevronDown, AlignJustify} from "lucide-react";
 const styles = {
   container: {
     fontFamily: 'Arial, sans-serif',
     background: 'white',
-    minHeight: '100vh',
+     height:' 1083px',
     maxWidth:'1300px',
-    //  position:'relative',
+     position:'relative',
+       borderRadius: '10px 10px 0 0',
   },
   header: {
     backgroundColor: '#3658BF',
@@ -104,13 +107,23 @@ const styles = {
     height:'70px',
     position:'absolute',
     right:'0',
-    bottom:'0'
+    bottom:'0',
+    margin:'0 20px 20px 0'
   },
 };
+
+const buttons= [
+  { tabWork:'Sale Invoices'},
+  { tabWork:'Proforma Quotations'},
+  { tabWork:'Purchases'},
+   { tabWork:'Payments'},
+ { tabWork:'Expenses'},
+]
 
 const PaymentCard = ({ name, type, amount }) => {
   const paymentStyle =
     type === 'Cash' ? styles.greenCash : styles.cash;
+   
 
   return (
     <div style={styles.card}>
@@ -119,7 +132,7 @@ const PaymentCard = ({ name, type, amount }) => {
       <div style={styles.cardHeader}>{name}</div>
       <button style={{ ...styles.paymentType, ...paymentStyle }}>{type}</button>
       </div>
-      <div style={{display:'flex' ,flexDirection:'column',textAlign:'right',fontSize:'13x',fontWeight:'400',
+      <div style={{display:'flex' ,flexDirection:'column',textAlign:'right',fontSize:'13px',fontWeight:'400',
         color:'#797979',gap:'6px'}}>
         <p>{}/25-26</p>
          <p> Sat Apr 05 2025</p>
@@ -145,6 +158,8 @@ const PaymentPage = () => {
   payments[0].type = 'Cash'; // Red one
   for (let i = 1; i < payments.length; i++) payments[i].type = 'Cash';
 
+   const [activeTab, setActiveTab] = useState(0);
+
   return (
     <div style={styles.container}>
       <div style={styles.header}>
@@ -163,11 +178,15 @@ const PaymentPage = () => {
 
 
       <div style={styles.controlButton}>
-        <button style={styles.tab}>Sale Invoices</button>
-        <button style={styles.tab}>Proforma Quotations</button>
-        <button style={styles.tab}>Purchases</button>
-        <button style={styles.tab}>Payments</button>
-        <button style={{ ...styles.tab, ...styles.activeTab }}>Expenses</button>
+        {buttons.map((tab,index)=>(
+        <button key={index}
+              onClick={() => setActiveTab(index)}
+              style={{
+                ...styles.tab,
+                ...(activeTab === index ? styles.activeTab : {})
+              }}
+        >{tab.tabWork}</button>))}
+    
         </div>
       </div>
 

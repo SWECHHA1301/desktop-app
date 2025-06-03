@@ -67,7 +67,7 @@ export default function PaymentPaid({ setIsDrawerOpen }) {
 
             <button style={addPaymentButton} onClick={() => setIsDrawerOpen(true)}>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16.5px' }}>
-                <div className="add-payment-icon"><p>+</p></div>
+                <div><p>+</p></div>
                 <p>Add Payment Type</p>
               </div>
             </button>
