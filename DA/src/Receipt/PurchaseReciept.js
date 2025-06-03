@@ -27,17 +27,19 @@ const PurchaseReceipt = () => {
     setExpandedItemId((prev) => (prev === id ? null : id));
   };
 
-  const handleQuantityChange = (id, delta) => {
-    setItems((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, qty: Math.max(1, item.qty + delta) } : item
-      )
-    );
-  };
-
   const handleRemove = (id) => {
     setItems((prev) => prev.filter((item) => item.id !== id));
   };
+
+  const handleQuantityChange = (itemId, newQty) => {
+  if (newQty < 0) return;
+  setItems((prev) =>
+    prev.map((item) =>
+      item.id === itemId ? { ...item, qty: newQty } : item
+    )
+  );
+};
+
 
   const total = items.reduce((acc, item) => acc + item.qty * item.price, 0);
 
@@ -162,45 +164,54 @@ const PurchaseReceipt = () => {
 
         {expandedItemId === item.id && (
           <div className="inline-drawer">
-            <div className="drawer-controls">
-              <div className="drawer-column">
-                <div className="drawer-label">Quantity</div>
-                <div className="qty-control">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleQuantityChange(item.id, -1);
-                    }}
-                  >
-                    -
-                  </button>
-                  <span>{item.qty}</span>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleQuantityChange(item.id, 1);
-                    }}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div className="drawer-column">
-                <div className="drawer-label">Discount</div>
-                <div className="discount-input">
-                  <input
-                    type="text"
-                    placeholder="0"
-                    onClick={(e) => e.stopPropagation()}
-                  />
-                  <select onClick={(e) => e.stopPropagation()}>
-                    <option value="%">%</option>
-                    <option value="₹">₹</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div className="drawer-controls">
+    <div className="drawer-column">
+      <div className="drawer-label">Quantity</div>
+      <div className="qty-control">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleQuantityChange(item.id, item.qty - 1);
+          }}
+        >
+          -
+        </button>
+        <input
+          type="number"
+          value={item.qty}
+          onClick={(e) => e.stopPropagation()}
+          onChange={(e) =>
+            handleQuantityChange(item.id, parseInt(e.target.value) || 0)
+          }
+        />
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleQuantityChange(item.id, item.qty + 1);
+          }}
+        >
+          +
+        </button>
+      </div>
+    </div>
+
+    <div className="drawer-column">
+      <div className="drawer-label">Discount</div>
+      <div className="discount-input">
+        <input
+          type="text"
+          placeholder="0"
+          onClick={(e) => e.stopPropagation()}
+        />
+        <select onClick={(e) => e.stopPropagation()}>
+          <option value="%">%</option>
+          <option value="₹">₹</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
         )}
       </div>
     </div>

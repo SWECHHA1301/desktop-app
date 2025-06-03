@@ -434,14 +434,17 @@ height: 40px;
   justify-content: center;
 }
 
-.qty-control span {
+.qty-control input {
   height: 28px;
   width: 43px;
   border: 1px solid #3658BF;
   border-radius: 20px;
   text-align: center;
   font-weight: 500;
+  outline: none;
+  appearance: none;
 }
+
 
 /* Discount Input */
 .discount-input {

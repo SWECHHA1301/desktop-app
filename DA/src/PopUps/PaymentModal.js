@@ -47,43 +47,59 @@ const PaymentModal = ({ onClose }) => {
       label: "Cash",
       description: "Pay in cash",
       content: (
-        <div className="cash-inputs">
-          <div className="cash-row">
-            <span>Cash Received</span>
-            <input type="text" defaultValue="₹ 00.00" className="cash-input" style={{ border: "1px solid #797979" }} />
-          </div>
-          <div className="cash-row">
-            <span>Return Amount</span>
-            <span>₹ 00.00</span>
-          </div>
-        </div>
-      ),
+            <div className="cash-inputs">
+              <div className="cash-row">
+                <span>Cash Received</span>
+                <div className="input-wrapper">
+                  <span className="static-symbol">₹</span>
+                  <input
+                    type="text"
+                    defaultValue="00.00"
+                    className="cash-input input-with-symbol"
+                    style={{ border: "1px solid #797979" }}
+                  />
+                </div>
+              </div>
+              <div className="cash-row">
+                <span>Return Amount</span>
+                <span>₹ 00.00</span>
+              </div>
+            </div>
+          ),
     },
     {
       key: "Split",
       label: "Split",
       description: "Pay in multiple methods",
       content: (
-        <div className="split-grid">
-          <div className="split-row">
-            <span>Cash :</span>
-            <input type="text" defaultValue="₹ 00.00" className="split-input" />
-          </div>
-          <div className="split-row">
-            <span>UPI :</span>
-            <input type="text" defaultValue="₹ 00.00" className="split-input" />
-          </div>
-          <div className="split-row">
-            <span>Card :</span>
-            <input type="text" defaultValue="₹ 00.00" className="split-input" />
-          </div>
-          <div className="split-row">
-            <span>Return :</span>
-            <span className="rupee-symbol">₹</span>
-            <span>₹ 00.00</span>
-          </div>
-        </div>
-      ),
+                <div className="split-grid">
+                  <div className="split-row">
+                    <span>Cash :</span>
+                    <div className="input-wrapper">
+                      <span className="static-symbol">₹</span>
+                      <input type="text" defaultValue="00.00" className="split-input input-with-symbol" />
+                    </div>
+                  </div>
+                  <div className="split-row">
+                    <span>UPI :</span>
+                    <div className="input-wrapper">
+                      <span className="static-symbol">₹</span>
+                      <input type="text" defaultValue="00.00" className="split-input input-with-symbol" />
+                    </div>
+                  </div>
+                  <div className="split-row">
+                    <span>Card :</span>
+                    <div className="input-wrapper">
+                      <span className="static-symbol">₹</span>
+                      <input type="text" defaultValue="00.00" className="split-input input-with-symbol" />
+                    </div>
+                  </div>
+                  <div className="split-row">
+                    <span>Return :</span>
+                    <span>₹ 00.00</span>
+                  </div>
+                </div>
+              ),
     },
   ];
 
@@ -107,28 +123,35 @@ const PaymentModal = ({ onClose }) => {
               <span className="additional-link">Additional Charges</span>
             </div>
             <div className="charges-list">
-              {["Subtotal", "Taxes", "Discount", "Coupon", "Round off", "Tip amount", "Added Charges 1"].map((item) => (
-                <div className="charge-row" key={item}>
-                  <span>{item}</span>
-                  <span>
-                    {item.includes("Tip") || item.includes("Added") ? (
+            {["Subtotal", "Taxes", "Discount", "Coupon", "Round off", "Tip amount", "Added Charges 1"].map((item) => (
+              <div className="charge-row" key={item}>
+                <span>{item}</span>
+                <span>
+                  {(item.includes("Tip") || item.includes("Added")) ? (
+                    <div className="input-wrapper">
+                      <span className="static-symbol">₹</span>
                       <input
                         className="tip-box"
                         type="text"
-                        defaultValue="₹00.00"
-                        style={{ borderRadius: "20px", border: "1px solid #797979", padding: "3px 8px", textAlign: "right" }}
+                        defaultValue="00.00"
+                        style={{borderRadius: 10}}
                       />
-                    ) : (
-                      "₹00.00"
-                    )}
-                  </span>
-                </div>
-              ))}
-              <div className="total-row">
-                <strong>Total Payable</strong>
-                <strong>₹ 00.00</strong>
+                    </div>
+                  ) : (
+                    <>
+                      <span className="symbol">₹</span>
+                      00.00
+                    </>
+                  )}
+                </span>
               </div>
+            ))}
+            <div className="total-row">
+              <strong>Total Payable</strong>
+              <strong>₹ 00.00</strong>
             </div>
+          </div>
+
           </div>
 
           <div className="vertical-divider"></div>

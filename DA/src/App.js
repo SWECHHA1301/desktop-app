@@ -57,11 +57,11 @@ function App() {
     {/* <MainContainer children={<FoodVariationModal />} /> */}
        
        {/* <MainContainer children={<AddExpense/>}/> */}
- {/* <MainContainer children={<AddNoteModal/>}/> */}
+ <MainContainer children={<PaymentModal/>}/>
 
 
       {/* <MainContainer children={<ItemCancellation/>}/> */}
-      <MainContainer children={<ProductCard/>}/>
+      {/* <MainContainer children={<ProductCard/>}/> */}
       {/* <MainContainer children={<OrderDashboard/>}/> */}
 
       {/* <MainContainer children={<TableDashboard/>}/> */}
