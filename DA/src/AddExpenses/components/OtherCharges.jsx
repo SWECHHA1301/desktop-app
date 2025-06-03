@@ -33,7 +33,7 @@ export default function OtherCharges() {
               backgroundColor:'#E3E6EE',
               border:'1px solid #ccc',
               borderRadius:'5px',
-              
+               padding:'0 10px'
             }} type='text' placeholder='Enter Expense Category' defaultValue={'Expense Category'}/>
           </div>
 
@@ -45,7 +45,7 @@ export default function OtherCharges() {
               backgroundColor:'#E3E6EE',
               border:'1px solid #ccc',
               borderRadius:'5px',
-              
+              padding:'0 10px'
             }} type='number' placeholder='Enter Amount' defaultValue={180000.00}/>
             
             {/* {₹}  */}
@@ -60,7 +60,9 @@ export default function OtherCharges() {
               backgroundColor:'#E3E6EE',
               border:'1px solid #ccc',
               borderRadius:'5px',
-              paddingTop:'6px',
+              padding:'6px 10px 0 10px',
+              
+
             }} type='text' placeholder='Enter Expense Description'/>
           </div>
 

@@ -1,225 +1,266 @@
 import React, { useState } from 'react';
+import { ChevronDown, X } from 'lucide-react';
 
-const OrderCancellation = ({ onClose, onConfirm }) => {
+export default function OrderCancellation({ onClose }) {
   const [refundType, setRefundType] = useState('partial');
-  const [partialAmount, setPartialAmount] = useState(100);
-  const refundAmount = 480;
+
+  const styles = {
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 1000,
+    },
+    modalContainer: {
+      width: '100%',
+      maxWidth: '556px',
+      height: '544px',
+      backgroundColor: '#ffffff',
+      borderRadius: '10px',
+      display: 'flex',
+      flexDirection: 'column',
+      position: 'relative',
+    },
+    closeButton: {
+      position: 'absolute',
+      top: '12px',
+      right: '12px',
+      cursor: 'pointer',
+      color: 'white',
+    },
+    header: {
+      backgroundColor: '#3658BF',
+      height: '49px',
+      borderRadius: '10px 10px 0 0',
+      display: 'flex',
+      alignItems: 'center',
+      padding: '0 24px',
+    },
+    headerText: {
+      fontWeight: 700,
+      fontSize: '20px',
+      color: 'white',
+    },
+    main: {
+      padding: '24px 40px 0 30px',
+      flex: 1,
+    },
+    row: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '24px',
+      marginBottom: '16px',
+    },
+    label: {
+      fontWeight: 700,
+      color: '#000',
+      fontSize: '16px',
+    },
+    value: {
+      color: '#000',
+      fontWeight: '500',
+    },
+    selectWrapper: {
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+    },
+    select: {
+      appearance: 'none',
+      WebkitAppearance: 'none',
+      MozAppearance: 'none',
+      width: '100%',
+      height: '30px',
+      padding: '4px 28px 4px 10px',
+      border: '1px solid #797979',
+      borderRadius: '5px',
+      color: '#797979',
+      fontSize: '14px',
+      background: 'white',
+    },
+    chevron: {
+      position: 'absolute',
+      right: '8px',
+      pointerEvents: 'none',
+    },
+    divider: {
+      borderTop: '1px solid #ccc',
+      margin: '16px 0',
+    },
+    refundSection: {
+      marginTop: '16px',
+    },
+    radioRow: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '16px',
+      marginTop: '8px',
+    },
+    amountInput: {
+      width: '100px',
+      height: '26px',
+      paddingLeft: '20px',
+      border: '1px solid #797979',
+      borderRadius: '5px',
+    },
+    rupeePrefix: {
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+    },
+    rupeeSymbol: {
+      position: 'absolute',
+      left: '8px',
+      color: '#797979',
+      fontSize: '14px',
+      pointerEvents: 'none',
+    },
+    footer: {
+      backgroundColor: '#E2E6F3',
+      borderRadius: '0 0 10px 10px',
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      padding: '16px 24px',
+      gap: '16px',
+    },
+    cancelBtn: {
+      backgroundColor: 'white',
+      border: '1px solid black',
+      borderRadius: '10px',
+      color: '#3658BF',
+      fontWeight: 700,
+      fontSize: '12px',
+      padding: '8px 16px',
+      cursor: 'pointer',
+    },
+    confirmBtn: {
+      backgroundColor: '#3658BF',
+      border: 'none',
+      borderRadius: '10px',
+      color: 'white',
+      fontWeight: 700,
+      fontSize: '12px',
+      padding: '8px 16px',
+      cursor: 'pointer',
+    },
+  };
 
   return (
-    <div style={styles.backdrop}>
-      <div style={styles.popup}>
-        <div style={styles.header}>Order Cancellation</div>
-
-        <div style={styles.section}>
-          <div style={styles.row}>
-            <span>Table Number :</span>
-            <select style={styles.selectBox}>
-              <option>Non AC</option>
-            </select>
-            <select style={styles.selectBox}>
-              <option>T 2</option>
-            </select>
-          </div>
-
-          <div style={{ marginTop: 10 }}>
-            <div style={styles.label}>Customer Details</div>
-            <div style={styles.row}>
-              <span style={{color: '#797979', fontSize: '16px', fontWeight: 700}}>Name :</span>
-              <strong style={styles.infoText}>Airy</strong>
-              <span style={{ marginLeft: 83,color: '#797979', fontSize: '16px', fontWeight: 700 }}>Phone No. :</span>
-              <strong style={styles.infoText}>8263200401</strong>
-            </div>
-            <div style={styles.row}>
-              <span style={{color: '#797979', fontSize: '16px', fontWeight: 700}}>No. of items :</span>
-              <strong style={styles.infoText}>6</strong>
-            </div>
-          </div>
+    <div style={styles.overlay}>
+      <div style={styles.modalContainer}>
+        {/* Close Icon (optional) */}
+        <div onClick={onClose} style={styles.closeButton}>
+          <X size={20} />
         </div>
 
-        <hr />
-
-        <div style={styles.section}>
-          <label style={styles.label}>Reasons</label>
-          <select style={styles.dropdown}>
-            <option>Reasons</option>
-          </select>
+        <div style={styles.header}>
+          <h2 style={styles.headerText}>Order Cancellation</h2>
         </div>
 
-        <div style={styles.section}>
+        <div style={styles.main}>
+          {/* Table Number Section */}
           <div style={styles.row}>
-            <span style={styles.labelBold}>Refund Amount</span>
-            <span style={{ marginLeft: 'auto', fontWeight: 'bold' }}>₹ {refundAmount}</span>
+            <span style={styles.label}>Table Number :</span>
+            <div style={styles.selectWrapper}>
+              <select style={styles.select}>
+                <option>Non AC</option>
+                <option>AC</option>
+              </select>
+              <ChevronDown size={16} style={styles.chevron} />
+            </div>
+            <div style={styles.selectWrapper}>
+              <select style={styles.select}>
+                <option>T 1</option>
+                <option>T 2</option>
+                <option>T 3</option>
+              </select>
+              <ChevronDown size={16} style={styles.chevron} />
+            </div>
           </div>
 
-          <div style={styles.radioRow}>
-            <input
-              type="radio"
-              checked={refundType === 'complete'}
-              onChange={() => setRefundType('complete')}
-            />
-            <label style={{ marginLeft: 8 }}>Complete Refund</label>
-            <span style={{ marginLeft: 'auto' }}>₹ {refundAmount}</span>
+          {/* Customer Details */}
+          <h4 style={{ fontWeight: 700, fontSize: '16px', marginBottom: '10px' }}>Customer Details</h4>
+          <div style={styles.row}>
+            <span style={{ ...styles.label, paddingLeft: '10px', color: '#797979' }}>Name :</span>
+            <span style={{ ...styles.value, marginRight: '24px' }}>Airy</span>
+            <span style={{ ...styles.label, color: '#797979' }}>Phone No. :</span>
+            <span style={styles.value}>8263200401</span>
+          </div>
+          <div style={styles.row}>
+            <span style={{ ...styles.label, paddingLeft: '10px', color: '#797979' }}>No. of items :</span>
+            <span style={styles.value}>6</span>
           </div>
 
-          <div style={styles.radioRow}>
-            <input
-              type="radio"
-              checked={refundType === 'partial'}
-              onChange={() => setRefundType('partial')}
-            />
-            <label style={{ marginLeft: 8 }}>Partial Refund</label>
+          <div style={styles.divider}></div>
+
+          {/* Reasons */}
+          <div style={{ marginBottom: '16px' }}>
+            <span style={{ ...styles.label, display: 'block', marginBottom: '8px' }}>Reasons</span>
+            <div style={{ ...styles.selectWrapper, maxWidth: '363px', marginLeft: '55px' }}>
+              <select style={{ ...styles.select, width: '100%', height: '26px', borderRadius: 10 }}>
+                <option>Select a reason</option>
+              </select>
+              <ChevronDown size={16} style={styles.chevron} />
+            </div>
           </div>
 
-          {refundType === 'partial' && (
-            <div style={styles.partialRow}>
-              <span>Amount</span>
-              <div style={styles.amountInput}>
-                <span style={{ padding: '4px 8px' }}>₹</span>
-                <input
-                  type="number"
-                  value={partialAmount}
-                  onChange={(e) => setPartialAmount(e.target.value)}
-                  style={styles.inputBox}
-                />
+          {/* Refund Section */}
+          <div style={styles.refundSection}>
+            <div style={{ display: 'flex', fontWeight: 700 }}>
+              <h3 style={styles.label}>Refund Amount </h3>
+              <h3 style={{ marginLeft: '20px' }}>₹ 480</h3>
+            </div>
+
+            <div style={styles.radioRow}>
+              <input
+                type="radio"
+                id="complete"
+                name="refund"
+                value="complete"
+                checked={refundType === 'complete'}
+                onChange={() => setRefundType('complete')}
+              />
+              <label htmlFor="complete">Complete Refund</label>
+              <span style={{ marginLeft: '20px' }}>₹ 480</span>
+            </div>
+
+            <div style={styles.radioRow}>
+              <input
+                type="radio"
+                id="partial"
+                name="refund"
+                value="partial"
+                checked={refundType === 'partial'}
+                onChange={() => setRefundType('partial')}
+              />
+              <label htmlFor="partial">Partial Refund</label>
+            </div>
+
+            {refundType === 'partial' && (
+              <div style={styles.radioRow}>
+                <span>Amount :</span>
+                <div style={styles.rupeePrefix}>
+                  <span style={styles.rupeeSymbol}>₹</span>
+                  <input type="number" defaultValue={100} style={styles.amountInput} />
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
         <div style={styles.footer}>
-          <button onClick={onClose} style={styles.cancelButton}>Cancel</button>
-          <button
-            onClick={() => onConfirm({ refundType, partialAmount })}
-            style={styles.confirmButton}
-          >
-            Confirm Cancellation
-          </button>
+          <button style={styles.cancelBtn} onClick={onClose}>Cancel</button>
+          <button style={styles.confirmBtn}>Confirm Cancellation</button>
         </div>
       </div>
     </div>
   );
-};
-
-const styles = {
-  backdrop: {
-    position: 'fixed',
-    top: 0, left: 0, right: 0, bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.4)',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 1000,
-    
-  },
-  popup: {
-    width: 556,
-    height: 544,
-    background: '#fff',
-    borderRadius: 10,
-    overflow: 'hidden',
-    boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
-    fontFamily: 'sans-serif',
-  },
-  header: {
-    background: '#3658BF',
-    color: '#fff',
-    padding: '14px 24px',
-    fontSize: 20,
-    fontWeight: 700,
-  },
-  section: {
-    padding: '16px 20px'
-  },
-  row: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: 10,
-    fontSize: 14
-  },
-  label: {
-    fontSize: 14,
-    fontWeight: 600,
-    marginBottom: 6
-  },
-  labelBold: {
-    fontSize: 14,
-    fontWeight: 700
-  },
-  infoText: {
-    marginLeft: 6,
-    fontWeight: 500
-  },
-  selectBox: {
-    height: 36,
-    width: 110,
-    marginLeft: 8,
-    padding: '6px 12px',
-    borderRadius: 10,
-    border: '1px solid #ccc',
-    fontSize: 14
-  },
-  dropdown: {
-    width: '100%',
-    height: 36,
-    padding: '6px 12px',
-    borderRadius: 10,
-    border: '1px solid #ccc',
-    fontSize: 14,
-    marginRight: 12
-  },
-  radioRow: {
-    display: 'flex',
-    alignItems: 'center',
-    marginTop: 10,
-    fontSize: 14
-  },
-  partialRow: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 10,
-    marginTop: 10
-  },
-  amountInput: {
-    display: 'flex',
-    alignItems: 'center',
-    border: '1px solid #ccc',
-    borderRadius: 10,
-    overflow: 'hidden',
-    height: 36
-  },
-  inputBox: {
-    border: 'none',
-    padding: '6px 10px',
-    outline: 'none',
-    width: 100,
-    background: 'white',
-    fontSize: 14
-  },
-  footer: {
-    background: '#f3f3f3',
-    padding: '12px 20px',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    gap: 10
-  },
-  cancelButton: {
-    padding: '8px 16px',
-    background: '#fff',
-    border: '1px solid #ccc',
-    borderRadius: 10,
-    cursor: 'pointer',
-    fontWeight: 500
-  },
-  confirmButton: {
-    padding: '8px 16px',
-    background: '#3658BF',
-    color: '#fff',
-    border: 'none',
-    borderRadius: 10,
-    cursor: 'pointer',
-    fontWeight: 700
-  }
-};
-
-export default OrderCancellation;
+}
 

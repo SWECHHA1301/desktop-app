@@ -54,7 +54,7 @@
 }
 
 .addexpense-drawer-body input {
-  /* padding: 9px 16px; */
+   padding:0 10px;
   background-color: #E3E6EE;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -69,3 +69,4 @@
   flex-direction: column;
   gap: 16px;
 }
+

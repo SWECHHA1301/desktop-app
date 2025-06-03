@@ -13,6 +13,7 @@ export default function PaymentPaid({ setIsDrawerOpen }) {
     fontSize: '12px',
     fontWeight: '400',
     maxWidth: '390px',
+    padding:'0 10px'
   };
 
   const addPaymentButton = {
