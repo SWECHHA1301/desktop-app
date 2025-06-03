@@ -71,9 +71,9 @@ function App() {
 
       {/* <MainContainer children={<ItemCancellation/>}/> */}
       {/* <MainContainer children={<ProductCard/>}/> */}
-      {/* <MainContainer children={<OrderDashboard/>}/> */}
+    
 
-      <MainContainer children={<AddProduct />}/>
+  
      
     </div>
   );
