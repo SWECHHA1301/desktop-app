@@ -28,6 +28,10 @@ import AddSale  from "./AddSale/AddSale"
 import AddStaffForm from "./AddNewStaff/AddStaffForm";
 import ImageSelector from "./Common/ImageSelector";
 import CreatePayment from "./CreatePayment/CreatePayment";
+import PurchaseReceipt from "./Receipt/PurchaseReciept";
+import CustomTable from "./Receipt/components/CustomTable";
+import PaymentSummary from "./Receipt/components/PaymentSummary";
+import PurchaseInfo from "./Receipt/components/PurchaseInfo";
 // import OrderCancellation from "./PopUps/OrderCancellation";
 // import ApplyDiscount from "./PopUps/ApplyDiscount";
 // import AddNoteModal from "./PopUps/AddNoteModal";
@@ -84,7 +88,10 @@ function App() {
       {/* <MainContainer children={<OrderDashboard/>}/> */}
 
       {/* <MainContainer children={<TableDashboard/>}/> */}
-      <MainContainer children={<CreatePayment/>}/>
+      {/* <MainContainer children={<CustomTable/>}/> */}
+      {/* <MainContainer children={<PaymentSummary/>}/> */}
+        <MainContainer children={<PurchaseReceipt/>}/>
+        {/* <MainContainer children={<PurchaseInfo/>}/> */}
     </div>
   );
 }

@@ -199,7 +199,7 @@ height: 40px;
 .receipt-body {
   flex: 1;
   overflow-y: auto;
-  border-top: 1px solid #ccc;
+  /* border-top: 1px solid #ccc; */
   padding-top: 8px;
 }
 
