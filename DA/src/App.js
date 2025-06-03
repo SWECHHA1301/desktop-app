@@ -28,6 +28,7 @@ import AddSale  from "./AddSale/AddSale"
 import AddStaffForm from "./AddNewStaff/AddStaffForm";
 import ImageSelector from "./Common/ImageSelector";
 import CreatePayment from "./CreatePayment/CreatePayment";
+import PurchaseReceipt from "./Receipt/PurchaseReciept";
 // import OrderCancellation from "./PopUps/OrderCancellation";
 // import ApplyDiscount from "./PopUps/ApplyDiscount";
 // import AddNoteModal from "./PopUps/AddNoteModal";
@@ -70,7 +71,7 @@ function App() {
 
 
       {/* <MainContainer children={<ItemCancellation/>}/> */}
-      {/* <MainContainer children={<ProductCard/>}/> */}
+      <MainContainer children={<PurchaseReceipt/>}/>
     
 
   
