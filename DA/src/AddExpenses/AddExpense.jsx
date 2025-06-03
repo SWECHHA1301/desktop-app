@@ -6,12 +6,15 @@ import PaymentPaid from './components/PaymentPaid';
 import './AddExpense.css'; // Ensure your drawer CSS is imported here
 
 export default function AddExpense() {
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
-    <div style={{ width: '100%', maxWidth: '1318px', height: '885px', backgroundColor: '#D4DAED', padding: '16px 24px' }}>
+    <div style={{ width: '100%', maxWidth: '1318px', height: '885px', backgroundColor: '#D4DAED', padding: '16px 24px' ,
+    
+    }}>
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      <div style={{ width:'100%',display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
         <div style={{
           display: 'flex',
           alignItems: 'center',
@@ -19,6 +22,7 @@ export default function AddExpense() {
           fontWeight: '700',
           fontSize: '16px',
           color: '#3658BF',
+          
         }}>
           <ChevronLeft style={{ color: "white", width: "20px" }} />
           <ChevronRight style={{ color: "black", width: "20px" }} />
@@ -62,13 +66,17 @@ export default function AddExpense() {
           <div className="addexpense-payment-drawer">
             <div className="addexpense-drawer-header">
               <h3 style={{ fontSize: '16px', fontWeight: '600' }}>Add Payment Type</h3>
-              <span className="addexpense-drawer-close" onClick={() => setIsDrawerOpen(false)}>×</span>
+              <span className="addexpense-drawer-close" onClick={() => setIsDrawerOpen(false)}>X</span>
             </div>
             <div className="addexpense-drawer-body">
+              <div style={{display:'flex',flexDirection:'column',gap:'6px'}}>
               <label>Payment Type</label>
               <input type="text" placeholder="e.g. UPI / Wallet / etc." />
+              </div>
+              <div style={{display:'flex',flexDirection:'column',gap:'6px'}}>
               <label>Amount</label>
               <input type="number" placeholder="e.g. ₹500" />
+              </div>
             </div>
           </div>
         )}

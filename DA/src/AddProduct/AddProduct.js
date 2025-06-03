@@ -4,16 +4,17 @@ import { PencilLine, BarcodeReader } from "../Common/Icons";
 import ProductInfo from "./components/ProductInfo";
 import VariantDetails from "./components/VariantDetails";
 import VariantDrawer from "./components/VariantDrawer";
-import { Details } from './components/Details';
-import { InventoryDetails } from './components/InventoryDetails';
-import { CategorySection } from './components/CategorySection';
-import { TaxesSection } from './components/TaxesSection';
-import { InventoryStatus } from './components/InventoryStatus';
+import { Details } from "./components/Details";
+import { InventoryDetails } from "./components/InventoryDetails";
+import { CategorySection } from "./components/CategorySection";
+import { TaxesSection } from "./components/TaxesSection";
+import { InventoryStatus } from "./components/InventoryStatus";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function AddProduct() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [variants, setVariants] = useState([]);
 
   return (
     <div className="ap-wrapper">
@@ -27,14 +28,17 @@ export default function AddProduct() {
       </div>
 
       <div className={`ap-form-layout ${drawerOpen ? "drawer-open" : ""}`}>
-
         <div className="ap-form-main">
-            <div className="ap-title">
-            <h2 >New Entry</h2>
-            </div>
+          <div className="ap-title">
+            <h2>New Entry</h2>
+          </div>
           <ProductInfo />
           <Details />
-          <VariantDetails openDrawer={() => setDrawerOpen(true)} />
+          <VariantDetails
+            setVariants={setVariants}
+            variants={variants}
+            openDrawer={() => setDrawerOpen(true)}
+          />
           <InventoryDetails />
           <CategorySection />
           <TaxesSection />
@@ -42,10 +46,14 @@ export default function AddProduct() {
         </div>
 
         {drawerOpen && (
-          <VariantDrawer closeDrawer={() => setDrawerOpen(false)} />
+          <VariantDrawer
+            closeDrawer={() => setDrawerOpen(false)}
+            handleSaveVariant={(_variants) =>
+              setVariants([...variants, ..._variants])
+            }
+          />
         )}
       </div>
     </div>
   );
 }
-
