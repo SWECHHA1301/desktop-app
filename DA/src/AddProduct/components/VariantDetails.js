@@ -22,6 +22,11 @@ export default function VariantDetails({ openDrawer, variants, setVariants }) {
     setVariants([...updated]);
   };
 
+  const removeVariant = (i) => {
+    const updated = variants.filter((_, index) => index !== i);
+    setVariants(updated);
+  };
+
   return (
     <div
       style={{
@@ -101,7 +106,7 @@ export default function VariantDetails({ openDrawer, variants, setVariants }) {
             </label>
           </div>
 
-          {/* Color Box */}
+          {/* Color Boxes */}
           {variants.map((v, i) => (
             <div
               key={i}
@@ -133,9 +138,9 @@ export default function VariantDetails({ openDrawer, variants, setVariants }) {
                   flexWrap: "wrap",
                 }}
               >
-                {v?.attrValues?.split(",")?.map((v, _i) => (
+                {v?.attrValues?.split(",")?.map((val, _i) => (
                   <span
-                    key={v + _i}
+                    key={val + _i}
                     style={{
                       border: "1px solid #3658BF",
                       borderRadius: "20px",
@@ -149,7 +154,7 @@ export default function VariantDetails({ openDrawer, variants, setVariants }) {
                       cursor: "default",
                     }}
                   >
-                    {v}
+                    {val}
                     <span
                       onClick={() => removeColor(i, _i)}
                       style={{
@@ -178,6 +183,7 @@ export default function VariantDetails({ openDrawer, variants, setVariants }) {
                   <PencilLine style={{ color: "#797979" }} />
                 </span>
                 <span
+                  onClick={() => removeVariant(i)}
                   style={{
                     cursor: "pointer",
                     color: "#3658BF",
