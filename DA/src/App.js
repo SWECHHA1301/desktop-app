@@ -25,6 +25,8 @@ import FoodVariationModal from "./PopUps/FoodVariationModal";
 import AddExpense from "./AddExpenses/AddExpense";
 import PaymentPage from "./PaymentPage/PaymentPage";
 import AddSale  from "./AddSale/AddSale"
+import AddStaffForm from "./AddNewStaff/AddStaffForm";
+import ImageSelector from "./Common/ImageSelector";
 function App() {
   return (
     <div className="app">
@@ -60,10 +62,12 @@ function App() {
   {/* <MainContainer children={<OrderCancellation />} /> */}
     {/* <MainContainer children={<FoodVariationModal />} /> */}
        
-       <MainContainer children={<AddExpense/>}/>
+       {/* <MainContainer children={<AddExpense/>}/> */}
 
  {/* <MainContainer children={<PaymentPage/>}/>
  <MainContainer children={<AddNoteModal/>}/> */}
+
+<MainContainer children={<AddStaffForm/>}/>
 
 
 

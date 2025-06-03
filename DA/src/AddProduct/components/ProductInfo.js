@@ -68,6 +68,7 @@ export default function ProductInfo() {
               </label>
             </div>
           </div>
+          
         </div>
 
         {/* Bottom Grid */}
