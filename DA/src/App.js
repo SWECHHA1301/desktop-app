@@ -17,12 +17,24 @@ import ItemCancellation from "./PopUps/ItemCancellation";
 // import AccManagement from "./HistoryMgmt/AccManagement";
 // import AddProduct from "./AddProduct/AddProduct";
 // import ManageProduct from "./ManageProduct/ManageProduct";
+
+import OrderCancellation from "./PopUps/OrderCancellation";
+import ApplyDiscount from "./PopUps/ApplyDiscount";
+import AddNoteModal from "./PopUps/AddNoteModal";
+import FoodVariationModal from "./PopUps/FoodVariationModal";
+import AddExpense from "./AddExpenses/AddExpense";
+import PaymentPage from "./PaymentPage/PaymentPage";
+import AddSale  from "./AddSale/AddSale"
+import AddStaffForm from "./AddNewStaff/AddStaffForm";
+import ImageSelector from "./Common/ImageSelector";
+import CreatePayment from "./CreatePayment/CreatePayment";
 // import OrderCancellation from "./PopUps/OrderCancellation";
 // import ApplyDiscount from "./PopUps/ApplyDiscount";
 // import AddNoteModal from "./PopUps/AddNoteModal";
 // import FoodVariationModal from "./PopUps/FoodVariationModal";
 // import AddExpense from "./AddExpenses/AddExpense";
 // import PaymentPage from "./PaymentPage/PaymentPage";
+
 
 function App() {
   return (
@@ -57,7 +69,14 @@ function App() {
     {/* <MainContainer children={<FoodVariationModal />} /> */}
        
        {/* <MainContainer children={<AddExpense/>}/> */}
- <MainContainer children={<PaymentModal/>}/>
+
+
+ {/* <MainContainer children={<PaymentPage/>}/>
+ <MainContainer children={<AddNoteModal/>}/> */}
+
+ {/* <MainContainer children={<AddNoteModal/>}/> */}
+
+{/* <MainContainer children={<AddStaffForm/>}/> */}
 
 
       {/* <MainContainer children={<ItemCancellation/>}/> */}
@@ -65,6 +84,7 @@ function App() {
       {/* <MainContainer children={<OrderDashboard/>}/> */}
 
       {/* <MainContainer children={<TableDashboard/>}/> */}
+     
     </div>
   );
 }
