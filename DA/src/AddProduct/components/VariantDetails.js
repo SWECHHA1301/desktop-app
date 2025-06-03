@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronRight, PencilLine } from "lucide-react";
 
-export default function VariantDetails({ openDrawer }) {
+export default function VariantDetails({ openDrawer, variants, setVariants }) {
   const [isOpen, setIsOpen] = useState(true);
   const [hasVariant, setHasVariant] = useState(null);
-  const [colors, setColors] = useState(["Red", "Blue"]);
-  const [showColorBox, setShowColorBox] = useState(true); // Controls visibility of the Color box
 
   const toggleSection = () => setIsOpen(!isOpen);
-  const removeColor = (colorToRemove) => {
-    setColors(colors.filter((color) => color !== colorToRemove));
-  };
 
-  const toggleColorBox = () => setShowColorBox(!showColorBox);
+  const removeColor = (i, _i) => {
+    let updated = [...variants];
+    const changedAttributeValues = variants[i]?.attrValues
+      ?.split(",")
+      ?.filter((_, atI) => atI !== _i);
+
+    if (changedAttributeValues.length) {
+      updated[i].attrValues = changedAttributeValues.join(", ");
+    } else {
+      updated = updated.filter((_, vI) => vI !== i);
+    }
+
+    setVariants([...updated]);
+  };
 
   return (
     <div
@@ -55,8 +63,17 @@ export default function VariantDetails({ openDrawer }) {
           >
             Has Variant
           </label>
-          <div style={{ display: "flex", gap: "20px", marginBottom: "16px", fontSize: "16px" }}>
-            <label style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              marginBottom: "16px",
+              fontSize: "16px",
+            }}
+          >
+            <label
+              style={{ display: "flex", alignItems: "center", gap: "4px" }}
+            >
               <input
                 type="radio"
                 name="variant"
@@ -64,12 +81,13 @@ export default function VariantDetails({ openDrawer }) {
                 checked={hasVariant === "yes"}
                 onChange={() => {
                   setHasVariant("yes");
-                  setShowColorBox(true); // Ensure it's visible if "Yes" selected
                 }}
               />
               Yes
             </label>
-            <label style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+            <label
+              style={{ display: "flex", alignItems: "center", gap: "4px" }}
+            >
               <input
                 type="radio"
                 name="variant"
@@ -77,7 +95,6 @@ export default function VariantDetails({ openDrawer }) {
                 checked={hasVariant === "no"}
                 onChange={() => {
                   setHasVariant("no");
-                  setShowColorBox(false); // Hide color box if "No" selected
                 }}
               />
               No
@@ -85,8 +102,9 @@ export default function VariantDetails({ openDrawer }) {
           </div>
 
           {/* Color Box */}
-          {hasVariant === "yes" && showColorBox && (
+          {variants.map((v, i) => (
             <div
+              key={i}
               style={{
                 border: "2px solid #3658BF",
                 borderRadius: "8px",
@@ -105,13 +123,19 @@ export default function VariantDetails({ openDrawer }) {
                   padding: "0 4px",
                 }}
               >
-                Color
+                {v?.attrName}
               </label>
-
-              <div style={{ display: "flex", gap: "8px", marginTop: "10px", flexWrap: "wrap" }}>
-                {colors.map((color) => (
+              <div
+                style={{
+                  display: "flex",
+                  gap: "8px",
+                  marginTop: "10px",
+                  flexWrap: "wrap",
+                }}
+              >
+                {v?.attrValues?.split(",")?.map((v, _i) => (
                   <span
-                    key={color}
+                    key={v + _i}
                     style={{
                       border: "1px solid #3658BF",
                       borderRadius: "20px",
@@ -125,9 +149,9 @@ export default function VariantDetails({ openDrawer }) {
                       cursor: "default",
                     }}
                   >
-                    {color}
+                    {v}
                     <span
-                      onClick={() => removeColor(color)}
+                      onClick={() => removeColor(i, _i)}
                       style={{
                         fontWeight: "bold",
                         color: "#797979",
@@ -141,19 +165,30 @@ export default function VariantDetails({ openDrawer }) {
               </div>
 
               {/* Edit/Clear Icons */}
-              <div style={{ position: "absolute", top: "8px", right: "10px", display: "flex", gap: "10px" }}>
+              <div
+                style={{
+                  position: "absolute",
+                  top: "8px",
+                  right: "10px",
+                  display: "flex",
+                  gap: "10px",
+                }}
+              >
                 <span style={{ cursor: "pointer" }}>
                   <PencilLine style={{ color: "#797979" }} />
                 </span>
                 <span
-                  onClick={toggleColorBox}
-                  style={{ cursor: "pointer", color: "#3658BF", fontSize: "16px" }}
+                  style={{
+                    cursor: "pointer",
+                    color: "#3658BF",
+                    fontSize: "16px",
+                  }}
                 >
                   ✖
                 </span>
               </div>
             </div>
-          )}
+          ))}
 
           {/* Add Variant Button */}
           {hasVariant === "yes" && (
@@ -210,14 +245,3 @@ export default function VariantDetails({ openDrawer }) {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-

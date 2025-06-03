@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { X, Plus } from "lucide-react";
 
-export default function VariantDrawer({ closeDrawer }) {
+export default function VariantDrawer({
+  closeDrawer,
+  handleSaveVariant = () => {},
+}) {
   const [variants, setVariants] = useState([
     { attrName: "", attrValues: "", description: "" },
   ]);
@@ -13,12 +16,15 @@ export default function VariantDrawer({ closeDrawer }) {
   };
 
   const handleAddMore = () => {
-    setVariants([...variants, { attrName: "", attrValues: "", description: "" }]);
+    setVariants([
+      ...variants,
+      { attrName: "", attrValues: "", description: "" },
+    ]);
   };
 
   const handleSave = () => {
-    console.log("Saved variants:", variants);
-    closeDrawer(); // Optionally call this or handle save elsewhere
+    handleSaveVariant(variants);
+    closeDrawer();
   };
 
   return (

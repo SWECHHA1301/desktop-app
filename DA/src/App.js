@@ -1,23 +1,23 @@
 import React from "react";
 // import Navbar from "./Common/Navbar";
 // import Sidebar from "./Common/Sidebar";
-// import ProductCard from "./Product/ProductCard";
-// import TableDashboard from "./Table Management/TableDashboard";
+import ProductCard from "./Product/ProductCard";
+import TableDashboard from "./Table Management/TableDashboard";
 // import PurchaseReceipt from "./Receipt/PurchaseReciept";
 // import CustomerList from "./CustomerDetails/CustomerList";
-// import OrderDashboard from "./OrderStatus/OrderDashboard";
+import OrderDashboard from "./OrderStatus/OrderDashboard";
 // import Dashboard from "./Dashboard/Dashboard";
 // import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 import MainContainer from "./MainContainer";
-// import PaymentModal from "./PopUps/PaymentModal";
-// import ItemCancellation from "./PopUps/ItemCancellation";
-
+import PaymentModal from "./PopUps/PaymentModal";
+import ItemCancellation from "./PopUps/ItemCancellation";
 
 // import StaffManagement from "./StaffManagement/StaffManagement";
 // import OrderHistory from "./OrderHistory/OrderHistory";
 // import AccManagement from "./HistoryMgmt/AccManagement";
 // import AddProduct from "./AddProduct/AddProduct";
 // import ManageProduct from "./ManageProduct/ManageProduct";
+
 import OrderCancellation from "./PopUps/OrderCancellation";
 import ApplyDiscount from "./PopUps/ApplyDiscount";
 import AddNoteModal from "./PopUps/AddNoteModal";
@@ -27,6 +27,14 @@ import PaymentPage from "./PaymentPage/PaymentPage";
 import AddSale  from "./AddSale/AddSale"
 import AddStaffForm from "./AddNewStaff/AddStaffForm";
 import ImageSelector from "./Common/ImageSelector";
+// import OrderCancellation from "./PopUps/OrderCancellation";
+// import ApplyDiscount from "./PopUps/ApplyDiscount";
+// import AddNoteModal from "./PopUps/AddNoteModal";
+// import FoodVariationModal from "./PopUps/FoodVariationModal";
+// import AddExpense from "./AddExpenses/AddExpense";
+// import PaymentPage from "./PaymentPage/PaymentPage";
+
+
 function App() {
   return (
     <div className="app">
@@ -41,17 +49,14 @@ function App() {
       {/* <AccManagement/> */}
       {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
-
       {/* <MainContainer children={<Dashboard />}/> */}
-
-      
 
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
-     
+
       {/* <MainContainer children={<ItemCancellation />}/> */}
-    
-   {/* <MainContainer children={<OrderHistory/>}/> */}
+
+      {/* <MainContainer children={<OrderHistory/>}/> */}
 
       {/* <MainContainer children={<PaymentModal/>}/> */}
    
@@ -64,14 +69,20 @@ function App() {
        
        {/* <MainContainer children={<AddExpense/>}/> */}
 
+
  {/* <MainContainer children={<PaymentPage/>}/>
  <MainContainer children={<AddNoteModal/>}/> */}
+
+ {/* <MainContainer children={<AddNoteModal/>}/> */}
 
 <MainContainer children={<AddStaffForm/>}/>
 
 
+      {/* <MainContainer children={<ItemCancellation/>}/> */}
+      <MainContainer children={<ProductCard/>}/>
+      {/* <MainContainer children={<OrderDashboard/>}/> */}
 
-{/* <MainContainer children={<AddSale/>}/> */}
+      {/* <MainContainer children={<TableDashboard/>}/> */}
     </div>
   );
 }
