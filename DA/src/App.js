@@ -5,7 +5,7 @@ import React from "react";
 // import TableDashboard from "./Table Management/TableDashboard";
 // import PurchaseReceipt from "./Receipt/PurchaseReciept";
 // import CustomerList from "./CustomerDetails/CustomerList";
-// import OrderDashboard from "./OrderStatus/OrderDashboard";
+import OrderDashboard from "./OrderStatus/OrderDashboard";
 // import Dashboard from "./Dashboard/Dashboard";
 // import OrderTypeSwitch from "./Common/OrderTypeSwitch";
 import MainContainer from "./MainContainer";
@@ -18,12 +18,12 @@ import MainContainer from "./MainContainer";
 // import AccManagement from "./HistoryMgmt/AccManagement";
 // import AddProduct from "./AddProduct/AddProduct";
 // import ManageProduct from "./ManageProduct/ManageProduct";
-import OrderCancellation from "./PopUps/OrderCancellation";
-import ApplyDiscount from "./PopUps/ApplyDiscount";
-import AddNoteModal from "./PopUps/AddNoteModal";
-import FoodVariationModal from "./PopUps/FoodVariationModal";
-import AddExpense from "./AddExpenses/AddExpense";
-import PaymentPage from "./PaymentPage/PaymentPage";
+// import OrderCancellation from "./PopUps/OrderCancellation";
+// import ApplyDiscount from "./PopUps/ApplyDiscount";
+// import AddNoteModal from "./PopUps/AddNoteModal";
+// import FoodVariationModal from "./PopUps/FoodVariationModal";
+// import AddExpense from "./AddExpenses/AddExpense";
+// import PaymentPage from "./PaymentPage/PaymentPage";
 
 function App() {
   return (
@@ -56,12 +56,13 @@ function App() {
 
      
  {/* <MainContainer children={<ManageProduct/>}/> */}
- {/* <MainContainer children={<OrderDashboard/>}/> */}
+ <MainContainer children={<OrderDashboard/>}/>
   {/* <MainContainer children={<OrderCancellation />} /> */}
     {/* <MainContainer children={<FoodVariationModal />} /> */}
        
        {/* <MainContainer children={<AddExpense/>}/> */}
- <MainContainer children={<AddNoteModal/>}/>
+ {/* <MainContainer children={<AddNoteModal/>}/> */}
+
 
 
     </div>
