@@ -9,7 +9,6 @@ export default function CreatePayment() {
       container : {
            maxWidth:'1316px',
            height:'884px',
- backgroundColor:'#D4DAED',
   padding: '16px 24px',
    display:'flex',
   flexDirection:'column',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Home, Layers, Clock, Settings, ShoppingCart } from 'lucide-react';
+
 import './Sidebar.css';
 
 const Sidebar = () => {

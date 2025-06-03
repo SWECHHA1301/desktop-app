@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronRight, Pencil } from "lucide-react";
+import { ChevronDown, ChevronDown as ChevronDownIcon, ChevronRight, Pencil } from "lucide-react";
 
 export default function ProductInfo() {
   const [isOpen, setIsOpen] = useState(true);
@@ -49,7 +49,10 @@ export default function ProductInfo() {
           <div className="upload-container">
             <div className="upload-box">
               {previewUrl ? (
-                <img src={previewUrl} alt="Preview" className="image-preview" />
+                <>
+                  <img src={previewUrl} alt="Preview" className="image-preview" />
+                  <span className="remove-image" onClick={() => setPreviewUrl(null)}>✖</span>
+                </>
               ) : (
                 <div className="image-placeholder" />
               )}
@@ -68,7 +71,6 @@ export default function ProductInfo() {
               </label>
             </div>
           </div>
-          
         </div>
 
         {/* Bottom Grid */}
@@ -80,10 +82,13 @@ export default function ProductInfo() {
 
           <div className="product-type-container">
             <label>Product Type</label>
-            <select className="input-select">
-              <option>Product</option>
-              <option>Service</option>
-            </select>
+            <div className="select-wrapper">
+              <select className="input-select">
+                <option>Product</option>
+                <option>Service</option>
+              </select>
+              <ChevronDown className="select-icon" size={16} />
+            </div>
           </div>
         </div>
       </div>
@@ -100,6 +105,7 @@ export default function ProductInfo() {
           justify-content: space-between;
           align-items: center;
           padding: 16px 24px;
+          cursor: pointer;
         }
 
         .section-title {
@@ -131,6 +137,8 @@ export default function ProductInfo() {
         .grid-row {
           display: grid;
           grid-template-columns: 1fr 160px;
+          gap: 24px;
+          align-items: start;
         }
 
         .left-column {
@@ -156,17 +164,25 @@ export default function ProductInfo() {
           border-radius: 6px;
           border: 1px solid #ccc;
           background-color: #e3e6ee;
+          font-size: 14px;
         }
 
         .description-textarea {
           height: 93px;
           resize: none;
+          width: 390px;
+          padding: 10px;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+          background-color: #e3e6ee;
+          font-size: 14px;
         }
 
         .upload-container {
           display: flex;
           justify-content: center;
           align-items: flex-start;
+          
         }
 
         .upload-box {
@@ -177,11 +193,11 @@ export default function ProductInfo() {
           border-radius: 10px;
           position: relative;
           background-color: #f9f9f9;
-          right: 194px;
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          right: 194px;
         }
 
         .image-placeholder {
@@ -216,6 +232,26 @@ export default function ProductInfo() {
           z-index: 2;
         }
 
+        .remove-image {
+          position: absolute;
+          top: 4px;
+          right: 4px;
+          width: 20px;
+          height: 20px;
+          background: white;
+          border: 1px solid #999;
+          border-radius: 50%;
+          color: #333;
+          font-size: 14px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 3;
+          user-select: none;
+        }
+
         .plus-sign {
           font-size: 18px;
           font-weight: bold;
@@ -227,14 +263,35 @@ export default function ProductInfo() {
           margin-top: 75px;
           display: flex;
           flex-direction: column;
+          max-width: 360px;
+        }
+
+        .select-wrapper {
+          position: relative;
+          width: 100%;
         }
 
         .input-select {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
           border-radius: 5px;
           border: 1px solid #ccc;
           background-color: #e3e6ee;
           height: 27px;
-          width: 360px;
+          width: 100%;
+          padding: 5px 30px 5px 10px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+
+        .select-icon {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          color: #666;
         }
 
         @media (max-width: 768px) {
@@ -243,7 +300,6 @@ export default function ProductInfo() {
           }
 
           .upload-box {
-            right: 0;
             margin-top: 16px;
             margin-bottom: 10px;
           }
@@ -254,7 +310,8 @@ export default function ProductInfo() {
           }
 
           .input-field,
-          .input-select {
+          .input-select,
+          .description-textarea {
             width: 100%;
           }
         }

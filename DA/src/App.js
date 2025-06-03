@@ -12,11 +12,11 @@ import MainContainer from "./MainContainer";
 import PaymentModal from "./PopUps/PaymentModal";
 import ItemCancellation from "./PopUps/ItemCancellation";
 
-// import StaffManagement from "./StaffManagement/StaffManagement";
-// import OrderHistory from "./OrderHistory/OrderHistory";
-// import AccManagement from "./HistoryMgmt/AccManagement";
-// import AddProduct from "./AddProduct/AddProduct";
-// import ManageProduct from "./ManageProduct/ManageProduct";
+import StaffManagement from "./StaffManagement/StaffManagement";
+import OrderHistory from "./OrderHistory/OrderHistory";
+import AccManagement from "./HistoryMgmt/AccManagement";
+import AddProduct from "./AddProduct/AddProduct";
+import ManageProduct from "./ManageProduct/ManageProduct";
 
 import OrderCancellation from "./PopUps/OrderCancellation";
 import ApplyDiscount from "./PopUps/ApplyDiscount";
@@ -43,16 +43,6 @@ import PurchaseInfo from "./Receipt/components/PurchaseInfo";
 function App() {
   return (
     <div className="app">
-      {/* <TableDashboard /> */}
-      {/* <CustomerList /> */}
-
-      {/* <PurchaseReceipt /> */}
-      {/* <OrderDashboard /> */}
-      {/* <Dashboard /> */}
-      {/* <OrderTypeSwitch /> */}
-      {/* <OrderHistory /> */}
-      {/* <AccManagement/> */}
-      {/* <PurchaseReceipt /> */}
       {/* <MainContainer children={<CustomerList />} /> */}
       {/* <MainContainer children={<Dashboard />}/> */}
 
@@ -85,8 +75,7 @@ function App() {
 
       {/* <MainContainer children={<ItemCancellation/>}/> */}
       {/* <MainContainer children={<ProductCard/>}/> */}
-      {/* <MainContainer children={<OrderDashboard/>}/> */}
-
+    
       {/* <MainContainer children={<TableDashboard/>}/> */}
       {/* <MainContainer children={<CustomTable/>}/> */}
       {/* <MainContainer children={<PaymentSummary/>}/> */}
