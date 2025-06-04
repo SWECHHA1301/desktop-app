@@ -44,14 +44,14 @@ function App() {
   return (
     <div className="app">
       {/* <MainContainer children={<CustomerList />} /> */}
-       <MainContainer children={<Dashboard />}/> 
+       {/* <MainContainer children={<Dashboard />}/>  */}
 
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
 
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
-      {/* <MainContainer children={<OrderHistory/>}/> */}
+      <MainContainer children={<OrderHistory/>}/>
 
       {/* <MainContainer children={<PaymentModal />} /> */}
 
