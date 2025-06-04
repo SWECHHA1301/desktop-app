@@ -1,3 +1,36 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProductCard from './Product/ProductCard';
+import Dashboard from './Dashboard/Dashboard';
+import TableDashboard from './TableManagement/TableDashboard';
+import OrderHistory from './OrderHistory/OrderHistory';
+import OrderDashboard from './OrderStatus/OrderDashboard';
+import AccManagement from './HistoryMgmt/AccManagement';
+import CustomerList from './CustomerDetails/CustomerList';
+import MainContainer from './MainContainer';
+
+function App() {
+  return (
+    <Router>
+      <MainContainer>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/home" element={<ProductCard />} />
+          <Route path="/table" element={<TableDashboard />} />
+          <Route path="/history" element={<OrderHistory />} />
+          <Route path="/order" element={<OrderDashboard />} />
+          <Route path="/account" element={<AccManagement />} />
+          <Route path="/customerlist" element={<CustomerList />} />
+        </Routes>
+      </MainContainer>
+    </Router>
+  );
+}
+
+export default App;
+
+
+
 // import React from "react";
 // // import Navbar from "./Common/Navbar";
 // // import Sidebar from "./Common/Sidebar";
@@ -24,7 +57,7 @@
 // import FoodVariationModal from "./PopUps/FoodVariationModal";
 // import AddExpense from "./AddExpenses/AddExpense";
 // import PaymentPage from "./PaymentPage/PaymentPage";
-// import AddSale  from "./AddSale/AddSale"
+// import AddSale from "./AddSale/AddSale";
 // import AddStaffForm from "./AddNewStaff/AddStaffForm";
 // import ImageSelector from "./Common/ImageSelector";
 // import CreatePayment from "./CreatePayment/CreatePayment";
@@ -38,13 +71,13 @@
 // // import FoodVariationModal from "./PopUps/FoodVariationModal";
 // // import AddExpense from "./AddExpenses/AddExpense";
 // // import PaymentPage from "./PaymentPage/PaymentPage";
-
+// import Dashboard from "./Dashboard/Dashboard"
 
 // function App() {
 //   return (
 //     <div className="app">
 //       {/* <MainContainer children={<CustomerList />} /> */}
-//       {/* <MainContainer children={<Dashboard />}/> */}
+//        {/* <MainContainer children={<Dashboard />}/>  */}
 
 //       {/* <MainContainer children={<StaffManagement />}/> */}
 //       {/* <MainContainer children={<AccManagement/>}/> */}
@@ -53,34 +86,31 @@
 
 //       {/* <MainContainer children={<OrderHistory/>}/> */}
 
-//       {/* <MainContainer children={<PaymentModal/>}/> */}
-   
+//       {/* <MainContainer children={<PaymentModal />} /> */}
 
-     
-//  {/* <MainContainer children={<ManageProduct/>}/> */}
-//  {/* <MainContainer children={<OrderDashboard/>}/> */}
-//   {/* <MainContainer children={<OrderCancellation />} /> */}
-//     {/* <MainContainer children={<FoodVariationModal />} /> */}
-       
-//        {/* <MainContainer children={<AddExpense/>}/> */}
+//       {/* <MainContainer children={<ManageProduct/>}/> */}
+//       {/* <MainContainer children={<OrderDashboard/>}/> */}
+//       {/* <MainContainer children={<OrderCancellation />} /> */}
+//       {/* <MainContainer children={<FoodVariationModal />} /> */}
 
+//       <MainContainer children={<AddExpense />} />
 
-//  {/* <MainContainer children={<PaymentPage/>}/>
-//  <MainContainer children={<AddNoteModal/>}/> */}
+//       {/* <MainContainer children={<PaymentPage />} /> */}
+//       {/* <MainContainer children={<AddNoteModal />} /> */}
 
-//  {/* <MainContainer children={<AddNoteModal/>}/> */}
+//       {/* <MainContainer children={<AddStaffForm/>}/> */}
 
-// {/* <MainContainer children={<AddStaffForm/>}/> */}
+//       {/* <MainContainer children={<ApplyDiscount />} /> */}
+//       {/* <MainContainer children={<ProductCard/>}/> */}
 
-
-//       {/* <MainContainer children={<ItemCancellation/>}/> */}
-//       <MainContainer children={< />}/>
-    
 //       {/* <MainContainer children={<TableDashboard/>}/> */}
 //       {/* <MainContainer children={<CustomTable/>}/> */}
 //       {/* <MainContainer children={<PaymentSummary/>}/> */}
-//         {/* <MainContainer children={<PurchaseReceipt/>}/> */}
+
+     
 //         {/* <MainContainer children={<PurchaseInfo/>}/> */}
+//       {/* <PurchaseReceipt/> */}
+
 //     </div>
 //   );
 // }
@@ -90,4 +120,4 @@
 // // KOT 2 C D
 // // KOT 3 E, F
 
-// // export default App;
+// export default App;

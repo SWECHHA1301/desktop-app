@@ -90,4 +90,5 @@ export const Barcode = () => (
 </svg> 
 );
 
+
 export default UserAvatarIcon;
