@@ -79,7 +79,7 @@ function App() {
       {/* <MainContainer children={<TableDashboard/>}/> */}
       {/* <MainContainer children={<CustomTable/>}/> */}
       {/* <MainContainer children={<PaymentSummary/>}/> */}
-        <MainContainer children={<PurchaseReceipt/>}/>
+        {/* <MainContainer children={<PurchaseReceipt/>}/> */}
         {/* <MainContainer children={<PurchaseInfo/>}/> */}
     </div>
   );
