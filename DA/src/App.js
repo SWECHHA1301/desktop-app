@@ -79,12 +79,24 @@ export default App;
 //       {/* <MainContainer children={<CustomerList />} /> */}
 //        {/* <MainContainer children={<Dashboard />}/>  */}
 
+      // {/* <MainContainer children={<StaffManagement />}/> */}
+      // <MainContainer children={<AccManagement/>}/>
+
 //       {/* <MainContainer children={<StaffManagement />}/> */}
 //       {/* <MainContainer children={<AccManagement/>}/> */}
 
+
 //       {/* <MainContainer children={<ItemCancellation />}/> */}
 
+<<<<<<< HEAD
 //       {/* <MainContainer children={<OrderHistory/>}/> */}
+=======
+
+//       {/* <MainContainer children={<OrderHistory/>}/> */}
+
+    
+
+>>>>>>> be3d7f8eb052bd5201443a62134d86ac4d68eb32
 
 //       {/* <MainContainer children={<PaymentModal />} /> */}
 
@@ -93,7 +105,16 @@ export default App;
 //       {/* <MainContainer children={<OrderCancellation />} /> */}
 //       {/* <MainContainer children={<FoodVariationModal />} /> */}
 
+<<<<<<< HEAD
 //       <MainContainer children={<AddExpense />} />
+=======
+
+      
+
+//       <MainContainer children={<AddExpense />} />
+      // <MainContainer children={<AddExpense />} />
+
+>>>>>>> be3d7f8eb052bd5201443a62134d86ac4d68eb32
 
 //       {/* <MainContainer children={<PaymentPage />} /> */}
 //       {/* <MainContainer children={<AddNoteModal />} /> */}
@@ -110,6 +131,11 @@ export default App;
      
 //         {/* <MainContainer children={<PurchaseInfo/>}/> */}
 //       {/* <PurchaseReceipt/> */}
+<<<<<<< HEAD
+=======
+        
+
+>>>>>>> be3d7f8eb052bd5201443a62134d86ac4d68eb32
 
 //     </div>
 //   );
