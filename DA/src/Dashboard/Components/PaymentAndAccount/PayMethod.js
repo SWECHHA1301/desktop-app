@@ -1,6 +1,5 @@
 import React from 'react'
-import './PayMethod.css'
-import { Calendar } from "lucide-react";
+import { Calendar, Maximize } from "lucide-react";
 const blockItems=[
 
     {
@@ -9,7 +8,7 @@ const blockItems=[
      percent:'42%',
      style:{
       color:'#2BAC04',
-      
+      textAlign:'center'
      }
     },
 
@@ -19,7 +18,7 @@ const blockItems=[
      percent:'31%',
      style:{
       color:'#E38417',
-      
+        textAlign:'center'
      }
     },
     {
@@ -28,7 +27,7 @@ const blockItems=[
      percent:'27%',
      style:{
       color:'#FECB00',
-      
+        textAlign:'center'
      }
     },
     
@@ -43,7 +42,10 @@ const accountItems=[
     totalsales:'10,900',
     orders:'43',
     style:{
-      color:'#3658BF'
+      color:'#3658BF',
+      padding:'0 10px',
+      textAlign:'center',
+      height:'50px'
     }
   },
   {
@@ -54,42 +56,134 @@ const accountItems=[
     totalsales:'7,400',
     orders:'30',
     style:{
-      color:'#3658BF'
+      color:'#3658BF',
+      padding:'0 10px',
+      textAlign:'center',
+       height:'50px'
     }
   },
 ]
+
+const styles ={
+  payInfo :{
+  width:'100%',
+  display:'flex',
+  flexDirection:'column',
+  gap:'24px'
+  },
+  payMethod :{
+    maxWidth:'640px',
+    height:'594px',
+    backgroundColor:'white',
+    borderRadius:'10px',
+    boxShadow:'4px 4px 4px #00000040'
+  },
+  payHead:{
+    width:'100%',
+    borderRadius:'10px 10px 0 0',
+    backgroundColor:'#D4DAED',
+    borderBottom:'1px solid black',
+    display:'flex',
+    height:'77px',
+    alignItems:'center',
+    justifyContent:'space-between',
+    padding:'0 24px'
+  },
+
+ calendar:{
+  display:'flex',
+  backgroundColor:'white',
+  borderRadius:'10px',
+  height:'27px',
+  width:'101px',
+  alignItems:'center',
+  gap:'8px',
+  padding:'0 8px'
+ },
+ breakDown:{
+  display:'flex',
+  flexDirection:'column',
+  padding :'16px 16px 24px 16px',
+  gap:'24px',
+  alignItems:'center'
+
+ },
+ payGraph:{
+  maxWidth:'245px',
+  height:'244px',
+ },
+ blockItemHead:{
+  backgroundColor:'#D4DAED',
+  height:'50px',
+   borderBottom:'1px solid black',
+    borderRadius:'10px 10px 0 0',
+  
+ },
+ accountManage:{
+   width:'100%',
+  height:'246px',
+   backgroundColor:'white',
+     borderRadius:'10px',
+      boxShadow:'4px 4px 4px #3658BF40'
+ },
+ accountTitle:{
+  width:'100%',
+    borderRadius:'10px 10px 0 0',
+    backgroundColor:'#D4DAED',
+    borderBottom:'1px solid black',
+    display:'flex',
+    height:'72px',
+    alignItems:'center',
+   
+    padding:'0 24px'
+ },
+ accountTable:{
+  width:"100%",
+  
+ },
+ accountHeader:{
+  backgroundColor:'#D4DAED',
+    height:'66px',
+    color:'#4A4A4A',
+    fontSize:'16px',
+    fontWeight:'700',
+   
+ }
+
+}
 export default function PayMethod() {
   return (
     <>
-     <div className='Pay-Info'>
-      <div className='paymentMethod'>
-        <div className='pay-method'>
+     <div style={styles.payInfo}>
+      <div style={styles.payMethod}>
+        <div style={styles.payHead}>
 
-        <p>Payment Method Breakdown</p>
-        <div className='Days'>
+        <p style={{fontSize:'20px',fontWeight:'700',lineHeight:'100%',color:'#3658BF'}}>Payment Method Breakdown</p>
+        <div style={styles.calendar}>
         <Calendar size={20} color='black'/>
          <p>30 days</p>
         </div>
       </div>
 
-    <div className='breakdown'>
-<div className='pay-graph'></div>
+    <div style={styles.breakDown}>
+<div style={styles.payGraph}></div>
 
 
-<table className='pay-table'>
+<table style={{width:'100%',borderRadius:'10px',boxShadow:'0 4px 4px 0 #3658BF',height:'200px',backgroundColor:'white'}}>
   
-   <thead style={{width:'100%',}}>
-      <tr className='block-Item-head'> <th >Method</th>
-       <th>Value(₹)</th>
-       <th>Percentage</th>
+   <thead >
+      <tr style={styles.blockItemHead} > 
+      <th style={{borderRadius:'10px 0 0 0',padding:'0 10px 0 20px'}}>Method</th>
+       <th style={{padding:'0 15px'}}>Value(₹)</th>
+       <th style={{borderRadius:'0 10px 0 0',padding:'0 10px'}} >Percentage</th>
        </tr>
       </thead>
       <tbody>
     {blockItems.map((item,index) => (
-<tr className='table-block' key={index} >
+<tr  key={index} >
 <td style={item.style} >{item.name}</td>
-<td>{item.value}</td>
-<td>{item.percent}</td>
+<td  style={{padding:'0 10px',textAlign:'center'}}>{item.value}</td>
+<td   style={{padding:'0 10px',textAlign:'center'}} >{item.percent}</td>
 
 </tr>))}</tbody>
 </table>
@@ -98,14 +192,14 @@ export default function PayMethod() {
 
       </div>
 
-       <div className='Account-manage'>
+       <div style={styles.accountManage}>
 
-        <div className='Account-title'>
-          <p>Account Management</p>
+        <div style={styles.accountTitle}>
+          <p style={{fontSize:'20px',fontWeight:'700',lineHeight:'100%',color:'#3658BF'}}>Account Management</p>
         </div>
-        <table className='Acc-table'>
+        <table style={{width:'100%'}}>
           <thead style={{width:'100%',}}>
-         <tr className='account-table-head'>
+         <tr style={styles.accountHeader}>
        <th>Counter</th>
        <th>Transaction</th>
 
@@ -115,15 +209,15 @@ export default function PayMethod() {
       <th ><p>Orders</p> <p>(₹)</p></th>
       
       </tr></thead>
-      <tbody>
+      <tbody >
       {accountItems.map((item,index)=>(
-      <tr className='account-Items' key={index}>
+      <tr style={styles.accountTable} key={index}>
        <td style={item.style}>{item.name}</td>
-       <td>{item.transaction}</td>
-       <td>{item.UPI}</td>
-       <td>{item.card}</td>
-       <td>{item.totalsales}</td>
-       <td>{item.orders}</td>
+       <td style={{padding:'0 10px',textAlign:'center'}}>{item.transaction}</td>
+       <td style={{padding:'0 10px',textAlign:'center'}}>{item.UPI}</td>
+       <td style={{padding:'0 10px',textAlign:'center'}}>{item.card}</td>
+       <td style={{padding:'0 10px',textAlign:'center'}}>{item.totalsales}</td>
+       <td style={{padding:'0 10px',textAlign:'center'}}>{item.orders}</td>
       </tr>))}</tbody>
       </table>
       </div>

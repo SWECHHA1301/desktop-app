@@ -24,7 +24,7 @@ import AddNoteModal from "./PopUps/AddNoteModal";
 import FoodVariationModal from "./PopUps/FoodVariationModal";
 import AddExpense from "./AddExpenses/AddExpense";
 import PaymentPage from "./PaymentPage/PaymentPage";
-import AddSale  from "./AddSale/AddSale"
+import AddSale from "./AddSale/AddSale";
 import AddStaffForm from "./AddNewStaff/AddStaffForm";
 import ImageSelector from "./Common/ImageSelector";
 import CreatePayment from "./CreatePayment/CreatePayment";
@@ -38,13 +38,13 @@ import PurchaseInfo from "./Receipt/components/PurchaseInfo";
 // import FoodVariationModal from "./PopUps/FoodVariationModal";
 // import AddExpense from "./AddExpenses/AddExpense";
 // import PaymentPage from "./PaymentPage/PaymentPage";
-
+import Dashboard from "./Dashboard/Dashboard"
 
 function App() {
   return (
     <div className="app">
       {/* <MainContainer children={<CustomerList />} /> */}
-      {/* <MainContainer children={<Dashboard />}/> */}
+       <MainContainer children={<Dashboard />}/> 
 
       {/* <MainContainer children={<StaffManagement />}/> */}
       {/* <MainContainer children={<AccManagement/>}/> */}
@@ -53,34 +53,31 @@ function App() {
 
       {/* <MainContainer children={<OrderHistory/>}/> */}
 
-      {/* <MainContainer children={<PaymentModal/>}/> */}
-   
+      {/* <MainContainer children={<PaymentModal />} /> */}
 
-     
- {/* <MainContainer children={<ManageProduct/>}/> */}
- {/* <MainContainer children={<OrderDashboard/>}/> */}
-  {/* <MainContainer children={<OrderCancellation />} /> */}
-    {/* <MainContainer children={<FoodVariationModal />} /> */}
-       
-       {/* <MainContainer children={<AddExpense/>}/> */}
+      {/* <MainContainer children={<ManageProduct/>}/> */}
+      {/* <MainContainer children={<OrderDashboard/>}/> */}
+      {/* <MainContainer children={<OrderCancellation />} /> */}
+      {/* <MainContainer children={<FoodVariationModal />} /> */}
 
+      {/* <MainContainer children={<AddExpense />} /> */}
 
- {/* <MainContainer children={<PaymentPage/>}/>
- <MainContainer children={<AddNoteModal/>}/> */}
+      {/* <MainContainer children={<PaymentPage />} /> */}
+      {/* <MainContainer children={<AddNoteModal />} /> */}
 
- {/* <MainContainer children={<AddNoteModal/>}/> */}
+      {/* <MainContainer children={<AddStaffForm/>}/> */}
 
-{/* <MainContainer children={<AddStaffForm/>}/> */}
-
-
-      {/* <MainContainer children={<ItemCancellation/>}/> */}
+      {/* <MainContainer children={<ApplyDiscount />} /> */}
       {/* <MainContainer children={<ProductCard/>}/> */}
-    
+
       {/* <MainContainer children={<TableDashboard/>}/> */}
       {/* <MainContainer children={<CustomTable/>}/> */}
       {/* <MainContainer children={<PaymentSummary/>}/> */}
+
         {/* <MainContainer children={<PurchaseReceipt/>}/> */}
         {/* <MainContainer children={<PurchaseInfo/>}/> */}
+      {/* <MainContainer children={<PurchaseReceipt/>}/> */}
+
     </div>
   );
 }

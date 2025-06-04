@@ -1,16 +1,15 @@
 .receipt-wrapper {
   width: 400px;
-  height: 90vh;
-  position: fixed;
-  top: 65px;
-  right: 10px;
-  display: flex;
-  flex-direction: column;
+  height: calc(92vh - 48px);
+  /* position: fixed; */
+  /* top: 65px; */
+  /* right: 10px; */
+  /* display: flex;
+  /* flex-direction: column; */
   background: white;
   border-radius: 10px;
   box-shadow: 8px 8px 4px 0px #3658BF;
-  z-index: 999;
-  overflow: hidden;
+  overflow: hidden;  
 }
 
 .receipt-container {
@@ -21,6 +20,8 @@
   padding: 10px;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
+  height: 100%;
+  justify-content: space-between;
 }
 
 ::-webkit-scrollbar {
@@ -197,10 +198,8 @@ height: 40px;
 
 /* Items Section */
 .receipt-body {
-  flex: 1;
   overflow-y: auto;
-  /* border-top: 1px solid #ccc; */
-  padding-top: 8px;
+  max-height: 260px;
 }
 
 
@@ -321,7 +320,6 @@ height: 40px;
 
 /* Buttons */
 .payment-buttons {
-  margin-top: 16px;
 }
 
 .receipt-actions {
@@ -527,6 +525,7 @@ height: 40px;
 
 .summary-details {
   margin-bottom: 8px;
+  /* position: absolute; */
 }
 
 .summary-row {
