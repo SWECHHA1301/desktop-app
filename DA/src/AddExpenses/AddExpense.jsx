@@ -9,6 +9,8 @@ export default function AddExpense() {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
+  
+
   return (
     <div style={{ width: '100%', maxWidth: '1318px', height: '885px', backgroundColor: '#D4DAED', padding: '16px 24px' ,
     
@@ -69,14 +71,22 @@ export default function AddExpense() {
               <span className="addexpense-drawer-close" onClick={() => setIsDrawerOpen(false)}>X</span>
             </div>
             <div className="addexpense-drawer-body">
+
               <div style={{display:'flex',flexDirection:'column',gap:'6px'}}>
               <label>Payment Type</label>
-              <input type="text" placeholder="e.g. UPI / Wallet / etc." />
+             <select >
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                    <option value="UPI">UPI</option>
+                  </select>
               </div>
+
               <div style={{display:'flex',flexDirection:'column',gap:'6px'}}>
               <label>Amount</label>
               <input type="number" placeholder="e.g. ₹500" />
               </div>
+
+              <SaveButton/>
             </div>
           </div>
         )}

@@ -30,7 +30,7 @@
 
 .Tab-Section td ,
 .Tab-Section th{
-    padding: 19px 0 19px 0;
+    padding: 19px 20px;
     max-width: 140px;
     width: 100%;
     font-size: 16px;
@@ -137,5 +137,8 @@ height: 40px;
    .Tab-Section th, 
    .Tab-Section td{
     font-size: 14px;
+   }
+   .Tab-Section{
+    overflow-x: scroll;
    }
   }

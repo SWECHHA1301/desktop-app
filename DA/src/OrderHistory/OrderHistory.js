@@ -180,29 +180,33 @@ export default function OrderHistory() {
         <tbody>
           {filteredOrders.map((item, index) => (
             <tr key={index} >
-              <td>{item.Number}</td>
+              <td style={{ color: "#797979",fontWeight:'700',fontSize:'16px',textAlign:'left' }}>{item.Number}</td>
               <td>{item.Id}</td>
               <td style={{ color: "#797979",fontWeight:'400',fontSize:'16px' }}>{item.Date}</td>
+             
               <td
                 style={{
-                  color: 'black',fontWeight:'400',fontSize:'16px'
-                }}
-              >
-                {item.Type}
-              </td>
-              <td
-                style={{
-                  color:
-                    item.Method === "Card"
-                      ? "#FF0000"
-                      : item.Method === "Cash"
-                      ? "#2CAC04"
-                      : "inherit",
+                  color: "black",fontWeight:'400',fontSize:'16px' 
                 }}
               >
                 {item.Method}
               </td>
-              <td>{item.total}</td>
+               <td
+                style={{
+              fontWeight:'400',fontSize:'14px'
+                }}
+              >
+                <button style={{maxWidth:'87px', width:'100%',height:'32px',padding:'8px', borderRadius:'10px',backgroundColor:
+                   item.Type === "Dine in"
+        ? "#F4C430"
+        : item.Type === "Take Away"
+        ? "#2F5D62"
+        : "gray", 
+        color:item.Type === "Dine in" ? "black" : item.Type === "Take Away" ? "white" : "gray",
+                }}>{item.Type}</button>
+                
+              </td>
+              <td style={{justifyContent:'end'}}>{item.total}</td>
             </tr>
           ))}
         </tbody>

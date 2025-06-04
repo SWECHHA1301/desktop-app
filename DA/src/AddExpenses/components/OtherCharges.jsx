@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChevronLeft, ChevronRight ,ChevronDown} from "lucide-react";
+import { UploadCloud, ChevronRight ,ChevronDown} from "lucide-react";
 import { useState } from 'react';
 
 export default function OtherCharges() {
@@ -70,7 +70,9 @@ export default function OtherCharges() {
          
 
            <div style={{display:'flex',alignItems:'center', gap:'16px',justifyContent:'center',
-            maxWidth:'141px',height:'31px',border:'1.5px solid #3658BF',borderRadius:'5px',marginTop:'24px'}}>
+            maxWidth:'141px',height:'31px',border:'1.5px solid #3658BF',borderRadius:'5px',marginTop:'24px',
+            cursor:'pointer'}}>
+              <UploadCloud size={20} style={{color:' #3658BF'}}/>
             <p style={{fontSize:'12px',fontWeight:'700',lineHeight:'100%',color:'#3658BF'}}>Attachment</p>
            </div>
            
