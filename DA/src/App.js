@@ -84,11 +84,7 @@ export default App;
 
 //       {/* <MainContainer children={<ItemCancellation />}/> */}
 
-<<<<<<< HEAD
 //       {/* <MainContainer children={<OrderHistory/>}/> */}
-=======
-      {/* <MainContainer children={<OrderHistory/>}/> */}
->>>>>>> 2c931bc15f3d41bab601b85f85375087c7b4aca1
 
 //       {/* <MainContainer children={<PaymentModal />} /> */}
 
@@ -97,11 +93,7 @@ export default App;
 //       {/* <MainContainer children={<OrderCancellation />} /> */}
 //       {/* <MainContainer children={<FoodVariationModal />} /> */}
 
-<<<<<<< HEAD
 //       <MainContainer children={<AddExpense />} />
-=======
-      <MainContainer children={<AddExpense />} />
->>>>>>> 2c931bc15f3d41bab601b85f85375087c7b4aca1
 
 //       {/* <MainContainer children={<PaymentPage />} /> */}
 //       {/* <MainContainer children={<AddNoteModal />} /> */}
@@ -116,13 +108,8 @@ export default App;
 //       {/* <MainContainer children={<PaymentSummary/>}/> */}
 
      
-<<<<<<< HEAD
 //         {/* <MainContainer children={<PurchaseInfo/>}/> */}
 //       {/* <PurchaseReceipt/> */}
-=======
-        {/* <MainContainer children={<PurchaseInfo/>}/> */}
-      {/* <PurchaseReceipt/> */}
->>>>>>> 2c931bc15f3d41bab601b85f85375087c7b4aca1
 
 //     </div>
 //   );
