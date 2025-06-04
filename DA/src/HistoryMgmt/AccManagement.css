@@ -2,7 +2,7 @@
 width: 100%;
 background-color: #E2E6F3;
 font-family: Arial, Helvetica, sans-serif;
-max-height: 1304px;
+ border-radius: 10px;
 }
 
 .Account-nav{
@@ -26,7 +26,7 @@ margin-bottom: 24px;
 background-color: white;
     width: 100%;
     max-width: 1304px;
-    height: 863px;
+  
     border-radius: 10px;
 
 }
@@ -127,11 +127,18 @@ justify-content: space-between;
     max-width: 60px;
 }
 
-.main-tab{
-    padding: 0 24px;
+.manageTable{
+  padding: 24px;
+    height: calc(92vh - 104px);
      width: 100%;
-     max-width: 1256px;
-    
+}
+.main-tab{
+
+     width: 100%;
+     /* max-width: 1256px; */
+   overflow: hidden;
+ 
+   
 }
 
 .table-header,
@@ -139,6 +146,7 @@ justify-content: space-between;
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
+    background-color: white;
 }
 
 
@@ -159,7 +167,7 @@ justify-content: space-between;
 
 /* Fixed header styling */
 .table-header th {
-  background-color: #f5f5f5;
+  background-color: white;
   position: sticky;
   top: 0;
   z-index: 2;

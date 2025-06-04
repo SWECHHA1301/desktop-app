@@ -47,7 +47,7 @@ function App() {
        {/* <MainContainer children={<Dashboard />}/>  */}
 
       {/* <MainContainer children={<StaffManagement />}/> */}
-      {/* <MainContainer children={<AccManagement/>}/> */}
+      <MainContainer children={<AccManagement/>}/>
 
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
@@ -60,7 +60,7 @@ function App() {
       {/* <MainContainer children={<OrderCancellation />} /> */}
       {/* <MainContainer children={<FoodVariationModal />} /> */}
 
-      <MainContainer children={<AddExpense />} />
+      {/* <MainContainer children={<AddExpense />} /> */}
 
       {/* <MainContainer children={<PaymentPage />} /> */}
       {/* <MainContainer children={<AddNoteModal />} /> */}

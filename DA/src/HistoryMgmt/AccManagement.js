@@ -90,7 +90,7 @@ export default function AccManagement() {
               <div></div>
             </button>
           </div>
-
+<div className="manageTable">
          <div className="main-tab">
   <table className="table-header">
     <thead >
@@ -120,6 +120,7 @@ export default function AccManagement() {
       </tbody>
     </table>
   </div>
+</div>
 </div>
 
 
