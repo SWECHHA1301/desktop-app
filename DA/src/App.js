@@ -36,12 +36,10 @@ import CreatePayment from "./CreatePayment/CreatePayment";
 import CustomTable from "./Receipt/components/CustomTable";
 import PaymentSummary from "./Receipt/components/PaymentSummary";
 import PurchaseInfo from "./Receipt/components/PurchaseInfo";
-// import OrderCancellation from "./PopUps/OrderCancellation";
+import ProductVarient from "./PopUps/ProductVarient"
 import ApplyDiscount from "./PopUps/ApplyDiscount";
 
-// import FoodVariationModal from "./PopUps/FoodVariationModal";
-// import AddExpense from "./AddExpenses/AddExpense";
-// import PaymentPage from "./PaymentPage/PaymentPage";
+
 
 
 function App() {
@@ -68,7 +66,7 @@ function App() {
       {/* <MainContainer children={<OrderCancellation />} /> */}
       {/* <MainContainer children={<FoodVariationModal />} /> */}
 
-      <ItemCancellation />
+      <ProductVarient />
 
       {/* <MainContainer children={<PaymentPage />} /> */}
       {/* <MainContainer children={<AddNoteModal />} /> */}
