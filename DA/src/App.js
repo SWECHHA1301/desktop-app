@@ -51,7 +51,7 @@ function App() {
 
       {/* <MainContainer children={<ItemCancellation />}/> */}
 
-      <MainContainer children={<OrderHistory/>}/>
+      {/* <MainContainer children={<OrderHistory/>}/> */}
 
       {/* <MainContainer children={<PaymentModal />} /> */}
 
@@ -60,7 +60,7 @@ function App() {
       {/* <MainContainer children={<OrderCancellation />} /> */}
       {/* <MainContainer children={<FoodVariationModal />} /> */}
 
-      {/* <MainContainer children={<AddExpense />} /> */}
+      <MainContainer children={<AddExpense />} />
 
       {/* <MainContainer children={<PaymentPage />} /> */}
       {/* <MainContainer children={<AddNoteModal />} /> */}
@@ -74,9 +74,9 @@ function App() {
       {/* <MainContainer children={<CustomTable/>}/> */}
       {/* <MainContainer children={<PaymentSummary/>}/> */}
 
-        {/* <MainContainer children={<PurchaseReceipt/>}/> */}
+     
         {/* <MainContainer children={<PurchaseInfo/>}/> */}
-      {/* <MainContainer children={<PurchaseReceipt/>}/> */}
+      {/* <PurchaseReceipt/> */}
 
     </div>
   );

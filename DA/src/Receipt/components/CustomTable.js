@@ -39,6 +39,7 @@ export default function CustomTable() {
   };
   return (
     <>
+    
       <div className="receipt-body">
         <div className="receipt-h">
           <span>S.No</span>
@@ -147,6 +148,7 @@ export default function CustomTable() {
           ))}
         </div>
       </div>
+      
     </>
   );
 }
