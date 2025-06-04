@@ -117,7 +117,7 @@ const ApplyDiscount = ({ onClose, onSave }) => {
               <button style={styles.applyBtn} onClick={handleApplyCoupon}>Apply</button>
             </div>
             {couponError && (
-              <span style={{ color: 'red', fontSize: 12, marginTop: 4 }}>
+              <span style={{ color: 'red', fontSize: 12, marginTop: 4, marginLeft: 42}}>
                 not a valid code*
               </span>
             )}
