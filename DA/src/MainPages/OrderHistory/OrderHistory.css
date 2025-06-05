@@ -12,8 +12,6 @@
    border-radius: 10px;
     padding: 24px;
     height: calc(92vh - 104px);
-    /* overflow-y: auto; */
-     /* background-color: pink; */
 }
 
 .table-container {

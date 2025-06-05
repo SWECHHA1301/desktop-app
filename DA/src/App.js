@@ -15,8 +15,8 @@ import AddProduct from "./Products/AddProduct/AddProduct"
 function App() {
   return (
     <Router>
-      <MainContainer children={<Dashboard/>}/>
-      {/* <MainContainer>
+      {/* <MainContainer children={<Dashboard/>}/> */}
+      <MainContainer>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/home" element={<ProductCard />} />
@@ -26,7 +26,7 @@ function App() {
           <Route path="/account" element={<AccManagement />} />
           <Route path="/customerlist" element={<CustomerList />} />
         </Routes>
-      </MainContainer> */}
+      </MainContainer>
     </Router>
   );
 }
