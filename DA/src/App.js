@@ -15,7 +15,7 @@ import AddProduct from "./Products/AddProduct/AddProduct"
 function App() {
   return (
     <Router>
-      <MainContainer children={<Dashboard/>}/>
+      <MainContainer children={<OrderHistory/>}/>
       {/* <MainContainer>
         <Routes>
           <Route path="/" element={<Dashboard />} />
