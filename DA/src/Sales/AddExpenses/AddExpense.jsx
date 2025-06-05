@@ -1,13 +1,66 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import SaveButton from '../Common/SaveButton';
+import SaveButton from '../../Common/SaveButton';
 import OtherCharges from './components/OtherCharges';
 import PaymentPaid from './components/PaymentPaid';
-import './AddExpense.css'; // Ensure your drawer CSS is imported here
 
 export default function AddExpense() {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+const styles = {
+  addExpenseLayout: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    width: '100%',
+    height: '100%',
+    gap: '24px',
+  },
+  addExpenseFormBox: {
+    backgroundColor: 'white',
+    width: '100%',
+    maxWidth: '700px',
+    borderRadius: '8px',
+    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
+  },
+  addExpensePaymentDrawer: {
+    width: '320px',
+    height: '787px',
+    backgroundColor: 'white',
+    boxShadow: '-2px 0 10px rgba(0, 0, 0, 0.1)',
+    padding: '16px',
+    borderRadius: '8px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+  },
+  addExpenseDrawerHeader: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  addExpenseDrawerClose: {
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    fontSize: '18px',
+  },
+  addExpenseDrawerBody: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+  },
+  input: {
+    padding: '0 10px',
+    backgroundColor: '#E3E6EE',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    fontSize: '14px',
+    maxWidth: '390px',
+    height: '27px',
+  },
+ 
+};
 
   
 
@@ -34,9 +87,9 @@ export default function AddExpense() {
       </div>
 
       {/* Layout container */}
-      <div className={isDrawerOpen ? 'addexpense-layout-open' : 'addexpense-layout'}>
+      <div style={styles.addExpenseLayout}>
         {/* Main Form Card */}
-        <div className="addexpense-form-box">
+        <div style={styles.addExpenseFormBox}>
           <p style={{
             fontSize: '24px', fontWeight: '700', lineHeight: '100%', padding: '21px 32px',
             borderBottom: '1px solid #D4DAED'
@@ -65,16 +118,16 @@ export default function AddExpense() {
 
         {/* Drawer */}
         {isDrawerOpen && (
-          <div className="addexpense-payment-drawer">
-            <div className="addexpense-drawer-header">
+          <div style={styles.addExpensePaymentDrawer}>
+            <div style={styles.addExpenseDrawerHeader}>
               <h3 style={{ fontSize: '16px', fontWeight: '600' }}>Add Payment Type</h3>
-              <span className="addexpense-drawer-close" onClick={() => setIsDrawerOpen(false)}>X</span>
+              <span style={styles.addExpenseDrawerClose} onClick={() => setIsDrawerOpen(false)}>X</span>
             </div>
-            <div className="addexpense-drawer-body">
+            <div style={styles.addExpenseDrawerBody}>
 
               <div style={{display:'flex',flexDirection:'column',gap:'6px'}}>
               <label>Payment Type</label>
-             <select >
+             <select style={styles.input}>
                     <option value="Cash">Cash</option>
                     <option value="Card">Card</option>
                     <option value="UPI">UPI</option>
@@ -83,7 +136,7 @@ export default function AddExpense() {
 
               <div style={{display:'flex',flexDirection:'column',gap:'6px'}}>
               <label>Amount</label>
-              <input type="number" placeholder="e.g. ₹500" />
+              <input type="number" placeholder="e.g. ₹500"  style={styles.input}/>
               </div>
 
               <SaveButton/>

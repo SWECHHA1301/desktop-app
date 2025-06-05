@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 // import UserAvatarIcon from "../Common/Icons";
-import NativeDateRangePicker from "../Common/NativeDateRangePicker";
-import UserAvatarIcon from "../Common/Icons";
+import NativeDateRangePicker from "../../Common/NativeDateRangePicker";
+import UserAvatarIcon from "../../Common/Icons";
 
 // style
 const staffContainer = {

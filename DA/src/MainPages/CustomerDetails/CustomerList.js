@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { FourPointStar } from "../Common/Icons";
+import { FourPointStar } from "../../Common/Icons";
 import { FaWhatsapp } from "react-icons/fa";
 import { ChevronDown, Phone, Bell, ChevronRight } from "lucide-react";
-import NativeDateRangePicker from "../Common/NativeDateRangePicker";
-import UserAvatarIcon from "../Common/Icons";   // ⬅️  removed:  import "./CustomerList.css";
+import NativeDateRangePicker from "../../Common/NativeDateRangePicker";
+import UserAvatarIcon from "../../Common/Icons";   // ⬅️  removed:  import "./CustomerList.css";
 
 const customers = new Array(7).fill({
   name: "Username",

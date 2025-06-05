@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { BarcodeReader } from "../../Common/Icons";
+import { BarcodeReader } from "../../../Common/Icons";
 
 export function InventoryDetails() {
   const [isOpen, setIsOpen] = useState(true);

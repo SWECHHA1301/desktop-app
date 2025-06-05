@@ -1,6 +1,6 @@
 import PersonalDetails from "./components/PersonalDetails";
 import SalaryDetails from "./components/SalaryDetails";
-import SaveButton from "../Common/SaveButton";
+import SaveButton from "../../Common/SaveButton";
 import { ChevronLeft,ChevronRight } from "lucide-react";
 export default function AddStaffForm() {
   

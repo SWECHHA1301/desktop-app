@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { ChevronRight, ChevronDown  } from "lucide-react";
-import ImageSelector from '../../Common/ImageSelector';
+import ImageSelector from '../../../Common/ImageSelector';
 export default function PersonalDetails() {
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NativeDateRangePicker from "../Common/NativeDateRangePicker";
+import NativeDateRangePicker from "../../Common/NativeDateRangePicker";
 import "./OrderHistory.css";
 
 export default function OrderHistory() {
@@ -136,7 +136,7 @@ export default function OrderHistory() {
   });
 
   return (
-    <div className="Order-Main-Container">
+    <div style={{fontFamily:'Arial, Helvetica, sans-serif', width:' 100%',}}>
       <div className="tab-sec">
         {["All", "Dine in", "Take Away"].map((tab) => (
           <button

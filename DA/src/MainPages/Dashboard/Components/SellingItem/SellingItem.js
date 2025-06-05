@@ -23,6 +23,7 @@ export default function SellingItem() {
     boxShadow: '4px 4px 4px 0 #3658BF40',
     borderRadius: '10px',
     overflowX: 'auto',
+    height:'400px',
   };
 
   const headTitle = {
@@ -63,7 +64,7 @@ export default function SellingItem() {
   const graphStyle = {
     backgroundColor: '#3658BF',
     width: '100%',
-    height: '240px',
+    height: '306px',
     borderRadius: '10px',
   };
 
