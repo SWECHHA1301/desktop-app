@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { X, Plus } from "lucide-react";
+import styles from "../Style"; // adjust path if needed
 
 export default function VariantDrawer({
   closeDrawer,
@@ -28,64 +29,69 @@ export default function VariantDrawer({
   };
 
   return (
-    <div className="ap-drawer">
-      <div className="ap-drawer-header">
+    <div style={styles.drawer}>
+      <div style={styles.drawerHeader}>
         <h3 style={{ fontSize: "20px", fontWeight: "700" }}>
           Add Variant Attribute
         </h3>
-        <button onClick={closeDrawer} className="close-btn">
+        <button onClick={closeDrawer} style={styles.closeBtn}>
           <X />
         </button>
       </div>
 
-      <div className="ap-drawer-body">
+      <div style={styles.drawerBody}>
         {variants.map((variant, index) => (
           <div key={index} style={{ marginBottom: "24px" }}>
             <h4 style={{ fontWeight: "600", marginBottom: "10px" }}>
               #{index + 1} Add Variant Attribute
             </h4>
 
-            <div className="form-group">
-              <label>Attribute Name</label>
+            <div style={styles.formGroup}>
+              <label style={styles.formLabel}>Attribute Name</label>
               <input
                 type="text"
                 value={variant.attrName}
                 onChange={(e) =>
                   handleChange(index, "attrName", e.target.value)
                 }
+                style={styles.input}
               />
             </div>
 
-            <div className="form-group">
-              <label>Attribute Values (comma separated)</label>
+            <div style={styles.formGroup}>
+              <label style={styles.formLabel}>
+                Attribute Values (comma separated)
+              </label>
               <input
                 type="text"
                 value={variant.attrValues}
                 onChange={(e) =>
                   handleChange(index, "attrValues", e.target.value)
                 }
+                style={styles.input}
               />
             </div>
 
-            <div className="form-group">
-              <label>Product Description</label>
+            <div style={styles.formGroup}>
+              <label style={styles.formLabel}>Product Description</label>
               <textarea
                 value={variant.description}
                 onChange={(e) =>
                   handleChange(index, "description", e.target.value)
                 }
+                style={styles.textarea}
               />
             </div>
           </div>
         ))}
       </div>
 
-      <div className="btn-group">
-        <button className="add-more-btn" onClick={handleAddMore}>
+      <div style={styles.btnGroup}>
+        <button style={styles.addMoreBtn} onClick={handleAddMore}>
           <Plus size={16} style={{ marginRight: "4px" }} />
           Add More Variant Attributes
         </button>
-        <button className="save-btn" onClick={handleSave}>
+        <button style={styles.saveButton} onClick={handleSave}>
           Save
         </button>
       </div>

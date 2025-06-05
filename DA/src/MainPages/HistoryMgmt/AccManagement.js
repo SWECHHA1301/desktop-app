@@ -2,7 +2,67 @@ import React from "react";
 // import DateCalendar from '../Common/Calendar/DateCalendar';
 // import "./AccManagement.css";
 import NativeDateRangePicker from "../../Common/NativeDateRangePicker";
+import { ChevronDown } from "lucide-react";
+import AddIcon from "../../Common/AddIcon";
 const details = [
+  {
+    Number: "1",
+    Id: "xxxx5",
+    Date: "Saturday, April 11",
+    Type: "Take Away",
+    Method: "UPI",
+    total: "₹200.00",
+  },
+  {
+    Number: "2",
+    Id: "zzzz7",
+    Date: "Saturday, April 11",
+    Type: "Take Away",
+    Method: "UPI",
+    total: "₹579.00",
+  },
+  {
+    Number: "3",
+    Id: "yyyy9",
+    Date: "Saturday, April 11",
+    Type: "Dine in",
+    Method: "Card",
+    total: "₹1000.00",
+  },
+  {
+    Number: "4",
+    Id: "xxxx4",
+    Date: "Saturday, April 11",
+    Type: "Dine in",
+    Method: "UPI",
+    total: "₹795.00",
+  },
+  {
+    Number: "5",
+    Id: "xxxx7",
+    Date: "Saturday, April 11",
+    Type: "Take Away",
+    Method: "Cash",
+    total: "₹250.00",
+  },
+  {
+    Number: "6",
+    Id: "tthhvv",
+    Date: "Saturday, April 11",
+    Type: "Dine in",
+    Method: "Cash",
+    total: "₹2450.00",
+  },
+  {
+    Number: "7",
+    Id: "jinin",
+    Date: "Saturday, April 11",
+    Type: "Dine in",
+    Method: "Card",
+    total: "₹5075.00",
+  },
+
+
   {
     Number: "1",
     Id: "xxxx5",
@@ -71,7 +131,7 @@ export default function AccManagement() {
   },
   accountNav: {
     width: '100%',
-    paddingTop: '24px',
+    // paddingTop: '24px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -109,11 +169,12 @@ export default function AccManagement() {
     display: 'flex',
     gap: '8px',
     alignItems: 'center',
+    justifyContent:'space-between'
   },
   selectBtnText: {
     color: '#3658BF',
     fontWeight: '700',
-    fontSize: '20px',
+    fontSize: '18px',
     lineHeight: '100%',
   },
   createBtn: {
@@ -124,13 +185,14 @@ export default function AccManagement() {
     borderRadius: '10px',
     padding: '0 10px',
     display: 'flex',
-    gap: '8px',
+    gap: '18px',
     alignItems: 'center',
+    
   },
   createBtnText: {
     color: '#3658BF',
     fontWeight: '700',
-    fontSize: '20px',
+    fontSize: '18px',
     lineHeight: '100%',
   },
   transactionsSec: {
@@ -169,7 +231,8 @@ export default function AccManagement() {
   },
   mainTab: {
     width: '100%',
-    overflow: 'hidden',
+    // overflow: 'hidden',
+    backgroundColor:'pink'
   },
   tableHeader: {
     width: '100%',
@@ -201,9 +264,18 @@ export default function AccManagement() {
     zIndex: 2,
     color: '#306CFE',
     borderRadius: '10px 10px 0 0',
+     padding: '19px 0',
+    maxWidth: '140px',
+    width: '100%',
+    fontSize: '16px',
+    fontWeight: '700',
+    lineHeight: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   tableBodyWrapper: {
-    maxHeight: '300px',
+    maxHeight:'400px',
     overflowY: 'auto',
   },
   accountTableRow: {
@@ -231,10 +303,11 @@ export default function AccManagement() {
           <div style={styles.selectAccount}>
             <button style={styles.selectBtn}>
               <p style={styles.selectBtnText}>Select Account</p>
-              <div></div>
+              <ChevronDown/>
             </button>
             <button style={styles.createBtn}>
               <p style={styles.createBtnText}>Create Transaction</p>
+              <AddIcon />
             </button>
           </div>
 
@@ -249,13 +322,13 @@ export default function AccManagement() {
          <div style={styles.mainTab}>
   <table style={styles.tableHeader}>
     <thead >
-      <tr style={{ borderRadius: "10px 10px 0 0", }}> 
-        <th >No.</th>
-        <th>Order ID</th>
-        <th>Order Date</th>
-        <th>Order Type</th>
-        <th>Payment Method</th>
-        <th>Total Payment</th>
+      <tr style={styles.accountTableRow}> 
+        <th style={styles.tableHeaderCell}>No.</th>
+        <th style={styles.tableHeaderCell}>Order ID</th>
+        <th style={styles.tableHeaderCell}>Order Date</th>
+        <th style={styles.tableHeaderCell}>Order Type</th>
+        <th style={styles.tableHeaderCell}>Payment Method</th>
+        <th style={styles.tableHeaderCell}>Total Payment</th>
       </tr>
     </thead>
   </table>
@@ -263,13 +336,13 @@ export default function AccManagement() {
     <table style={styles.tableBody}>
       <tbody>
         {details.map((item, index) => (
-          <tr key={index}>
-            <td>{item.Number}</td>
-            <td>{item.Id}</td>
-            <td style={{ color: "#3658BF" }}>{item.Date}</td>
-            <td>{item.Type}</td>
-            <td>{item.Method}</td>
-            <td>{item.total}</td>
+          <tr  style={styles.accountTableRow} key={index}>
+            <td style={styles.tableCell}>{item.Number}</td>
+            <td style={styles.tableCell}>{item.Id}</td>
+            <td style={styles.tableCell}>{item.Date}</td>
+            <td style={styles.tableCell}>{item.Type}</td>
+            <td style={styles.tableCell}>{item.Method}</td>
+            <td style={styles.tableCell}>{item.total}</td>
           </tr>
         ))}
       </tbody>

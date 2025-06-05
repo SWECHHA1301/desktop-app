@@ -11,12 +11,14 @@ import CustomerList from './MainPages/CustomerDetails/CustomerList';
 import MainContainer from './MainContainer';
 import AddExpense from "./Sales/AddExpenses/AddExpense";
 import AddProduct from "./Products/AddProduct/AddProduct"
+import CancelOrderModal from "./PopUps/CancelOrderModal";
+import CancelItemsModal from "./PopUps/CancelItemsModal";
 
 function App() {
   return (
     <Router>
-      {/* <MainContainer children={<Dashboard/>}/> */}
-      <MainContainer>
+      <MainContainer children={<CancelItemsModal />}/>
+      {/* <MainContainer>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/home" element={<ProductCard />} />
@@ -26,7 +28,7 @@ function App() {
           <Route path="/account" element={<AccManagement />} />
           <Route path="/customerlist" element={<CustomerList />} />
         </Routes>
-      </MainContainer>
+      </MainContainer> */}
     </Router>
   );
 }
