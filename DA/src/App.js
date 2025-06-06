@@ -25,8 +25,6 @@ function App() {
 
       <MainContainer children={<AccManagement />}/>
 
-      <MainContainer children={<StaffAttendance />}/>
-
       {/* <MainContainer>
         <Routes>
           <Route path="/" element={<Dashboard />} />
