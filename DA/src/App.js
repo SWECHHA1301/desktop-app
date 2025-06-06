@@ -16,12 +16,17 @@ import ManageProduct from "./Products/ManageProduct/ManageProduct"
 
 import CancelOrderModal from "./PopUps/CancelOrderModal";
 import CancelItemsModal from "./PopUps/CancelItemsModal";
+import StaffAttendance from "./MainPages/StaffAttendence/StaffAttendence";
 
 
 function App() {
   return (
     <Router>
+
       <MainContainer children={<AccManagement />}/>
+
+      <MainContainer children={<StaffAttendance />}/>
+
       {/* <MainContainer>
         <Routes>
           <Route path="/" element={<Dashboard />} />
