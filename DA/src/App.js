@@ -11,7 +11,7 @@ import CustomerList from './MainPages/CustomerDetails/CustomerList';
 import MainContainer from './MainContainer';
 import AddExpense from "./Sales/AddExpenses/AddExpense";
 import AddProduct from "./Products/AddProduct/AddProduct"
-
+import ManageProduct from "./Products/ManageProduct/ManageProduct"
 function App() {
   return (
     <Router>

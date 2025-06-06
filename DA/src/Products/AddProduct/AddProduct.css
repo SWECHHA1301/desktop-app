@@ -33,6 +33,10 @@
 .ap-form-layout {
   display: flex;
   gap: 16px;
+   justify-content:center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
 }
 
 .ap-form-main {

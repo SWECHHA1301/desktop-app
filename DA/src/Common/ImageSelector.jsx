@@ -62,11 +62,11 @@ const styles ={
         plusSign: {
           fontSize: '18px',
           fontWeight:'bold' ,
-          // marginTop: '-2px',
+          marginTop: '-2px',
           width:'30px',
           height:'30px',
           display:'flex',
-          justifyContent:'space-around',
+          justifyContent:'center',
           alignItems:'center',
         },
 }
