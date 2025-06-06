@@ -1,6 +1,4 @@
 import React from "react";
-// import DateCalendar from '../Common/Calendar/DateCalendar';
-// import "./AccManagement.css";
 import NativeDateRangePicker from "../../Common/NativeDateRangePicker";
 import { ChevronDown } from "lucide-react";
 import AddIcon from "../../Common/AddIcon";
@@ -122,46 +120,50 @@ const details = [
 ];
 
 export default function AccManagement() {
-  const styles = {
+const styles = {
   accountSection: {
     width: '100%',
     backgroundColor: '#E2E6F3',
     fontFamily: 'Arial, Helvetica, sans-serif',
     borderRadius: '10px',
+    // padding: '16px',
+    boxSizing: 'border-box',
   },
   accountNav: {
     width: '100%',
-    // paddingTop: '24px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: '16px',
   },
   navTitle: {
     color: '#3658BF',
     fontSize: '20px',
     fontWeight: '700',
     lineHeight: '100%',
-    marginBottom: '24px',
+    marginBottom: '16px',
   },
   transactionInfo: {
     backgroundColor: 'white',
     width: '100%',
-    maxWidth: '1304px',
     borderRadius: '10px',
+    overflow: 'hidden',
   },
   selectAccount: {
     backgroundColor: '#3658BF',
     width: '100%',
-    height: '83px',
-    position: 'relative',
+    minHeight: '83px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '0 16px',
+    flexWrap: 'wrap',
+    padding: '12px 16px',
+    gap: '12px',
+    boxSizing: 'border-box',
   },
   selectBtn: {
     backgroundColor: 'white',
-    width: '100%',
     maxWidth: '193px',
     height: '44px',
     borderRadius: '10px',
@@ -169,43 +171,42 @@ export default function AccManagement() {
     display: 'flex',
     gap: '8px',
     alignItems: 'center',
-    justifyContent:'space-between'
+    justifyContent: 'space-between',
+    flex: '1 1 auto',
   },
   selectBtnText: {
     color: '#3658BF',
     fontWeight: '700',
     fontSize: '18px',
-    lineHeight: '100%',
   },
   createBtn: {
     backgroundColor: 'white',
-    width: '100%',
     maxWidth: '237.5px',
     height: '44px',
     borderRadius: '10px',
     padding: '0 10px',
     display: 'flex',
-    gap: '18px',
+    gap: '12px',
     alignItems: 'center',
-    
+    flex: '1 1 auto',
   },
   createBtnText: {
     color: '#3658BF',
     fontWeight: '700',
     fontSize: '18px',
-    lineHeight: '100%',
   },
   transactionsSec: {
     display: 'flex',
-    gap: '27px',
+    // justifyContent: 'space-between',
     alignItems: 'center',
-    margin: '18px 0 15.12px 39px',
+    flexWrap: 'wrap',
+    gap: '12px',
+    margin: '18px 0 15px 16px',
   },
   transactionsHeading: {
     color: '#4A4A4A',
     fontSize: '20px',
     fontWeight: '700',
-    lineHeight: '100%',
   },
   filter: {
     display: 'flex',
@@ -213,7 +214,6 @@ export default function AccManagement() {
     gap: '10px',
     padding: '10px',
     borderRadius: '10px',
-    width: '100%',
     maxWidth: '90px',
     height: '39px',
     backgroundColor: '#3658BF',
@@ -222,17 +222,15 @@ export default function AccManagement() {
     color: 'white',
     fontSize: '16px',
     fontWeight: '700',
-    lineHeight: '100%',
   },
   manageTable: {
-    padding: '24px',
-    height: 'calc(92vh - 104px)',
+    padding: '0 16px 16px',
     width: '100%',
+    overflowX: 'auto',
   },
   mainTab: {
-    width: '100%',
-    // overflow: 'hidden',
-    backgroundColor:'pink'
+    minWidth: '600px',
+    
   },
   tableHeader: {
     width: '100%',
@@ -247,45 +245,33 @@ export default function AccManagement() {
     backgroundColor: 'white',
   },
   tableCell: {
-    padding: '19px 0',
-    maxWidth: '140px',
+    padding: '16px',
     width: '100%',
     fontSize: '16px',
-    fontWeight: '700',
-    lineHeight: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    fontWeight: '500',
+    lineHeight: '120%',
+    textAlign: 'center',
   },
   tableHeaderCell: {
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     position: 'sticky',
     top: 0,
     zIndex: 2,
     color: '#306CFE',
-    borderRadius: '10px 10px 0 0',
-     padding: '19px 0',
-    maxWidth: '140px',
-    width: '100%',
+    padding: '16px',
     fontSize: '16px',
     fontWeight: '700',
-    lineHeight: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    textAlign: 'center',
+    borderBottom: '2px solid #ddd',
   },
   tableBodyWrapper: {
-    maxHeight:'400px',
+    height: '280px',
     overflowY: 'auto',
   },
   accountTableRow: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    border: '1px solid rgb(97, 97, 97)',
-  },
-  tableFirstCol: {
-    width: '100%',
-    maxWidth: '60px',
+    display: 'table-row',
+    border: '1px solid black',
+
   },
 };
 
