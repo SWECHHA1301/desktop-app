@@ -73,6 +73,3 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-
-
-<div className="nav-icon"><User size={20} /><span>Account</span></div>

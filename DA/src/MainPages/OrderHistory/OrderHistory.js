@@ -319,5 +319,7 @@ const headerCellStyle = {
   fontWeight: "700",
   fontSize: "16px",
   color: "#797979",
+
    
 };
+

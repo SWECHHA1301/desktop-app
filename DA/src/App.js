@@ -11,11 +11,17 @@ import CustomerList from './MainPages/CustomerDetails/CustomerList';
 import MainContainer from './MainContainer';
 import AddExpense from "./Sales/AddExpenses/AddExpense";
 import AddProduct from "./Products/AddProduct/AddProduct"
+
 import ManageProduct from "./Products/ManageProduct/ManageProduct"
+
+import CancelOrderModal from "./PopUps/CancelOrderModal";
+import CancelItemsModal from "./PopUps/CancelItemsModal";
+
+
 function App() {
   return (
     <Router>
-      <MainContainer children={<OrderHistory/>}/>
+      <MainContainer children={<CancelItemsModal />}/>
       {/* <MainContainer>
         <Routes>
           <Route path="/" element={<Dashboard />} />
