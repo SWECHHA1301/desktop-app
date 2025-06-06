@@ -13,11 +13,12 @@ import AddExpense from "./Sales/AddExpenses/AddExpense";
 import AddProduct from "./Products/AddProduct/AddProduct"
 import CancelOrderModal from "./PopUps/CancelOrderModal";
 import CancelItemsModal from "./PopUps/CancelItemsModal";
+import StaffAttendance from "./MainPages/StaffAttendence/StaffAttendence";
 
 function App() {
   return (
     <Router>
-      <MainContainer children={<CancelItemsModal />}/>
+      <MainContainer children={<StaffAttendance />}/>
       {/* <MainContainer>
         <Routes>
           <Route path="/" element={<Dashboard />} />
