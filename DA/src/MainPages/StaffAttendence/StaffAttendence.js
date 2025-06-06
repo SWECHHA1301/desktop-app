@@ -68,8 +68,8 @@ export default function StaffAttendance() {
           color: "#3658BF",
         }}
       >
-        <ChevronLeft />
-        <ChevronRight />
+        <ChevronLeft color="white"/>
+        <ChevronRight color="black"/>
         Staff Attendance
       </div>
 

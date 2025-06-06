@@ -1,6 +1,11 @@
 import { useState } from "react";
-import { ChevronDown, ChevronDown as ChevronDownIcon, ChevronRight, Pencil } from "lucide-react";
-import ImageSelector from "../../../Common/ImageSelector"
+import {
+  ChevronDown,
+  ChevronDown as ChevronDownIcon,
+  ChevronRight,
+  Pencil,
+} from "lucide-react";
+import ImageSelector from "../../../Common/ImageSelector";
 export default function ProductInfo() {
   const [isOpen, setIsOpen] = useState(true);
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -46,7 +51,9 @@ export default function ProductInfo() {
           </div>
 
           {/* Image Upload */}
-         <ImageSelector/>
+          <div className="upload-box">
+            <ImageSelector />
+          </div>
         </div>
 
         {/* Bottom Grid */}
@@ -121,13 +128,12 @@ export default function ProductInfo() {
           display: flex;
           flex-direction: column;
           gap: 8px;
-            max-width:390px;
+          max-width: 390px;
         }
 
         .field {
           display: flex;
           flex-direction: column;
-        
         }
 
         label {
@@ -156,84 +162,13 @@ export default function ProductInfo() {
           font-size: 14px;
         }
 
-        .upload-container {
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          
-        }
-
         .upload-box {
-          max-width: 164px;
-          width: 100%;
-          height: 135px;
-          border: 2px solid #797979;
-          border-radius: 10px;
           position: relative;
-          background-color: #f9f9f9;
           display: flex;
-          align-items: center;
           justify-content: center;
-          overflow: hidden;
+          align-items: center;
+
           right: 194px;
-        }
-
-        .image-placeholder {
-          width: 60px;
-          height: 40px;
-          background-color: #aaa;
-          border-radius: 4px;
-        }
-
-        .image-preview {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 8px;
-        }
-
-        .upload-icon {
-          position: absolute;
-          bottom: -5px;
-          right: -1px;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background-color: #fff;
-          border: 1px solid #888;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: bold;
-          font-size: 14px;
-          cursor: pointer;
-          z-index: 2;
-        }
-
-        .remove-image {
-          position: absolute;
-          top: 4px;
-          right: 4px;
-          width: 20px;
-          height: 20px;
-          background: white;
-          border: 1px solid #999;
-          border-radius: 50%;
-          color: #333;
-          font-size: 14px;
-          font-weight: bold;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 3;
-          user-select: none;
-        }
-
-        .plus-sign {
-          font-size: 18px;
-          font-weight: bold;
-          margin-top: -2px;
         }
 
         .product-type-container {
@@ -275,11 +210,6 @@ export default function ProductInfo() {
         @media (max-width: 768px) {
           .grid-row {
             grid-template-columns: 1fr;
-          }
-
-          .upload-box {
-            margin-top: 16px;
-            margin-bottom: 10px;
           }
 
           .product-type-container {
