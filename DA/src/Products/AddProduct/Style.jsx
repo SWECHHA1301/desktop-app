@@ -30,6 +30,10 @@ const styles = {
   formLayout: {
     display: 'flex',
     gap: '16px',
+     justifyContent:'center',
+    alignItems: 'flex-start',
+    width: '100%',
+    height: '100%'
   },
   formMain: {
     flex: 1,

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronDown as ChevronDownIcon, ChevronRight, Pencil } from "lucide-react";
-
+import ImageSelector from "../../../Common/ImageSelector"
 export default function ProductInfo() {
   const [isOpen, setIsOpen] = useState(true);
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -46,31 +46,7 @@ export default function ProductInfo() {
           </div>
 
           {/* Image Upload */}
-          <div className="upload-container">
-            <div className="upload-box">
-              {previewUrl ? (
-                <>
-                  <img src={previewUrl} alt="Preview" className="image-preview" />
-                  <span className="remove-image" onClick={() => setPreviewUrl(null)}>✖</span>
-                </>
-              ) : (
-                <div className="image-placeholder" />
-              )}
-              <label className="upload-icon">
-                {previewUrl ? (
-                  <Pencil size={14} color="#333" />
-                ) : (
-                  <span className="plus-sign">+</span>
-                )}
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                  style={{ display: "none" }}
-                />
-              </label>
-            </div>
-          </div>
+         <ImageSelector/>
         </div>
 
         {/* Bottom Grid */}
@@ -145,11 +121,13 @@ export default function ProductInfo() {
           display: flex;
           flex-direction: column;
           gap: 8px;
+            max-width:390px;
         }
 
         .field {
           display: flex;
           flex-direction: column;
+        
         }
 
         label {

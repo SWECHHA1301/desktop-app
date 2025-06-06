@@ -193,7 +193,7 @@ export default function OrderHistory() {
               height: "40px",
               padding: "8px 12px 8px 36px",
               borderRadius: "10px",
-              border: "1px solid #616161",
+              border: "1px solid  #616161",
               fontSize: "16px",
               fontWeight: "700",
               boxSizing: "border-box",
@@ -233,8 +233,8 @@ export default function OrderHistory() {
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
-                  border: "1px solid #D0D0D0",
-                  borderRadius: 10,
+                 border: "1px solid rgb(41, 41, 41)",
+                  borderRadius: '10px 10px 0 0'
                   
                 }}
               >
@@ -257,26 +257,27 @@ export default function OrderHistory() {
                     style={{
                       display: "flex",
                       justifyContent: "space-between",
-                      border: "1px solid #D0D0D0",
+                      border: "1px solid rgb(41, 41, 41)",
                       backgroundColor: "white",
                     }}
                   >
                     <td style={cellStyle}>{item.Number}</td>
-                    <td style={cellStyle}>{item.Id}</td>
+                    <td style={{...cellStyle,color:'black'}}>{item.Id}</td>
                     <td style={{ ...cellStyle, fontWeight: 400 }}>
                       {item.Date}
                     </td>
-                    <td style={{ ...cellStyle, fontWeight: 400 }}>
+                    <td style={{ ...cellStyle, fontWeight: 400 ,color:'black'}}>
                       {item.Method}
                     </td>
-                    <td style={{ ...cellStyle, fontWeight: 400 }}>
+                    <td style={{ ...cellStyle, fontWeight: 400 ,fontSize:'14px'}}>
                       <button
                         style={{
                           maxWidth: "87px",
                           width: "100%",
                           height: "32px",
-                          padding: "8px",
+                          // padding: "8px",
                           borderRadius: "10px",
+                         
                           backgroundColor:
                             item.Type === "Dine in" ? "#F4C430" : "#2F5D62",
                           color: item.Type === "Dine in" ? "black" : "white",
@@ -285,7 +286,7 @@ export default function OrderHistory() {
                         {item.Type}
                       </button>
                     </td>
-                    <td style={{ ...cellStyle, justifyContent: "end" }}>
+                    <td style={{ ...cellStyle, justifyContent: "end" , color:'black' }}>
                       {item.total}
                     </td>
                   </tr>
@@ -310,6 +311,7 @@ const cellStyle = {
   justifyContent: "center",
   whiteSpace: "nowrap",
   color: "#797979",
+ 
 };
 
 const headerCellStyle = {
@@ -317,4 +319,7 @@ const headerCellStyle = {
   fontWeight: "700",
   fontSize: "16px",
   color: "#797979",
+
+   
 };
+

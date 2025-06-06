@@ -11,9 +11,13 @@ import CustomerList from './MainPages/CustomerDetails/CustomerList';
 import MainContainer from './MainContainer';
 import AddExpense from "./Sales/AddExpenses/AddExpense";
 import AddProduct from "./Products/AddProduct/AddProduct"
+
+import ManageProduct from "./Products/ManageProduct/ManageProduct"
+
 import CancelOrderModal from "./PopUps/CancelOrderModal";
 import CancelItemsModal from "./PopUps/CancelItemsModal";
 import StaffAttendance from "./MainPages/StaffAttendence/StaffAttendence";
+
 
 function App() {
   return (
