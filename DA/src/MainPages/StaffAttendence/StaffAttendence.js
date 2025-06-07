@@ -49,7 +49,8 @@ export default function StaffAttendance() {
       style={{
         border: "2px solid black",
         borderRadius: 10,
-        width: "1390px",
+        width:'100%',
+        maxWidth: "1390px",
         height: "650px",
         backgroundColor: "#D4DAED",
         padding: "20px",

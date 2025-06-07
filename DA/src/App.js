@@ -23,9 +23,9 @@ function App() {
   return (
     <Router>
 
-      <MainContainer children={<AccManagement />}/>
+      <MainContainer children={<ManageProduct />}/>
 
-      <MainContainer children={<StaffAttendance />}/>
+      {/* <MainContainer children={<StaffAttendance />}/> */}
 
       {/* <MainContainer>
         <Routes>

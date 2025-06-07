@@ -98,6 +98,7 @@ export default function StaffManagement() {
       staff.role.toLowerCase().includes(searchTerm.toLowerCase())
   );
   return (
+    <>
     <div style={staffContainer}>
       
 
@@ -184,12 +185,12 @@ export default function StaffManagement() {
         </div>
          
         
-      
+    
         
       
 
 
-    </div>
+    </div>  </>
   );
 }
 
