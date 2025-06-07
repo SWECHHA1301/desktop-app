@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductCard from './MainPages/Product/ProductCard';
@@ -17,33 +16,17 @@ import ManageProduct from "./Products/ManageProduct/ManageProduct"
 import CancelOrderModal from "./PopUps/CancelOrderModal";
 import CancelItemsModal from "./PopUps/CancelItemsModal";
 import StaffAttendance from "./MainPages/StaffAttendence/StaffAttendence";
-import SidebarDrawer from "./Common/SidebarDrawer";
+import Payrolls from "./MainPages/Payrolls/Payrolls";
+
 
 
 function App() {
   return (
-    // <Router>
+    <Router>
 
-<<<<<<< HEAD
-    // <MainContainer/>
+    
 
-    //   <MainContainer>
-    //     <Routes>
-    //       <Route path="/" element={<Dashboard />} />
-    //       <Route path="/home" element={<ProductCard />} />
-    //       <Route path="/table" element={<TableDashboard />} />
-    //       <Route path="/history" element={<OrderHistory />} />
-    //       <Route path="/order" element={<OrderDashboard />} />
-    //       <Route path="/account" element={<AccManagement />} />
-    //       <Route path="/customerlist" element={<CustomerList />} />
-    //     </Routes>
-    //   </MainContainer>
-    // </Router>
-    <MainContainer/>
-=======
-      <MainContainer children={<ManageProduct />}/>
-
-      {/* <MainContainer children={<StaffAttendance />}/> */}
+      <MainContainer children={<Payrolls/>}/>
 
       {/* <MainContainer>
         <Routes>
@@ -57,11 +40,11 @@ function App() {
         </Routes>
       </MainContainer> */}
     </Router>
->>>>>>> 4ff1f2ff496159b7ab7eee2ef8ff682839189a2b
   );
 }
 
 export default App;
+
 
 //  import React from 'react'
 //  import MainContainer from "./MainContainer"

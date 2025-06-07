@@ -1,5 +1,6 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import TabSwitcher from "../../Payrolls/components/TabSwitcher";
 
 export default function StaffTable({ staffList, handleMark }) {
   const gridTemplate = "1fr 1fr 1fr 1fr 1fr";
@@ -20,6 +21,8 @@ export default function StaffTable({ staffList, handleMark }) {
         boxSizing: "border-box",
       }}
     >
+
+      <div><TabSwitcher /></div>
       {/* Table Header */}
       <div
         style={{
