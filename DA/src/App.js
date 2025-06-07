@@ -17,13 +17,14 @@ import ManageProduct from "./Products/ManageProduct/ManageProduct"
 import CancelOrderModal from "./PopUps/CancelOrderModal";
 import CancelItemsModal from "./PopUps/CancelItemsModal";
 import StaffAttendance from "./MainPages/StaffAttendence/StaffAttendence";
+import SidebarDrawer from "./MainPages/Menu/SidebarDrawer";
 
 
 function App() {
   return (
     <Router>
 
-      <MainContainer children={<ManageProduct />}/>
+    
 
       {/* <MainContainer children={<StaffAttendance />}/> */}
 
