@@ -5,118 +5,65 @@ import AddIcon from "../../Common/AddIcon";
 const details = [
   {
     Number: "1",
-    Id: "xxxx5",
+    transactionType: "Debit",
     Date: "Saturday, April 11",
     Type: "Take Away",
-    Method: "UPI",
+    description: "Sale",
     total: "₹200.00",
   },
   {
     Number: "2",
-    Id: "zzzz7",
+   transactionType: "Credit",
     Date: "Saturday, April 11",
     Type: "Take Away",
-    Method: "UPI",
+  description: "Sale",
     total: "₹579.00",
   },
   {
     Number: "3",
-    Id: "yyyy9",
-    Date: "Saturday, April 11",
+      Date: "Saturday, April 11",
+     transactionType: "Debit",
     Type: "Dine in",
-    Method: "Card",
+    description: "Sale Deleted",
     total: "₹1000.00",
   },
   {
     Number: "4",
-    Id: "xxxx4",
-    Date: "Saturday, April 11",
+       Date: "Saturday, April 11",
+     transactionType: "Debit",
     Type: "Dine in",
-    Method: "UPI",
+    description: "Sale",
     total: "₹795.00",
   },
   {
     Number: "5",
-    Id: "xxxx7",
+   transactionType: "Credit",
     Date: "Saturday, April 11",
     Type: "Take Away",
-    Method: "Cash",
+   description: "Sale",
     total: "₹250.00",
   },
   {
     Number: "6",
-    Id: "tthhvv",
+   transactionType: "Credit",
     Date: "Saturday, April 11",
     Type: "Dine in",
-    Method: "Cash",
+  description: "Sale",
     total: "₹2450.00",
   },
   {
     Number: "7",
-    Id: "jinin",
-    Date: "Saturday, April 11",
+
+      transactionType: "Debit",
+       Date: "Saturday, April 11",
     Type: "Dine in",
-    Method: "Card",
+   description: "Sale",
     total: "₹5075.00",
   },
 
 
-  {
-    Number: "1",
-    Id: "xxxx5",
-    Date: "Saturday, April 11",
-    Type: "Take Away",
-    Method: "UPI",
-    total: "₹200.00",
-  },
-  {
-    Number: "2",
-    Id: "zzzz7",
-    Date: "Saturday, April 11",
-    Type: "Take Away",
-    Method: "UPI",
-    total: "₹579.00",
-  },
-  {
-    Number: "3",
-    Id: "yyyy9",
-    Date: "Saturday, April 11",
-    Type: "Dine in",
-    Method: "Card",
-    total: "₹1000.00",
-  },
-  {
-    Number: "4",
-    Id: "xxxx4",
-    Date: "Saturday, April 11",
-    Type: "Dine in",
-    Method: "UPI",
-    total: "₹795.00",
-  },
-  {
-    Number: "5",
-    Id: "xxxx7",
-    Date: "Saturday, April 11",
-    Type: "Take Away",
-    Method: "Cash",
-    total: "₹250.00",
-  },
-  {
-    Number: "6",
-    Id: "tthhvv",
-    Date: "Saturday, April 11",
-    Type: "Dine in",
-    Method: "Cash",
-    total: "₹2450.00",
-  },
-  {
-    Number: "7",
-    Id: "jinin",
-    Date: "Saturday, April 11",
-    Type: "Dine in",
-    Method: "Card",
-    total: "₹5075.00",
-  },
+  
+
 ];
 
 export default function AccManagement() {
@@ -245,10 +192,11 @@ const styles = {
     backgroundColor: 'white',
   },
   tableCell: {
+    
     padding: '16px',
     width: '100%',
     fontSize: '16px',
-    fontWeight: '500',
+    fontWeight: '700',
     lineHeight: '120%',
     textAlign: 'center',
   },
@@ -257,7 +205,7 @@ const styles = {
     position: 'sticky',
     top: 0,
     zIndex: 2,
-    color: '#306CFE',
+    color: '#797979',
     padding: '16px',
     fontSize: '16px',
     fontWeight: '700',
@@ -265,7 +213,7 @@ const styles = {
     borderBottom: '2px solid #ddd',
   },
   tableBodyWrapper: {
-    height: '280px',
+    height: '50vh',
     overflowY: 'auto',
   },
   accountTableRow: {
@@ -310,11 +258,11 @@ const styles = {
     <thead >
       <tr style={styles.accountTableRow}> 
         <th style={styles.tableHeaderCell}>No.</th>
-        <th style={styles.tableHeaderCell}>Order ID</th>
-        <th style={styles.tableHeaderCell}>Order Date</th>
-        <th style={styles.tableHeaderCell}>Order Type</th>
-        <th style={styles.tableHeaderCell}>Payment Method</th>
-        <th style={styles.tableHeaderCell}>Total Payment</th>
+        <th style={styles.tableHeaderCell}>Transaction Type</th>
+        <th style={styles.tableHeaderCell}> Date</th>
+        <th style={styles.tableHeaderCell}>Time</th>
+        <th style={styles.tableHeaderCell}>Description</th>
+        <th style={styles.tableHeaderCell}>Amount(in ₹)</th>
       </tr>
     </thead>
   </table>
@@ -324,10 +272,10 @@ const styles = {
         {details.map((item, index) => (
           <tr  style={styles.accountTableRow} key={index}>
             <td style={styles.tableCell}>{item.Number}</td>
-            <td style={styles.tableCell}>{item.Id}</td>
+            <td style={styles.tableCell}>{item.transactionType}</td>
             <td style={styles.tableCell}>{item.Date}</td>
             <td style={styles.tableCell}>{item.Type}</td>
-            <td style={styles.tableCell}>{item.Method}</td>
+            <td style={styles.tableCell}>{item.description}</td>
             <td style={styles.tableCell}>{item.total}</td>
           </tr>
         ))}

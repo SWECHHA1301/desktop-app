@@ -46,27 +46,26 @@ export default function ManageProduct() {
     },
     productGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(4, 1fr)",
+      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
       gap: "20px",
     },
     productCard: {
       backgroundColor: "#fff",
       borderRadius: "10px",
-      maxWidth: "288px",
-      maxHeight: "415px",
+      width: "100%",
+      eight: "415px",
       boxShadow: "4px 4px 4px #3658BF40",
     },
     productImage: {
       width: "100%",
        maxHeight: "288px",
       objectFit: "contain",
-    
-      // border: "1.5px solid rgb(31, 31, 31)",
+  // border: "1.5px solid rgb(31, 31, 31)",
       borderRadius: "10px 10px 0 0",
     },
   
     textBlock: {
-      padding: " 6px 16px",
+      padding: " 16px 16px 8px 16px",
       display: "flex",
       flexDirection: "column",
       gap: "6px",
@@ -88,7 +87,7 @@ export default function ManageProduct() {
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      padding: "8px 16px 12px 16px",
+      padding: "8px 16px 16px 16px",
     },
     infoColumn: {
       display: "flex",
@@ -179,7 +178,7 @@ export default function ManageProduct() {
                   </div>
                   <div style={styles.infoColumn}>
                     <p style={styles.label}>Revenue</p>
-                    <p>{product.revenue}</p>
+                    <p>₹{product.revenue}</p>
                   </div>
                 </div>
               </div>

@@ -24,6 +24,7 @@ function App() {
   return (
     // <Router>
 
+<<<<<<< HEAD
     // <MainContainer/>
 
     //   <MainContainer>
@@ -39,6 +40,24 @@ function App() {
     //   </MainContainer>
     // </Router>
     <MainContainer/>
+=======
+      <MainContainer children={<ManageProduct />}/>
+
+      {/* <MainContainer children={<StaffAttendance />}/> */}
+
+      {/* <MainContainer>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/home" element={<ProductCard />} />
+          <Route path="/table" element={<TableDashboard />} />
+          <Route path="/history" element={<OrderHistory />} />
+          <Route path="/order" element={<OrderDashboard />} />
+          <Route path="/account" element={<AccManagement />} />
+          <Route path="/customerlist" element={<CustomerList />} />
+        </Routes>
+      </MainContainer> */}
+    </Router>
+>>>>>>> 4ff1f2ff496159b7ab7eee2ef8ff682839189a2b
   );
 }
 
