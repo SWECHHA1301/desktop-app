@@ -17,26 +17,28 @@ import ManageProduct from "./Products/ManageProduct/ManageProduct"
 import CancelOrderModal from "./PopUps/CancelOrderModal";
 import CancelItemsModal from "./PopUps/CancelItemsModal";
 import StaffAttendance from "./MainPages/StaffAttendence/StaffAttendence";
+import SidebarDrawer from "./Common/SidebarDrawer";
 
 
 function App() {
   return (
-    <Router>
+    // <Router>
 
-      <MainContainer children={<AccManagement />}/>
+    // <MainContainer/>
 
-      {/* <MainContainer>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/home" element={<ProductCard />} />
-          <Route path="/table" element={<TableDashboard />} />
-          <Route path="/history" element={<OrderHistory />} />
-          <Route path="/order" element={<OrderDashboard />} />
-          <Route path="/account" element={<AccManagement />} />
-          <Route path="/customerlist" element={<CustomerList />} />
-        </Routes>
-      </MainContainer> */}
-    </Router>
+    //   <MainContainer>
+    //     <Routes>
+    //       <Route path="/" element={<Dashboard />} />
+    //       <Route path="/home" element={<ProductCard />} />
+    //       <Route path="/table" element={<TableDashboard />} />
+    //       <Route path="/history" element={<OrderHistory />} />
+    //       <Route path="/order" element={<OrderDashboard />} />
+    //       <Route path="/account" element={<AccManagement />} />
+    //       <Route path="/customerlist" element={<CustomerList />} />
+    //     </Routes>
+    //   </MainContainer>
+    // </Router>
+    <MainContainer/>
   );
 }
 

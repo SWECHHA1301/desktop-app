@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from './Common/Sidebar'
 import Navbar from './Common/Navbar'
+import SidebarDrawer from './Common/SidebarDrawer'
 
 const MainContainer = ({ children }) => {
     return (
@@ -8,9 +9,10 @@ const MainContainer = ({ children }) => {
             <Navbar />
             <div style={{
                 display: 'flex',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                padding: '5px'
             }}>
-                <Sidebar />
+                <SidebarDrawer />
                 <div style={{
                     height: '92vh',
                     overflowY: 'scroll',
