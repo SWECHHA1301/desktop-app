@@ -12,21 +12,21 @@ import AddExpense from "./Sales/AddExpenses/AddExpense";
 import AddProduct from "./Products/AddProduct/AddProduct"
 
 import ManageProduct from "./Products/ManageProduct/ManageProduct"
-
 import CancelOrderModal from "./PopUps/CancelOrderModal";
 import CancelItemsModal from "./PopUps/CancelItemsModal";
 import StaffAttendance from "./MainPages/StaffAttendence/StaffAttendence";
-import Payrolls from "./MainPages/Payrolls/Payrolls";
+import Sidebar from "./Common/Sidebar";
+import SidebarDrawer from "./Common/SidebarDrawer";
+import Menu from "./Menu/Menu";
 
 
 
 function App() {
   return (
     <Router>
-
-    
-
-      <MainContainer children={<Payrolls/>}/>
+      {/* <SidebarDrawer/> */}
+      <MainContainer children={<Menu/>}/>
+ {/* <MainContainer children={<StaffAttendance />}/> */}
 
       {/* <MainContainer>
         <Routes>
@@ -56,7 +56,3 @@ export default App;
 //      </div>
 //    )
 //  }
- 
-
-
-

@@ -19,8 +19,8 @@ export default function SidebarDrawer() {
       display: "flex",
     },
     sidebar: {
-      height: "90vh",
-      width: isOpen ? "220px" : "60px",
+      height: "95vh",
+      width: isOpen ? "305px" : "60px",
       backgroundColor: "#fff",
       borderRight: "1px solid #e2e8f0",
       transition: "width 0.3s ease",
@@ -45,15 +45,17 @@ export default function SidebarDrawer() {
     navContainer: {
       paddingTop: "12px",
       flexGrow: 1,
+   
     },
     navItem: {
       display: "flex",
       alignItems: "center",
-      justifyContent: isOpen ? "flex-start" : "center",
+      justifyContent: isOpen ? "space-between" : "center",
       padding: "8px 10px",
       margin: "4px",
       cursor: "pointer",
       transition: "background 0.3s, color 0.3s",
+      
     },
     icon: (isActive) => ({
       minWidth: "20px",
@@ -72,29 +74,37 @@ export default function SidebarDrawer() {
       transition: "background 0.3s, color 0.3s",
     }),
     bottomSection: {
-      borderTop: "1px solid #e2e8f0",
+    
       paddingTop: "10px",
       display: "flex",
       flexDirection: "column",
       gap: "4px", // optional spacing between items
+        width: '230px',
+      justifySelf:'end',
+     
+        borderTop: "1px solid rgb(51, 51, 51)",
     },
 
     bottomTextItem: {
-      padding: "10px 16px",
+      padding: "10px 12px",
       fontSize: "14px",
       color: "#3658BF",
       fontWeight: 700,
       cursor: "pointer",
       whiteSpace: "nowrap",
+    
     },
 
     logout: {
-      padding: "14px 16px",
+      padding: "10px 12px",
       fontSize: "16px",
       color: "#797979",
       fontWeight: 700,
       cursor: "pointer",
-      borderTop: "1px solid #e2e8f0",
+      // borderTop: "1px solid #e2e8f0",
+       width: '230px',
+      justifySelf:'end',
+      display:'flex'
     },
   };
 
@@ -136,15 +146,17 @@ export default function SidebarDrawer() {
           {/* Bottom Section */}
           {isOpen && (
             <div style={styles.bottomSection}>
-              <div style={styles.bottomTextItem}>Help Center</div>
-              <div style={styles.bottomTextItem}>Privacy Policy</div>
-              <div style={styles.bottomTextItem}>Invoice Settings</div>
+              <div style={styles.bottomTextItem}><p>Help Center</p></div>
+              <div style={styles.bottomTextItem}><p>Privacy Policy</p></div>
+              <div style={styles.bottomTextItem}><p>Invoice Settings</p></div>
             </div>
           )}
+
+           {/* Logout */}
+        {isOpen && <div style={styles.logout}>Logout</div>}
         </div>
 
-        {/* Logout */}
-        {isOpen && <div style={styles.logout}>Logout</div>}
+       
       </div>
     </div>
   );
