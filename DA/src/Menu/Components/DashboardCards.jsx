@@ -1,21 +1,30 @@
 import React from "react";
-import styles from "../../Products/AddProduct/Style";
-
+import saleIcon from "../assets/sale.png"
+import purchaseIcon from "../assets/purchase.png"
+import quotationIcon from "../assets/quotation.png"
+import paymentIcon from "../assets/payment.png"
+import quickInvoiceIcon from "../assets/quickInvoice.png"
+import catalogueIcon from "../assets/catalogue.png"
+import expenseIcon from "../assets/expenses.png"
+import staffIcon from "../assets/staffAttendance.png"
+import printerIcon from "../assets/connectPrinter.png"
+import invoiceIcon from "../assets/invoiceSettings.png"
+import labelIcon from "../assets/printLabel.png"
 const cardData = {
   create: [
-    { title: "Sale", subtitle: "Create new sale entry." },
-    { title: "Purchase", subtitle: "New Purchase entry." },
-    { title: "Quotation", subtitle: "Customer product quotation." },
-    { title: "Payment", subtitle: "Current Transactions." },
-    { title: "Quick Invoice", subtitle: "Create quick invoice." },
-    { title: "Catalogue", subtitle: "View Now." },
-    { title: "Expenses", subtitle: "History of transaction." },
+    { title: "Sale", subtitle: "Create new sale entry." ,icon:saleIcon},
+    { title: "Purchase", subtitle: "New Purchase entry." ,icon:purchaseIcon},
+    { title: "Quotation", subtitle: "Customer product quotation.",icon:quotationIcon },
+    { title: "Payment", subtitle: "Current Transactions." ,icon:paymentIcon},
+    { title: "Quick Invoice", subtitle: "Create quick invoice." ,icon:quickInvoiceIcon},
+    { title: "Catalogue", subtitle: "View Now." ,icon:catalogueIcon},
+    { title: "Expenses", subtitle: "History of transaction.",icon:expenseIcon },
   ],
   quickAccess: [
-    { title: "Staff Attendance", subtitle: "Staff time." },
-    { title: "Connect Printer", subtitle: "Printer Online." },
-    { title: "Invoice Settings", subtitle: "Billing & payment handling settings." },
-    { title: "Print Price Label", subtitle: "Setting Price list Label." },
+    { title: "Staff Attendance", subtitle: "Staff time." ,icon:staffIcon },
+    { title: "Connect Printer", subtitle: "Printer Online." ,icon:printerIcon },
+    { title: "Invoice Settings", subtitle: "Billing & payment handling settings.",icon:invoiceIcon },
+    { title: "Print Price Label", subtitle: "Setting Price list Label." ,icon:labelIcon},
   ],
 };
  
@@ -26,6 +35,9 @@ const cardStyle = {
   borderRadius: "10px",
  minWidth: "160px",
   flex: "1 1 200px",
+  display:'flex',
+  alignItems:'center',
+  gap:'10px'
 };
 
 const sectionStyle = {
@@ -46,7 +58,7 @@ const titleStyle = {
 const textContent ={
     display:'flex',
     flexDirection:'column',
-    gap:'6px'
+    gap:'4px'
 }
 
 const DashboardCards = () => {
@@ -65,6 +77,13 @@ const DashboardCards = () => {
         >
           {cardData.create.map((item, idx) => (
             <div key={idx} style={cardStyle}>
+                           {item.icon && (
+      <img
+        src={item.icon}
+        alt={item.title}
+        style={{ width: "50px", height: "50px", }}
+      />
+    )}
               <div style={textContent}>
               <div style={{ fontWeight: 700 ,fontSize: "16px"}}>{item.title}</div>
               <div style={{ fontSize: "12px", color: "#797979" ,fontWeight: 700}}>{item.subtitle}</div>
@@ -85,7 +104,13 @@ const DashboardCards = () => {
         >
           {cardData.quickAccess.map((item, idx) => (
             <div key={idx} style={cardStyle}>
-            {/* icon place */}
+                {item.icon && (
+      <img
+        src={item.icon}
+        alt={item.title}
+        style={{ width: "50px", height: "50px", }}
+      />
+    )}
                 <div style={textContent}>
               <div style={{ fontWeight: 700 ,fontSize: "16px"}}>{item.title}</div>
               <div style={{ fontSize: "12px", color: "#797979" ,fontWeight: 700}}>{item.subtitle}</div>

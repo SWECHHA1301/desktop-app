@@ -24,7 +24,7 @@ import Menu from "./Menu/Menu";
 function App() {
   return (
     <Router>
-      {/* <SidebarDrawer/> */}
+      
       <MainContainer children={<Menu/>}/>
  {/* <MainContainer children={<StaffAttendance />}/> */}
 

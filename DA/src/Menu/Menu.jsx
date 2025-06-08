@@ -7,7 +7,7 @@ import DashboardCards from './Components/DashboardCards';
 export default function Menu() {
     const styles ={
         constainer:{
-            maxWidth:'1300px',
+          
             width:'100%',
             backgroundColor:'#fff',
             padding:'24px 16px',
