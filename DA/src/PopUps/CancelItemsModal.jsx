@@ -58,6 +58,9 @@ export default function CancelItemsModal({ onEdit, onCancel }) {
       gap: 8,
     },
     btnEdit: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
       padding: "8px 16px",
       backgroundColor: "#fff",
       border: "1px solid #3658BF",
@@ -67,7 +70,11 @@ export default function CancelItemsModal({ onEdit, onCancel }) {
       fontWeight: 600,
       height: 32,
     },
+
     btnCancel: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
       padding: "8px 16px",
       backgroundColor: "#FF0000",
       border: "none",

@@ -1,32 +1,32 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, PlusCircle } from "lucide-react";
-import TabSwitcher from "./TabSwitcher"; // Make sure this path is correct
+import { PlusCircle } from "lucide-react";
+import TabSwitcher from "./TabSwitcher";
 
 const payments = [
   {
     date: "05/14/2025",
-    day: "Wednesday,May",
+    day: "Wednesday, May",
     time: "16:59:00",
     type: "Advance",
     amount: 2000,
   },
   {
     date: "05/14/2025",
-    day: "Wednesday,May",
+    day: "Wednesday, May",
     time: "10:59:00",
     type: "Salary",
     amount: 2000,
   },
   {
     date: "05/14/2025",
-    day: "Wednesday,May",
+    day: "Wednesday, May",
     time: "10:59:00",
     type: "Advance",
     amount: 2000,
   },
   {
     date: "05/14/2025",
-    day: "Wednesday,May",
+    day: "Wednesday, May",
     time: "10:59:00",
     type: "Other",
     amount: 2000,
@@ -44,7 +44,11 @@ const PaymentTable = () => {
         background: "#fff",
         borderRadius: 10,
         width: "100%",
+
         // maxWidth: "1358px",
+
+        maxWidth: "1362px",
+
         height: "430px",
         display: "flex",
         flexDirection: "column",
@@ -61,25 +65,32 @@ const PaymentTable = () => {
           {/* Table Header */}
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: gridTemplate,
-              alignItems: "center",
-              padding: "10px",
-              fontWeight: 700,
-              textAlign: "center",
-              borderTopLeftRadius: "10px",
-              borderTopRightRadius: "10px",
+              overflowX: "auto",
               margin: "0 16px 8px 16px",
-              border: "1px solid #ccc",
-              color: "#797979",
             }}
           >
-            <div>No.</div>
-            <div>Date</div>
-            <div>Day/Month</div>
-            <div>Time</div>
-            <div>Payment Type</div>
-            <div>Amount</div>
+            <div
+              style={{
+                display: "grid",
+                minWidth: 600,
+                gridTemplateColumns: gridTemplate,
+                alignItems: "center",
+                padding: "10px",
+                fontWeight: 700,
+                textAlign: "center",
+                borderTopLeftRadius: "10px",
+                borderTopRightRadius: "10px",
+                border: "1px solid #ccc",
+                color: "#797979",
+              }}
+            >
+              <div>No.</div>
+              <div>Date</div>
+              <div>Day/Month</div>
+              <div>Time</div>
+              <div>Payment Type</div>
+              <div>Amount</div>
+            </div>
           </div>
 
           {/* Scrollable Body */}
@@ -97,6 +108,7 @@ const PaymentTable = () => {
                   key={index}
                   style={{
                     display: "grid",
+                    minWidth: 600,
                     gridTemplateColumns: gridTemplate,
                     alignItems: "center",
                     padding: "10px",
@@ -105,7 +117,8 @@ const PaymentTable = () => {
                     backgroundColor: "#fff",
                     textAlign: "center",
                     marginBottom: "8px",
-                    fontWeight: "400px",
+                    fontWeight: 400,
+                    overflowX: "auto",
                   }}
                 >
                   <div>{index + 1}.</div>
