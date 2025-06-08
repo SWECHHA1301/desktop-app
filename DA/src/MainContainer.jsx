@@ -12,7 +12,7 @@ const MainContainer = ({ children }) => {
                 flexDirection: 'row',
                 padding: '5px'
             }}>
-                <Sidebar />
+                <SidebarDrawer/>
                 <div style={{
                     height: '92vh',
                     overflowY: 'scroll',
