@@ -33,10 +33,10 @@ export default function CancelOrderModal({ onBack, onConfirm }) {
       padding: "20px",
     },
     label: {
-      color: '#797979',
+      color: "#797979",
       fontSize: 16,
       fontWeight: 700,
-      marginLeft: '40px'
+      marginLeft: "40px",
     },
     row: {
       marginTop: "8px",
@@ -48,16 +48,20 @@ export default function CancelOrderModal({ onBack, onConfirm }) {
       fontSize: "12px",
       fontWeight: 400,
       marginTop: "12px",
-      marginLeft: '20px'
+      marginLeft: "20px",
     },
     footer: {
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent: "flex-end",
       padding: "16px 20px",
       backgroundColor: "#E2E6F3",
+      gap: "16px",
       height: 60,
     },
     btnBack: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
       padding: "8px 16px",
       backgroundColor: "#fff",
       border: "1px solid #3658BF",
@@ -67,7 +71,11 @@ export default function CancelOrderModal({ onBack, onConfirm }) {
       fontWeight: 600,
       height: 32,
     },
+
     btnConfirm: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
       padding: "8px 16px",
       backgroundColor: "#FF0000",
       border: "none",
@@ -84,18 +92,22 @@ export default function CancelOrderModal({ onBack, onConfirm }) {
       <div style={styles.modal}>
         <div style={styles.header}>Cancel Order ?</div>
         <div style={styles.content}>
-          <p style={{fontSize: 17, fontWeight: 700,}}>
+          <p style={{ fontSize: 17, fontWeight: 700 }}>
             <strong>
               Are you sure you want to cancel the following Order?
             </strong>
           </p>
           <div style={styles.row}>
             <span style={styles.label}>Order Number :</span>
-            <span style={{fontSize: 16, fontWeight: 400,marginLeft: '60px'}}>#15</span>
+            <span style={{ fontSize: 16, fontWeight: 400, marginLeft: "60px" }}>
+              #15
+            </span>
           </div>
           <div style={styles.row}>
             <span style={styles.label}>Refundable Amount :</span>
-            <span style={{fontSize: 16, fontWeight: 400, marginLeft: '20px'}}>₹ 480</span>
+            <span style={{ fontSize: 16, fontWeight: 400, marginLeft: "20px" }}>
+              ₹ 480
+            </span>
           </div>
           <p style={styles.note}>
             This Order will be cancelled and KOT will be updated.

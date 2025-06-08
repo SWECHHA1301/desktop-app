@@ -25,7 +25,7 @@ function App() {
   return (
     <Router>
       
-      <MainContainer children={<Menu/>}/>
+      <MainContainer children={<CancelOrderModal/>}/>
  {/* <MainContainer children={<StaffAttendance />}/> */}
 
       {/* <MainContainer>
