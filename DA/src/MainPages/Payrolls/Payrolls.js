@@ -14,7 +14,7 @@ const Payroll = () => {
         border: "2px solid black",
         borderRadius: 10,
         width: '100%',
-        maxWidth: "1390px",
+        // maxWidth: "1390px",
         height: "648px",
         backgroundColor: "#D4DAED",
         padding: "10px",

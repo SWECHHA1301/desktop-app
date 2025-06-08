@@ -44,7 +44,7 @@ const PaymentTable = () => {
         background: "#fff",
         borderRadius: 10,
         width: "100%",
-        maxWidth: "1358px",
+        // maxWidth: "1358px",
         height: "430px",
         display: "flex",
         flexDirection: "column",
