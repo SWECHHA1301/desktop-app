@@ -5,8 +5,9 @@ const StaffHeader = ({ staffName, setStaffName }) => (
   <div
     style={{
       display: "flex",
-      alignItems: "center",
-      gap: "10px",
+      flexWrap: "wrap",
+      alignItems: "flex-start",
+      gap: "12px",
       marginBottom: "10px",
       padding: "12px 16px",
       backgroundColor: "#fff",
@@ -15,12 +16,12 @@ const StaffHeader = ({ staffName, setStaffName }) => (
   >
     <label
       style={{
-        marginRight: "30px",
         whiteSpace: "nowrap",
         color: "#939191",
         fontSize: "18px",
         fontWeight: 700,
-        marginLeft: "32px",
+        minWidth: "120px",
+        marginTop: "6px",
       }}
     >
       Staff Name :
@@ -33,9 +34,9 @@ const StaffHeader = ({ staffName, setStaffName }) => (
         border: "1px solid #000",
         borderRadius: "8px",
         padding: "6px 10px",
-        width: "100%",
-        maxWidth: "897px",
-        marginLeft: "60px",
+        flex: "1 1 250px",
+        minWidth: "200px",
+        maxWidth: "900px",
       }}
     >
       <Search size={16} style={{ marginRight: "6px" }} />

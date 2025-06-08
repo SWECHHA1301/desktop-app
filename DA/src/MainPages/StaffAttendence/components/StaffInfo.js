@@ -1,5 +1,10 @@
 import React from "react";
-import { Calendar, ChevronLeft, ChevronRight, Search } from "lucide-react";
+import {
+  Calendar,
+  ChevronLeft,
+  ChevronRight,
+  Search,
+} from "lucide-react";
 import CalendarPopup from "./CalendarPopup";
 
 export default function StaffInfo({
@@ -24,6 +29,7 @@ export default function StaffInfo({
       style={{
         borderRadius: "10px",
         marginBottom: "12px",
+        width: "100%",
       }}
     >
       <div
@@ -33,36 +39,38 @@ export default function StaffInfo({
           borderRadius: "10px",
           display: "flex",
           flexDirection: "column",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
           gap: "16px",
         }}
       >
         {/* Staff Name Section */}
-        <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
-          <label
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: "12px",
+            width: "100%",
+          }}
+        >
+          <div
             style={{
-              marginRight: "16px",
-              whiteSpace: "nowrap",
-              color: "#939191",
-              fontSize: 20,
-              fontWeight: 700,
+              display: "flex",
+              alignItems: "center",
+              minWidth: "120px",
             }}
           >
-            Staff Name 
-          </label>
-          <label
-            style={{
-              marginRight: "95px",
-              marginLeft: "20px",
-              whiteSpace: "nowrap",
-              color: "#939191",
-              fontSize: 20,
-              fontWeight: 700,
-            }}
-          >
-            :
-          </label>
+            <label
+              style={{
+                color: "#939191",
+                fontSize: 16,
+                fontWeight: 700,
+                marginRight: "8px",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Staff Name:
+            </label>
+          </div>
           <div
             style={{
               display: "flex",
@@ -70,8 +78,9 @@ export default function StaffInfo({
               border: "1px solid #000",
               borderRadius: "8px",
               padding: "6px 10px",
-              width: "100%",
-              maxWidth: "712px",
+              flex: 1,
+              minWidth: "240px",
+               maxWidth: "900px",
             }}
           >
             <Search size={16} style={{ marginRight: "6px" }} />
@@ -79,41 +88,48 @@ export default function StaffInfo({
               type="text"
               value={staffName}
               onChange={(e) => setStaffName(e.target.value)}
+              placeholder="Enter staff name"
               style={{
                 border: "none",
                 outline: "none",
                 flex: 1,
                 fontSize: "14px",
+                width: "100%",
+                maxWidth: "480px"
               }}
             />
           </div>
         </div>
 
         {/* Date Section */}
-        <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
-          <label
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: "12px",
+            width: "100%",
+          }}
+        >
+          <div
             style={{
-              marginRight: "16px",
-              whiteSpace: "nowrap",
-              color: "#939191",
-              fontSize: 20,
-              fontWeight: 700,
+              display: "flex",
+              alignItems: "center",
+              minWidth: "120px",
             }}
           >
-            Date 
-          </label>
-          <label
-            style={{
-              marginRight: "70px",
-              marginLeft: "80px",
-              whiteSpace: "nowrap",
-              color: "#939191",
-              fontSize: 20,
-              fontWeight: 700,
-            }}
-          >
-             :
-          </label>
+            <label
+              style={{
+                color: "#939191",
+                fontSize: 16,
+                fontWeight: 700,
+                marginRight: "8px",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Date:
+            </label>
+          </div>
           <Calendar size={16} />
           <div
             onClick={() => setShowCalendar(!showCalendar)}
@@ -126,8 +142,7 @@ export default function StaffInfo({
               gap: "10px",
               cursor: "pointer",
               width: "100%",
-              maxWidth: "180px",
-              marginLeft: "10px",
+              maxWidth: "200px",
             }}
           >
             <ChevronLeft
