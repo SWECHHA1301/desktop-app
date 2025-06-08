@@ -1,4 +1,4 @@
-import React from "react";
+
 import NativeDateRangePicker from "../../Common/NativeDateRangePicker";
 import { ChevronDown } from "lucide-react";
 import AddIcon from "../../Common/AddIcon";
@@ -131,11 +131,11 @@ const styles = {
     maxWidth: '237.5px',
     height: '44px',
     borderRadius: '10px',
-    padding: '0 10px',
+    justifyContent:'space-around',
     display: 'flex',
     gap: '12px',
     alignItems: 'center',
-    flex: '1 1 auto',
+    padding:'0 10px'
   },
   createBtnText: {
     color: '#3658BF',
@@ -196,7 +196,7 @@ const styles = {
     padding: '16px',
     width: '100%',
     fontSize: '16px',
-    fontWeight: '700',
+    fontWeight: '400',
     lineHeight: '120%',
     textAlign: 'center',
   },
@@ -219,7 +219,7 @@ const styles = {
   accountTableRow: {
     display: 'table-row',
     border: '1px solid black',
-
+   
   },
 };
 
@@ -249,7 +249,7 @@ const styles = {
             <h2 style={styles.transactionsHeading}>Transactions</h2>
             <button style={styles.filter}>
               <p style={styles.filterText}>Filter</p>
-              <div></div>
+              
             </button>
           </div>
 <div style={styles.manageTable}>
@@ -271,9 +271,17 @@ const styles = {
       <tbody>
         {details.map((item, index) => (
           <tr  style={styles.accountTableRow} key={index}>
-            <td style={styles.tableCell}>{item.Number}</td>
-            <td style={styles.tableCell}>{item.transactionType}</td>
-            <td style={styles.tableCell}>{item.Date}</td>
+            <td style={{...styles.tableCell,
+              color:'#797979',
+               fontWeight:'700'
+            } }>{item.Number}</td>
+            <td style={{...styles.tableCell,
+              fontSize:'15px',
+              fontWeight:'700'
+            }}>{item.transactionType}</td>
+            <td style={{...styles.tableCell,
+              color:'#797979'
+            }}>{item.Date}</td>
             <td style={styles.tableCell}>{item.Type}</td>
             <td style={styles.tableCell}>{item.description}</td>
             <td style={styles.tableCell}>{item.total}</td>

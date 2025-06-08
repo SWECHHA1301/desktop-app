@@ -4,17 +4,17 @@ import { Plus } from 'lucide-react';
 const AddIcon = () => {
   return (
     <div style={{
-      border: '2px solid #3658BF',
+      border: '2px solid rgb(54, 88, 191)',
       borderRadius: '50%',
       width: '24px',
       height: '24px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: '#3658BF',
+      color: 'rgb(54, 88, 191)',
       cursor: 'pointer'
     }}>
-      <Plus size={18} />
+      <Plus size={20} />
     </div>
   );
 };

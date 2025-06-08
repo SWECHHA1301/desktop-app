@@ -18,7 +18,7 @@ import StaffAttendance from "./MainPages/StaffAttendence/StaffAttendence";
 import Sidebar from "./Common/Sidebar";
 import SidebarDrawer from "./Common/SidebarDrawer";
 import Menu from "./Menu/Menu";
-import Payrolls from "./MainPages/Payrolls/Payrolls"
+
 
 
 
@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       
-      <MainContainer children={<Payrolls/>}/>
+      <MainContainer children={<AccManagement/>}/>
  {/* <MainContainer children={<StaffAttendance />}/> */}
 
       {/* <MainContainer>
